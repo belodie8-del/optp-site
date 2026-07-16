@@ -6,7 +6,7 @@
 <title>Ose Prendre Ta Place. Formation Management en ligne</title>
 <meta name="description" content="Formation en ligne management Ose Prendre Ta Place. Retrouve ta posture, ta légitimité et le plaisir de manager.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Caveat:wght@600&display=swap" rel="stylesheet">
 <style>
   :root {
     --teal: #0f868a;
@@ -51,13 +51,13 @@
   .btn-teal { background: var(--teal); color: #fff; }
   .btn-outline { background: transparent; color: var(--ink); border: 2px solid var(--ink); padding: 14px 28px; }
 
-  nav { position: sticky; top: 0; background: rgba(255,255,255,0.94); backdrop-filter: blur(6px); z-index: 10; border-bottom: 1px solid var(--line); }
-  nav .wrap { display: flex; align-items: center; justify-content: space-between; padding: 20px 32px; }
-  nav .brand { font-family: 'Space Grotesk', sans-serif; font-weight: 800; font-size: 16px; letter-spacing: -0.01em; }
-  nav ul { list-style: none; display: flex; gap: 6px; margin: 0; padding: 0; flex-wrap: wrap; align-items: center; }
-  nav li:not(:last-child)::after { content: "·"; margin-left: 6px; color: var(--ink-soft); }
-  nav a { color: var(--ink); text-decoration: none; font-size: 14px; font-weight: 600; padding: 0 4px; }
-  nav .cta { background: var(--orange); color: #fff; padding: 11px 20px; border-radius: 100px; font-weight: 700; font-size: 13px; margin-left: 12px; }
+  nav { position: sticky; top: 0; background: rgba(255,145,77,0.92); backdrop-filter: blur(6px); z-index: 10; }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; padding: 18px 32px; }
+  nav .brand { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: -0.01em; color: #fff; }
+  nav ul { list-style: none; display: flex; gap: 28px; margin: 0; padding: 0; flex-wrap: wrap; align-items: center; }
+  nav li:not(:last-child)::after { content: none; }
+  nav a { font-family: 'Inter', sans-serif; color: #fff; text-decoration: none; font-size: 14.5px; font-weight: 500; padding: 0; }
+  nav .cta { font-family: 'Inter', sans-serif; background: var(--ink); color: #fff; padding: 11px 22px; border-radius: 8px; font-weight: 600; font-size: 13.5px; margin-left: 0; }
 
   /* HERO */
   .hero { padding: 64px 0 0; }
@@ -245,10 +245,8 @@
   <div class="wrap">
     <div class="brand">OSE PRENDRE TA PLACE</div>
     <ul>
-      <li><a href="#pour-qui">C'est pour moi ?</a></li>
-      <li><a href="#formatrice">La formatrice</a></li>
-      <li><a href="#programme">Le contenu</a></li>
-      <li><a href="#offres">Les offres</a></li>
+      <li><a href="#programme">Formation</a></li>
+      <li><a href="#newsletter">Newsletter</a></li>
       <li><a href="#avis">Avis</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#offres" class="cta">Je prends ma place</a></li>
@@ -282,7 +280,7 @@
 <div class="wrap">
 
   <!-- AUDIT CTA -->
-  <section style="padding-top:64px;">
+  <section id="newsletter" style="padding-top:64px;">
     <div class="audit-cta">
       <div>
         <h2>Gratuit · 30 questions</h2>
