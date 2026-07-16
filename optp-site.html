@@ -109,6 +109,25 @@
   .fit-col li .mark { color: var(--teal); font-weight: 800; flex-shrink: 0; }
   .fit-col.no li .mark { color: var(--no); }
 
+  .empathy { font-size: 18px; text-align: center; max-width: 56ch; margin: 56px auto 0; color: var(--ink-soft); font-style: italic; }
+  .empathy strong { color: var(--ink); font-style: normal; }
+
+  .quote-callout { background: var(--card); border-left: 4px solid var(--orange); border-radius: 4px; padding: 28px 32px; margin: 40px auto 0; max-width: 62ch; box-shadow: 0 16px 32px rgba(15,134,138,0.06); }
+  .quote-callout p { font-family: 'Parkinsans', sans-serif; font-weight: 700; font-size: 18px; margin: 0; }
+
+  .founder-teaser { display: flex; gap: 36px; align-items: center; background: var(--card); border-radius: 20px; padding: 36px; margin-top: 48px; box-shadow: 0 16px 32px rgba(15,134,138,0.06); flex-wrap: wrap; }
+  .founder-teaser .photo-rect { width: 140px; height: 170px; }
+  .founder-teaser .text { flex: 1; min-width: 260px; }
+  .founder-teaser h4 { font-family: 'Parkinsans', sans-serif; font-size: 19px; font-weight: 700; margin: 0 0 10px; }
+  .founder-teaser p { font-size: 14.5px; color: var(--ink-soft); margin: 0; }
+
+  .feature-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 32px; }
+  .feature-grid .feature { background: rgba(255,255,255,0.65); border-radius: 14px; padding: 22px; }
+  .feature-grid .feature-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+  .feature-grid h4 { font-family: 'Parkinsans', sans-serif; font-size: 15.5px; font-weight: 700; margin: 0; }
+  .feature-grid .icon-check { width: 24px; height: 24px; border-radius: 50%; background: var(--teal); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; }
+  .feature-grid p { font-size: 13.5px; color: var(--ink-soft); margin: 10px 0 0; }
+
   /* PHOTO */
   .photo-rect {
     width: 220px; height: 260px; border-radius: 16px; background: var(--teal-pale);
@@ -293,28 +312,18 @@
       </ul>
     </div>
 
-    <div style="margin-top: 64px;">
-      <span class="badge">Pour toi ?</span>
-      <h3 style="font-size:22px;">Avant d'aller plus loin...</h3>
-      <div class="fit-cols">
-        <div class="fit-col yes">
-          <h4>C'est fait pour toi si...</h4>
-          <ul>
-            <li><span class="mark">✓</span> Tu es manager de terrain avec une équipe à taille humaine</li>
-            <li><span class="mark">✓</span> Tu veux des outils concrets activables immédiatement</li>
-            <li><span class="mark">✓</span> Tu es prêt(e) à remettre en question tes réflexes d'expert</li>
-            <li><span class="mark">✓</span> Tu veux progresser sans attendre une formation de ton employeur</li>
-          </ul>
-        </div>
-        <div class="fit-col no">
-          <h4>Ce n'est pas fait pour toi si...</h4>
-          <ul>
-            <li><span class="mark">✕</span> Tu cherches une formation théorique avec un diplôme à la clé</li>
-            <li><span class="mark">✕</span> Tu n'as pas de contact régulier avec ton équipe</li>
-            <li><span class="mark">✕</span> Tu veux une solution miracle sans passer à l'action</li>
-            <li><span class="mark">✕</span> Tu es dirigeant d'une grande entreprise avec des enjeux stratégiques complexes</li>
-          </ul>
-        </div>
+    <p class="empathy"><strong>Respire : non, ce n'est pas toi le problème.</strong> Tu es doué(e) dans ce que tu fais, ton équipe le sait. Ce qui te manque, ce ne sont pas des efforts en plus — c'est une méthode.</p>
+
+    <div class="quote-callout">
+      <p>Ce qui te manque, c'est <span class="hl">le truc entre les deux</span> : une posture qui tient, un cadre qui se pose, et les mots pour le dire.</p>
+    </div>
+
+    <div class="founder-teaser">
+      <div class="photo-rect reveal">photo Élodie</div>
+      <div class="text">
+        <span class="badge">Spoiler</span>
+        <h4>Ce n'est pas un rôle à jouer. C'est une posture à trouver.</h4>
+        <p>Ça fait des années qu'on te répète de "prendre confiance" ou d'"être plus ferme". Le vrai sujet n'est pas là : sans méthode pour poser un cadre clair et le tenir, rien ne change durablement. La bonne nouvelle, c'est que cette posture s'apprend, et plus vite que tu ne le penses.</p>
       </div>
     </div>
 
@@ -690,14 +699,23 @@
 
     <div class="complete-block">
       <h3 style="font-size:20px;">Ce que tu reçois</h3>
-      <div class="complete-grid">
-        <div><span class="check">✓</span> 17h30 de vidéos terrain</div>
-        <div><span class="check">✓</span> 22 Feuilles de route + 18 Fiches outils + 7 Workbooks</div>
-        <div><span class="check">✓</span> 7 Kits de Survie Verbal</div>
-        <div><span class="check">✓</span> 6 séances individuelles d'1h avec Élodie</div>
-        <div><span class="check">✓</span> Groupe WhatsApp privé, 3 mois</div>
-        <div><span class="check">✓</span> Séance bilan 3 mois après la fin</div>
-        <div><span class="check">✓</span> Accès à vie + mises à jour incluses</div>
+      <div class="feature-grid">
+        <div class="feature">
+          <div class="feature-head"><h4>17h30 de vidéos terrain</h4><span class="icon-check">✓</span></div>
+          <p>Des vidéos courtes et denses sur les 6 axes, à ton rythme, sans remplissage théorique.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-head"><h4>47 outils prêts à l'emploi</h4><span class="icon-check">✓</span></div>
+          <p>22 Feuilles de route + 18 Fiches outils + 7 Workbooks + 7 Kits de Survie Verbal.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-head"><h4>6 séances individuelles avec Élodie</h4><span class="icon-check">✓</span></div>
+          <p>1h après chaque module, plus un groupe WhatsApp privé pendant 3 mois.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-head"><h4>Accès à vie</h4><span class="icon-check">✓</span></div>
+          <p>Mises à jour incluses, plus une séance bilan 3 mois après la fin du parcours.</p>
+        </div>
       </div>
 
       <h4 style="margin-top:32px; font-size:16px; font-family:'Parkinsans',sans-serif;">Les 6 séances avec Élodie</h4>
@@ -741,6 +759,32 @@
       <div class="testi"><div class="stars">★★★★★</div><p>Le Pack Booste ton équipe avec l'accompagnement d'Élodie a été un vrai déclic ! Concret, pratique, adapté à ma situation. Je recommande +++</p><cite>Célia</cite></div>
       <div class="testi"><div class="stars">★★★★★</div><p>La matrice me permet aujourd'hui de savoir manager toutes les personnalités de mon équipe ! Les vidéos ne sont pas de la grande théorie déconnectée.</p><cite>Mégane</cite></div>
       <div class="testi"><div class="stars">★★★★★</div><p>Une formatrice au top, à l'écoute, solaire, enrichissante ! Il y a toujours une solution, et Élodie va la co-construire avec vous. Merci !!</p><cite>Élisa</cite></div>
+    </div>
+  </section>
+
+  <!-- AVANT DE T'ENGAGER -->
+  <section>
+    <span class="badge">Avant de t'engager</span>
+    <h2>Ose Prendre Ta Place est pensée pour celles et ceux qui <span class="hl">passent à l'action</span></h2>
+    <div class="fit-cols">
+      <div class="fit-col yes">
+        <h4>C'est fait pour toi si...</h4>
+        <ul>
+          <li><span class="mark">✓</span> Tu es manager de terrain avec une équipe à taille humaine</li>
+          <li><span class="mark">✓</span> Tu veux des outils concrets activables immédiatement</li>
+          <li><span class="mark">✓</span> Tu es prêt(e) à remettre en question tes réflexes d'expert</li>
+          <li><span class="mark">✓</span> Tu veux progresser sans attendre une formation de ton employeur</li>
+        </ul>
+      </div>
+      <div class="fit-col no">
+        <h4>Ce n'est pas fait pour toi si...</h4>
+        <ul>
+          <li><span class="mark">✕</span> Tu cherches une formation théorique avec un diplôme à la clé</li>
+          <li><span class="mark">✕</span> Tu n'as pas de contact régulier avec ton équipe</li>
+          <li><span class="mark">✕</span> Tu veux une solution miracle sans passer à l'action</li>
+          <li><span class="mark">✕</span> Tu es dirigeant d'une grande entreprise avec des enjeux stratégiques complexes</li>
+        </ul>
+      </div>
     </div>
   </section>
 
