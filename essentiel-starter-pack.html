@@ -51,8 +51,18 @@ h1 em{font-style:italic;color:var(--orange);}
 .tools h2{font-family:'Lora',serif;font-size:32px;font-weight:700;color:var(--ink);margin:0 0 10px;letter-spacing:-.015em;}
 .tools .sub{color:var(--muted);font-size:15.5px;margin:0;}
 
-.tools-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;max-width:980px;margin:0 auto;align-items:start;}
-.tool-detail{background:#fff;border-radius:28px;padding:32px;box-shadow:0 20px 48px -12px rgba(8,80,85,.14);}
+.tools-carousel-wrap{max-width:440px;margin:0 auto;position:relative;}
+.tools-carousel{overflow:hidden;padding:18px;border-radius:30px;}
+.tc-track{display:flex;transition:transform .5s cubic-bezier(.4,0,.2,1);}
+.tc-slide{flex:0 0 100%;min-width:0;}
+.tc-arrow{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;background:#fff;color:var(--teal-dark);border:0;font-size:19px;font-weight:800;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px rgba(8,80,85,.2);cursor:pointer;z-index:2;}
+.tc-arrow.prev{left:-6px;}
+.tc-arrow.next{right:-6px;}
+.tc-dots{display:flex;gap:8px;justify-content:center;margin-top:18px;flex-wrap:wrap;}
+.tc-dots button{appearance:none;border:0;width:8px;height:8px;padding:0;border-radius:50%;background:var(--orange-pale);cursor:pointer;}
+.tc-dots button[aria-current="true"]{background:var(--orange);width:22px;border-radius:5px;transition:width .2s;}
+
+.tool-detail{background:#fff;border-radius:26px;padding:32px;box-shadow:0 20px 48px -12px rgba(8,80,85,.18);min-height:360px;}
 .icon-sq{width:52px;height:52px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:18px;}
 .icon-sq.teal{background:var(--teal-pale);}
 .icon-sq.orange{background:var(--orange-pastel);}
@@ -153,7 +163,10 @@ footer a{color:var(--teal-dark);}
       <h2>Ce qu'il y a dans L'Essentiel</h2>
       <p class="sub">8 outils du terrain, pas des concepts théoriques.</p>
     </div>
-    <div class="tools-list">
+    <div class="tools-carousel-wrap">
+      <div class="tools-carousel" id="toolsCarousel">
+        <div class="tc-track">
+          <div class="tc-slide">
       <div class="tool-detail">
         <div class="icon-sq teal">👥</div>
         <h3>La Réunion d'équipe</h3>
@@ -174,7 +187,8 @@ footer a{color:var(--teal-dark);}
           </details>
         </div>
       </div>
-
+          </div>
+          <div class="tc-slide">
       <div class="tool-detail">
         <div class="icon-sq orange">📅</div>
         <h3>Le calendrier des rituels managériaux</h3>
@@ -194,7 +208,8 @@ footer a{color:var(--teal-dark);}
           </details>
         </div>
       </div>
-
+          </div>
+          <div class="tc-slide">
       <div class="tool-detail">
         <div class="icon-sq teal">📋</div>
         <h3>L'Entretien annuel d'évaluation</h3>
@@ -213,7 +228,8 @@ footer a{color:var(--teal-dark);}
           </details>
         </div>
       </div>
-
+          </div>
+          <div class="tc-slide">
       <div class="tool-detail">
         <div class="icon-sq orange">🎯</div>
         <h3>L'Entretien professionnel</h3>
@@ -234,7 +250,8 @@ footer a{color:var(--teal-dark);}
           </details>
         </div>
       </div>
-
+          </div>
+          <div class="tc-slide">
       <div class="tool-detail">
         <div class="icon-sq teal">✅</div>
         <h3>Les 10 commandements pour réussir ses entretiens</h3>
@@ -251,7 +268,8 @@ footer a{color:var(--teal-dark);}
           </details>
         </div>
       </div>
-
+          </div>
+          <div class="tc-slide">
       <div class="tool-detail">
         <div class="icon-sq orange">🧯</div>
         <h3>Kit de Survie Verbal</h3>
@@ -260,7 +278,8 @@ footer a{color:var(--teal-dark);}
           <span class="fmt">PDF</span>
         </div>
       </div>
-
+          </div>
+          <div class="tc-slide">
       <div class="tool-detail">
         <div class="icon-sq teal">🔄</div>
         <h3>Trame du OTO</h3>
@@ -269,7 +288,8 @@ footer a{color:var(--teal-dark);}
           <span class="fmt">PDF</span>
         </div>
       </div>
-
+          </div>
+          <div class="tc-slide">
       <div class="tool-detail">
         <div class="icon-sq orange">📊</div>
         <h3>Tableau de Bord des Objectifs</h3>
@@ -277,6 +297,21 @@ footer a{color:var(--teal-dark);}
         <div class="subpanel">
           <span class="fmt">EXCEL</span>
         </div>
+      </div>
+          </div>
+        </div>
+        <button type="button" class="tc-arrow prev" aria-label="Précédent">‹</button>
+        <button type="button" class="tc-arrow next" aria-label="Suivant">›</button>
+      </div>
+      <div class="tc-dots">
+        <button type="button" aria-label="1" aria-current="true"></button>
+        <button type="button" aria-label="2" aria-current="false"></button>
+        <button type="button" aria-label="3" aria-current="false"></button>
+        <button type="button" aria-label="4" aria-current="false"></button>
+        <button type="button" aria-label="5" aria-current="false"></button>
+        <button type="button" aria-label="6" aria-current="false"></button>
+        <button type="button" aria-label="7" aria-current="false"></button>
+        <button type="button" aria-label="8" aria-current="false"></button>
       </div>
     </div>
   </section>
@@ -354,3 +389,23 @@ footer a{color:var(--teal-dark);}
 </symbol>
   </defs>
 </svg>
+
+<script>
+(function(){
+  var car = document.getElementById('toolsCarousel');
+  if(!car) return;
+  var wrap = car.parentElement;
+  var track = car.querySelector('.tc-track');
+  var dots = wrap.querySelectorAll('.tc-dots button');
+  var slides = track.children.length;
+  var n = 0;
+  function show(){
+    track.style.transform = 'translateX(-' + (n * 100) + '%)';
+    dots.forEach(function(d, i){ d.setAttribute('aria-current', i === n ? 'true' : 'false'); });
+  }
+  car.querySelector('.tc-arrow.prev').addEventListener('click', function(){ n = (n + slides - 1) % slides; show(); });
+  car.querySelector('.tc-arrow.next').addEventListener('click', function(){ n = (n + 1) % slides; show(); });
+  dots.forEach(function(d, i){ d.addEventListener('click', function(){ n = i; show(); }); });
+  show();
+})();
+</script>
