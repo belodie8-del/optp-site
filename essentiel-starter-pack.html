@@ -45,33 +45,39 @@ h1 em{font-style:italic;color:var(--orange);}
 .float-badge.b1{top:-14px;right:20px;}
 .float-badge.b2{bottom:-14px;left:20px;background:var(--orange);color:#fff;}
 
-/* TOOLS — unified grid, no duplicate carousel+list */
-.tools{padding:20px 5vw 64px;background:var(--teal-pale);}
-.tools .head{text-align:center;max-width:560px;margin:0 auto 44px;}
-.tools h2{font-family:'Lora',serif;font-size:28px;color:var(--teal-dark);margin:0 0 10px;}
+/* TOOLS — modern collapsible list */
+.tools{padding:72px 5vw 76px;background:#fff;}
+.tools .head{text-align:center;max-width:560px;margin:0 auto 48px;}
+.tools .eyebrow-sm{display:inline-block;color:var(--teal);font-size:11.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px;}
+.tools h2{font-family:'Lora',serif;font-size:30px;color:var(--teal-dark);margin:0 0 10px;letter-spacing:-.01em;}
 .tools .sub{color:var(--muted);font-size:15.5px;margin:0;}
+
 .tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;}
-.tool-card{background:#fff;border-radius:18px;padding:24px;box-shadow:0 10px 26px rgba(8,80,85,.07);}
+.tool-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;transition:box-shadow .2s,transform .2s;}
+.tool-card:hover{box-shadow:0 14px 30px rgba(8,80,85,.08);transform:translateY(-2px);}
 .tool-card .num{font-family:'Lora',serif;font-size:13px;font-weight:700;color:var(--orange);margin-bottom:10px;}
 .tool-card .kicker{font-size:10.5px;font-weight:800;letter-spacing:.04em;color:var(--teal);text-transform:uppercase;margin-bottom:6px;}
 .tool-card h3{font-size:15.5px;margin:0 0 8px;color:var(--teal-dark);}
 .tool-card p{font-size:13px;color:var(--muted);margin:0 0 10px;line-height:1.55;}
 .tool-card .fmt{font-size:10px;font-weight:800;letter-spacing:.03em;color:var(--teal);background:var(--teal-pale);padding:3px 9px;border-radius:7px;}
 
-.tools-list{display:flex;flex-direction:column;gap:16px;max-width:760px;margin:0 auto 28px;}
-.tool-detail{background:#fff;border-radius:20px;padding:30px 32px;box-shadow:0 10px 26px rgba(8,80,85,.07);display:flex;gap:22px;}
-.tool-detail .num{font-family:'Lora',serif;font-size:28px;font-weight:700;color:var(--orange-pale);flex:0 0 42px;line-height:1;}
-.tool-detail h3{font-size:18px;margin:0 0 6px;color:var(--teal-dark);}
-.tool-detail .accroche{font-family:'Lora',serif;font-style:italic;font-size:14.5px;color:var(--teal);margin:0 0 12px;}
-.tool-detail .ce-que-cest{font-size:13.5px;color:var(--muted);line-height:1.6;margin:0 0 14px;}
-.tool-detail details{margin:0 0 14px;}
-.tool-detail summary{font-size:13px;font-weight:700;color:var(--teal);cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:6px;}
+.tools-list{display:flex;flex-direction:column;gap:14px;max-width:700px;margin:0 auto 32px;}
+.tool-detail{background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px 28px;transition:box-shadow .25s,border-color .25s;}
+.tool-detail:hover{box-shadow:0 16px 36px rgba(8,80,85,.08);border-color:transparent;}
+.tool-head{display:flex;align-items:center;gap:14px;margin-bottom:12px;}
+.num-chip{flex:0 0 auto;width:34px;height:34px;border-radius:50%;background:var(--teal-pale);color:var(--teal-dark);font-family:'Lora',serif;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;}
+.tool-detail h3{font-size:17px;font-weight:600;margin:0;color:var(--teal-dark);letter-spacing:-.005em;}
+.tool-detail .accroche{font-family:'Lora',serif;font-style:italic;font-size:14px;color:var(--teal);margin:0 0 10px;padding-left:48px;}
+.tool-detail .ce-que-cest{font-size:13.5px;color:var(--muted);line-height:1.6;margin:0 0 4px;padding-left:48px;}
+.tool-detail details{padding-left:48px;}
+.tool-detail summary{font-size:12.5px;font-weight:700;color:var(--teal);cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:5px;padding:10px 0 0;}
 .tool-detail summary::-webkit-details-marker{display:none;}
-.tool-detail summary::after{content:'▾';font-size:11px;transition:transform .2s;}
-.tool-detail details[open] summary::after{transform:rotate(180deg);}
-.tool-detail .find-list{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:5px;}
-.tool-detail .find-list li{font-size:13.5px;color:var(--ink);line-height:1.5;}
-.tool-detail .fmt{font-size:10.5px;font-weight:800;letter-spacing:.03em;color:var(--teal);background:var(--teal-pale);padding:3px 10px;border-radius:7px;}
+.tool-detail summary::after{content:'';width:7px;height:7px;border-right:1.6px solid var(--teal);border-bottom:1.6px solid var(--teal);transform:rotate(45deg);margin-top:-3px;transition:transform .2s;}
+.tool-detail details[open] summary::after{transform:rotate(225deg);margin-top:3px;}
+.tool-detail .find-list{list-style:none;margin:14px 0 16px;padding:0;display:flex;flex-direction:column;gap:9px;}
+.tool-detail .find-list li{font-size:13.5px;color:var(--ink);line-height:1.5;padding-left:16px;position:relative;}
+.tool-detail .find-list li::before{content:'';position:absolute;left:0;top:7px;width:6px;height:6px;border-radius:50%;background:var(--orange-light);}
+.tool-detail .fmt{display:inline-block;margin-top:10px;font-size:10px;font-weight:800;letter-spacing:.04em;color:var(--teal);background:var(--teal-pale);padding:4px 10px;border-radius:999px;text-transform:uppercase;}
 
 /* PRICING — moved up, prominent */
 .pricing{padding:64px 5vw;text-align:center;background:#fff;}
@@ -156,101 +162,86 @@ footer a{color:var(--teal-dark);}
     </div>
     <div class="tools-list">
       <div class="tool-detail">
-        <div class="num">01</div>
-        <div>
-          <h3>La Réunion d'équipe</h3>
+        <div class="tool-head"><span class="num-chip">01</span><h3>La Réunion d'équipe</h3></div>
           <p class="accroche">Une réunion par mois. 3 priorités. Une équipe qui sait où elle va.</p>
           <p class="ce-que-cest">La trame d'une réunion d'équipe mensuelle, de la préparation jusqu'aux décisions. Tu arrives avec un plan, pas avec une improvisation.</p>
           <details>
             <summary>Voir ce que tu y trouves</summary>
             <ul class="find-list">
-              <li>→ Une checklist de préparation</li>
-              <li>→ Le cadre et les objectifs de la réunion, avec les phrases pour ouvrir</li>
-              <li>→ Un état des lieux des sujets en cours et à venir</li>
-              <li>→ Qui fait quoi pour le mois</li>
-              <li>→ Tes 3 priorités du mois</li>
-              <li>→ Les erreurs à éviter</li>
+              <li>Une checklist de préparation</li>
+              <li>Le cadre et les objectifs de la réunion, avec les phrases pour ouvrir</li>
+              <li>Un état des lieux des sujets en cours et à venir</li>
+              <li>Qui fait quoi pour le mois</li>
+              <li>Tes 3 priorités du mois</li>
+              <li>Les erreurs à éviter</li>
             </ul>
           </details>
           <span class="fmt">NOTION — à dupliquer chaque mois</span>
-        </div>
       </div>
 
       <div class="tool-detail">
-        <div class="num">02</div>
-        <div>
-          <h3>Le calendrier des rituels managériaux</h3>
+        <div class="tool-head"><span class="num-chip">02</span><h3>Le calendrier des rituels managériaux</h3></div>
           <p class="accroche">Ton année de manager, rituel par rituel.</p>
           <p class="ce-que-cest">Un calendrier qui place chaque rituel au bon moment : quotidien, hebdomadaire, mensuel, trimestriel, annuel. Tu sais quoi faire, et quand.</p>
           <details>
             <summary>Voir ce que tu y trouves</summary>
             <ul class="find-list">
-              <li>→ Les rituels de chaque jour, de chaque semaine et de chaque mois</li>
-              <li>→ Les bilans de fin de trimestre et les entretiens annuels</li>
-              <li>→ Les jours fériés et les moments à fêter</li>
-              <li>→ Les rituels « à la demande » : accueillir un nouvel arrivant, reprendre après une absence, gérer un recadrage, un départ</li>
-              <li>→ Des catégories en couleur pour s'y retrouver d'un coup d'œil</li>
+              <li>Les rituels de chaque jour, de chaque semaine et de chaque mois</li>
+              <li>Les bilans de fin de trimestre et les entretiens annuels</li>
+              <li>Les jours fériés et les moments à fêter</li>
+              <li>Les rituels « à la demande » : accueillir un nouvel arrivant, reprendre après une absence, gérer un recadrage, un départ</li>
+              <li>Des catégories en couleur pour s'y retrouver d'un coup d'œil</li>
             </ul>
           </details>
           <span class="fmt">NOTION — base avec vue calendrier</span>
-        </div>
       </div>
 
       <div class="tool-detail">
-        <div class="num">03</div>
-        <div>
-          <h3>L'Entretien annuel d'évaluation</h3>
+        <div class="tool-head"><span class="num-chip">03</span><h3>L'Entretien annuel d'évaluation</h3></div>
           <p class="accroche">Un entretien qui sert à quelque chose, pour toi et pour ton collaborateur.</p>
           <p class="ce-que-cest">Une trame complète pour faire le bilan de l'année et fixer la suivante. Chacun a son exemplaire, le remplit avant, et vous comparez vos deux regards.</p>
           <details>
             <summary>Voir ce que tu y trouves</summary>
             <ul class="find-list">
-              <li>→ 8 blocs : bien-être et QVCT, missions et compétences, objectifs, résultats, management, posture du collaborateur, moyens mis à disposition, besoins en formation</li>
-              <li>→ Une clôture avec la synthèse, les observations et les signatures</li>
-              <li>→ Un exemplaire manager et un exemplaire collaborateur</li>
-              <li>→ Dans chaque bloc, le rôle de chacun et ce que chacun retient</li>
+              <li>8 blocs : bien-être et QVCT, missions et compétences, objectifs, résultats, management, posture du collaborateur, moyens mis à disposition, besoins en formation</li>
+              <li>Une clôture avec la synthèse, les observations et les signatures</li>
+              <li>Un exemplaire manager et un exemplaire collaborateur</li>
+              <li>Dans chaque bloc, le rôle de chacun et ce que chacun retient</li>
             </ul>
           </details>
           <span class="fmt">La plateforme — à imprimer ou remplir à l'écran</span>
-        </div>
       </div>
 
       <div class="tool-detail">
-        <div class="num">04</div>
-        <div>
-          <h3>L'Entretien professionnel</h3>
+        <div class="tool-head"><span class="num-chip">04</span><h3>L'Entretien professionnel</h3></div>
           <p class="accroche">L'entretien qu'on oublie, et qui compte pour la carrière de ton collaborateur.</p>
           <p class="ce-que-cest">Une trame pour parler d'avenir, pas d'évaluation : compétences, envies d'évolution, formations possibles, plan d'actions. Elle est construite pour reprendre les points que la loi demande de traiter.</p>
           <details>
             <summary>Voir ce que tu y trouves</summary>
             <ul class="find-list">
-              <li>→ Un mode d'emploi avec le rappel du cadre légal</li>
-              <li>→ Poste et compétences, puis envies d'évolution</li>
-              <li>→ L'information sur les dispositifs : VAE, CPF, conseil en évolution professionnelle</li>
-              <li>→ Les objectifs de professionnalisation et les propositions de formation, avec la réponse de l'entreprise</li>
-              <li>→ Un plan d'actions daté, la synthèse et les signatures, avec la copie remise au collaborateur</li>
-              <li>→ Un exemplaire manager et un exemplaire collaborateur</li>
+              <li>Un mode d'emploi avec le rappel du cadre légal</li>
+              <li>Poste et compétences, puis envies d'évolution</li>
+              <li>L'information sur les dispositifs : VAE, CPF, conseil en évolution professionnelle</li>
+              <li>Les objectifs de professionnalisation et les propositions de formation, avec la réponse de l'entreprise</li>
+              <li>Un plan d'actions daté, la synthèse et les signatures, avec la copie remise au collaborateur</li>
+              <li>Un exemplaire manager et un exemplaire collaborateur</li>
             </ul>
           </details>
           <span class="fmt">La plateforme</span>
-        </div>
       </div>
 
       <div class="tool-detail">
-        <div class="num">05</div>
-        <div>
-          <h3>Les 10 commandements pour réussir ses entretiens</h3>
+        <div class="tool-head"><span class="num-chip">05</span><h3>Les 10 commandements pour réussir ses entretiens</h3></div>
           <p class="accroche">Le document ne fait pas l'entretien. C'est toi.</p>
           <p class="ce-que-cest">Un kit d'une page sur la posture du manager en entretien. Dix repères concrets, avec le pourquoi de chacun, pour que ton collaborateur sorte de l'entretien avec envie et pas seulement avec une signature.</p>
           <details>
             <summary>Voir ce que tu y trouves</summary>
             <ul class="find-list">
-              <li>→ Dix commandements courts, chacun avec son explication</li>
-              <li>→ Des repères qui s'appliquent aussi bien à l'entretien annuel qu'à l'entretien professionnel</li>
+              <li>Dix commandements courts, chacun avec son explication</li>
+              <li>Des repères qui s'appliquent aussi bien à l'entretien annuel qu'à l'entretien professionnel</li>
             </ul>
           </details>
           <span class="fmt">PDF — à garder sous la main</span>
-        </div>
       </div>
     </div>
 
