@@ -64,7 +64,12 @@ h1 em{font-style:italic;color:var(--orange);}
 .tool-detail h3{font-size:18px;margin:0 0 6px;color:var(--teal-dark);}
 .tool-detail .accroche{font-family:'Lora',serif;font-style:italic;font-size:14.5px;color:var(--teal);margin:0 0 12px;}
 .tool-detail .ce-que-cest{font-size:13.5px;color:var(--muted);line-height:1.6;margin:0 0 14px;}
-.tool-detail .find-list{list-style:none;margin:0 0 14px;padding:0;display:flex;flex-direction:column;gap:5px;}
+.tool-detail details{margin:0 0 14px;}
+.tool-detail summary{font-size:13px;font-weight:700;color:var(--teal);cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:6px;}
+.tool-detail summary::-webkit-details-marker{display:none;}
+.tool-detail summary::after{content:'▾';font-size:11px;transition:transform .2s;}
+.tool-detail details[open] summary::after{transform:rotate(180deg);}
+.tool-detail .find-list{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:5px;}
 .tool-detail .find-list li{font-size:13.5px;color:var(--ink);line-height:1.5;}
 .tool-detail .fmt{font-size:10.5px;font-weight:800;letter-spacing:.03em;color:var(--teal);background:var(--teal-pale);padding:3px 10px;border-radius:7px;}
 
@@ -156,14 +161,17 @@ footer a{color:var(--teal-dark);}
           <h3>La Réunion d'équipe</h3>
           <p class="accroche">Une réunion par mois. 3 priorités. Une équipe qui sait où elle va.</p>
           <p class="ce-que-cest">La trame d'une réunion d'équipe mensuelle, de la préparation jusqu'aux décisions. Tu arrives avec un plan, pas avec une improvisation.</p>
-          <ul class="find-list">
-            <li>→ Une checklist de préparation</li>
-            <li>→ Le cadre et les objectifs de la réunion, avec les phrases pour ouvrir</li>
-            <li>→ Un état des lieux des sujets en cours et à venir</li>
-            <li>→ Qui fait quoi pour le mois</li>
-            <li>→ Tes 3 priorités du mois</li>
-            <li>→ Les erreurs à éviter</li>
-          </ul>
+          <details>
+            <summary>Voir ce que tu y trouves</summary>
+            <ul class="find-list">
+              <li>→ Une checklist de préparation</li>
+              <li>→ Le cadre et les objectifs de la réunion, avec les phrases pour ouvrir</li>
+              <li>→ Un état des lieux des sujets en cours et à venir</li>
+              <li>→ Qui fait quoi pour le mois</li>
+              <li>→ Tes 3 priorités du mois</li>
+              <li>→ Les erreurs à éviter</li>
+            </ul>
+          </details>
           <span class="fmt">NOTION — à dupliquer chaque mois</span>
         </div>
       </div>
@@ -174,13 +182,16 @@ footer a{color:var(--teal-dark);}
           <h3>Le calendrier des rituels managériaux</h3>
           <p class="accroche">Ton année de manager, rituel par rituel.</p>
           <p class="ce-que-cest">Un calendrier qui place chaque rituel au bon moment : quotidien, hebdomadaire, mensuel, trimestriel, annuel. Tu sais quoi faire, et quand.</p>
-          <ul class="find-list">
-            <li>→ Les rituels de chaque jour, de chaque semaine et de chaque mois</li>
-            <li>→ Les bilans de fin de trimestre et les entretiens annuels</li>
-            <li>→ Les jours fériés et les moments à fêter</li>
-            <li>→ Les rituels « à la demande » : accueillir un nouvel arrivant, reprendre après une absence, gérer un recadrage, un départ</li>
-            <li>→ Des catégories en couleur pour s'y retrouver d'un coup d'œil</li>
-          </ul>
+          <details>
+            <summary>Voir ce que tu y trouves</summary>
+            <ul class="find-list">
+              <li>→ Les rituels de chaque jour, de chaque semaine et de chaque mois</li>
+              <li>→ Les bilans de fin de trimestre et les entretiens annuels</li>
+              <li>→ Les jours fériés et les moments à fêter</li>
+              <li>→ Les rituels « à la demande » : accueillir un nouvel arrivant, reprendre après une absence, gérer un recadrage, un départ</li>
+              <li>→ Des catégories en couleur pour s'y retrouver d'un coup d'œil</li>
+            </ul>
+          </details>
           <span class="fmt">NOTION — base avec vue calendrier</span>
         </div>
       </div>
@@ -191,13 +202,16 @@ footer a{color:var(--teal-dark);}
           <h3>L'Entretien annuel d'évaluation</h3>
           <p class="accroche">Un entretien qui sert à quelque chose, pour toi et pour ton collaborateur.</p>
           <p class="ce-que-cest">Une trame complète pour faire le bilan de l'année et fixer la suivante. Chacun a son exemplaire, le remplit avant, et vous comparez vos deux regards.</p>
-          <ul class="find-list">
-            <li>→ 8 blocs : bien-être et QVCT, missions et compétences, objectifs, résultats, management, posture du collaborateur, moyens mis à disposition, besoins en formation</li>
-            <li>→ Une clôture avec la synthèse, les observations et les signatures</li>
-            <li>→ Un exemplaire manager et un exemplaire collaborateur</li>
-            <li>→ Dans chaque bloc, le rôle de chacun et ce que chacun retient</li>
-          </ul>
-          <span class="fmt">CANVA — 23 pages, à imprimer ou remplir à l'écran</span>
+          <details>
+            <summary>Voir ce que tu y trouves</summary>
+            <ul class="find-list">
+              <li>→ 8 blocs : bien-être et QVCT, missions et compétences, objectifs, résultats, management, posture du collaborateur, moyens mis à disposition, besoins en formation</li>
+              <li>→ Une clôture avec la synthèse, les observations et les signatures</li>
+              <li>→ Un exemplaire manager et un exemplaire collaborateur</li>
+              <li>→ Dans chaque bloc, le rôle de chacun et ce que chacun retient</li>
+            </ul>
+          </details>
+          <span class="fmt">La plateforme — à imprimer ou remplir à l'écran</span>
         </div>
       </div>
 
@@ -207,15 +221,18 @@ footer a{color:var(--teal-dark);}
           <h3>L'Entretien professionnel</h3>
           <p class="accroche">L'entretien qu'on oublie, et qui compte pour la carrière de ton collaborateur.</p>
           <p class="ce-que-cest">Une trame pour parler d'avenir, pas d'évaluation : compétences, envies d'évolution, formations possibles, plan d'actions. Elle est construite pour reprendre les points que la loi demande de traiter.</p>
-          <ul class="find-list">
-            <li>→ Un mode d'emploi avec le rappel du cadre légal</li>
-            <li>→ Poste et compétences, puis envies d'évolution</li>
-            <li>→ L'information sur les dispositifs : VAE, CPF, conseil en évolution professionnelle</li>
-            <li>→ Les objectifs de professionnalisation et les propositions de formation, avec la réponse de l'entreprise</li>
-            <li>→ Un plan d'actions daté, la synthèse et les signatures, avec la copie remise au collaborateur</li>
-            <li>→ Un exemplaire manager et un exemplaire collaborateur</li>
-          </ul>
-          <span class="fmt">CANVA — 13 pages</span>
+          <details>
+            <summary>Voir ce que tu y trouves</summary>
+            <ul class="find-list">
+              <li>→ Un mode d'emploi avec le rappel du cadre légal</li>
+              <li>→ Poste et compétences, puis envies d'évolution</li>
+              <li>→ L'information sur les dispositifs : VAE, CPF, conseil en évolution professionnelle</li>
+              <li>→ Les objectifs de professionnalisation et les propositions de formation, avec la réponse de l'entreprise</li>
+              <li>→ Un plan d'actions daté, la synthèse et les signatures, avec la copie remise au collaborateur</li>
+              <li>→ Un exemplaire manager et un exemplaire collaborateur</li>
+            </ul>
+          </details>
+          <span class="fmt">La plateforme</span>
         </div>
       </div>
 
@@ -225,11 +242,14 @@ footer a{color:var(--teal-dark);}
           <h3>Les 10 commandements pour réussir ses entretiens</h3>
           <p class="accroche">Le document ne fait pas l'entretien. C'est toi.</p>
           <p class="ce-que-cest">Un kit d'une page sur la posture du manager en entretien. Dix repères concrets, avec le pourquoi de chacun, pour que ton collaborateur sorte de l'entretien avec envie et pas seulement avec une signature.</p>
-          <ul class="find-list">
-            <li>→ Dix commandements courts, chacun avec son explication</li>
-            <li>→ Des repères qui s'appliquent aussi bien à l'entretien annuel qu'à l'entretien professionnel</li>
-          </ul>
-          <span class="fmt">PDF — 1 page A4, à garder sous la main</span>
+          <details>
+            <summary>Voir ce que tu y trouves</summary>
+            <ul class="find-list">
+              <li>→ Dix commandements courts, chacun avec son explication</li>
+              <li>→ Des repères qui s'appliquent aussi bien à l'entretien annuel qu'à l'entretien professionnel</li>
+            </ul>
+          </details>
+          <span class="fmt">PDF — à garder sous la main</span>
         </div>
       </div>
     </div>
