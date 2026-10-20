@@ -59,15 +59,16 @@
 @media (max-width:760px){.wps .tgrid,.wps .grid2,.wps .rea{grid-template-columns:1fr;}.wps .price{font-size:46px;}.wps .order .price{padding-left:0;border-left:0;}.wps .postit{transform:rotate(1deg);}}
 </style>
 <style>
-.wps .selh{font-family:'Young Serif',Georgia,serif;font-size:22px;text-align:center;margin:40px 0 4px;color:#085055;}
-.wps .selsub{text-align:center;color:#5A6663;font-size:16px;margin-bottom:16px;}
-.wps .sel{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;}
-.wps .opt{text-align:center;background:#fff;border:2px solid #E4F5F6;border-radius:22px;padding:18px 12px 16px;box-shadow:0 14px 30px -26px rgba(29,42,40,.45);}
-.wps .opt b{display:block;font-family:'Young Serif',Georgia,serif;font-weight:400;font-size:20px;color:#085055;line-height:1.2;}
-.wps .opt i{display:block;font-style:normal;font-weight:800;font-size:19px;color:#B4561F;margin-top:6px;}
-.wps .selmore{text-align:center;font-size:14px;color:#5A6663;margin-top:14px;}
-.wps .order .from{display:block;font-size:14px;color:#CFE9EA;text-align:right;margin-bottom:2px;}
-@media (max-width:760px){.wps .sel{grid-template-columns:1fr;}.wps .order .from{text-align:left;}}
+.wps .selh{font-family:'Young Serif',Georgia,serif;font-size:clamp(26px,3.6vw,34px);text-align:center;margin:40px 0 4px;color:#085055;}
+.wps .selsub{text-align:center;color:#5A6663;font-size:17px;margin-bottom:22px;}
+.wps .sel{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;}
+.wps .opt{text-align:center;color:#fff;background-color:#0F868A;background-image:linear-gradient(148deg,#0F868A 0%,#085055 100%);border-radius:26px;padding:26px 16px 24px;box-shadow:0 24px 44px -26px rgba(8,80,85,.75);}
+.wps .opt .ot{display:block;font-size:14px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#CFE9EA;}
+.wps .opt b{display:block;font-family:'Young Serif',Georgia,serif;font-weight:400;font-size:23px;color:#fff;line-height:1.2;margin-top:6px;}
+.wps .opt i{display:block;font-style:normal;font-family:'Young Serif',Georgia,serif;font-size:48px;line-height:1.1;color:#FFD3B5;margin-top:14px;}
+.wps .opt .oc{display:block;font-size:14px;color:#CFE9EA;margin-top:4px;}
+.wps .selmore{text-align:center;font-size:14px;color:#5A6663;margin-top:18px;}
+@media (max-width:760px){.wps .sel{grid-template-columns:1fr;}}
 </style>
 <div class="wps"><div class="band" style="--bg:#FFF4EE">
   <canvas class="snow" aria-hidden="true"></canvas>
@@ -76,17 +77,13 @@
     <h1>Winter Pack <span class="mark">PME</span></h1>
     <p class="sub">Tu équipes tous les managers de ton entreprise avec les mêmes 8 outils, en autonomie.</p>
     <h2 class="selh">Les 3 paliers du Winter Pack PME</h2>
-    <p class="selsub">Tu choisis ton palier dans le formulaire de paiement, juste en dessous.</p>
+    <p class="selsub">Les mêmes 8 outils pour chaque palier. Tu choisis le tien dans le formulaire de paiement, juste en dessous.</p>
     <div class="sel">
-      <div class="opt"><b>Jusqu’à 5 managers</b><i>490 €</i></div>
-      <div class="opt"><b>Jusqu’à 10 managers</b><i>790 €</i></div>
-      <div class="opt"><b>Jusqu’à 20 managers</b><i>1 190 €</i></div>
+      <div class="opt"><span class="ot">Winter Pack PME</span><b>Jusqu’à 5 managers</b><i>490 €</i><span class="oc">paiement unique · sans abonnement</span></div>
+      <div class="opt"><span class="ot">Winter Pack PME</span><b>Jusqu’à 10 managers</b><i>790 €</i><span class="oc">paiement unique · sans abonnement</span></div>
+      <div class="opt"><span class="ot">Winter Pack PME</span><b>Jusqu’à 20 managers</b><i>1 190 €</i><span class="oc">paiement unique · sans abonnement</span></div>
     </div>
     <p class="selmore">Plus de 20 managers ? Écris-moi pour un devis : <a href="mailto:contact@oseprendretaplace.fr">contact@oseprendretaplace.fr</a></p>
-    <div class="card order" style="background-color:#0F868A;background-image:linear-gradient(148deg,#0F868A 0%,#085055 100%);color:#fff">
-      <div><b>Winter Pack · L’Essentiel du Manager</b><span>Formule PME · paiement unique · sans abonnement<br>TVA non applicable, art. 293 B du CGI</span></div>
-      <div class="price"><span class="from">à partir de</span>490 €</div>
-    </div>
     <h2 style="margin-top:48px;text-align:center">Ce que contient ton Winter Pack</h2>
     <p class="sub" style="margin-bottom:0">8 outils pour que tes managers préparent leurs entretiens, animent leurs rituels et suivent leurs objectifs, toute l’année.</p>
     <div class="tgrid" style="margin-top:28px"><article class="card tool"><span class="n">1</span><div><h3>L’Entretien professionnel</h3><p>Un collaborateur qui ne se voit pas d’avenir chez toi finit par le chercher ailleurs.</p></div><span class="tfmt">en PDF, à imprimer ou à remplir</span></article><article class="card tool"><span class="n">2</span><div><h3>L’Entretien annuel</h3><p>L’entretien annuel évalue aussi le manager.</p></div><span class="tfmt">en PDF, à imprimer ou à remplir</span></article><article class="card tool"><span class="n">3</span><div><h3>La Réunion d’équipe</h3><p>Une équipe qui ne sait pas ce qui compte ce mois-ci travaille sur tout, donc sur rien.</p></div><span class="tfmt">sur Notion</span></article><article class="card tool"><span class="n">4</span><div><h3>La trame du OTO</h3><p>Ce qu’un collaborateur ne dit pas en réunion, il le dit en tête-à-tête. À condition que ce temps existe.</p></div><span class="tfmt">sur Notion</span></article><article class="card tool"><span class="n">5</span><div><h3>Le tableau de bord des objectifs</h3><p>Un objectif qu’on regarde une fois par an, c’est un vœu pieux.</p></div><span class="tfmt">sur Excel</span></article><article class="card tool"><span class="n">6</span><div><h3>Le calendrier des rituels managériaux</h3><p>Le management ne s’improvise pas entre deux urgences.</p></div><span class="tfmt">sur Notion · compatible Outlook et Gmail</span></article><article class="card tool"><span class="n">7</span><div><h3>Les 10 commandements pour réussir ses entretiens</h3><p>Le document ne fait pas l’entretien, c’est le manager.</p></div><span class="tfmt">en PDF</span></article><article class="card tool"><span class="n">8</span><div><h3>Le kit de survie verbal, spécial gestion de conflit</h3><p>Quand le manager intervient enfin, c’est trop tard : chacun a déjà pris position.</p></div><span class="tfmt">sur Notion</span></article></div>
