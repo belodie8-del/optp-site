@@ -1,0 +1,134 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif&family=Nunito+Sans:wght@400;700;800&family=Caveat:wght@600;700&display=swap');
+.wps{--pine:#085055;--teal:#0F868A;--mint:#E4F5F6;--ember:#FF914D;--ember-ink:#B4561F;--peach:#FFF4EE;--peach2:#FFE7D8;--ink:#1D2A28;--muted:#5A6663;--hl:rgba(255,145,77,.38);
+  font-family:'Nunito Sans',system-ui,sans-serif;color:var(--ink);line-height:1.7;font-size:17px;-webkit-font-smoothing:antialiased;}
+.wps *{box-sizing:border-box;}
+.wps p{margin:0;}
+.wps .band{position:relative;isolation:isolate;padding:clamp(40px,6vw,64px) 20px;box-shadow:0 0 0 100vmax var(--bg);clip-path:inset(0 -100vmax);background:var(--bg);}
+.wps .in{position:relative;z-index:1;max-width:1000px;margin:0 auto;}
+.wps canvas.snow{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;}
+.wps .hand{font-family:'Caveat',cursive;font-weight:700;color:var(--ember-ink);font-size:30px;line-height:1.1;display:inline-block;transform:rotate(-2deg);}
+.wps .mark{background:linear-gradient(transparent 58%,var(--hl) 58%,var(--hl) 92%,transparent 92%);padding:0 .08em;}
+.wps h1,.wps h2{font-family:'Young Serif',Georgia,serif;font-weight:400;margin:6px 0 14px;text-wrap:balance;}
+.wps h1{font-size:clamp(38px,6vw,60px);line-height:1.06;}
+.wps h2{font-size:clamp(28px,4vw,40px);line-height:1.1;}
+.wps .sub{font-size:19px;color:var(--muted);max-width:56ch;}
+.wps .card{background:#fff;border-radius:28px;padding:28px 30px;box-shadow:0 18px 40px -30px rgba(29,42,40,.35);}
+.wps .order{margin-top:28px;display:flex;flex-wrap:wrap;gap:16px 30px;align-items:center;justify-content:space-between;}
+.wps .order b{display:block;font-family:'Young Serif',Georgia,serif;font-weight:400;font-size:25px;line-height:1.2;color:var(--pine);}
+.wps .order span{color:var(--muted);font-size:16px;}
+.wps .price{font-family:'Young Serif',Georgia,serif;font-size:58px;line-height:1;white-space:nowrap;}
+.wps .tgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:34px;}
+.wps .tool{position:relative;display:grid;grid-template-columns:52px minmax(0,1fr);gap:18px;align-items:start;padding-bottom:52px;}
+.wps .tool .n{width:52px;height:52px;border-radius:50%;background:var(--peach2);color:var(--ember-ink);display:flex;align-items:center;justify-content:center;font-family:'Young Serif',Georgia,serif;font-size:20px;}
+.wps .tool:nth-child(even) .n{background:var(--mint);color:var(--pine);}
+.wps .tool h3{font-family:'Young Serif',Georgia,serif;font-weight:400;font-size:22px;line-height:1.2;margin:4px 0 8px;}
+.wps .tool p{font-weight:800;font-size:15.5px;line-height:1.5;color:var(--pine);}
+.wps .tfmt{position:absolute;right:26px;bottom:14px;font-family:'Caveat',cursive;font-weight:700;font-size:18px;line-height:1;color:var(--ember-ink);transform:rotate(-2deg);}
+.wps .grid2{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:34px;align-items:center;margin-top:34px;}
+.wps .postit{position:relative;background:#FFF1C9;padding:30px 28px 26px;transform:rotate(2deg);box-shadow:0 24px 30px -22px rgba(29,42,40,.55);border-radius:4px 4px 18px 4px;}
+.wps .postit::before{content:"";position:absolute;top:-12px;left:50%;width:96px;height:24px;margin-left:-48px;background:rgba(15,134,138,.25);transform:rotate(-4deg);border-radius:3px;}
+.wps .postit h3{font-family:'Caveat',cursive;font-size:31px;font-weight:700;margin:0 0 8px;color:var(--ink);line-height:1;}
+.wps .postit p{font-family:'Caveat',cursive;font-size:23px;line-height:1.2;color:var(--ink);}
+.wps .plain p{color:var(--muted);font-size:17px;}
+.wps a{color:var(--teal);font-weight:800;}
+.wps .steps{list-style:none;margin:0;padding:0;}
+.wps .steps li{display:grid;grid-template-columns:44px 1fr;gap:16px;padding-bottom:18px;position:relative;}
+.wps .steps li:not(:last-child)::before{content:"";position:absolute;left:21px;top:46px;bottom:2px;width:2px;background:repeating-linear-gradient(180deg,var(--teal) 0 5px,transparent 5px 10px);opacity:.5;}
+.wps .steps .sn{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--mint);color:var(--teal);font-family:'Young Serif',Georgia,serif;font-size:19px;}
+.wps .steps li:last-child .sn{background:var(--teal);color:#fff;}
+.wps .steps b{display:block;font-size:17px;margin-top:6px;line-height:1.35;}
+.wps .steps p{color:var(--muted);font-size:15px;line-height:1.55;margin-top:2px;}
+.wps .rea{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;}
+.wps .rea div{background:var(--mint);border-radius:18px;padding:16px 18px;font-size:15px;line-height:1.5;color:var(--muted);}
+.wps .rea b{display:block;font-size:16px;color:var(--pine);margin-bottom:2px;}
+.wps .small{font-size:14px;color:var(--muted);text-align:center;}
+.wps .gap{height:28px;}
+/* carte de commande : volontairement différente des cartes d'outils (fond vert, prix séparé par un pointillé) */
+.wps .order{background:linear-gradient(148deg,#0F868A 0%,#085055 100%);color:#fff;box-shadow:0 24px 44px -26px rgba(8,80,85,.75);}
+.wps .order b{color:#fff;}
+.wps .order span{color:#CFE9EA;}
+.wps .order .price{color:#FFD3B5;padding-left:30px;border-left:2px dashed rgba(255,255,255,.4);}
+.wps .grid2{display:block;max-width:560px;margin:38px auto 0;}
+.wps .postit{text-align:center;}
+/* alignement voulu quel que soit le réglage « Aligner » de Systeme.io : titres centrés, contenu à gauche */
+.wps{text-align:left;}
+.wps .hand,.wps h1,.wps h2,.wps .sub{text-align:center;}
+.wps .hand{display:block;width:fit-content;margin:0 auto;}
+.wps .sub{margin-left:auto;margin-right:auto;}
+@media (max-width:760px){.wps .tgrid,.wps .grid2,.wps .rea{grid-template-columns:1fr;}.wps .price{font-size:46px;}.wps .order .price{padding-left:0;border-left:0;}.wps .postit{transform:rotate(1deg);}}
+</style>
+<div class="wps"><div class="band" style="--bg:#FFF4EE">
+  <canvas class="snow" aria-hidden="true"></canvas>
+  <div class="in">
+    <span class="hand">Merci !</span>
+    <h1>Ta commande est <span class="mark">confirmée</span></h1>
+    <p class="sub">Ton paiement est bien passé. Plus qu’une étape pour que tes managers reçoivent leurs outils.</p>
+    <div class="card" style="margin-top:28px"><ol class="steps"><li><span class="sn">1</span><div><b>Paiement validé</b><p>Tu vas recevoir ta confirmation de commande et ta facture par e-mail.</p></div></li><li><span class="sn">2</span><div><b>Tu remplis le formulaire ci-dessous</b><p>Indique le nom de ton entreprise et l’adresse e-mail de chaque manager à équiper, celle avec laquelle il accédera au dossier Drive. Dans la limite de ton palier.</p></div></li><li><span class="sn">3</span><div><b>Tes managers reçoivent leurs outils sous 24 h</b><p>Dans les 24 h après réception de ton formulaire, je donne à chacun l’accès aux outils.</p></div></li></ol></div>
+    <h2 style="margin-top:48px;margin-bottom:6px;text-align:center">Les accès de tes managers</h2>
+    <p class="sub" style="margin-bottom:0">Un seul formulaire, à remplir une fois.</p>
+  </div>
+</div></div>
+<script>
+[].forEach.call(document.querySelectorAll('canvas.snow'), function(cv){
+  var hero = cv.parentElement;
+  if (!cv.getContext) return;
+  var ctx = cv.getContext('2d'), flakes = [], w = 0, h = 0, dpr = 1, raf = 0, running = false;
+  var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function size(){
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    w = hero.clientWidth; h = hero.clientHeight;
+    cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    var n = Math.max(28, Math.min(70, Math.round(w / 22)));
+    flakes = [];
+    for (var i = 0; i < n; i++){
+      var big = Math.random() < .22;
+      flakes.push({x: Math.random() * w, y: Math.random() * h, r: big ? 5 + Math.random() * 5 : 1.4 + Math.random() * 2.4, s: .35 + Math.random() * .8, d: Math.random() * 6.28, a: big ? .5 : .35 + Math.random() * .3, rot: Math.random() * 6.28, big: big});
+    }
+    draw();
+  }
+  function crystal(f){
+    ctx.save(); ctx.translate(f.x, f.y); ctx.rotate(f.rot);
+    ctx.lineWidth = 1.3; ctx.lineCap = 'round';
+    for (var k = 0; k < 6; k++){
+      ctx.rotate(Math.PI / 3);
+      ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(0, -f.r);
+      ctx.moveTo(0, -f.r * .55); ctx.lineTo(f.r * .28, -f.r * .8);
+      ctx.moveTo(0, -f.r * .55); ctx.lineTo(-f.r * .28, -f.r * .8);
+      ctx.stroke();
+    }
+    ctx.restore();
+  }
+  function draw(){
+    ctx.clearRect(0, 0, w, h);
+    for (var i = 0; i < flakes.length; i++){
+      var f = flakes[i];
+      if (f.big){
+        ctx.strokeStyle = 'rgba(15,134,138,' + f.a + ')';
+        crystal(f);
+      } else {
+        ctx.beginPath(); ctx.arc(f.x, f.y, f.r, 0, 6.2832);
+        ctx.fillStyle = 'rgba(255,255,255,' + Math.min(1, f.a + .45) + ')'; ctx.fill();
+        ctx.lineWidth = 1; ctx.strokeStyle = 'rgba(15,134,138,' + f.a + ')'; ctx.stroke();
+      }
+    }
+  }
+  function step(){
+    for (var i = 0; i < flakes.length; i++){
+      var f = flakes[i];
+      f.d += .008; f.y += f.s; f.x += Math.sin(f.d) * .4; f.rot += f.big ? .004 : 0;
+      if (f.y > h + 14){ f.y = -14; f.x = Math.random() * w; }
+      if (f.x > w + 14) f.x = -14; else if (f.x < -14) f.x = w + 14;
+    }
+    draw();
+    if (running) raf = requestAnimationFrame(step);
+  }
+  function start(){ if (!running && !still){ running = true; raf = requestAnimationFrame(step); } }
+  function stop(){ running = false; cancelAnimationFrame(raf); }
+  size();
+  window.addEventListener('resize', size);
+  document.addEventListener('visibilitychange', function(){ if (document.hidden) stop(); else start(); });
+  if ('IntersectionObserver' in window){ new IntersectionObserver(function(es){ if (es[0].isIntersecting) start(); else stop(); }).observe(hero); } else { start(); }
+});
+</script>
