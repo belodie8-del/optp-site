@@ -266,11 +266,12 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .a p{background:var(--paper);padding:16px 22px;border-radius:26px 26px 26px 6px;box-shadow:0 10px 24px -20px rgba(29,42,40,.6);}
 .todo{color:var(--ember-ink);}
 
-.final .wrap{padding-block:clamp(72px, 9vw, 120px);}
-.final h2{font-family:var(--display);font-weight:400;font-size:clamp(42px, 6.4vw, 84px);line-height:1.02;margin:0 0 18px;max-width:15ch;}
-.final .fsub{font-size:20px;color:var(--muted);margin-bottom:34px;}
-.sig{margin-top:56px;display:flex;flex-direction:column;gap:6px;}
-.sig i{font-family:var(--hand);font-style:normal;font-weight:700;font-size:58px;line-height:1;color:var(--ember-ink);transform:rotate(-3deg);display:inline-block;width:fit-content;}
+.room.final{padding-block:0;}
+.final .wrap{padding-block:clamp(40px, 4.5vw, 56px);}
+.final h2{font-family:var(--display);font-weight:400;font-size:clamp(38px, 5vw, 62px);line-height:1.05;margin:0 0 14px;max-width:none;}
+.final .fsub{font-size:19px;color:var(--muted);margin-bottom:24px;}
+.sig{margin-top:28px;display:flex;flex-direction:column;gap:6px;}
+.sig i{font-family:var(--hand);font-style:normal;font-weight:700;font-size:46px;line-height:1;color:var(--ember-ink);transform:rotate(-3deg);display:inline-block;width:fit-content;}
 .sig p{color:var(--muted);max-width:60ch;margin-top:14px;}
 
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-block:28px;font-size:14px;color:var(--muted);border-top:2px dashed var(--line);}
@@ -421,7 +422,6 @@ canvas.snow{position:absolute;inset:0;width:100%;height:100%;pointer-events:none
 </div></section>
 
 <section class="room peach final"><div class="wrap">
-  <span class="hand">Pour finir</span>
   <h2>L’hiver arrive plus vite que tu crois.</h2><p class="fsub">Prépare tes managers avec les bons outils.</p>
   <a class="btn" href="https://calendly.com/eb-formationconsulting/appel-decouverte-ose-prendre-ta-place" target="_blank" rel="noopener">On en discute <span aria-hidden="true">→</span></a>
   <div class="sig"><i>Élodie</i></div>
