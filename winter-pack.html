@@ -135,7 +135,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .need input:checked::after{content:"";position:absolute;left:6px;top:-6px;width:9px;height:18px;border:solid var(--ember-ink);border-width:0 4px 4px 0;border-radius:2px;transform:rotate(40deg);}
 .verdict{margin-top:34px;font-family:var(--hand);font-weight:700;font-size:34px;line-height:1.15;color:var(--pine);max-width:44ch;transform:rotate(-1deg);}
 .verdict.hit{color:var(--ember-ink);}
-.verdict{max-width:none;font-size:clamp(24px, 2.6vw, 32px);}
+.verdict{max-width:none;font-size:clamp(24px, 2.6vw, 32px);min-height:1.2em;}
 @media (min-width:1000px){.verdict{white-space:nowrap;}}
 @media (prefers-reduced-motion:reduce){.need:hover{transform:none;}}
 
@@ -595,7 +595,8 @@ canvas.snow{position:absolute;inset:0;width:100%;height:100%;pointer-events:none
 (function(){
   var boxes = document.querySelectorAll('[id^="need-"]'), v = document.getElementById('verdict5');
   if (!v) return;
-  var base = v.textContent;
+  var base = '';
+  v.textContent = base;
   var msg = ['', '1 case cochée : le pack est un peu fait pour toi.', '2 cases cochées : le pack est fait pour toi.',
              '3 cases cochées : le pack est bien fait pour toi.', '4 cases cochées : le pack est vraiment fait pour toi.',
              '5 cases cochées : le pack est complètement fait pour toi.', '6 cases cochées : le pack est 100 % fait pour toi.'];
