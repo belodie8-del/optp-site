@@ -189,6 +189,16 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .track:nth-child(2) li:last-child .sn{background:var(--ember);color:#3A1A08;}
 .track b{display:block;font-size:17px;line-height:1.35;color:var(--ink);margin-top:6px;}
 .track li p{margin:2px 0 0;font-size:15px;line-height:1.55;color:var(--muted);}
+.rvjs .rv{opacity:0;translate:0 26px;transition:opacity .7s ease var(--d,0ms),translate .8s cubic-bezier(.2,.8,.2,1) var(--d,0ms);will-change:opacity,translate;}
+.rvjs .rv.in{opacity:1;translate:0 0;}
+.rvjs .why-sheet.rv{translate:0 34px;scale:.96;transition:opacity .8s ease,translate .9s cubic-bezier(.2,.8,.2,1),scale .9s cubic-bezier(.2,.8,.2,1);}
+.rvjs .why-sheet.rv.in{scale:1;}
+.rvjs .offers > .card.rv{translate:0 40px;}
+@keyframes tickpop{0%{transform:rotate(40deg) scale(0);}60%{transform:rotate(40deg) scale(1.25);}100%{transform:rotate(40deg) scale(1);}}
+.need input:checked::after{animation:tickpop .35s ease-out;}
+@keyframes verpop{0%{opacity:0;translate:0 8px;}100%{opacity:1;translate:0 0;}}
+.verdict.pop{animation:verpop .4s ease-out;}
+@media (prefers-reduced-motion:reduce){.need input:checked::after,.verdict.pop{animation:none;}}
 .qa{margin-top:10px;}
 .qa-row{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:32px;align-items:center;padding:20px 0;border-bottom:1.5px dashed #D5E6E7;}
 .qa-row:last-child{border-bottom:0;}
@@ -629,8 +639,42 @@ canvas.snow{position:absolute;inset:0;width:100%;height:100%;pointer-events:none
   function upd(){
     var n = 0; boxes.forEach(function(b){ if (b.checked) n++; });
     v.textContent = msg[n];
+    v.classList.remove('pop'); void v.offsetWidth; v.classList.add('pop');
     v.classList.toggle('hit', n > 0);
   }
   boxes.forEach(function(b){ b.addEventListener('change', upd); });
+})();
+
+(function(){
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+  var root = document.documentElement; root.classList.add('rvjs');
+  // [selector, mode]  seq = one after the other, col = by column (2 per row)
+  var groups = [
+    ['section.room > .wrap > .hand, section.room > .wrap > .h2, section.room > .wrap > .sub, section.room > .wrap > .cons', 'head'],
+    ['.for > *', 'col'], ['.notes > div', 'seq'], ['.need', 'seq'], ['.verdict', 'one'], ['.tgrid > .card', 'col'],
+    ['.why-sheet', 'one'], ['.inside > p', 'one'], ['.duo > .card', 'col'], ['.daily-t', 'one'], ['.qa-row', 'seq'],
+    ['.bubble', 'one'], ['.bubble-by', 'one'], ['.secure > *', 'col'], ['.ggrid > .card', 'col'], ['.me > *', 'col'],
+    ['.offers > .card', 'seq'], ['.track', 'col'], ['.track li', 'seq'], ['.fq', 'seq'], ['.final .wrap > *', 'seq'], ['.cf-wrap', 'one']
+  ];
+  var targets = [];
+  groups.forEach(function(g){
+    var els = document.querySelectorAll(g[0]);
+    var seen = new Map();
+    [].forEach.call(els, function(el, i){
+      if (el.closest('.hero') || el.classList.contains('rv')) return;
+      var parent = el.parentElement, k = seen.get(parent) || 0; seen.set(parent, k + 1);
+      var d = g[1] === 'seq' ? Math.min(k, 6) * 90 : g[1] === 'col' ? (k % 2) * 130 : g[1] === 'head' ? Math.min(k, 3) * 80 : 0;
+      el.classList.add('rv'); el.style.setProperty('--d', d + 'ms'); targets.push(el);
+    });
+  });
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if (!e.isIntersecting) return;
+      var el = e.target; io.unobserve(el); el.classList.add('in');
+      var d = parseFloat(el.style.getPropertyValue('--d')) || 0;
+      setTimeout(function(){ el.classList.remove('rv', 'in'); el.style.removeProperty('--d'); }, d + 1000);
+    });
+  }, {threshold: .12, rootMargin: '0px 0px -6% 0px'});
+  targets.forEach(function(el){ io.observe(el); });
 })();
 </script>
