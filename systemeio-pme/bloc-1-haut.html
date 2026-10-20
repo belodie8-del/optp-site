@@ -62,15 +62,12 @@
 .wps .selh{font-family:'Young Serif',Georgia,serif;font-size:22px;text-align:center;margin:40px 0 4px;color:#085055;}
 .wps .selsub{text-align:center;color:#5A6663;font-size:16px;margin-bottom:16px;}
 .wps .sel{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;}
-.wps .opt{appearance:none;-webkit-appearance:none;cursor:pointer;text-align:center;font:inherit;color:#1D2A28;background:#fff;border:2px solid #E4F5F6;border-radius:22px;padding:18px 12px 16px;box-shadow:0 14px 30px -26px rgba(29,42,40,.45);transition:border-color .2s,transform .2s,background .2s;}
-.wps .opt:hover{transform:translateY(-2px);border-color:#FFD3B5;}
+.wps .opt{text-align:center;background:#fff;border:2px solid #E4F5F6;border-radius:22px;padding:18px 12px 16px;box-shadow:0 14px 30px -26px rgba(29,42,40,.45);}
 .wps .opt b{display:block;font-family:'Young Serif',Georgia,serif;font-weight:400;font-size:20px;color:#085055;line-height:1.2;}
-.wps .opt i{display:block;font-style:normal;font-weight:800;font-size:15px;color:#B4561F;margin-top:6px;}
-.wps .opt[aria-checked="true"]{border-color:#FF914D;background:#FFF1E8;transform:none;}
-.wps .opt[aria-checked="true"] b::after{content:" \2713";color:#B4561F;}
+.wps .opt i{display:block;font-style:normal;font-weight:800;font-size:19px;color:#B4561F;margin-top:6px;}
 .wps .selmore{text-align:center;font-size:14px;color:#5A6663;margin-top:14px;}
-.wps .order .price{transition:opacity .15s;}
-@media (max-width:760px){.wps .sel{grid-template-columns:1fr;}}
+.wps .order .from{display:block;font-size:14px;color:#CFE9EA;text-align:right;margin-bottom:2px;}
+@media (max-width:760px){.wps .sel{grid-template-columns:1fr;}.wps .order .from{text-align:left;}}
 </style>
 <div class="wps"><div class="band" style="--bg:#FFF4EE">
   <canvas class="snow" aria-hidden="true"></canvas>
@@ -78,17 +75,17 @@
     <span class="hand">Ta commande</span>
     <h1>Winter Pack <span class="mark">PME</span></h1>
     <p class="sub">Tu équipes tous les managers de ton entreprise avec les mêmes 8 outils, en autonomie.</p>
-    <h2 class="selh">Combien de managers veux-tu équiper ?</h2>
-    <p class="selsub">Le prix s’adapte à ton choix.</p>
-    <div class="sel" role="radiogroup" aria-label="Nombre de managers">
-      <button type="button" class="opt" role="radio" data-n="5" aria-checked="false"><b>Jusqu’à 5 managers</b><i>490 €</i></button>
-      <button type="button" class="opt" role="radio" data-n="10" aria-checked="false"><b>Jusqu’à 10 managers</b><i>790 €</i></button>
-      <button type="button" class="opt" role="radio" data-n="20" aria-checked="false"><b>Jusqu’à 20 managers</b><i>1 190 €</i></button>
+    <h2 class="selh">Les 3 paliers du Winter Pack PME</h2>
+    <p class="selsub">Tu choisis ton palier dans le formulaire de paiement, juste en dessous.</p>
+    <div class="sel">
+      <div class="opt"><b>Jusqu’à 5 managers</b><i>490 €</i></div>
+      <div class="opt"><b>Jusqu’à 10 managers</b><i>790 €</i></div>
+      <div class="opt"><b>Jusqu’à 20 managers</b><i>1 190 €</i></div>
     </div>
     <p class="selmore">Plus de 20 managers ? Écris-moi pour un devis : <a href="mailto:contact@oseprendretaplace.fr">contact@oseprendretaplace.fr</a></p>
     <div class="card order" style="background-color:#0F868A;background-image:linear-gradient(148deg,#0F868A 0%,#085055 100%);color:#fff">
-      <div><b>Winter Pack · L’Essentiel du Manager</b><span>Formule PME · jusqu’à <span data-mgr>5</span> managers<br>Paiement unique · sans abonnement · TVA non applicable, art. 293 B du CGI</span></div>
-      <div class="price" data-price>490 €</div>
+      <div><b>Winter Pack · L’Essentiel du Manager</b><span>Formule PME · paiement unique · sans abonnement<br>TVA non applicable, art. 293 B du CGI</span></div>
+      <div class="price"><span class="from">à partir de</span>490 €</div>
     </div>
     <h2 style="margin-top:48px;text-align:center">Ce que contient ton Winter Pack</h2>
     <p class="sub" style="margin-bottom:0">8 outils pour que tes managers préparent leurs entretiens, animent leurs rituels et suivent leurs objectifs, toute l’année.</p>
@@ -160,26 +157,4 @@
   document.addEventListener('visibilitychange', function(){ if (document.hidden) stop(); else start(); });
   if ('IntersectionObserver' in window){ new IntersectionObserver(function(es){ if (es[0].isIntersecting) start(); else stop(); }).observe(hero); } else { start(); }
 });
-</script>
-<script>
-(function(){
-  var URLS = {5: '', 10: '', 20: ''};
-  var DATA = {5: ['5', '490'], 10: ['10', '790'], 20: ['20', '1 190']};
-  var root = document.currentScript.previousElementSibling.parentNode;
-  var opts = root.querySelectorAll('.opt');
-  function show(n){
-    [].forEach.call(opts, function(o){ o.setAttribute('aria-checked', o.getAttribute('data-n') == n ? 'true' : 'false'); });
-    var p = root.querySelector('[data-price]'), m = root.querySelector('[data-mgr]');
-    if (p) p.textContent = DATA[n][1] + ' €';
-    if (m) m.textContent = DATA[n][0];
-  }
-  [].forEach.call(opts, function(o){
-    o.addEventListener('click', function(){
-      var n = o.getAttribute('data-n');
-      if (URLS[n] && n != '5') { window.location.href = URLS[n]; return; }
-      show(n);
-    });
-  });
-  show('5');
-})();
 </script>
