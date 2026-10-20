@@ -77,6 +77,13 @@
 .wps .more b{display:block;font-family:'Young Serif',Georgia,serif;font-weight:400;font-size:26px;line-height:1.2;color:#085055;}
 .wps .more span{display:block;font-size:16px;color:#5A6663;margin-top:4px;}
 .wps a.btn{display:inline-block;background:#FF914D;color:#1D2A28;font-weight:800;font-size:17px;text-decoration:none;border-radius:999px;padding:13px 26px;box-shadow:0 12px 24px -16px rgba(180,86,31,.8);}
+.wps .cgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:34px;}
+.wps .ct{display:grid;grid-template-columns:40px minmax(0,1fr);gap:14px;align-items:center;background:#fff;border-radius:20px;padding:14px 18px;box-shadow:0 14px 30px -26px rgba(29,42,40,.4);}
+.wps .ct .cn{width:40px;height:40px;border-radius:50%;background:#FFE7D8;color:#B4561F;display:flex;align-items:center;justify-content:center;font-family:'Young Serif',Georgia,serif;font-size:17px;}
+.wps .ct:nth-child(even) .cn{background:#E4F5F6;color:#085055;}
+.wps .ct b{display:block;font-family:'Young Serif',Georgia,serif;font-weight:400;font-size:18px;line-height:1.25;color:#1D2A28;}
+.wps .ct em{display:block;font-style:normal;font-family:'Caveat',cursive;font-weight:700;font-size:18px;line-height:1.1;color:#B4561F;margin-top:2px;}
+@media (max-width:760px){.wps .cgrid{grid-template-columns:1fr;}}
 @media (max-width:760px){.wps .more{padding:22px;}.wps a.btn{display:block;text-align:center;}}
 @media (max-width:760px){.wps .sel{grid-template-columns:1fr;}}
 </style>
@@ -101,6 +108,7 @@
       <div><b>Plus de 20 managers ?</b><span>Je te prépare un Winter Pack PME sur mesure, sur devis.</span></div>
       <a class="btn" href="mailto:contact@oseprendretaplace.fr?subject=Devis%20Winter%20Pack%20PME%20(plus%20de%2020%20managers)">Demander un devis</a>
     </div>
+    <div class="cgrid"><div class="ct"><span class="cn">1</span><div><b>L’Entretien professionnel</b><em>en PDF, à imprimer ou à remplir</em></div></div><div class="ct"><span class="cn">2</span><div><b>L’Entretien annuel</b><em>en PDF, à imprimer ou à remplir</em></div></div><div class="ct"><span class="cn">3</span><div><b>La Réunion d’équipe</b><em>sur Notion</em></div></div><div class="ct"><span class="cn">4</span><div><b>La trame du OTO</b><em>sur Notion</em></div></div><div class="ct"><span class="cn">5</span><div><b>Le tableau de bord des objectifs</b><em>sur Excel</em></div></div><div class="ct"><span class="cn">6</span><div><b>Le calendrier des rituels managériaux</b><em>sur Notion · compatible Outlook et Gmail</em></div></div><div class="ct"><span class="cn">7</span><div><b>Les 10 commandements pour réussir ses entretiens</b><em>en PDF</em></div></div><div class="ct"><span class="cn">8</span><div><b>Le kit de survie verbal, spécial gestion de conflit</b><em>sur Notion</em></div></div></div>
     <div class="grid2">
       <div class="postit"><h3>Le pack PME, c’est pour toi si…</h3><p>tu achètes pour ton entreprise et tu veux équiper tes managers.</p></div>
     </div>
