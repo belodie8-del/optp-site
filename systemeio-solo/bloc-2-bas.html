@@ -44,12 +44,17 @@
 .wps .rea b{display:block;font-size:16px;color:var(--pine);margin-bottom:2px;}
 .wps .small{font-size:14px;color:var(--muted);text-align:center;}
 .wps .gap{height:28px;}
+/* carte de commande : volontairement différente des cartes d'outils (fond vert, prix séparé par un pointillé) */
+.wps .order{background:linear-gradient(148deg,#0F868A 0%,#085055 100%);color:#fff;box-shadow:0 24px 44px -26px rgba(8,80,85,.75);}
+.wps .order b{color:#fff;}
+.wps .order span{color:#CFE9EA;}
+.wps .order .price{color:#FFD3B5;padding-left:30px;border-left:2px dashed rgba(255,255,255,.4);}
 /* alignement voulu quel que soit le réglage « Aligner » de Systeme.io : titres centrés, contenu à gauche */
 .wps{text-align:left;}
 .wps .hand,.wps h1,.wps h2,.wps .sub{text-align:center;}
 .wps .hand{display:block;width:fit-content;margin:0 auto;}
 .wps .sub{margin-left:auto;margin-right:auto;}
-@media (max-width:760px){.wps .tgrid,.wps .grid2,.wps .rea{grid-template-columns:1fr;}.wps .price{font-size:46px;}.wps .postit{transform:rotate(1deg);}}
+@media (max-width:760px){.wps .tgrid,.wps .grid2,.wps .rea{grid-template-columns:1fr;}.wps .price{font-size:46px;}.wps .order .price{padding-left:0;border-left:0;}.wps .postit{transform:rotate(1deg);}}
 </style>
 <div class="wps"><div class="band" style="--bg:#E4F5F6">
   <div class="in">
