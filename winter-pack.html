@@ -214,6 +214,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
 footer nav{display:flex;gap:18px;flex-wrap:wrap;}
 footer a{text-decoration:none;font-weight:700;}
 
+
+#snowfall{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:5;}
 @media (max-width:1020px){
   .offers{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:36px;}
   .daily{grid-template-columns:repeat(2,minmax(0,1fr));}
@@ -242,6 +244,7 @@ footer a{text-decoration:none;font-weight:700;}
   <a href="#top" aria-label="Retour en haut"><svg class="logo" viewBox="0 0 287 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="EB Formation Consulting"><use href="#optplogo"/></svg></a>
   <nav class="nav" aria-label="Sections"><a href="#outils">Les outils</a><a href="#management">Management</a><a href="#offre">Tarifs</a><a href="#faq">Questions</a><a class="btn" href="#offre">Je prends le Winter Pack</a></nav>
 </div></header>
+<canvas id="snowfall" aria-hidden="true"></canvas>
 <main id="top">
 <section class="hero"><div class="wrap">
   <div>
@@ -428,5 +431,67 @@ footer a{text-decoration:none;font-weight:700;}
   });
   window.addEventListener('resize', render);
   render();
+})();
+
+(function(){
+  var cv = document.getElementById('snowfall');
+  if (!cv || !cv.getContext) return;
+  var ctx = cv.getContext('2d'), flakes = [], w = 0, h = 0, dpr = 1, raf = 0, running = false;
+  var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function size(){
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    w = window.innerWidth; h = window.innerHeight;
+    cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    var n = Math.max(28, Math.min(70, Math.round(w / 22)));
+    flakes = [];
+    for (var i = 0; i < n; i++){
+      var big = Math.random() < .22;
+      flakes.push({x: Math.random() * w, y: Math.random() * h, r: big ? 5 + Math.random() * 5 : 1.4 + Math.random() * 2.4, s: .35 + Math.random() * .8, d: Math.random() * 6.28, a: big ? .5 : .35 + Math.random() * .3, rot: Math.random() * 6.28, big: big});
+    }
+    draw();
+  }
+  function crystal(f){
+    ctx.save(); ctx.translate(f.x, f.y); ctx.rotate(f.rot);
+    ctx.lineWidth = 1.3; ctx.lineCap = 'round';
+    for (var k = 0; k < 6; k++){
+      ctx.rotate(Math.PI / 3);
+      ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(0, -f.r);
+      ctx.moveTo(0, -f.r * .55); ctx.lineTo(f.r * .28, -f.r * .8);
+      ctx.moveTo(0, -f.r * .55); ctx.lineTo(-f.r * .28, -f.r * .8);
+      ctx.stroke();
+    }
+    ctx.restore();
+  }
+  function draw(){
+    ctx.clearRect(0, 0, w, h);
+    for (var i = 0; i < flakes.length; i++){
+      var f = flakes[i];
+      if (f.big){
+        ctx.strokeStyle = 'rgba(15,134,138,' + f.a + ')';
+        crystal(f);
+      } else {
+        ctx.beginPath(); ctx.arc(f.x, f.y, f.r, 0, 6.2832);
+        ctx.fillStyle = 'rgba(255,255,255,' + Math.min(1, f.a + .45) + ')'; ctx.fill();
+        ctx.lineWidth = 1; ctx.strokeStyle = 'rgba(15,134,138,' + f.a + ')'; ctx.stroke();
+      }
+    }
+  }
+  function step(){
+    for (var i = 0; i < flakes.length; i++){
+      var f = flakes[i];
+      f.d += .008; f.y += f.s; f.x += Math.sin(f.d) * .4; f.rot += f.big ? .004 : 0;
+      if (f.y > h + 14){ f.y = -14; f.x = Math.random() * w; }
+      if (f.x > w + 14) f.x = -14; else if (f.x < -14) f.x = w + 14;
+    }
+    draw();
+    if (running) raf = requestAnimationFrame(step);
+  }
+  function start(){ if (!running && !still){ running = true; raf = requestAnimationFrame(step); } }
+  function stop(){ running = false; cancelAnimationFrame(raf); }
+  size();
+  window.addEventListener('resize', size);
+  document.addEventListener('visibilitychange', function(){ if (document.hidden) stop(); else start(); });
+  start();
 })();
 </script>
