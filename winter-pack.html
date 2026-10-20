@@ -175,6 +175,18 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .daily-t{margin:110px 0 28px;font-family:var(--display);font-weight:400;font-size:clamp(28px, 3.5vw, 40px);line-height:1.2;color:var(--ink);}
 .daily-t .daily-k{display:block;font-family:var(--body);font-weight:700;font-size:18px;line-height:1.5;color:var(--muted);margin-bottom:8px;}
 .daily-t em{font-style:normal;color:var(--teal);padding-bottom:8px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12' preserveAspectRatio='none'%3E%3Cpath d='M3 9 C 50 2, 120 2, 197 6' fill='none' stroke='%23FF914D' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E") left bottom/100% 12px no-repeat;}
+.steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;margin-top:40px;align-items:start;}
+.track{background:var(--paper);border-radius:28px;padding:30px 30px 22px;box-shadow:0 18px 40px -30px rgba(29,42,40,.35);}
+.track h3{margin:0 0 22px;font-family:var(--display);font-weight:400;font-size:22px;line-height:1.25;color:var(--pine);padding-bottom:14px;border-bottom:2px dashed #F2C4A6;}
+.track ol{list-style:none;margin:0;padding:0;position:relative;}
+.track li{display:grid;grid-template-columns:40px minmax(0,1fr);gap:16px;padding-bottom:20px;position:relative;}
+.track li:not(:last-child)::before{content:"";position:absolute;left:19px;top:42px;bottom:2px;width:2px;background:repeating-linear-gradient(180deg,var(--teal) 0 5px,transparent 5px 10px);opacity:.5;}
+.sn{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--mint);color:var(--teal);font-family:var(--display);font-size:17px;}
+.track:nth-child(2) .sn{background:var(--peach2);color:var(--ember-ink);}
+.track li:last-child .sn{background:var(--teal);color:#fff;}
+.track:nth-child(2) li:last-child .sn{background:var(--ember);color:#3A1A08;}
+.track b{display:block;font-size:17px;line-height:1.35;color:var(--ink);margin-top:6px;}
+.track li p{margin:2px 0 0;font-size:15px;line-height:1.55;color:var(--muted);}
 .qa{margin-top:10px;}
 .qa-row{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:32px;align-items:center;padding:20px 0;border-bottom:1.5px dashed #D5E6E7;}
 .qa-row:last-child{border-bottom:0;}
@@ -291,6 +303,7 @@ canvas.snow{position:absolute;inset:0;width:100%;height:100%;pointer-events:none
   .daily{grid-template-columns:repeat(2,minmax(0,1fr));}
 }
 @media (max-width:860px){
+  .steps{grid-template-columns:1fr;}
   .qa-row{grid-template-columns:1fr;gap:10px;}
   .skp{grid-template-columns:1fr;gap:14px;}
   .skp::before{top:8px;bottom:8px;left:21px;right:auto;width:2px;height:auto;background:repeating-linear-gradient(180deg,var(--teal) 0 8px,transparent 8px 14px);}
@@ -413,6 +426,12 @@ canvas.snow{position:absolute;inset:0;width:100%;height:100%;pointer-events:none
   <span class="hand">Les offres</span>
   <h2 class="h2">Winter Pack · L’Essentiel du Manager</h2><p class="sub one-line">Un pack, quatre façons de l’utiliser : pour toi, pour ta PME, ou avec moi à tes côtés.</p>
   <div class="offers"><article class="card offer"><h3>Winter Pack Solo</h3><p class="who">Tu es manager et tu t’équipes toi‑même.</p><p class="odesc">Les 8 outils, pour un seul manager, en autonomie.</p><div class="pblock"><p class="price">197 €</p></div><a class="btn soft" href="https://www.oseprendretaplace.fr/cartablederentree" target="_blank" rel="noopener">Je prends le Winter Pack Solo</a></article><article class="card offer feat"><span class="flag">Pour les PME</span><h3>Winter Pack Entreprise</h3><p class="who">Pour équiper tous les managers de ta PME.</p><p class="odesc">Les 8 outils, en autonomie.</p><ul class="tiers"><li><span>Jusqu’à 5 managers</span><b>490 €</b></li><li><span>Jusqu’à 10 managers</span><b>790 €</b></li><li><span>Jusqu’à 20 managers</span><b>1 190 €</b></li><li><span>Plus de 20 managers</span><b>Sur devis</b></li></ul><a class="btn" href="https://www.oseprendretaplace.fr/cartablederentree" target="_blank" rel="noopener">Je prends le Winter Pack Entreprise</a></article><article class="card offer"><h3>Winter Pack + Prise en main</h3><p class="who">Pour lancer le pack avec tes managers.</p><p class="odesc">Le pack, plus 2 h en visio avec tes managers, jusqu’à 10 managers.</p><div class="pblock"><p class="price">1 290 €</p></div><a class="btn soft" href="https://calendly.com/eb-formationconsulting/appel-decouverte-ose-prendre-ta-place" target="_blank" rel="noopener">Réserver un échange</a></article><article class="card offer"><span class="oflag">Prise en charge<br>OPCO possible !<svg viewBox="0 0 60 120" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M30 4 C 60 30, 56 70, 20 104"/><path d="M18 90 L 18 106 L 34 108"/></svg></span><h3>Winter Pack + Atelier</h3><p class="who">Pour ancrer les bonnes pratiques en équipe.</p><p class="odesc">Le pack, plus une demi-journée d’atelier, jusqu’à 10 managers.</p><div class="pblock"><span class="pfrom">À partir de</span><p class="price">1 790 €</p><p class="onote strong">Soit 179 € par manager, pour une équipe de 10.</p><p class="onote">Hors frais de déplacement pour un atelier en présentiel.</p></div><a class="btn soft" href="https://calendly.com/eb-formationconsulting/appel-decouverte-ose-prendre-ta-place" target="_blank" rel="noopener">Réserver un échange</a></article></div>
+</div></section>
+
+<section class="room peach" id="commande"><div class="wrap">
+  <span class="hand">Comment ça se passe</span>
+  <h2 class="h2 one">De ta commande à tes premiers entretiens</h2>
+  <div class="steps"><div class="track"><h3>Winter Pack Solo et Winter Pack PME</h3><ol><li><span class="sn">1</span><div><b>Tu choisis ton offre</b><p>Selon le nombre de managers à équiper.</p></div></li><li><span class="sn">2</span><div><b>Tu paies en ligne</b><p>Par carte bancaire, en quelques minutes. Ta facture arrive automatiquement.</p></div></li><li><span class="sn">3</span><div><b>Tu reçois tes outils</b><p>Dès la validation du paiement, un mail avec le lien du dossier Drive et l’accès aux outils Notion.</p></div></li><li><span class="sn">4</span><div><b>Tu les transmets à tes managers</b><p>Ils ont tout pour préparer leurs entretiens et lancer leurs rituels.</p></div></li></ol></div><div class="track"><h3>Winter Pack + Prise en main et Winter Pack + Atelier</h3><ol><li><span class="sn">1</span><div><b>Tu réserves un échange</b><p>On fait le point sur ton équipe et tes besoins.</p></div></li><li><span class="sn">2</span><div><b>Tu reçois ton devis et le programme</b><p>De quoi lancer ta demande de prise en charge OPCO si tu le souhaites.</p></div></li><li><span class="sn">3</span><div><b>On fixe la date</b><p>En visio ou en présentiel pour l’atelier.</p></div></li><li><span class="sn">4</span><div><b>Tu reçois tes outils</b><p>Avant la séance, pour que tes managers arrivent préparés.</p></div></li><li><span class="sn">5</span><div><b>On se retrouve avec tes managers</b><p>Pour la prise en main ou l’atelier.</p></div></li></ol></div></div>
 </div></section>
 
 <section class="room" id="faq"><div class="wrap">
