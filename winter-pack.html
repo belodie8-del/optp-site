@@ -133,13 +133,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .need input{appearance:none;-webkit-appearance:none;width:26px;height:26px;margin:1px 0 0;border:2.5px solid var(--ink);border-radius:8px 6px 9px 7px;position:relative;cursor:pointer;background:var(--paper);}
 .need input:checked{border-color:var(--ember);}
 .need input:checked::after{content:"";position:absolute;left:6px;top:-6px;width:9px;height:18px;border:solid var(--ember-ink);border-width:0 4px 4px 0;border-radius:2px;transform:rotate(40deg);}
-.level{display:flex;align-items:center;gap:16px;margin-top:30px;}
-.lvl-bar{display:flex;gap:8px;width:min(100%, 380px);}
-.lvl-bar i{flex:1;height:12px;border-radius:7px;background:rgba(15,134,138,.16);transition:background .3s, transform .3s;}
-.lvl-bar i.on{background:var(--teal);transform:scaleY(1.15);}
-.lvl-bar.full i{background:var(--ember);}
-.lvl-n{font-weight:800;font-size:15px;color:var(--pine);font-variant-numeric:tabular-nums;white-space:nowrap;}
-.verdict{margin-top:14px;font-family:var(--hand);font-weight:700;font-size:34px;line-height:1.15;color:var(--pine);max-width:44ch;transform:rotate(-1deg);}
+.verdict{margin-top:34px;font-family:var(--hand);font-weight:700;font-size:34px;line-height:1.15;color:var(--pine);max-width:44ch;transform:rotate(-1deg);}
 .verdict.hit{color:var(--ember-ink);}
 @media (prefers-reduced-motion:reduce){.need:hover{transform:none;}}
 
@@ -354,7 +348,6 @@ canvas.snow{position:absolute;inset:0;width:100%;height:100%;pointer-events:none
   <span class="hand">Pourquoi tu en as besoin</span>
   <h2 class="h2">Tu en as besoin si :</h2>
   <div class="needs"><label class="need" for="need-1"><input type="checkbox" id="need-1"><span>Chaque manager mène ses entretiens avec son propre document, ou sans document du tout.</span></label><label class="need" for="need-2"><input type="checkbox" id="need-2"><span>L’entretien professionnel est fait à moitié, ou pas fait, parce que les managers n’en voient pas l’intérêt.</span></label><label class="need" for="need-3"><input type="checkbox" id="need-3"><span>Tu ne sais pas si ce qui est dit en entretien est écrit, signé et remis au salarié.</span></label><label class="need" for="need-4"><input type="checkbox" id="need-4"><span>Tes managers préparent leurs réunions la veille au soir, et leurs points individuels n’ont lieu que quand ils ont le temps.</span></label><label class="need" for="need-5"><input type="checkbox" id="need-5"><span>Un conflit éclate, et ils ne savent pas quoi dire.</span></label></div>
-  <div class="level"><div class="lvl-bar" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><span class="lvl-n" id="lvlN">0 / 5</span></div>
   <p class="verdict" id="verdict5" aria-live="polite">Si tu te reconnais dans une seule de ces phrases, le pack est pour toi.</p>
 </div></section>
 
@@ -582,7 +575,6 @@ canvas.snow{position:absolute;inset:0;width:100%;height:100%;pointer-events:none
 
 (function(){
   var boxes = document.querySelectorAll('[id^="need-"]'), v = document.getElementById('verdict5');
-  var bars = document.querySelectorAll('.lvl-bar i'), bar = document.querySelector('.lvl-bar'), num = document.getElementById('lvlN');
   if (!v) return;
   var base = v.textContent;
   var msg = ['', '1 case cochée : le pack est un peu fait pour toi.', '2 cases cochées : le pack est fait pour toi.',
@@ -590,9 +582,6 @@ canvas.snow{position:absolute;inset:0;width:100%;height:100%;pointer-events:none
              '5 cases cochées : le pack est 100 % fait pour toi.'];
   function upd(){
     var n = 0; boxes.forEach(function(b){ if (b.checked) n++; });
-    bars.forEach(function(b, i){ b.classList.toggle('on', i < n); });
-    bar.classList.toggle('full', n === 5);
-    num.textContent = n + ' / 5';
     v.textContent = n ? msg[n] : base;
     v.classList.toggle('hit', n > 0);
   }
