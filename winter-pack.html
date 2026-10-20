@@ -117,6 +117,12 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .nope::before,.nope::after{content:"";position:absolute;left:5px;top:10px;width:12px;height:2px;background:var(--muted);transform:rotate(45deg);}
 .nope::after{transform:rotate(-45deg);}
 .for .no li{color:var(--muted);}
+.for .no{padding:20px 22px;border-radius:22px;}
+.for .no h3{font-size:22px;margin-bottom:10px;}
+.for .no .marks{gap:9px;}
+.for .no .marks li{grid-template-columns:20px 1fr;gap:10px;font-size:14px;line-height:1.4;font-weight:600;}
+.for .no .nope{width:20px;height:20px;border-width:1.5px;}
+.for .no .nope::before,.for .no .nope::after{left:4px;top:8px;width:9px;height:1.5px;}
 
 .needs{display:flex;flex-direction:column;gap:12px;margin-top:30px;max-width:800px;}
 .need{display:grid;grid-template-columns:30px 1fr;gap:16px;align-items:start;background:var(--paper);border-radius:20px;padding:18px 22px;cursor:pointer;font-weight:700;font-size:17.5px;box-shadow:0 10px 24px -20px rgba(29,42,40,.5);transition:transform .15s;}
