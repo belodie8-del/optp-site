@@ -649,7 +649,11 @@ canvas.snow{position:absolute;inset:0;width:100%;height:100%;pointer-events:none
   var root = document.documentElement; root.classList.add('rvjs');
   // [selector, mode]  seq = one after the other, col = by column (2 per row)
   var groups = [
-    ['.need', 'seq'], ['.tgrid > .card', 'col'], ['.why-sheet', 'one'], ['.offers > .card', 'seq'], ['.track li', 'seq']
+    ['section.room > .wrap > .hand, section.room > .wrap > .h2, section.room > .wrap > .sub, section.room > .wrap > .cons', 'head'],
+    ['.for > *', 'col'], ['.notes > div', 'seq'], ['.need', 'seq'], ['.verdict', 'one'], ['.tgrid > .card', 'col'],
+    ['.why-sheet', 'one'], ['.inside > p', 'one'], ['.duo > .card', 'col'], ['.daily-t', 'one'], ['.qa-row', 'seq'],
+    ['.bubble', 'one'], ['.bubble-by', 'one'], ['.secure > *', 'col'], ['.ggrid > .card', 'col'], ['.me > *', 'col'],
+    ['.offers > .card', 'seq'], ['.track', 'col'], ['.track li', 'seq'], ['.fq', 'seq'], ['.final .wrap > *', 'seq'], ['.cf-wrap', 'one']
   ];
   var targets = [];
   groups.forEach(function(g){
