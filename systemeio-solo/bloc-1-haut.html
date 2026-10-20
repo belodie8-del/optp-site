@@ -1,0 +1,62 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif&family=Nunito+Sans:wght@400;700;800&family=Caveat:wght@600;700&display=swap');
+.wps{--pine:#085055;--teal:#0F868A;--mint:#E4F5F6;--ember:#FF914D;--ember-ink:#B4561F;--peach:#FFF4EE;--peach2:#FFE7D8;--ink:#1D2A28;--muted:#5A6663;
+  font-family:'Nunito Sans',system-ui,sans-serif;color:var(--ink);line-height:1.65;font-size:17px;max-width:860px;margin:0 auto;padding:8px 18px;box-sizing:border-box;}
+.wps *{box-sizing:border-box;}
+.wps p{margin:0;}
+.wps .hand{font-family:'Caveat',cursive;font-weight:700;font-size:30px;line-height:1.1;color:var(--ember-ink);display:block;transform:rotate(-2deg);transform-origin:left;margin-bottom:6px;}
+.wps h1,.wps h2{font-family:'Young Serif',Georgia,serif;font-weight:400;margin:0;text-wrap:balance;}
+.wps h1{font-size:clamp(34px,6vw,52px);line-height:1.08;color:var(--ink);}
+.wps h2{font-size:clamp(24px,4vw,32px);line-height:1.2;color:var(--ink);margin-bottom:18px;}
+.wps .lead{margin-top:10px;font-size:19px;color:var(--muted);}
+.wps .card{background:#fff;border-radius:26px;padding:28px 30px;box-shadow:0 18px 40px -28px rgba(29,42,40,.45);}
+.wps .order{margin-top:26px;display:flex;flex-wrap:wrap;gap:20px 30px;align-items:center;justify-content:space-between;}
+.wps .order b{display:block;font-family:'Young Serif',Georgia,serif;font-weight:400;font-size:24px;line-height:1.2;color:var(--pine);}
+.wps .order span{color:var(--muted);font-size:16px;}
+.wps .price{font-family:'Young Serif',Georgia,serif;font-size:56px;line-height:1;color:var(--ink);white-space:nowrap;}
+.wps .tools{list-style:none;margin:18px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 28px;}
+.wps .tools li{display:flex;gap:12px;align-items:flex-start;font-weight:800;font-size:16px;line-height:1.4;}
+.wps .tools li::before{content:"";flex:none;width:22px;height:22px;margin-top:1px;border-radius:50%;background:var(--teal) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Cpath d='M6 11.5l3.2 3.2 6.8-7.4' fill='none' stroke='%23fff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/100% no-repeat;}
+.wps .tools small{display:block;font-weight:700;font-size:13px;color:var(--muted);}
+.wps .note{margin-top:18px;font-size:15px;color:var(--muted);}
+.wps a{color:var(--teal);font-weight:800;}
+.wps .steps{list-style:none;margin:0;padding:0;counter-reset:s;}
+.wps .steps li{display:grid;grid-template-columns:44px 1fr;gap:16px;padding-bottom:18px;position:relative;}
+.wps .steps li:not(:last-child)::before{content:"";position:absolute;left:21px;top:46px;bottom:2px;width:2px;background:repeating-linear-gradient(180deg,var(--teal) 0 5px,transparent 5px 10px);opacity:.5;}
+.wps .steps .n{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--mint);color:var(--teal);font-family:'Young Serif',Georgia,serif;font-size:19px;}
+.wps .steps li:last-child .n{background:var(--teal);color:#fff;}
+.wps .steps b{display:block;font-size:17px;margin-top:6px;line-height:1.35;}
+.wps .steps p{color:var(--muted);font-size:15px;line-height:1.55;margin-top:2px;}
+.wps .rea{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:6px;}
+.wps .rea div{background:var(--mint);border-radius:18px;padding:16px 18px;font-size:15px;line-height:1.5;color:var(--muted);}
+.wps .rea b{display:block;font-size:16px;color:var(--pine);margin-bottom:2px;}
+.wps .small{margin-top:22px;font-size:14px;color:var(--muted);text-align:center;}
+.wps .gap{height:26px;}
+@media (max-width:640px){.wps .tools,.wps .rea{grid-template-columns:1fr;}.wps .price{font-size:46px;}}
+</style>
+<div class="wps">
+  <span class="hand">Ta commande</span>
+  <h1>Winter Pack Solo</h1>
+  <p class="lead">Tu es manager et tu t’équipes toi-même. Les 8 outils, pour un seul manager, en autonomie.</p>
+
+  <div class="card order">
+    <div><b>Winter Pack · L’Essentiel du Manager</b><span>Formule Solo · paiement unique · accès sans limite de durée</span></div>
+    <div class="price">197 €</div>
+  </div>
+
+  <div class="gap"></div>
+  <div class="card">
+    <h2>Les 8 outils que tu reçois</h2>
+    <ul class="tools">
+      <li><span>L’Entretien professionnel<small>PDF</small></span></li>
+      <li><span>L’Entretien annuel<small>PDF</small></span></li>
+      <li><span>La Réunion d’équipe<small>Notion</small></span></li>
+      <li><span>La trame du OTO<small>Notion</small></span></li>
+      <li><span>Le tableau de bord des objectifs<small>Excel</small></span></li>
+      <li><span>Le calendrier des rituels managériaux<small>Notion, compatible Outlook et Gmail</small></span></li>
+      <li><span>Les 10 commandements pour réussir ses entretiens<small>PDF</small></span></li>
+      <li><span>Le kit de survie verbal, spécial gestion de conflit<small>Notion</small></span></li>
+    </ul>
+    <p class="note">Le Solo est réservé aux managers qui achètent à titre personnel. Pour un achat par ton entreprise, même pour un seul manager, c’est le <a href="https://winterpack.oseprendretaplace.fr/#offre">pack PME</a>.</p>
+  </div>
+</div>
