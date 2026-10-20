@@ -595,14 +595,17 @@ canvas.snow{position:absolute;inset:0;width:100%;height:100%;pointer-events:none
 (function(){
   var boxes = document.querySelectorAll('[id^="need-"]'), v = document.getElementById('verdict5');
   if (!v) return;
-  var base = '';
-  v.textContent = base;
-  var msg = ['', '1 case cochée : le pack est un peu fait pour toi.', '2 cases cochées : le pack est fait pour toi.',
-             '3 cases cochées : le pack est bien fait pour toi.', '4 cases cochées : le pack est vraiment fait pour toi.',
-             '5 cases cochées : le pack est complètement fait pour toi.', '6 cases cochées : le pack est 100 % fait pour toi.'];
+  var msg = ['Coche les situations que tu vis dans ton entreprise.',
+             'Un premier signal. Le pack peut déjà t’aider sur ce point.',
+             'Deux signaux. Tes managers ont besoin d’un cadre commun.',
+             'La moitié des situations. Le pack est fait pour toi.',
+             'Tes entretiens et tes rituels méritent mieux. Le pack est fait pour toi.',
+             'Il est temps d’outiller tes managers. Le pack est fait pour toi.',
+             'Le pack est 100 % fait pour toi.'];
+  v.textContent = msg[0];
   function upd(){
     var n = 0; boxes.forEach(function(b){ if (b.checked) n++; });
-    v.textContent = n ? msg[n] : base;
+    v.textContent = msg[n];
     v.classList.toggle('hit', n > 0);
   }
   boxes.forEach(function(b){ b.addEventListener('change', upd); });
