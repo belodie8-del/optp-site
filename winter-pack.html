@@ -262,8 +262,11 @@ footer a{text-decoration:none;font-weight:700;}
 
 
 .hero{position:relative;overflow:hidden;}
-#snowfall{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;}
-.hero > .wrap{position:relative;z-index:1;}
+canvas.snow{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;}
+.hero > .wrap,.snowy > .wrap{position:relative;z-index:1;}
+.snowy{position:relative;overflow:hidden;}
+.sub.one-line{max-width:none;}
+@media (min-width:900px){.sub.one-line{white-space:nowrap;}}
 @media (max-width:1020px){
   .offers{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:36px;}
   .daily{grid-template-columns:repeat(2,minmax(0,1fr));}
@@ -302,7 +305,7 @@ footer a{text-decoration:none;font-weight:700;}
   <nav class="nav" aria-label="Sections"><a href="#outils">Les outils</a><a href="#management">Management</a><a href="#offre">Tarifs</a><a href="#faq">Questions</a><a class="btn" href="#offre">Je prends le Winter Pack</a></nav>
 </div></header>
 <main id="top">
-<section class="hero"><canvas id="snowfall" aria-hidden="true"></canvas><div class="wrap">
+<section class="hero"><canvas class="snow" aria-hidden="true"></canvas><div class="wrap">
   <div>
     <span class="hand">Winter Pack · L’Essentiel du Manager</span>
     <h1>L’hiver arrive. <span class="mark">Prépare tes managers.</span></h1>
@@ -388,9 +391,9 @@ footer a{text-decoration:none;font-weight:700;}
     <div class="creds"><div><b>15 ans +</b>de terrain RH et management</div><div><b>300</b>managers formés</div><div><b>CNAM</b>Master en droit du travail</div><div><b>ESSEC</b>Certification management</div></div><p class="sub" style="color:var(--ink)">Je vois toujours la même chose : on a promu des managers sans leur donner les outils. Alors j’ai tout mis dans un seul pack.</p><p class="big">Mon idée fixe : vulgariser le management pour le rendre réel et actionnable. Ces outils, j’aurais aimé les avoir à mes débuts.</p></div>
 </div></section>
 
-<section class="room mint" id="offre"><div class="wrap">
+<section class="room mint snowy" id="offre"><canvas class="snow" aria-hidden="true"></canvas><div class="wrap">
   <span class="hand">Les offres</span>
-  <h2 class="h2">Winter Pack · L’Essentiel du Manager</h2><p class="sub">Un pack, quatre façons de l’utiliser : pour toi, pour ta PME, ou avec moi à tes côtés.</p>
+  <h2 class="h2">Winter Pack · L’Essentiel du Manager</h2><p class="sub one-line">Un pack, quatre façons de l’utiliser : pour toi, pour ta PME, ou avec moi à tes côtés.</p>
   <div class="offers"><article class="card offer"><h3>Winter Pack Solo</h3><p class="who">Tu es manager et tu t’équipes toi‑même.</p><p class="odesc">Les 8 outils, pour un seul manager, en autonomie.</p><div class="pblock"><p class="price">197 €</p></div><a class="btn soft" href="https://www.oseprendretaplace.fr/cartablederentree" target="_blank" rel="noopener">Je prends le Winter Pack Solo</a></article><article class="card offer feat"><span class="flag">Pour les PME</span><h3>Winter Pack Entreprise</h3><p class="who">Pour équiper tous les managers de ta PME.</p><p class="odesc">Les 8 outils, en autonomie.</p><ul class="tiers"><li><span>Jusqu’à 5 managers</span><b>490 €</b></li><li><span>Jusqu’à 10 managers</span><b>790 €</b></li><li><span>Jusqu’à 20 managers</span><b>1 190 €</b></li><li><span>Plus de 20 managers</span><b>Sur devis</b></li></ul><a class="btn" href="https://www.oseprendretaplace.fr/cartablederentree" target="_blank" rel="noopener">Je prends le Winter Pack Entreprise</a></article><article class="card offer"><h3>Winter Pack + Prise en main</h3><p class="who">Pour lancer le pack avec tes managers.</p><p class="odesc">Le pack, plus 2 h en visio avec tes managers, jusqu’à 10 managers.</p><div class="pblock"><p class="price">1 290 €<small>HT</small></p></div><a class="btn soft" href="https://calendly.com/eb-formationconsulting/appel-decouverte-ose-prendre-ta-place" target="_blank" rel="noopener">Réserver un échange</a></article><article class="card offer"><h3>Winter Pack + Atelier</h3><p class="who">Pour ancrer les bonnes pratiques en équipe.</p><p class="odesc">Le pack, plus une demi-journée d’atelier, jusqu’à 10 managers.</p><div class="pblock"><p class="price">1 790 €<small>HT</small></p><p class="onote">Frais de déplacement en métropole en sus.</p></div><a class="btn soft" href="https://calendly.com/eb-formationconsulting/appel-decouverte-ose-prendre-ta-place" target="_blank" rel="noopener">Réserver un échange</a></article></div>
 </div></section>
 
@@ -502,9 +505,9 @@ footer a{text-decoration:none;font-weight:700;}
   render();
 })();
 
-(function(){
-  var cv = document.getElementById('snowfall'), hero = cv && cv.parentElement;
-  if (!cv || !cv.getContext) return;
+[].forEach.call(document.querySelectorAll('canvas.snow'), function(cv){
+  var hero = cv.parentElement;
+  if (!cv.getContext) return;
   var ctx = cv.getContext('2d'), flakes = [], w = 0, h = 0, dpr = 1, raf = 0, running = false;
   var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   function size(){
@@ -562,7 +565,7 @@ footer a{text-decoration:none;font-weight:700;}
   window.addEventListener('resize', size);
   document.addEventListener('visibilitychange', function(){ if (document.hidden) stop(); else start(); });
   if ('IntersectionObserver' in window){ new IntersectionObserver(function(es){ if (es[0].isIntersecting) start(); else stop(); }).observe(hero); } else { start(); }
-})();
+});
 
 (function(){
   var boxes = document.querySelectorAll('[id^="need-"]'), v = document.getElementById('verdict5');
