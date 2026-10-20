@@ -104,7 +104,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 @media (prefers-reduced-motion:reduce){.notes div{animation:none;}}
 .notes div::before{content:"";position:absolute;top:-9px;left:50%;width:70px;height:18px;margin-left:-35px;background:rgba(15,134,138,.22);border-radius:3px;transform:rotate(-3deg);}
 
-.for{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:20px;margin-top:36px;align-items:start;}
+.for{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:20px;margin-top:36px;align-items:center;}
 .for .yes{background:var(--mint);box-shadow:none;}
 .for .no{background:var(--paper);border:2px dashed var(--line);box-shadow:none;}
 .for h3{font-family:var(--hand);font-size:28px;font-weight:700;margin:0 0 14px;color:var(--pine);line-height:1;}
@@ -117,6 +117,12 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .nope::before,.nope::after{content:"";position:absolute;left:5px;top:10px;width:12px;height:2px;background:var(--muted);transform:rotate(45deg);}
 .nope::after{transform:rotate(-45deg);}
 .for .no li{color:var(--muted);}
+.postit{position:relative;background:#FFF1C9;padding:36px 30px 30px;transform:rotate(2.5deg);box-shadow:0 24px 30px -22px rgba(29,42,40,.55);border-radius:4px 4px 18px 4px;}
+.postit::before{content:"";position:absolute;top:-12px;left:50%;width:96px;height:24px;margin-left:-48px;background:rgba(15,134,138,.25);transform:rotate(-4deg);border-radius:3px;}
+.postit h3{font-family:var(--hand);font-size:34px;font-weight:700;margin:0 0 14px;color:var(--ink);line-height:1;}
+.postit ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px;}
+.postit li{font-family:var(--hand);font-size:25px;line-height:1.25;color:var(--ink);}
+.postit li span{text-decoration:line-through;text-decoration-color:rgba(204,106,46,.6);text-decoration-thickness:1.5px;}
 
 .needs{display:flex;flex-direction:column;gap:12px;margin-top:30px;max-width:800px;}
 .need{display:grid;grid-template-columns:30px 1fr;gap:16px;align-items:start;background:var(--paper);border-radius:20px;padding:18px 22px;cursor:pointer;font-weight:700;font-size:17.5px;box-shadow:0 10px 24px -20px rgba(29,42,40,.5);transition:transform .15s;}
@@ -235,6 +241,7 @@ footer a{text-decoration:none;font-weight:700;}
   .s2{right:-8px;}
   .note{margin-top:28px;}
   .scribble{display:none;}
+  .postit{transform:rotate(1deg);}
   .notes,.for,.why,.duo,.secure,.me,.ggrid,.tgrid{grid-template-columns:1fr;}
   .notes div{--r:0deg!important;}
   .bubble-by{margin-left:60px;}
@@ -280,7 +287,7 @@ footer a{text-decoration:none;font-weight:700;}
   <h2 class="h2">Ce pack est fait pour les PME</h2>
   <div class="for">
     <div class="card yes"><ul class="marks"><li><span class="dot"></span><span>qui n’ont pas de SIRH, ou un SIRH sans module entretiens</span></li><li><span class="dot"></span><span>où les entretiens varient d’un manager à l’autre</span></li><li><span class="dot"></span><span>qui veulent de vrais rituels managériaux (réunion d’équipe, point individuel, suivi des objectifs) en plus des entretiens</span></li><li><span class="dot"></span><span>dont le dirigeant veut une vraie stratégie managériale pour 2027</span></li></ul></div>
-    <div class="card no"><h3>Il n’est pas fait pour</h3><ul class="marks"><li><span class="nope"></span><span>les grandes entreprises équipées d’un SIRH complet, avec des campagnes d’entretiens déjà paramétrées</span></li><li><span class="nope"></span><span>ceux qui cherchent un logiciel de gestion des entretiens</span></li><li><span class="nope"></span><span>ceux qui veulent cocher une case sans faire évoluer leurs pratiques managériales</span></li></ul></div>
+    <div class="postit"><h3>Il n’est pas fait pour</h3><ul><li><span>les grandes entreprises équipées d’un SIRH complet, avec des campagnes d’entretiens déjà paramétrées</span></li><li><span>ceux qui cherchent un logiciel de gestion des entretiens</span></li><li><span>ceux qui veulent cocher une case sans faire évoluer leurs pratiques managériales</span></li></ul></div>
   </div>
 </div></section>
 
