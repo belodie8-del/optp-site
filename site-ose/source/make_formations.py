@@ -7,7 +7,7 @@ head = head.replace('<title>Ose prendre ta place · Accueil</title>', '<title>Le
 HOME = 'https://www.oseprendretaplace.fr/accueil'
 PAY_OSE = 'https://www.oseprendretaplace.fr/paiement-ose'
 PAY_BOOSTE = 'https://www.oseprendretaplace.fr/paiement-packbooste'
-PAY_INCARNE = RDV   # lien de paiement « Incarne ta posture » à confirmer
+PAY_INCARNE = 'https://www.oseprendretaplace.fr/paiement-packincarnetaposture'
 CROSS = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7"/></svg>'
 def ul(items, cls=''): return '<ul class="%s">%s</ul>' % (cls, ''.join('<li>%s<span>%s</span></li>' % (CHK, x) for x in items))
 
