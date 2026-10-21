@@ -93,8 +93,8 @@ FAQ = [
 def mod_card(i, m):
     name, tag, desc, items, extra = m
     grp = 'a' if i < 3 else 'b'
-    return ('<article class="md g%s"><div class="md-h"><span class="md-n">%02d</span><div><span class="md-k">Module %d</span><h3>%s</h3><p class="md-t">%s</p></div></div>'
-            '<p class="md-d">%s</p><details class="md-dt"><summary><span>Ce que tu vas travailler</span><span class="md-c">%d</span>'
+    return ('<article class="md g%s"><div class="md-top"><div class="md-h"><span class="md-n">%02d</span><div><span class="md-k">Module %d</span><h3>%s</h3><p class="md-t">%s</p></div></div>'
+            '<p class="md-d">%s</p></div><details class="md-dt"><summary><span>Ce que tu vas travailler</span><span class="md-c">%d</span>'
             '<svg class="md-chv" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>%s%s</details></article>') % (
             grp, i + 1, i + 1, name, tag, desc, len(items), ul(items, 'md-l'), ('<p class="md-x">%s</p>' % extra) if extra else '')
 def pack(name, line, mods, price, pay):
@@ -239,6 +239,22 @@ BODY = '''<header class="top hx"><div class="wrap">
   <div class="faq">''' + ''.join('<details class="fq"><summary>%s</summary><div class="fq-a">%s</div></details>' % (q, ''.join('<p>%s</p>' % x for x in a)) for q, a in FAQ) + '''</div>
 </div></section>
 </main>
+<script>
+(function(){
+  var tops = [].slice.call(document.querySelectorAll('.md-top'));
+  function even(){
+    tops.forEach(function(t){ t.style.minHeight = ''; });
+    if (window.innerWidth <= 1020) return;
+    var h = 0;
+    tops.forEach(function(t){ h = Math.max(h, t.getBoundingClientRect().height); });
+    tops.forEach(function(t){ t.style.minHeight = Math.ceil(h) + 'px'; });
+  }
+  even();
+  window.addEventListener('resize', even);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(even);
+  window.addEventListener('load', even);
+})();
+</script>
 <footer><div class="wrap"><span><b>Élodie Boyer</b> · Formatrice en management passionnée qui aide les managers à réaliser leur plein potentiel<br>© 2026 EB Formation Consulting · Politique de confidentialité · Conditions d’utilisation · Politique de cookies</span><nav aria-label="Liens"><a href="''' + HOME + '''">Accueil</a><a href="''' + BLOG + '''">Blog</a><a href="''' + CONTACT + '''">Contact</a><a href="https://www.linkedin.com/in/elodie-boyer-299891143/" target="_blank" rel="noopener">LinkedIn</a></nav></div></footer>
 '''
 
@@ -330,6 +346,7 @@ CSS_F = '''<style>
 .md-k{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);}
 .md h3{font-family:var(--display);font-weight:400;font-size:24px;line-height:1.15;margin:2px 0 2px;}
 .md-t{margin:0;font-family:var(--hand);font-size:22px;color:var(--teal);} .md.gb .md-t{color:var(--ember-ink);}
+.md-top{display:flex;flex-direction:column;}
 .md-d{margin:0 0 16px;color:var(--ink);line-height:1.6;}
 .md-l{list-style:none;margin:0;padding:0;display:grid;gap:9px;}
 .md-l li{display:flex;gap:10px;align-items:flex-start;font-size:15px;line-height:1.45;color:var(--ink);}
