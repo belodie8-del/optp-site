@@ -709,10 +709,10 @@ canvas.snow{position:absolute;inset:0;width:100%;height:100%;pointer-events:none
     if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
     else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
   });
-  window.setTimeout(open, 25000);
+  window.setTimeout(open, 10000);
   window.addEventListener('scroll', function(){
     var max = document.documentElement.scrollHeight - window.innerHeight;
-    if (max > 0 && window.pageYOffset / max > 0.4) open();
+    if (max > 0 && window.pageYOffset / max > 0.15) open();
   }, {passive: true});
   document.addEventListener('mouseout', function(e){ if (!e.relatedTarget && e.clientY <= 0) open(); });
 })();
