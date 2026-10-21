@@ -94,8 +94,9 @@ def mod_card(i, m):
     name, tag, desc, items, extra = m
     grp = 'a' if i < 3 else 'b'
     return ('<article class="md g%s"><div class="md-h"><span class="md-n">%02d</span><div><span class="md-k">Module %d</span><h3>%s</h3><p class="md-t">%s</p></div></div>'
-            '<p class="md-d">%s</p>%s%s</article>') % (grp, i + 1, i + 1, name, tag, desc, ul(items, 'md-l'),
-            ('<p class="md-x">%s</p>' % extra) if extra else '')
+            '<p class="md-d">%s</p><details class="md-dt"><summary><span>Ce que tu vas travailler</span><span class="md-c">%d</span>'
+            '<svg class="md-chv" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>%s%s</details></article>') % (
+            grp, i + 1, i + 1, name, tag, desc, len(items), ul(items, 'md-l'), ('<p class="md-x">%s</p>' % extra) if extra else '')
 def pack(name, line, mods, price, pay):
     return ('<article class="pk"><span class="trk-k">3 modules</span><h3>%s</h3><p class="pk-w">%s</p>%s'
             '<p class="pk-bn">🎁 Bonus inclus : l’Atelier Stratégie Managériale trimestriel, Manager, mais pour toi aussi.</p>'
@@ -171,8 +172,8 @@ BODY = '''<header class="top hx"><div class="wrap">
   <div class="pg-h"><span class="hand">Le programme</span><h2 class="h2">6 modules pour construire ton management, étape par étape</h2>
     <p class="sub">De ta prise de posture à la dynamique de ton équipe, chaque module travaille une dimension concrète de ton rôle de manager. Tu commences par poser les bases, comprendre ton équipe et affirmer ta posture. Puis tu apprends à communiquer, à manager chaque collaborateur et à faire avancer le collectif.</p>
     <p class="pg-q">Une progression pensée pour passer du « je fais comme je peux » à un management qui te ressemble et qui fonctionne sur le terrain.</p></div>
-  <div class="mdg"><p class="mdg-t ga">Modules 1 à 3 · <b>Incarne ta posture</b></p><p class="mdg-t gb">Modules 4 à 6 · <b>Booste ton équipe</b></p></div>
-  <div class="mds">''' + ''.join(mod_card(i, m) for i, m in enumerate(MODS)) + '''</div>
+  <div class="mds"><div class="mds-c"><p class="mdg-t ga">Modules 1 à 3 · <b>Incarne ta posture</b></p>''' + ''.join(mod_card(i, m) for i, m in enumerate(MODS[:3])) + '''</div>
+    <div class="mds-c"><p class="mdg-t gb">Modules 4 à 6 · <b>Booste ton équipe</b></p>''' + ''.join(mod_card(i + 3, m) for i, m in enumerate(MODS[3:])) + '''</div></div>
   ''' + kit_html() + '''
 </div></section>
 
@@ -302,10 +303,26 @@ CSS_F = '''<style>
 @media (max-width:560px){.oc-b{padding:22px;} .oc .btn{align-self:stretch;justify-content:center;}}
 /* programme */
 .pg-q{font-family:var(--hand);font-size:clamp(23px,2.4vw,28px);line-height:1.2;color:var(--pine);max-width:46ch;margin:6px auto 0;}
-.mdg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:48px;}
+
 .mdg-t{margin:0;text-align:center;padding:12px;border-radius:999px;font-size:15px;color:#fff;}
 .mdg-t.ga{background:var(--teal);} .mdg-t.gb{background:var(--ember-ink);}
-.mds{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-flow:column;grid-template-rows:repeat(3,auto);gap:20px;margin-top:20px;}
+.mds{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:48px;align-items:start;}
+.mds-c{display:flex;flex-direction:column;gap:20px;}
+.md-dt{margin-top:4px;border-radius:18px;background:var(--mint);}
+.md.gb .md-dt{background:var(--peach);}
+.md-dt summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:10px;padding:14px 18px;font-weight:800;font-size:15px;color:var(--pine);border-radius:18px;}
+.md.gb .md-dt summary{color:var(--ember-ink);}
+.md-dt summary::-webkit-details-marker{display:none;}
+.md-dt summary:hover{background:rgba(15,134,138,.1);} .md.gb .md-dt summary:hover{background:rgba(255,145,77,.14);}
+.md-dt summary:focus-visible{outline:3px solid var(--ember);outline-offset:2px;}
+.md-c{display:grid;place-items:center;min-width:24px;height:24px;padding:0 7px;border-radius:999px;background:var(--teal);color:#fff;font-size:12.5px;}
+.md.gb .md-c{background:var(--ember);color:#2B1304;}
+.md-chv{margin-left:auto;width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s;}
+.md-dt[open] .md-chv{transform:rotate(180deg);}
+.md-dt[open] summary{border-bottom:1.5px dashed rgba(8,80,85,.18);border-radius:18px 18px 0 0;}
+.md-dt .md-l{padding:16px 18px 18px;}
+.md-dt .md-x{margin:0 18px 18px;background:#fff;}
+@media (prefers-reduced-motion:reduce){.md-chv{transition:none;}}
 .md{background:#fff;border-radius:26px;padding:28px 28px 26px;border-top:6px solid var(--teal);box-shadow:0 20px 36px -30px rgba(8,80,85,.7);}
 .md.gb{border-top-color:var(--ember);}
 .md-h{display:flex;gap:16px;align-items:flex-start;margin-bottom:14px;}
@@ -313,7 +330,7 @@ CSS_F = '''<style>
 .md-k{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);}
 .md h3{font-family:var(--display);font-weight:400;font-size:24px;line-height:1.15;margin:2px 0 2px;}
 .md-t{margin:0;font-family:var(--hand);font-size:22px;color:var(--teal);} .md.gb .md-t{color:var(--ember-ink);}
-.md-d{margin:0 0 14px;color:var(--ink);line-height:1.6;}
+.md-d{margin:0 0 16px;color:var(--ink);line-height:1.6;}
 .md-l{list-style:none;margin:0;padding:0;display:grid;gap:9px;}
 .md-l li{display:flex;gap:10px;align-items:flex-start;font-size:15px;line-height:1.45;color:var(--ink);}
 .md-l svg{flex:none;width:18px;height:18px;margin-top:2px;} .md-l circle{fill:var(--teal);} .md.gb .md-l circle{fill:var(--ember);} .md-l path{fill:none;stroke:#fff;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;}
@@ -382,7 +399,7 @@ CSS_F = '''<style>
   .fh > .wrap:first-child,.aq,.tr,.oc,.bx,.fqw,.fit,.pks{grid-template-columns:1fr;}
   .fh > .wrap:first-child{padding-block:64px 36px;gap:48px;} .fh-st{left:-16px;} .fh-st.s2{right:-16px;}
   .fh-s{grid-template-columns:1fr;gap:18px;}
-  .mdg{display:none;} .mds{grid-template-columns:1fr;grid-auto-flow:row;grid-template-rows:none;}
+  .mds{grid-template-columns:1fr;}
   .stp{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:40px;} .stp::before{display:none;}
   .wds{grid-template-columns:repeat(2,minmax(0,1fr));}
   .fqw > div:first-child{position:static;}
