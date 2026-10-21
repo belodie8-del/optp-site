@@ -79,6 +79,8 @@ CSS_B = '''<style>
 /* audit strip */
 .as{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 40px;margin-top:64px;padding:30px 36px;border-radius:28px;background:var(--peach);border:2px dashed rgba(255,145,77,.6);}
 .as p{margin:0;font-family:var(--display);font-size:clamp(22px,2.4vw,28px);line-height:1.25;color:var(--pine);} .as small{display:block;margin-top:6px;font-family:var(--body);font-size:15px;color:var(--muted);}
+main > #articles{padding-bottom:clamp(40px,5vw,64px);}
+main > #newsletter{padding-top:clamp(24px,3vw,40px);}
 /* newsletter box */
 .nlb{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center;padding:clamp(32px,5vw,60px);border-radius:34px;background:var(--pine);color:#fff;}
 .nlb img{width:clamp(130px,16vw,190px);height:auto;transform:rotate(-6deg);}
