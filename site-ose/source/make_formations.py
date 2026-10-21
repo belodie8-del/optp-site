@@ -11,11 +11,11 @@ PAY_INCARNE = RDV   # lien de paiement « Incarne ta posture » à confirmer
 CROSS = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7"/></svg>'
 def ul(items, cls=''): return '<ul class="%s">%s</ul>' % (cls, ''.join('<li>%s<span>%s</span></li>' % (CHK, x) for x in items))
 
-WHY_NOW = ['Parce que tu rentres le soir en te demandant comment tu vas gérer la situation de demain.',
-           'Parce que tu cherches des réponses en cachette sur ChatGPT et que tu ne trouves jamais la bonne, juste des réponses génériques qui ne connaissent ni ton équipe, ni ton contexte.',
-           'Parce que t’en as marre de faire semblant de ne pas entendre ou de ne pas comprendre ce qu’il se passe, parce que tu ne sais pas comment le gérer.',
-           'Parce que tu rejoues la scène de la réunion dans ta tête, en te disant que t’aurais dû dire autrement.',
-           'Parce que tu as peur de dire à ton N+1 que tu n’y arrives pas, puisque si on t’a mis à ce poste, c’est qu’on te sentait capable.']
+WHY_NOW = ['tu rentres le soir en te demandant <mark>comment tu vas gérer la situation de demain</mark>.',
+           'tu cherches des réponses en cachette sur ChatGPT et que tu ne trouves jamais la bonne, juste <mark>des réponses génériques qui ne connaissent ni ton équipe, ni ton contexte</mark>.',
+           't’en as marre de <mark>faire semblant de ne pas entendre</mark> ou de ne pas comprendre ce qu’il se passe, parce que tu ne sais pas comment le gérer.',
+           'tu <mark>rejoues la scène de la réunion dans ta tête</mark>, en te disant que t’aurais dû dire autrement.',
+           'tu as <mark>peur de dire à ton N+1 que tu n’y arrives pas</mark>, puisque si on t’a mis à ce poste, c’est qu’on te sentait capable.']
 FOR_YES = ['Tu es manager, que tu viennes d’être nommé(e) ou que tu le sois depuis un moment, et personne ne t’a vraiment expliqué comment faire',
            'Tu es doué(e) dans ton métier, et c’est justement pour ça qu’on t’a mis à ce poste',
            'Tu es prêt(e) à ce que ça bouge en 12 semaines, pas dans deux ans',
@@ -125,11 +125,11 @@ BODY = '''<header class="top hx"><div class="wrap">
 <div class="wrap"><ul class="fh-s"><li><b>6 séances</b><span>de coaching individuel avec moi, 1 h en visio à chaque fois</span></li><li><b>30 min</b><span>par jour : c’est le temps à prévoir</span></li><li><b>À vie</b><span>l’accès à la plateforme, mises à jour incluses</span></li></ul></div></section>
 
 ''' + P.BAND + '''
-<section class="room" id="moment"><div class="wrap mo">
-  <div class="mo-h"><span class="hand">On fait le point ?</span><h2 class="h2">Pourquoi c’est le moment</h2>
+<section class="room pm" id="moment"><div class="wrap pm-w">
+  <div class="pm-h"><span class="hand">On fait le point ?</span><h2 class="h2">Pourquoi c’est le moment</h2>
     <p class="sub">Je ne vais pas te convaincre avec des arguments bateau, parce que tu les vis au quotidien :</p>
-    <p class="mo-me"><img src="''' + TEAL + '''" alt="" width="56" height="56"><span>Les milliards de questions que tu te poses en rentrant le soir, je me les suis déjà posées.</span></p></div>
-  <div class="chatlist">''' + ''.join('<p class="bub%s">%s</p>' % (' r' if i % 2 else '', t) for i, t in enumerate(WHY_NOW)) + '''</div>
+    <a class="btn rdvbtn" href="''' + RDV + '''" target="_blank" rel="noopener">On en parle ? ''' + ARR + '''</a></div>
+  <ol class="pm-l">''' + ''.join('<li><span class="pm-n">%02d</span><p><span class="pm-pq">Parce que</span> %s</p></li>' % (i + 1, t) for i, t in enumerate(WHY_NOW)) + '''</ol>
 </div></section>
 
 <section class="room mint" id="pour-toi"><div class="wrap">
@@ -150,10 +150,10 @@ BODY = '''<header class="top hx"><div class="wrap">
   <div class="why2 solo"><div class="why2-a"><span class="hand">Pourquoi je peux te former ?</span>
       <p class="why2-q"><span aria-hidden="true">“</span>Parce que j’ai fait toutes les erreurs possibles.</p>
       <img class="why2-p" src="''' + ARCH_T + '''" alt="Élodie Boyer" width="420" height="540"></div>
-    <div class="why2-b"><p>J’ai été manager autoritaire, oui, vraiment. Celle qui pense qu’un ordre bien donné suffit. Puis je suis passée à l’autre extrême : manager Bisounours, à dire oui à tout, à vouloir que tout le monde m’aime plutôt que d’être respectée.</p>
-      <p>Les milliards de questions que tu te poses en rentrant chez toi le soir, je me les suis déjà posées. La boule au ventre en pensant au lendemain, aussi. Perdre le contrôle d’une réunion devant toute l’équipe, aussi. Ne pas te sentir légitime dans ton propre poste, aussi. Cacher tes angoisses derrière un sourire de façade en réunion, aussi.</p>
-      <p>Je ne te parle pas de théorie. Je te parle de douze ans à manager des équipes grandes, moyennes, petites, sur site, à distance, à l’échelle nationale.</p>
-      <p>J’ai testé, je me suis plantée, j’ai recommencé. Ce que je t’enseigne, ce n’est pas ce qu’on m’a appris dans un livre. C’est ce que j’ai vécu, dans les deux sens, avant de trouver ce qui fonctionne vraiment.</p></div></div>
+    <div class="why2-b"><p>J’ai été <mark>manager autoritaire</mark>, oui, vraiment. Celle qui pense qu’un ordre bien donné suffit. Puis je suis passée à l’autre extrême : <mark>manager Bisounours</mark>, à dire oui à tout, à vouloir que tout le monde m’aime plutôt que d’être respectée.</p>
+      <p><b>Les milliards de questions que tu te poses en rentrant chez toi le soir, je me les suis déjà posées.</b> La boule au ventre en pensant au lendemain, aussi. Perdre le contrôle d’une réunion devant toute l’équipe, aussi. Ne pas te sentir légitime dans ton propre poste, aussi. Cacher tes angoisses derrière un sourire de façade en réunion, aussi.</p>
+      <p class="why2-k">Je ne te parle pas de théorie. Je te parle de <mark>douze ans à manager des équipes</mark> grandes, moyennes, petites, sur site, à distance, à l’échelle nationale.</p>
+      <p>J’ai testé, je me suis plantée, j’ai recommencé. Ce que je t’enseigne, ce n’est pas ce qu’on m’a appris dans un livre. <b>C’est ce que j’ai vécu, dans les deux sens, avant de trouver ce qui fonctionne vraiment.</b></p></div></div>
   <div class="obj"><span class="hand">Mon objectif ?</span><p>T’apporter tout ce qu’il y a de plus concret, pratique et utile pour ton quotidien.</p><p class="obj-b">Que tu n’aies plus jamais besoin de moi après.</p></div>
 </div></section>
 
@@ -189,13 +189,13 @@ BODY = '''<header class="top hx"><div class="wrap">
   <div class="ctarow center"><a class="btn rdvbtn" href="''' + RDV + '''" target="_blank" rel="noopener">Je prends RDV avec Élodie ''' + ARR + '''</a></div>
 </div></section>
 
-<section class="room" id="elodie"><div class="wrap ab">
-  <div class="ab-v"><img src="''' + ARCH_T + '''" alt="Élodie Boyer" width="420" height="540"><p class="ab-n"><b>Élodie Boyer</b>Formatrice en management passionnée qui aide les managers à réaliser leur plein potentiel</p></div>
-  <div class="ab-t"><span class="hand">Hello, moi c’est Élodie !</span>
-    <p class="cq">« Ce n’est pas la plateforme qui te coache. <em>C’est moi.</em> »</p>
-    <p>Il y a des vidéos, oui, pour t’apporter le cadre et la méthode. Parce que sans ça, tu apprends sur le tas, à l’usure, en te plantant, en recommençant, comme moi pendant des années. Le cadre et la méthode, c’est ce qui te fait gagner tout ce temps-là.</p>
-    <p>Ils vont aussi te rendre 100 % autonome pour que tu n’aies plus jamais besoin de moi.</p>
-    <p class="ab-sign">Mais le vrai travail, celui qui fait la différence, se fait avec moi, sur ta situation à toi, pas sur un scénario écrit six mois avant que tu t’inscrives.</p></div>
+<section class="room" id="elodie"><div class="wrap co">
+  <img class="co-p" src="''' + ORANGE + '''" alt="Élodie Boyer" width="640" height="640">
+  <span class="hand">Hello, moi c’est Élodie !</span>
+  <p class="cq">« Ce n’est pas la plateforme qui te coache. <em>C’est moi.</em> »</p>
+  <div class="co-g"><div class="co-c"><span class="co-k">Les vidéos</span><p>Il y a des vidéos, oui, pour t’apporter <b>le cadre et la méthode</b>. Parce que sans ça, tu apprends sur le tas, à l’usure, en te plantant, en recommençant, comme moi pendant des années. Le cadre et la méthode, c’est ce qui te fait gagner tout ce temps-là.</p>
+      <p>Ils vont aussi te rendre <b>100 % autonome</b> pour que tu n’aies plus jamais besoin de moi.</p></div>
+    <div class="co-c me"><span class="co-k">Avec moi</span><p>Mais le vrai travail, <b>celui qui fait la différence</b>, se fait avec moi, <b>sur ta situation à toi</b>, pas sur un scénario écrit six mois avant que tu t’inscrives.</p></div></div>
 </div></section>
 
 <section class="room mint" id="malgre"><div class="wrap tr">
@@ -280,6 +280,24 @@ CSS_F = '''<style>
 .fh-s{list-style:none;margin:0;padding:34px 0 56px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;border-top:1.5px dashed rgba(8,80,85,.2);position:relative;}
 .fh-s b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(28px,3vw,38px);line-height:1;color:var(--ember-ink);}
 .fh-s span{display:block;margin-top:6px;font-size:15px;font-weight:700;color:var(--muted);max-width:30ch;}
+/* pourquoi c'est le moment: pine, numbered statements */
+.pm{background:var(--pine);color:#fff;}
+.pm-w{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:72px;align-items:start;}
+.pm-h{position:sticky;top:120px;}
+.pm .hand{color:var(--ember);} .pm .h2{color:#fff;} .pm .sub{color:var(--on-pine-soft);}
+.pm-h .btn{margin-top:18px;}
+.pm-l{list-style:none;margin:0;padding:0;counter-reset:pm;}
+.pm-l li{display:grid;grid-template-columns:64px minmax(0,1fr);gap:18px;align-items:baseline;padding:26px 0;border-bottom:1.5px solid rgba(255,255,255,.14);}
+.pm-l li:first-child{border-top:1.5px solid rgba(255,255,255,.14);}
+.pm-n{font-family:var(--display);font-size:34px;line-height:1;color:var(--ember);}
+.pm-l p{margin:0;font-size:clamp(18px,1.8vw,21px);line-height:1.5;color:var(--on-pine-soft);}
+.pm-pq{display:block;font-family:var(--hand);font-weight:700;font-size:26px;line-height:1;color:#FFCFA3;margin-bottom:6px;}
+.pm-l mark{background:none;color:#fff;font-weight:800;box-shadow:inset 0 -.42em 0 rgba(255,145,77,.45);padding:0 2px;}
+/* highlights in "pourquoi je peux te former" */
+.why2-b mark{background:none;color:var(--ink);font-weight:800;box-shadow:inset 0 -.45em 0 rgba(255,145,77,.38);padding:0 2px;}
+.why2-b b{color:var(--pine);}
+.why2-k{font-family:var(--display);font-size:clamp(20px,2vw,24px)!important;line-height:1.35!important;color:var(--pine)!important;}
+.why2-k mark{font-weight:400!important;color:var(--pine)!important;}
 /* fit */
 .fit{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:48px;}
 .fit-c{padding:34px 32px;border-radius:28px;background:#fff;box-shadow:0 22px 40px -32px rgba(8,80,85,.7);}
@@ -374,6 +392,17 @@ CSS_F = '''<style>
 .stp h3{font-family:var(--display);font-weight:400;font-size:23px;margin:0;}
 .stp p{margin:4px 0 0;color:var(--ink);font-size:15.5px;line-height:1.55;}
 #etapes .ctarow{margin-top:48px;}
+/* elodie coach: centered */
+.co{display:flex;flex-direction:column;align-items:center;text-align:center;}
+.co-p{width:150px;height:150px;border-radius:50%;object-fit:cover;border:6px solid #fff;box-shadow:0 18px 34px -18px rgba(8,80,85,.6);margin-bottom:18px;}
+.co .cq{max-width:22ch;margin:6px auto 40px!important;}
+.co-g{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:22px;text-align:left;width:100%;}
+.co-c{padding:30px 32px;border-radius:26px;background:var(--mint);}
+.co-c p{margin:0 0 14px;line-height:1.65;color:var(--ink);} .co-c p:last-child{margin:0;}
+.co-c b{color:var(--pine);}
+.co-k{display:inline-block;margin-bottom:12px;font-size:12.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);}
+.co-c.me{background:var(--pine);display:flex;flex-direction:column;justify-content:flex-start;}
+.co-c.me .co-k{color:var(--ember);} .co-c.me p{font-family:var(--display);font-size:clamp(21px,2.2vw,26px);line-height:1.3;color:#fff;} .co-c.me b{color:#FFCFA3;font-weight:400;}
 /* elodie coach */
 .cq{font-family:var(--display);font-size:clamp(28px,3.2vw,40px);line-height:1.18!important;color:var(--pine);margin:10px 0 24px!important;}
 .cq em{font-style:normal;color:var(--ember-ink);}
@@ -413,7 +442,7 @@ CSS_F = '''<style>
 .fqw .faq{margin-top:0;max-width:none;}
 .fq-a p b{color:var(--pine);}
 @media (max-width:1020px){
-  .fh > .wrap:first-child,.aq,.tr,.oc,.bx,.fqw,.fit,.pks{grid-template-columns:1fr;}
+  .fh > .wrap:first-child,.aq,.tr,.oc,.bx,.fqw,.fit,.pks,.pm-w,.co-g{grid-template-columns:1fr;} .pm-w{gap:36px;} .pm-h{position:static;}
   .fh > .wrap:first-child{padding-block:64px 36px;gap:48px;} .fh-st{left:-16px;} .fh-st.s2{right:-16px;}
   .fh-s{grid-template-columns:1fr;gap:18px;}
   .mds{grid-template-columns:1fr;}
@@ -422,7 +451,7 @@ CSS_F = '''<style>
   .fqw > div:first-child{position:static;}
 }
 @media (max-width:560px){
-  .tr-l,.wds,.stp{grid-template-columns:1fr;} .fit-c,.pk{padding:26px 22px;} .md{padding:24px 20px;}
+  .tr-l,.wds,.stp{grid-template-columns:1fr;} .pm-l li{grid-template-columns:44px minmax(0,1fr);gap:12px;} .pm-n{font-size:26px;} .fit-c,.pk{padding:26px 22px;} .md{padding:24px 20px;}
   .fh-v{width:min(100%,260px);}
 }
 </style>
