@@ -1,0 +1,110 @@
+{
+ "posts": [
+  {
+   "id": 3225008,
+   "name": " L'imprévu : ton pire ennemi ou ton meilleur allié ?",
+   "dateTs": 1792360800,
+   "description": "Une conférence annulée à la dernière minute. Et une leçon d’agilité managériale que je n’avais pas prévue.",
+   "image": "https://d1yei2z3i6k35z.cloudfront.net/13381158/6ad620f06bea40.54227757_istockphoto-614994868-612x6121_1.43_1.png",
+   "path": "/leblogose/agilite-manageriale-accepter-ce-qui-ne-depend-pas-de-toi",
+   "categories": [
+    {
+     "name": "Posture et légitimité",
+     "path": "posture-et-legitimite"
+    }
+   ]
+  },
+  {
+   "id": 3208801,
+   "name": " Combien de doliprane tu prescris à ton équipe chaque semaine ?",
+   "dateTs": 1791129600,
+   "description": "Tu prescris du doliprane à ton équipe sans le savoir. On traite ce qu'on voit, pas l'origine du problème. Et si tu posais enfin le bon diagnostic ?",
+   "image": "https://d1yei2z3i6k35z.cloudfront.net/13381158/6ac270eb247e44.12840325_istockphoto-1199617301-612x612_1.43_1.png",
+   "path": "/leblogose/le-pansement-managerial",
+   "categories": [
+    {
+     "name": "Manager son équipe",
+     "path": "manager-son-equipe"
+    }
+   ]
+  },
+  {
+   "id": 3202847,
+   "name": "Ce que 82 000 abonnés et des sachets de bonbons m'ont appris sur le management",
+   "dateTs": 1790627950,
+   "description": "Ton N+1 voit les résultats. Mais pas tout ce que tu fais pour y arriver. Voici pourquoi rendre ton travail visible change tout.",
+   "image": "https://d1yei2z3i6k35z.cloudfront.net/13381158/6abad170e99426.65238840_istockphoto-519527618-612x6121_1.43_1.png",
+   "path": "/leblogose/sachet-bonbons-management",
+   "categories": [
+    {
+     "name": "Déléguer et motiver",
+     "path": "deleguer-et-motiver"
+    }
+   ]
+  },
+  {
+   "id": 3202578,
+   "name": "La Gen Z : l'éternel débat. Et si on changeait enfin d'angle ?",
+   "dateTs": 1790607217,
+   "description": "Chaque génération a critiqué la suivante, de la Silent Generation à la Gen Z. Et si le vrai sujet était notre façon de les manager ?",
+   "image": "https://d1yei2z3i6k35z.cloudfront.net/13381158/6aba7fc044d415.22895213_istockphoto-1398289137-612x612_1.43_1.png",
+   "path": "/leblogose/manager-la-gen-z",
+   "categories": [
+    {
+     "name": "Manager son équipe",
+     "path": "manager-son-equipe"
+    }
+   ]
+  },
+  {
+   "id": 3202460,
+   "name": "« Ils ont décidé que... » : le réflexe toxique du manager",
+   "dateTs": 1789941600,
+   "description": "« Ils ont décidé que... » : cette phrase te coûte ta crédibilité. Voici comment annoncer une décision difficile à ton équipe, sans te dissocier.",
+   "image": "https://d1yei2z3i6k35z.cloudfront.net/13381158/6aba824e934d94.56212517_istockphoto-164486184-612x612_1.43_1.png",
+   "path": "/leblogose/annoncer-une-decision-difficile",
+   "categories": [
+    {
+     "name": "Posture et légitimité",
+     "path": "posture-et-legitimite"
+    },
+    {
+     "name": "Gestion de conflit",
+     "path": "gestion-de-conflit"
+    }
+   ]
+  },
+  {
+   "id": 3202588,
+   "name": "Tu te souviens de la dernière fois que tu as déjeuné avec ton équipe ?",
+   "dateTs": 1789336800,
+   "description": "Tu es devenu manager et tes collaborateurs déjeunent sans toi ? Normal. Voici pourquoi cette solitude existe et comment créer une vraie proximité.",
+   "image": "https://d1yei2z3i6k35z.cloudfront.net/13381158/6aba83da47d009.35000928_istockphoto-1160000102-612x612_1.43_1.png",
+   "path": "/leblogose/solitude-du-manager",
+   "categories": [
+    {
+     "name": "Posture et légitimité",
+     "path": "posture-et-legitimite"
+    }
+   ]
+  },
+  {
+   "id": 3202999,
+   "name": "Piña Colada ou Sex on the Beach ? Choisis ton cocktail et je te dis quel manager tu es",
+   "dateTs": 1788127200,
+   "description": "Participatif, directif, persuasif ou délégatif : ton style révélé par ton cocktail préféré.",
+   "image": "https://d1yei2z3i6k35z.cloudfront.net/13381158/6abad8e9cb6e71.02061280_istockphoto-2160798335-612x612_1.43_1.png",
+   "path": "/leblogose/cocktail-style-management",
+   "categories": [
+    {
+     "name": "Manager son équipe",
+     "path": "manager-son-equipe"
+    }
+   ]
+  }
+ ],
+ "pagination": {
+  "total": 1,
+  "current": 1
+ }
+}
