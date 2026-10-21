@@ -12,3 +12,5 @@ Pages refaites avec les codes du Winter Pack (couleurs, polices, finitions), san
 - `images/` : photos d'Élodie recadrées et visuels des articles du blog.
 
 Rien n'est en ligne : le site actuel reste sur Systeme.io.
+
+Animations : `source/anim.py` ajoute à chaque page les apparitions au défilement, les compteurs de chiffres, les surlignages qui se tracent et quelques effets au survol. Elles sont désactivées pour les visiteurs qui ont demandé moins d'animations sur leur appareil. `source/build_site.sh` régénère toutes les pages d'un coup.

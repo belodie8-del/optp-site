@@ -909,7 +909,64 @@ main > #newsletter{padding-top:clamp(24px,3vw,40px);}
     em.style.display = n ? 'none' : 'block'; }
   bs.forEach(function(b){ b.addEventListener('click', function(){ bs.forEach(function(x){ x.setAttribute('aria-pressed', x===b ? 'true':'false'); }); apply(b.getAttribute('data-f')); }); });
   apply('all');
-})();</script><svg width="0" height="0" style="position:absolute;">
+})();</script><style id="oa-anim">
+@media (prefers-reduced-motion: no-preference){
+  html.oa .oa-r{opacity:0;translate:0 26px;transition:opacity .7s ease var(--oa-d,0ms),translate .8s cubic-bezier(.2,.8,.2,1) var(--oa-d,0ms);}
+  html.oa .oa-r.oa-in{opacity:1;translate:0 0;}
+  html.oa mark.oa-m{box-shadow:none!important;background-image:linear-gradient(rgba(255,145,77,.32),rgba(255,145,77,.32));background-repeat:no-repeat;background-position:0 92%;background-size:0 .4em;transition:background-size 1s cubic-bezier(.3,.7,.2,1) .35s;}
+  html.oa mark.oa-m.oa-on{background-size:100% .4em;}
+  .h2o h1 em path{stroke-dasharray:420;stroke-dashoffset:420;animation:oa-draw 1.3s cubic-bezier(.4,.1,.2,1) .7s forwards;}
+  @keyframes oa-draw{to{stroke-dashoffset:0;}}
+  .arch img,.hb-p,.hc-r img,.ch-v img,.fh-v .arch img{animation:oa-zoom 1.6s cubic-bezier(.2,.8,.2,1) both;}
+  @keyframes oa-zoom{from{scale:1.08;opacity:.4;}to{scale:1;opacity:1;}}
+  .tag,.hb-st,.fh-st,.ch-bub,.kch-bub,.hb-badge{animation:oa-float 5s ease-in-out 1.2s infinite;}
+  .hb-st.r,.fh-st.s2{animation-delay:2.4s;}
+  @keyframes oa-float{0%,100%{translate:0 0;}50%{translate:0 -8px;}}
+  .btn > span[aria-hidden="true"]{display:inline-block;transition:translate .25s ease;}
+  .btn:hover > span[aria-hidden="true"]{translate:5px 0;}
+  .sp-logos li img{transition:opacity .3s,scale .3s;} .sp-logos li img:hover{opacity:1;scale:1.06;}
+  .fq[open] .fq-a,.md-dt[open] > ul,.md-dt[open] > .md-x{animation:oa-open .45s ease both;}
+  @keyframes oa-open{from{opacity:0;translate:0 -8px;}to{opacity:1;translate:0 0;}}
+  .rdvbtn.big{animation:oa-pulse 3.2s ease-in-out 2s infinite;}
+  @keyframes oa-pulse{0%,100%{box-shadow:0 16px 28px -16px rgba(180,86,31,.9);}50%{box-shadow:0 16px 28px -16px rgba(180,86,31,.9),0 0 0 8px rgba(255,145,77,.18);}}
+}
+</style>
+<script id="oa-anim-js">
+(function(){
+  if (!('IntersectionObserver' in window) || !window.matchMedia || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var root = document.documentElement; root.classList.add('oa');
+  var sel = ["main h1", "main .lede", "main .ctas", "main .hand", "main .h2", "main .sub", ".pg-q", ".mo-me", ".sp-logos li", ".sp-stats li", ".h2o-s li", ".fh-s li", ".bub", ".mv3-l li", ".fit-c", ".aq-a", ".aq-b", ".why2", ".obj", ".oc", ".ao", ".aud-n", ".trk", ".eq-op", ".md", ".mdg-t", ".kit2", ".kit2-l li", ".mods li", ".pk", ".stp li", ".tr-l li", ".wd", ".wd-end", ".bx", ".fm-quote", ".tms", ".ms", ".fq-big", ".ab-v", ".ab-t > *", ".why2-a", ".why2-b", ".co-p", ".cq", ".co-c", ".nl", ".nlb", ".pc2", ".bc", ".ft", ".flt", ".as", ".art > *", ".share", ".aut", ".kcf", ".kco2 > *", ".ksc-c", ".wq", ".wtags", ".fq", ".trk-k"];
+  var seen = [];
+  sel.forEach(function(s){ [].forEach.call(document.querySelectorAll(s), function(el){
+    if (seen.indexOf(el) > -1 || el.closest('header') || el.closest('footer')) return;
+    for (var p = el.parentElement; p; p = p.parentElement){ if (seen.indexOf(p) > -1 && p.classList.contains('oa-r') && !p.matches('main .wrap, section')) { if (!el.matches('.trk, .md, .pc2, .bc, li, .ao, .ksc-c, .co-c, .fit-c, .wd, .fq')) return; } }
+    seen.push(el); el.classList.add('oa-r');
+  }); });
+  seen.forEach(function(el){
+    var sib = [].filter.call(el.parentElement.children, function(c){ return c.classList.contains('oa-r'); });
+    el.style.setProperty('--oa-d', Math.min(sib.indexOf(el), 6) * 90 + 'ms');
+  });
+  var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('oa-in'); io.unobserve(e.target); } }); }, {rootMargin:'0px 0px -8% 0px', threshold:0.08});
+  seen.forEach(function(el){ io.observe(el); });
+  var marks = [].slice.call(document.querySelectorAll('main mark'));
+  var mo = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('oa-on'); mo.unobserve(e.target); } }); }, {threshold:0.6});
+  marks.forEach(function(m){ m.classList.add('oa-m'); mo.observe(m); });
+  function count(el){
+    var txt = el.textContent, m = txt.match(/^(\+?)(\d(?:[\d\u00a0\u202f ]*\d)?)(.*)$/);
+    if (!m || /^\s*\//.test(m[3])) return;
+    var n = parseInt(m[2].replace(/[^\d]/g, ''), 10); if (!(n >= 2)) return;
+    var spaced = /[\u00a0\u202f ]\d/.test(m[2]), t0 = null, dur = 1400;
+    function fmt(v){ var s = String(v); return spaced ? s.replace(/\B(?=(\d{3})+(?!\d))/g, '\u00a0') : s; }
+    function step(t){ if (!t0) t0 = t; var k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+      el.textContent = m[1] + fmt(Math.round(n * e)) + m[3]; if (k < 1) requestAnimationFrame(step); else el.textContent = txt; }
+    el.textContent = m[1] + fmt(0) + m[3]; requestAnimationFrame(step);
+  }
+  var nums = [].slice.call(document.querySelectorAll('.sp-stats b, .h2o-s b, .fh-s b'));
+  var co = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting){ count(e.target); co.unobserve(e.target); } }); }, {threshold:0.6});
+  nums.forEach(function(n){ co.observe(n); });
+})();
+</script>
+<svg width="0" height="0" style="position:absolute;">
   <defs>
     <symbol id="optplogo" viewBox="0 0 287 90">
 <path d="M49.7391 71.4427C49.6149 60.064 49.7076 48.4227 49.722 37.0247L49.7311 27.2639C49.7275 24.3953 49.7147 21.4814 49.4203 18.6169C49.239 16.8535 48.8441 14.7399 47.5972 13.3897C46.8598 12.5914 44.5492 11.7282 45.2234 10.5007C45.6508 10.1819 48.4176 10.3228 49.1674 10.324L56.4145 10.325L66.0097 10.3499C78.4922 10.3312 98.4702 9.86865 96.3333 28.0069C95.442 35.5765 88.1046 40.4104 81.2345 41.9217C80.2838 42.1309 79.2375 42.2775 78.3251 42.5209L78.452 42.5421C80.5406 42.8765 82.7601 42.8606 84.8387 43.2251C90.9697 44.3004 98.0634 47.1544 101.751 52.4359C108.739 62.4406 105.373 76.3823 95.5397 83.0672C84.0733 90.8628 70.7057 89.9534 57.6703 89.9655L49.6216 89.9726C48.8809 89.9726 45.9496 90.1186 45.1635 89.7359C45.042 89.6765 45.0472 89.177 45.1241 89.1095C45.5413 88.185 47.2485 87.5637 47.8522 86.7832C49.3454 84.8527 49.7476 80.1004 49.6989 77.7741C50.2873 77.8184 51.8666 77.7429 52.5474 77.7288L56.4739 66.781C57.1547 64.8978 57.8365 63.0126 58.5253 61.1324C58.6612 60.7608 58.6723 60.2563 58.2876 60.0519C57.4276 60.2231 56.6653 62.6521 56.2544 63.4164C54.8032 66.1144 52.4185 69.915 49.7391 71.4427ZM59.1064 44.0301C59.2353 45.1967 59.1728 46.5987 59.1728 47.7848L59.1658 54.2048L59.1678 74.2443C59.1708 77.5233 59.0369 80.8506 59.4306 84.0954C60.0037 88.8074 63.6814 88.3401 67.3169 88.3321C70.1981 88.325 73.0128 88.3744 75.8699 87.9504C80.1821 87.4106 85.5386 85.5445 88.7854 82.5747C92.7481 78.9403 94.6928 73.9936 94.9274 68.6421C95.2054 62.2996 93.9939 55.8665 89.6253 50.9939C85.5819 46.4834 79.2375 44.4655 73.324 44.1647C70.04 43.9977 66.5324 44.1341 63.2212 44.041C61.8687 44.003 60.482 44.1066 59.1064 44.0301ZM59.0731 42.3816C66.617 41.8124 75.605 44.0999 81.7793 38.2728C87.4198 32.6268 87.6665 22.6438 82.0079 16.9068C76.2606 11.0795 66.6674 12.0064 59.0631 12.063C59.2242 13.0861 59.1618 15.8834 59.1628 17.068L59.1617 26.5389V36.7544C59.1628 38.2687 59.2473 41.0102 59.0731 42.3816Z" fill="#0F868A"/>
