@@ -707,6 +707,21 @@ footer .wrap > span{line-height:1.6;}
 .aud-f .sub{margin:0!important;max-width:58ch;}
 .aud-f .btn{margin:0!important;}
 .aud-dark .aud-f{border-top-color:rgba(255,255,255,.22);}
+/* audit: the two real options */
+.aud-o{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;}
+.ao{display:flex;flex-direction:column;gap:8px;padding:26px 26px 24px;border-radius:24px;text-decoration:none;color:var(--ink);border-left:6px solid var(--ember);background:var(--peach);transition:transform .2s,box-shadow .2s;}
+.ao.co{border-left-color:var(--teal);background:var(--mint);}
+.ao:hover{transform:translateY(-4px);box-shadow:0 22px 36px -28px rgba(8,80,85,.7);}
+.ao:focus-visible{outline:3px solid var(--ember);outline-offset:4px;}
+.ao-i{font-size:24px;line-height:1;color:var(--ember);} .ao.co .ao-i{color:var(--teal);}
+.ao-k{font-size:12.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--ember-ink);} .ao.co .ao-k{color:var(--teal);}
+.ao b{font-family:var(--display);font-weight:400;font-size:26px;line-height:1.15;color:var(--ink);}
+.ao-t{font-size:15.5px;line-height:1.55;color:var(--muted);} .ao-t strong{color:var(--ink);}
+.ao-c{margin-top:auto;padding-top:8px;font-weight:800;color:var(--ember-ink);} .ao.co .ao-c{color:var(--pine);}
+.aud-n{margin:28px 0 0;padding-top:24px;border-top:1.5px dashed rgba(8,80,85,.18);font-size:17px;line-height:1.6;color:var(--muted);} .aud-n b{color:var(--pine);}
+.aud-dark .aud-n{color:var(--on-pine-soft);border-top-color:rgba(255,255,255,.22);} .aud-dark .aud-n b{color:#fff;}
+@media (max-width:760px){.aud-o{grid-template-columns:1fr;}}
+@media (prefers-reduced-motion:reduce){.ao{transition:none;}}
 /* formations equation: the two parcours side by side, "=" then the complete one across */
 .eq{grid-template-columns:minmax(0,1fr) auto minmax(0,1fr)!important;align-items:stretch!important;}
 .eq-eq{grid-column:1/-1;justify-self:center;}

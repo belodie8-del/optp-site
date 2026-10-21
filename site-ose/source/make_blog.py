@@ -134,7 +134,7 @@ LIST = (nav('blog') + '<main id="top">'
   '<span class="ft-t"><span class="bc-m">' + chips(posts[0]) + '<span class="bc-d">' + posts[0]['date'] + '</span></span><span class="ft-h">' + posts[0]['name'] + '</span>'
   '<span class="ft-x">' + posts[0]['description'] + '</span><span class="ft-r">Lire l’article →</span></span></a>'
   '<div class="bg3">' + ''.join(card(p, ' data-first' if i == 0 else '') for i, p in enumerate(posts)) + '</div><p class="empty">Pas encore d’article dans ce thème.</p>'
-  '<div class="as"><p>Et toi, tu en es où dans ton management ?<small>10 minutes, des vraies questions, et un premier plan d’action. C’est offert.</small></p><a class="btn rdvbtn" href="' + AUDIT + '">Faire l’audit offert ' + ARR + '</a></div>'
+  '<div class="as"><p>Et toi, tu en es où dans ton management ?<small>3 minutes en version express, 10 minutes pour l’audit complet. Des vraies questions, et un premier plan d’action. C’est offert.</small></p><a class="btn rdvbtn" href="' + AUDIT + '">Faire l’audit offert ' + ARR + '</a></div>'
   '</div></section>' + NEWSBOX.replace('Tu as aimé cet article ?', 'La newsletter').replace('Reçois le prochain chaque lundi', 'Le Coup de Boost Managérial') + '</main>' + FOOT +
   '''<script>(function(){
   var bs=[].slice.call(document.querySelectorAll('.flt button')), cards=[].slice.call(document.querySelectorAll('.bg3 .bc')), ft=document.querySelector('.ft'), em=document.querySelector('.empty');

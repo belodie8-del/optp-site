@@ -51,6 +51,8 @@ AVIS = [
  ("J’avais l’habitude de manager tout le monde de la même façon pendant des années. La matrice me permet aujourd’hui de savoir manager toutes les personnalités de mon équipe ! Les vidéos ne sont pas de la grande théorie déconnectée de la réalité, bien au contraire. Merci Élodie pour ces prises de conscience.", "Mégane J.", "Manager d’agence", False),
  ("J’ai suivi la formation digitale et j’ai été très agréablement surpris par la qualité du contenu ! Des outils concrets pour évoluer dans le domaine du management ! Merci à Élodie pour ces précieux conseils !", "Adrien S.", "Responsable Commercial", True),
 ]
+POST_URLS = ['https://oseprendretaplace.systeme.io/leblogose/sachet-bonbons-management', 'https://oseprendretaplace.systeme.io/leblogose/annoncer-une-decision-difficile',
+             'https://oseprendretaplace.systeme.io/leblogose/solitude-du-manager', 'https://oseprendretaplace.systeme.io/leblogose/manager-la-gen-z']
 POSTS = ['Ce que 82 000 abonnés et des sachets de bonbons m’ont appris sur le management',
          '« Ils ont décidé que... » : le réflexe toxique du manager',
          'Tu te souviens de la dernière fois que tu as déjeuné avec ton équipe ?',

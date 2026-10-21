@@ -29,13 +29,13 @@ BODY_A = '''<header class="top hx"><div class="wrap">
 <section class="room mint" id="audit"><div class="wrap">
   <div class="aud">
     <span class="hand">Audit offert</span><h2 class="h2 aud-h">Mon outil préféré (offert) pour transformer ton management</h2>
-    <ol class="aud-s">
-      <li><span>1</span><div><b>10 questions</b>Ton quotidien de manager</div></li>
-      <li><span>2</span><div><b>21 questions</b>Ce que ça donne sur le terrain</div></li>
-      <li><span>3</span><div><b>Ton rapport offert</b>Ton style dominant, tes pièges, tes forces et ton plan d’action pour les 3 prochaines semaines</div></li>
-    </ol>
-    <div class="aud-f"><p class="sub"><b>10 minutes. Des vraies questions. Un vrai diagnostic.</b><br>Et un premier plan d’action pour savoir exactement quoi changer dans ton management, dès maintenant.</p>
-      <a class="btn rdvbtn" href="''' + AUDIT + '''">Commencer l’audit ''' + ARR + '''</a></div>
+    <div class="aud-o">
+      <a class="ao ex" href="''' + AUDIT + '''"><span class="ao-i" aria-hidden="true">⚡</span><span class="ao-k">Version express · 3 min</span><b>Mon profil en 3 minutes</b>
+        <span class="ao-t">10 questions pour révéler ton <strong>style dominant</strong> et ton <strong>point de vigilance</strong>.</span><span class="ao-c">Commencer l’audit express →</span></a>
+      <a class="ao co" href="''' + AUDIT + '''"><span class="ao-i" aria-hidden="true">✦</span><span class="ao-k">Audit complet · 10 min</span><b>Mon analyse détaillée</b>
+        <span class="ao-t">31 questions : radar de maturité, forces, axes, et ton <strong>plan d’action sur 3 semaines</strong>.</span><span class="ao-c">Commencer l’audit complet →</span></a>
+    </div>
+    <p class="aud-n"><b>Des vraies questions. Un vrai diagnostic.</b> Et un premier plan d’action pour savoir exactement quoi changer dans ton management, dès maintenant.</p>
   </div>
 </div></section>
 
@@ -107,7 +107,7 @@ BODY_A = '''<header class="top hx"><div class="wrap">
   <div class="bg-h"><div><span class="hand">Le blog « OSE »</span><h2 class="h2">Le management, version terrain.</h2>
     <p class="sub">Des conseils, des outils et du concret pour t’aider à décoder les situations du quotidien et avancer dans ton rôle de manager. Sans jargon, sans grande théorie.</p></div>
     <a class="btn soft" href="''' + BLOG + '''">Découvrir tous les articles ''' + ARR + '''</a></div>
-  <div class="posts2">''' + ''.join('<a class="pc2" href="%s"><span class="pc2-i"><img src="%s" alt="" width="640" height="480" loading="lazy"></span><span class="pc2-t"><span class="pc2-k">Article</span><span class="pc2-h">%s</span><span class="pc2-m">Lire l’article →</span></span></a>' % (BLOG, POST_IMG[i], p) for i, p in enumerate(POSTS)) + '''</div>
+  <div class="posts2">''' + ''.join('<a class="pc2" href="%s"><span class="pc2-i"><img src="%s" alt="" width="640" height="480" loading="lazy"></span><span class="pc2-t"><span class="pc2-k">Article</span><span class="pc2-h">%s</span><span class="pc2-m">Lire l’article →</span></span></a>' % (POST_URLS[i], POST_IMG[i], p) for i, p in enumerate(POSTS)) + '''</div>
 </div></section>
 
 <section class="fin2"><div class="wrap">

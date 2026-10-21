@@ -51,6 +51,8 @@ AVIS = [
  ("J’avais l’habitude de manager tout le monde de la même façon pendant des années. La matrice me permet aujourd’hui de savoir manager toutes les personnalités de mon équipe ! Les vidéos ne sont pas de la grande théorie déconnectée de la réalité, bien au contraire. Merci Élodie pour ces prises de conscience.", "Mégane J.", "Manager d’agence", False),
  ("J’ai suivi la formation digitale et j’ai été très agréablement surpris par la qualité du contenu ! Des outils concrets pour évoluer dans le domaine du management ! Merci à Élodie pour ces précieux conseils !", "Adrien S.", "Responsable Commercial", True),
 ]
+POST_URLS = ['https://oseprendretaplace.systeme.io/leblogose/sachet-bonbons-management', 'https://oseprendretaplace.systeme.io/leblogose/annoncer-une-decision-difficile',
+             'https://oseprendretaplace.systeme.io/leblogose/solitude-du-manager', 'https://oseprendretaplace.systeme.io/leblogose/manager-la-gen-z']
 POSTS = ['Ce que 82 000 abonnés et des sachets de bonbons m’ont appris sur le management',
          '« Ils ont décidé que... » : le réflexe toxique du manager',
          'Tu te souviens de la dernière fois que tu as déjeuné avec ton équipe ?',
@@ -98,13 +100,13 @@ BODY = '''<header class="top hx"><div class="wrap">
 <section class="room mint" id="audit"><div class="wrap">
   <div class="aud">
     <span class="hand">Audit offert</span><h2 class="h2 aud-h">Mon outil préféré (offert) pour transformer ton management</h2>
-    <ol class="aud-s">
-      <li><span>1</span><div><b>10 questions</b>Ton quotidien de manager</div></li>
-      <li><span>2</span><div><b>21 questions</b>Ce que ça donne sur le terrain</div></li>
-      <li><span>3</span><div><b>Ton rapport offert</b>Ton style dominant, tes pièges, tes forces et ton plan d’action pour les 3 prochaines semaines</div></li>
-    </ol>
-    <div class="aud-f"><p class="sub"><b>10 minutes. Des vraies questions. Un vrai diagnostic.</b><br>Et un premier plan d’action pour savoir exactement quoi changer dans ton management, dès maintenant.</p>
-      <a class="btn rdvbtn" href="''' + AUDIT + '''">Commencer l’audit ''' + ARR + '''</a></div>
+    <div class="aud-o">
+      <a class="ao ex" href="''' + AUDIT + '''"><span class="ao-i" aria-hidden="true">⚡</span><span class="ao-k">Version express · 3 min</span><b>Mon profil en 3 minutes</b>
+        <span class="ao-t">10 questions pour révéler ton <strong>style dominant</strong> et ton <strong>point de vigilance</strong>.</span><span class="ao-c">Commencer l’audit express →</span></a>
+      <a class="ao co" href="''' + AUDIT + '''"><span class="ao-i" aria-hidden="true">✦</span><span class="ao-k">Audit complet · 10 min</span><b>Mon analyse détaillée</b>
+        <span class="ao-t">31 questions : radar de maturité, forces, axes, et ton <strong>plan d’action sur 3 semaines</strong>.</span><span class="ao-c">Commencer l’audit complet →</span></a>
+    </div>
+    <p class="aud-n"><b>Des vraies questions. Un vrai diagnostic.</b> Et un premier plan d’action pour savoir exactement quoi changer dans ton management, dès maintenant.</p>
   </div>
 </div></section>
 
@@ -176,7 +178,7 @@ BODY = '''<header class="top hx"><div class="wrap">
   <div class="bg-h"><div><span class="hand">Le blog « OSE »</span><h2 class="h2">Le management, version terrain.</h2>
     <p class="sub">Des conseils, des outils et du concret pour t’aider à décoder les situations du quotidien et avancer dans ton rôle de manager. Sans jargon, sans grande théorie.</p></div>
     <a class="btn soft" href="''' + BLOG + '''">Découvrir tous les articles ''' + ARR + '''</a></div>
-  <div class="posts2">''' + ''.join('<a class="pc2" href="%s"><span class="pc2-i"><img src="%s" alt="" width="640" height="480" loading="lazy"></span><span class="pc2-t"><span class="pc2-k">Article</span><span class="pc2-h">%s</span><span class="pc2-m">Lire l’article →</span></span></a>' % (BLOG, POST_IMG[i], p) for i, p in enumerate(POSTS)) + '''</div>
+  <div class="posts2">''' + ''.join('<a class="pc2" href="%s"><span class="pc2-i"><img src="%s" alt="" width="640" height="480" loading="lazy"></span><span class="pc2-t"><span class="pc2-k">Article</span><span class="pc2-h">%s</span><span class="pc2-m">Lire l’article →</span></span></a>' % (POST_URLS[i], POST_IMG[i], p) for i, p in enumerate(POSTS)) + '''</div>
 </div></section>
 
 <section class="fin2"><div class="wrap">
@@ -341,6 +343,21 @@ footer .wrap > span{line-height:1.6;}
 .aud-f .sub{margin:0!important;max-width:58ch;}
 .aud-f .btn{margin:0!important;}
 .aud-dark .aud-f{border-top-color:rgba(255,255,255,.22);}
+/* audit: the two real options */
+.aud-o{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;}
+.ao{display:flex;flex-direction:column;gap:8px;padding:26px 26px 24px;border-radius:24px;text-decoration:none;color:var(--ink);border-left:6px solid var(--ember);background:var(--peach);transition:transform .2s,box-shadow .2s;}
+.ao.co{border-left-color:var(--teal);background:var(--mint);}
+.ao:hover{transform:translateY(-4px);box-shadow:0 22px 36px -28px rgba(8,80,85,.7);}
+.ao:focus-visible{outline:3px solid var(--ember);outline-offset:4px;}
+.ao-i{font-size:24px;line-height:1;color:var(--ember);} .ao.co .ao-i{color:var(--teal);}
+.ao-k{font-size:12.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--ember-ink);} .ao.co .ao-k{color:var(--teal);}
+.ao b{font-family:var(--display);font-weight:400;font-size:26px;line-height:1.15;color:var(--ink);}
+.ao-t{font-size:15.5px;line-height:1.55;color:var(--muted);} .ao-t strong{color:var(--ink);}
+.ao-c{margin-top:auto;padding-top:8px;font-weight:800;color:var(--ember-ink);} .ao.co .ao-c{color:var(--pine);}
+.aud-n{margin:28px 0 0;padding-top:24px;border-top:1.5px dashed rgba(8,80,85,.18);font-size:17px;line-height:1.6;color:var(--muted);} .aud-n b{color:var(--pine);}
+.aud-dark .aud-n{color:var(--on-pine-soft);border-top-color:rgba(255,255,255,.22);} .aud-dark .aud-n b{color:#fff;}
+@media (max-width:760px){.aud-o{grid-template-columns:1fr;}}
+@media (prefers-reduced-motion:reduce){.ao{transition:none;}}
 /* formations equation: the two parcours side by side, "=" then the complete one across */
 .eq{grid-template-columns:minmax(0,1fr) auto minmax(0,1fr)!important;align-items:stretch!important;}
 .eq-eq{grid-column:1/-1;justify-self:center;}

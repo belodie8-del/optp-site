@@ -48,7 +48,7 @@ BODY = '''<header class="top hx"><div class="wrap">
 <section class="room ksc" id="raccourcis"><div class="wrap">
   <div class="ctr"><span class="hand">En attendant ma réponse</span><h2 class="h2">Et si tu commençais par là ?</h2></div>
   <div class="ksc-g">
-    <a class="ksc-c" href="''' + AUDIT + '''"><span class="ksc-n">01</span><b>Fais l’audit offert</b><span>10 minutes, des vraies questions, et un premier plan d’action pour ton management.</span><em>Commencer l’audit →</em></a>
+    <a class="ksc-c" href="''' + AUDIT + '''"><span class="ksc-n">01</span><b>Fais l’audit offert</b><span>3 minutes en version express ou 10 minutes pour l’audit complet, avec ton plan d’action sur 3 semaines.</span><em>Commencer l’audit →</em></a>
     <a class="ksc-c" href="''' + FORM + '''"><span class="ksc-n">02</span><b>Découvre les formations</b><span>Ose Prendre Ta Place, Incarne ta posture ou Booste ton équipe.</span><em>Voir les formations →</em></a>
     <a class="ksc-c" href="''' + BLOG + '''"><span class="ksc-n">03</span><b>Lis le blog « OSE »</b><span>Le management, version terrain. Sans jargon, sans grande théorie.</span><em>Lire les articles →</em></a>
   </div>
