@@ -125,11 +125,11 @@ BODY = '''<header class="top hx"><div class="wrap">
 <div class="wrap"><ul class="fh-s"><li><b>6 séances</b><span>de coaching individuel avec moi, 1 h en visio à chaque fois</span></li><li><b>30 min</b><span>par jour : c’est le temps à prévoir</span></li><li><b>À vie</b><span>l’accès à la plateforme, mises à jour incluses</span></li></ul></div></section>
 
 ''' + P.BAND + '''
-<section class="room pm" id="moment"><div class="wrap pm-w">
-  <div class="pm-h"><span class="hand">On fait le point ?</span><h2 class="h2">Pourquoi c’est le moment</h2>
-    <p class="sub">Je ne vais pas te convaincre avec des arguments bateau, parce que tu les vis au quotidien :</p>
-    <a class="btn rdvbtn" href="''' + RDV + '''" target="_blank" rel="noopener">On en parle ? ''' + ARR + '''</a></div>
-  <ol class="pm-l">''' + ''.join('<li><span class="pm-n">%02d</span><p><span class="pm-pq">Parce que</span> %s</p></li>' % (i + 1, t) for i, t in enumerate(WHY_NOW)) + '''</ol>
+<section class="room mv3" id="moment"><div class="wrap">
+  <div class="ctr"><span class="hand">On fait le point ?</span><h2 class="h2 mv3-h">5 raisons qui font que c’est <em>LE</em> moment</h2>
+    <p class="sub">Je ne vais pas te convaincre avec des arguments bateau, parce que tu les vis au quotidien :</p></div>
+  <ol class="mv3-l">''' + ''.join('<li class="%s"><span class="mv3-n" aria-hidden="true">%02d</span><p><span class="mv3-p">Parce que</span> %s</p></li>' % ('r' if i % 2 else 'l', i + 1, t) for i, t in enumerate(WHY_NOW)) + '''</ol>
+  <div class="ctarow center"><a class="btn rdvbtn" href="''' + RDV + '''" target="_blank" rel="noopener">On en parle ? ''' + ARR + '''</a></div>
 </div></section>
 
 <section class="room mint" id="pour-toi"><div class="wrap">
@@ -280,19 +280,19 @@ CSS_F = '''<style>
 .fh-s{list-style:none;margin:0;padding:34px 0 56px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;border-top:1.5px dashed rgba(8,80,85,.2);position:relative;}
 .fh-s b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(28px,3vw,38px);line-height:1;color:var(--ember-ink);}
 .fh-s span{display:block;margin-top:6px;font-size:15px;font-weight:700;color:var(--muted);max-width:30ch;}
-/* pourquoi c'est le moment: pine, numbered statements */
-.pm{background:var(--pine);color:#fff;}
-.pm-w{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:72px;align-items:start;}
-.pm-h{position:sticky;top:120px;}
-.pm .hand{color:var(--ember);} .pm .h2{color:#fff;} .pm .sub{color:var(--on-pine-soft);}
-.pm-h .btn{margin-top:18px;}
-.pm-l{list-style:none;margin:0;padding:0;counter-reset:pm;}
-.pm-l li{display:grid;grid-template-columns:64px minmax(0,1fr);gap:18px;align-items:baseline;padding:26px 0;border-bottom:1.5px solid rgba(255,255,255,.14);}
-.pm-l li:first-child{border-top:1.5px solid rgba(255,255,255,.14);}
-.pm-n{font-family:var(--display);font-size:34px;line-height:1;color:var(--ember);}
-.pm-l p{margin:0;font-size:clamp(18px,1.8vw,21px);line-height:1.5;color:var(--on-pine-soft);}
-.pm-pq{display:block;font-family:var(--hand);font-weight:700;font-size:26px;line-height:1;color:#FFCFA3;margin-bottom:6px;}
-.pm-l mark{background:none;color:#fff;font-weight:800;box-shadow:inset 0 -.42em 0 rgba(255,145,77,.45);padding:0 2px;}
+/* pourquoi c'est le moment: big alternating sentences */
+.mv3-h{max-width:none!important;}
+.mv3-h em{font-style:normal;color:var(--ember-ink);}
+.mv3-l{list-style:none;margin:56px auto 0;padding:0;max-width:980px;display:grid;gap:26px;}
+.mv3-l li{position:relative;width:min(100%,640px);padding:30px 34px 30px 110px;border-radius:28px;background:var(--peach);}
+.mv3-l li.r{margin-left:auto;background:var(--mint);}
+.mv3-n{position:absolute;left:26px;top:22px;font-family:var(--display);font-size:62px;line-height:1;color:var(--ember);opacity:.85;}
+.mv3-l li.r .mv3-n{color:var(--teal);}
+.mv3-l p{margin:0;font-family:var(--display);font-size:clamp(19px,1.9vw,23px);line-height:1.4;color:var(--ink);}
+.mv3-l mark{background:none;color:var(--ink);font-weight:400;box-shadow:inset 0 -.45em 0 rgba(255,145,77,.38);padding:0 2px;}
+.mv3-p{display:block;font-family:var(--hand);font-weight:700;font-size:25px;line-height:1;color:var(--ember-ink);margin-bottom:8px;}
+.mv3-l li.r .mv3-p{color:var(--teal);}
+.mv3 .ctarow{margin-top:48px;}
 /* highlights in "pourquoi je peux te former" */
 .why2-b mark{background:none;color:var(--ink);font-weight:800;box-shadow:inset 0 -.45em 0 rgba(255,145,77,.38);padding:0 2px;}
 .why2-b b{color:var(--pine);}
@@ -442,7 +442,7 @@ CSS_F = '''<style>
 .fqw .faq{margin-top:0;max-width:none;}
 .fq-a p b{color:var(--pine);}
 @media (max-width:1020px){
-  .fh > .wrap:first-child,.aq,.tr,.oc,.bx,.fqw,.fit,.pks,.pm-w,.co-g{grid-template-columns:1fr;} .pm-w{gap:36px;} .pm-h{position:static;}
+  .fh > .wrap:first-child,.aq,.tr,.oc,.bx,.fqw,.fit,.pks,.co-g{grid-template-columns:1fr;}
   .fh > .wrap:first-child{padding-block:64px 36px;gap:48px;} .fh-st{left:-16px;} .fh-st.s2{right:-16px;}
   .fh-s{grid-template-columns:1fr;gap:18px;}
   .mds{grid-template-columns:1fr;}
@@ -451,7 +451,7 @@ CSS_F = '''<style>
   .fqw > div:first-child{position:static;}
 }
 @media (max-width:560px){
-  .tr-l,.wds,.stp{grid-template-columns:1fr;} .pm-l li{grid-template-columns:44px minmax(0,1fr);gap:12px;} .pm-n{font-size:26px;} .fit-c,.pk{padding:26px 22px;} .md{padding:24px 20px;}
+  .tr-l,.wds,.stp{grid-template-columns:1fr;} .mv3-l li{padding:76px 22px 24px;} .mv3-n{left:22px;top:18px;font-size:46px;} .fit-c,.pk{padding:26px 22px;} .md{padding:24px 20px;}
   .fh-v{width:min(100%,260px);}
 }
 </style>
