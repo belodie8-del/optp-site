@@ -281,17 +281,18 @@ CSS_F = '''<style>
 .fh-s b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(28px,3vw,38px);line-height:1;color:var(--ember-ink);}
 .fh-s span{display:block;margin-top:6px;font-size:15px;font-weight:700;color:var(--muted);max-width:30ch;}
 /* pourquoi c'est le moment: big alternating sentences */
+main > .room.mv3{padding-top:clamp(64px,7vw,96px);}
 .mv3-h{max-width:none!important;}
-.mv3-h em{font-style:normal;color:var(--ember-ink);}
+.mv3-h em{font-style:normal;color:var(--pine);text-decoration:underline;text-decoration-color:rgba(255,145,77,.55);text-decoration-thickness:5px;text-underline-offset:6px;}
 .mv3-l{list-style:none;margin:56px auto 0;padding:0;max-width:980px;display:grid;gap:26px;}
 .mv3-l li{position:relative;width:min(100%,640px);padding:30px 34px 30px 110px;border-radius:28px;background:var(--peach);}
 .mv3-l li.r{margin-left:auto;background:var(--mint);}
-.mv3-n{position:absolute;left:26px;top:22px;font-family:var(--display);font-size:62px;line-height:1;color:var(--ember);opacity:.85;}
-.mv3-l li.r .mv3-n{color:var(--teal);}
+.mv3-n{position:absolute;left:26px;top:22px;font-family:var(--display);font-size:62px;line-height:1;color:var(--ember);opacity:.55;}
+.mv3-l li.r .mv3-n{color:var(--teal);opacity:.7;}
 .mv3-l p{margin:0;font-family:var(--display);font-size:clamp(19px,1.9vw,23px);line-height:1.4;color:var(--ink);}
-.mv3-l mark{background:none;color:var(--ink);font-weight:400;box-shadow:inset 0 -.45em 0 rgba(255,145,77,.38);padding:0 2px;}
-.mv3-p{display:block;font-family:var(--hand);font-weight:700;font-size:25px;line-height:1;color:var(--ember-ink);margin-bottom:8px;}
-.mv3-l li.r .mv3-p{color:var(--teal);}
+.mv3-l mark{background:none;color:var(--pine);font-weight:400;box-shadow:inset 0 -.32em 0 rgba(255,145,77,.2);padding:0 2px;}
+.mv3-p{display:block;font-family:var(--hand);font-weight:700;font-size:25px;line-height:1;color:var(--teal);margin-bottom:8px;}
+
 .mv3 .ctarow{margin-top:48px;}
 /* highlights in "pourquoi je peux te former" */
 .why2-b mark{background:none;color:var(--ink);font-weight:800;box-shadow:inset 0 -.45em 0 rgba(255,145,77,.38);padding:0 2px;}
