@@ -15,6 +15,38 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Nunito+Sans:opsz,wght@6..12,400..800&family=Caveat:wght@600;700&display=swap">
 <style>
+.bonus{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;padding:20px;background:rgba(6,44,47,.58);opacity:0;transition:opacity .25s ease;}
+.bonus[hidden]{display:none;}
+.bonus.on{opacity:1;}
+.bn-card{position:relative;width:min(100%,540px);max-height:calc(100vh - 40px);overflow:auto;background:#fff;border-radius:28px;padding:56px 32px 30px;text-align:center;box-shadow:0 40px 80px -30px rgba(0,0,0,.6);transform:translateY(14px) scale(.98);transition:transform .3s cubic-bezier(.2,.8,.2,1);}
+.bonus.on .bn-card{transform:none;}
+.bn-card::before{content:"";position:absolute;inset:0 0 auto 0;height:10px;border-radius:28px 28px 0 0;background:repeating-linear-gradient(135deg,var(--ember) 0 14px,#FFD3B5 14px 28px);}
+.bn-x{position:absolute;top:18px;right:14px;width:42px;height:42px;border:0;border-radius:50%;background:var(--mint);color:var(--pine);display:grid;place-items:center;cursor:pointer;}
+.bn-x:hover{background:#cfeaec;}
+.bn-x svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;}
+.bn-x:focus-visible,.bn-card a:focus-visible{outline:3px solid var(--ember);outline-offset:3px;}
+.bn-gift{display:grid;place-items:center;width:78px;height:78px;margin:0 auto 6px;border-radius:50%;background:var(--peach2);font-size:40px;line-height:1;transform:rotate(-6deg);}
+.bn-hand{display:block;font-family:var(--hand);font-weight:700;font-size:30px;line-height:1;color:var(--ember-ink);}
+.bn-card h2{font-family:var(--display);font-weight:400;font-size:clamp(27px,5.4vw,34px);line-height:1.12;margin:8px 0 10px;color:var(--ink);}
+.bn-sub{margin:0 0 20px;color:var(--muted);font-size:17px;}
+.bn-list{list-style:none;margin:0 0 24px;padding:0;display:grid;gap:10px;text-align:left;}
+.bn-list li{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;border-radius:18px;background:var(--mint);color:var(--pine);font-size:16px;line-height:1.35;}
+.bn-list svg{flex:none;width:22px;height:22px;margin-top:1px;}
+.bn-list circle{fill:var(--teal);} .bn-list path{fill:none;stroke:#fff;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;}
+.bn-cta{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;}
+.bn-cta .btn{justify-content:center;text-align:center;}
+@media (max-width:520px){
+  .bn-card{padding:52px 20px 24px;border-radius:24px;}
+  .bn-cta{flex-direction:column;}
+  .bn-cta .btn{width:100%;}
+}
+html.bonus-open{overflow:hidden;}
+@media (prefers-reduced-motion:reduce){.bonus,.bn-card{transition:none;}}
+</style>
+</head>
+<body>
+
+<style>
 .sp-stars{display:inline-flex;gap:2px;flex:none;}
 .sp-stars svg{width:19px;height:19px;fill:var(--ember);}
 .sp-google{margin:0;display:flex;align-items:center;gap:10px;font-size:15.5px;line-height:1.3;color:var(--ink);}
@@ -74,9 +106,6 @@
   .sp-note blockquote{font-size:24px;}
 }
 </style>
-</head>
-<body>
-
 <style>
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;}
@@ -666,6 +695,44 @@ canvas.snow{position:absolute;inset:0;width:100%;height:100%;pointer-events:none
   <div class="sig"><i>Élodie</i></div>
 </div></section>
 </main>
+<div class="bonus" id="bonus" role="dialog" aria-modal="true" aria-labelledby="bonus-t" hidden><div class="bn-card"><button type="button" class="bn-x" aria-label="Fermer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button><span class="bn-gift" aria-hidden="true">🎁</span><span class="bn-hand">Bonus de lancement</span><h2 id="bonus-t">Le kit d’invitation à l’entretien</h2><p class="bn-sub">Des mails prêts à envoyer et la check-list du manager.</p><ul class="bn-list"><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg><span><b>Offert pour tout achat</b> avant dimanche</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg><span><b>Ou pour toute prise de RDV</b> si tu veux la prise en main ou l’atelier</span></li></ul><div class="bn-cta"><a class="btn" href="#offre" data-bn-close>Je choisis mon pack</a><a class="btn rdvbtn" href="https://calendly.com/eb-formationconsulting/winter-pack" target="_blank" rel="noopener" data-bn-close>Je prends RDV</a></div></div></div>
+<script>
+(function(){
+  var box = document.getElementById('bonus');
+  if (!box || Date.now() > Date.UTC(2026,9,25,22,59,59)) return;
+  var KEY = 'wp-bonus-seen', shown = false, back = null;
+  function seen(){ try { return sessionStorage.getItem(KEY) === '1'; } catch (e) { return false; } }
+  function mark(){ try { sessionStorage.setItem(KEY, '1'); } catch (e) {} }
+  function open(){
+    if (shown || seen()) return;
+    shown = true; back = document.activeElement;
+    box.hidden = false; document.documentElement.classList.add('bonus-open');
+    window.requestAnimationFrame(function(){ box.classList.add('on'); });
+    box.querySelector('.bn-x').focus();
+  }
+  function close(){
+    mark(); box.classList.remove('on'); box.hidden = true; document.documentElement.classList.remove('bonus-open');
+    if (back && back.focus) back.focus();
+  }
+  box.querySelector('.bn-x').addEventListener('click', close);
+  [].forEach.call(box.querySelectorAll('[data-bn-close]'), function(a){ a.addEventListener('click', close); });
+  box.addEventListener('click', function(e){ if (e.target === box) close(); });
+  document.addEventListener('keydown', function(e){
+    if (box.hidden) return;
+    if (e.key === 'Escape') { close(); return; }
+    if (e.key !== 'Tab') return;
+    var f = [].slice.call(box.querySelectorAll('button, a[href]')), first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  });
+  window.setTimeout(open, 25000);
+  window.addEventListener('scroll', function(){
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    if (max > 0 && window.pageYOffset / max > 0.4) open();
+  }, {passive: true});
+  document.addEventListener('mouseout', function(e){ if (!e.relatedTarget && e.clientY <= 0) open(); });
+})();
+</script>
 <footer><div class="wrap"><span>© 2026 Élodie Boyer · EB Formation Consulting</span><nav aria-label="Liens"><a href="https://www.oseprendretaplace.fr" target="_blank" rel="noopener">oseprendretaplace.fr</a><a href="winter-pack-mentions-legales.html">Mentions légales</a><a href="winter-pack-cgv.html">CGV</a><a href="winter-pack-confidentialite.html">Confidentialité</a></nav></div></footer>
 
 <svg width="0" height="0" style="position:absolute;">
