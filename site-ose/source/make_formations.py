@@ -121,7 +121,7 @@ BODY = '''<header class="top hx"><div class="wrap">
   <div class="fh-v"><div class="arch"><img src="''' + ARCH_O + '''" alt="Élodie Boyer" width="420" height="540"></div>
     <div class="fh-st"><b>12</b>semaines</div><div class="fh-st s2"><b>6</b>modules</div></div>
 </div>
-<div class="wrap"><ul class="fh-s"><li><b>6</b><span>séances de coaching individuel</span></li><li><b>1 h</b><span>sur Google Meet, sur ta vraie situation</span></li><li><b>30 min</b><span>par jour, environ</span></li><li><b>À vie</b><span>accès à la plateforme, mises à jour incluses</span></li></ul></div></section>
+<div class="wrap"><ul class="fh-s"><li><b>6 séances</b><span>de coaching individuel avec moi, 1 h en visio à chaque fois</span></li><li><b>30 min</b><span>par jour : c’est le temps à prévoir</span></li><li><b>À vie</b><span>l’accès à la plateforme, mises à jour incluses</span></li></ul></div></section>
 
 ''' + P.BAND + '''
 <section class="room" id="moment"><div class="wrap mo">
@@ -260,9 +260,9 @@ CSS_F = '''<style>
 .fh-st{position:absolute;left:-64px;top:22%;background:#fff;border-radius:18px;padding:12px 18px;font-size:14px;font-weight:700;box-shadow:0 16px 34px -18px rgba(29,42,40,.45);transform:rotate(-4deg);}
 .fh-st b{display:block;font-family:var(--display);font-weight:400;font-size:30px;line-height:1;color:var(--pine);}
 .fh-st.s2{left:auto;right:-50px;top:62%;transform:rotate(3deg);}
-.fh-s{list-style:none;margin:0;padding:34px 0 56px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;border-top:1.5px dashed rgba(8,80,85,.2);position:relative;}
+.fh-s{list-style:none;margin:0;padding:34px 0 56px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;border-top:1.5px dashed rgba(8,80,85,.2);position:relative;}
 .fh-s b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(28px,3vw,38px);line-height:1;color:var(--ember-ink);}
-.fh-s span{font-size:14.5px;font-weight:700;color:var(--muted);}
+.fh-s span{display:block;margin-top:6px;font-size:15px;font-weight:700;color:var(--muted);max-width:30ch;}
 /* fit */
 .fit{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:48px;}
 .fit-c{padding:34px 32px;border-radius:28px;background:#fff;box-shadow:0 22px 40px -32px rgba(8,80,85,.7);}
@@ -281,7 +281,7 @@ CSS_F = '''<style>
 .aq-b > p:last-child{margin:0;font-size:17px;line-height:1.65;}
 /* pourquoi je peux te former (with photo) */
 .why2.solo{margin-top:0;align-items:start;background:#fff;}
-.why2-p{display:block;width:min(100%,180px);margin-top:28px;border-radius:120px 120px 22px 22px;transform:rotate(-3deg);}
+.why2-p{display:block;width:min(100%,200px);height:auto;aspect-ratio:420/540;object-fit:cover;margin-top:30px;border-radius:110px 110px 22px 22px;transform:rotate(-3deg);box-shadow:0 22px 34px -22px rgba(8,80,85,.6);}
 .obj{margin-top:40px;text-align:center;padding:clamp(30px,4vw,48px);border-radius:30px;background:var(--pine);color:#fff;}
 .obj .hand{color:var(--ember);}
 .obj p{margin:6px auto 0;max-width:46ch;font-size:19px;color:var(--on-pine-soft);}
@@ -381,7 +381,7 @@ CSS_F = '''<style>
 @media (max-width:1020px){
   .fh > .wrap:first-child,.aq,.tr,.oc,.bx,.fqw,.fit,.pks{grid-template-columns:1fr;}
   .fh > .wrap:first-child{padding-block:64px 36px;gap:48px;} .fh-st{left:-16px;} .fh-st.s2{right:-16px;}
-  .fh-s{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .fh-s{grid-template-columns:1fr;gap:18px;}
   .mdg{display:none;} .mds{grid-template-columns:1fr;grid-auto-flow:row;grid-template-rows:none;}
   .stp{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:40px;} .stp::before{display:none;}
   .wds{grid-template-columns:repeat(2,minmax(0,1fr));}
