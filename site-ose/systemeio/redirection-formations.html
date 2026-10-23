@@ -1,2 +1,3 @@
 <!-- Redirection vers le nouveau site · Systeme.io : Paramètres → Tracking → Modifier le code d’en-tête -->
-<script>location.replace('https://oseprendretaplace.fr/formations' + location.search + location.hash);</script>
+<script>if(location.hostname==="www.oseprendretaplace.fr"){location.replace("https://oseprendretaplace-formation.netlify.app/formations"+location.search+location.hash);}</script>
+<noscript><meta http-equiv="refresh" content="0;url=https://oseprendretaplace-formation.netlify.app/formations"></noscript>

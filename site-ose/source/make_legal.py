@@ -3,9 +3,9 @@ Texts come from Élodie's Drive documents (legal/*.md, light markup). Output: le
 import re, html as H
 exec(open('_pre.py', encoding='utf-8').read())
 exec(open('_cssA.py', encoding='utf-8').read())
-HOME = 'https://oseprendretaplace.fr/'
+HOME = '@@SITE@@/'
 MAIL = 'contact@oseprendretaplace.fr'
-SITE = 'https://oseprendretaplace.fr/'
+SITE = '@@SITE@@/'
 PAGES = [  # slug, md, short label, title, facts (En bref)
  ('politique-de-confidentialite', 'confidentialite', 'Confidentialité', 'Politique de confidentialité',
   [('Responsable du traitement', 'Élodie Boyer, EB Formation Consulting'), ('Données collectées', 'Nom, prénom, adresse mail'),

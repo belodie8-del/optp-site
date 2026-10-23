@@ -21,3 +21,4 @@ python3 make_blog_sio.py
 python3 make_contact_sio.py >/dev/null
 python3 make_legal.py >/dev/null
 python3 anim.py contact-sio.html legal-politique-de-confidentialite.html legal-conditions-utilisation.html legal-politique-cookies.html
+python3 rebase.py

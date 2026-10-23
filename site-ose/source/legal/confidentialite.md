@@ -107,7 +107,7 @@ Les cookies sont utilisés pour :
 - Vous identifier une fois enregistré en tant qu’utilisateur.
 - Surveiller et analyser les performances, le fonctionnement et l’efficacité du site internet.
 - Garantir la sécurité de notre plateforme et la sûreté de son utilisation.
-Pour savoir comment gérer ou refuser les cookies, consultez la [politique de cookies](https://oseprendretaplace.fr/politique-cookies).
+Pour savoir comment gérer ou refuser les cookies, consultez la [politique de cookies](@@SITE@@/politique-cookies).
 ## Article 16. Réclamations, CNIL
 Conformément à l’article 55 du Règlement général des données personnelles, si vous estimez que l’entreprise a violé vos droits concernant le traitement des données personnelles, vous pouvez écrire une réclamation à la CNIL dans les meilleurs délais, idéalement 72 heures au plus tard après en avoir pris connaissance. La notification de la violation doit :
 - décrire la nature de la violation de données à caractère personnel y compris, si possible, les catégories et le nombre approximatif de personnes concernées par la violation et les catégories et le nombre approximatif d’enregistrements de données à caractère personnel concernés ;

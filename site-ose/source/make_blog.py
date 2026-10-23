@@ -4,7 +4,7 @@ import json, datetime, urllib.parse
 exec(open('_pre.py', encoding='utf-8').read())
 exec(open('_cssA.py', encoding='utf-8').read())
 B = S + 'blog/'
-HOME = 'https://oseprendretaplace.fr/'
+HOME = '@@SITE@@/'
 BLOGROOT = 'https://oseprendretaplace.systeme.io'
 MOIS = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre']
 def fdate(ts):
@@ -28,7 +28,7 @@ def card(p, extra=''):
     return ('<a class="bc" href="%s" data-cats="%s"%s><span class="bc-i"><img src="%s" alt=""></span><span class="bc-t"><span class="bc-m">%s<span class="bc-d">%s</span></span>'
             '<span class="bc-h">%s</span><span class="bc-x">%s</span><span class="bc-r">Lire l’article →</span></span></a>') % (
         p['url'], ' '.join(c['path'] for c in p['categories']), extra, p['img'], chips(p), p['date'], p['name'], p['description'])
-FOOT = ('<footer><div class="wrap"><span><b>Élodie Boyer</b> · Formatrice en management passionnée qui aide les managers à réaliser leur plein potentiel<br>© 2026 EB Formation Consulting · <span class="flg"><a href="https://oseprendretaplace.fr/politique-de-confidentialite">Politique de confidentialité</a> · <a href="https://oseprendretaplace.fr/conditions-utilisation">Conditions d’utilisation</a> · <a href="https://oseprendretaplace.fr/politique-cookies">Politique de cookies</a></span></span>'
+FOOT = ('<footer><div class="wrap"><span><b>Élodie Boyer</b> · Formatrice en management passionnée qui aide les managers à réaliser leur plein potentiel<br>© 2026 EB Formation Consulting · <span class="flg"><a href="@@SITE@@/politique-de-confidentialite">Politique de confidentialité</a> · <a href="@@SITE@@/conditions-utilisation">Conditions d’utilisation</a> · <a href="@@SITE@@/politique-cookies">Politique de cookies</a></span></span>'
         '<nav aria-label="Liens"><a href="' + HOME + '">Accueil</a><a href="' + FORM + '">Les formations</a><a href="' + CONTACT + '">Contact</a><span class="fso"><a href="https://www.linkedin.com/in/elodie-boyer-299891143/" target="_blank" rel="noopener" aria-label="LinkedIn · Élodie Boyer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 11v5M8 8v.01M12 16v-5M12 13a2 2 0 0 1 4 0v3"/></svg></a><a href="https://www.instagram.com/elodie_boyer_off_management/" target="_blank" rel="noopener" aria-label="Instagram · elodie_boyer_off_management"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5v.01"/></svg></a></span></nav></div></footer>')
 NEWSBOX = ('<section class="room" id="newsletter"><div class="wrap"><div class="nlb"><img src="' + ENV + '" alt="" width="345" height="385">'
            '<div><span class="hand">Tu as aimé cet article ?</span><h2>Reçois le prochain chaque lundi</h2>'

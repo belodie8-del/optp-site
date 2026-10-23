@@ -1,12 +1,13 @@
-"""Whole oseprendretaplace.fr site for Netlify, on the bare domain oseprendretaplace.fr: our pages as static files, images
-as files, the contact form through Netlify Forms. www.oseprendretaplace.fr stays on Systeme.io (payment, thank-you pages,
-member area): every other path is sent there, and the old Systeme.io site pages send visitors here (REDIRECTS snippets).
+"""Whole new site for Netlify, served at the address of site_base.txt (today oseprendretaplace-formation.netlify.app): our pages
+as static files, images as files, the contact form through Netlify Forms. www.oseprendretaplace.fr stays on Systeme.io (payment,
+thank-you pages, member area): every other path is sent there, and the 3 old Systeme.io site pages send visitors here (header snippets).
 Output: /home/user/optp-site/deploy-site-ose/, site-ose-netlify.zip and the snippets in site-ose/systemeio/."""
 import re, os, shutil, hashlib, base64, zipfile, html as H
 R = '/home/user/optp-site/'
 OUT = R + 'deploy-site-ose/'
 ZIP = R + 'site-ose-netlify.zip'
-SITE = 'https://oseprendretaplace.fr/'
+BASE = open('site_base.txt', encoding='utf-8').read().strip().rstrip('/')
+SITE = BASE + '/'
 SIO = 'https://www.oseprendretaplace.fr'   # stays on Systeme.io
 BLOG = 'https://oseprendretaplace.systeme.io/leblogose'
 OWN = ['accueil', 'formations', 'contact', 'politique-de-confidentialite', 'conditions-utilisation', 'politique-cookies']
@@ -54,7 +55,7 @@ def build(src, path, title, desc, index=True, edit=None):
     s = open(src, encoding='utf-8').read()
     if edit: s = edit(s)
     s = re.sub(r'data:[^"\')\s]+', host, s)
-    s = re.sub(r'href="https://oseprendretaplace\.fr/(%s)?(?=[#"?])' % '|'.join(OWN),
+    s = re.sub(r'href="%s/(%s)?(?=[#"?])' % (re.escape(BASE), '|'.join(OWN)),
                lambda m: 'href="/' + ('' if m.group(1) in (None, 'accueil') else m.group(1)), s)
     i = s.index('<header')
     head = s[:i]
@@ -69,7 +70,7 @@ def contact_form(s):
                   '<input type="hidden" name="form-name" value="contact"><p hidden><label>Ne pas remplir : <input name="bot-field"></label></p>')
     s, n = re.subn(r'<p class="kcf-ok" role="status" hidden>.*?</p>',
                    '<p class="kcf-rg">Tes informations servent uniquement à te répondre. Plus de détails dans la '
-                   '<a href="https://oseprendretaplace.fr/politique-de-confidentialite">politique de confidentialité</a>.</p>', s)
+                   '<a href="/politique-de-confidentialite">politique de confidentialité</a>.</p>', s)
     assert n == 1
     a = "f.addEventListener('submit',function(e){e.preventDefault();f.querySelector('.kcf-ok').hidden=false;});"
     assert s.count(a) == 1
@@ -86,7 +87,7 @@ def merci(s):
     <p class="lede">Je lis ton message et je te réponds rapidement.</p>
     <p class="kch-s">En attendant, tu peux faire l’audit offert ou découvrir les formations.</p>
     <p style="display:flex;flex-wrap:wrap;gap:12px;margin-top:28px"><a class="btn rdvbtn" href="https://auditmanagerial.oseprendretaplace.fr/">Faire l’audit offert</a>
-      <a class="btn" href="https://oseprendretaplace.fr/formations" style="background:#fff;color:var(--pine);border:2px solid var(--line)">Voir les formations</a></p></div>
+      <a class="btn" href="/formations" style="background:#fff;color:var(--pine);border:2px solid var(--line)">Voir les formations</a></p></div>
   <div class="kch-v"><img src="''' + re.search(r'<div class="kch-v"><img src="([^"]+)"', s).group(1) + '''" alt="Élodie Boyer" width="420" height="540"><p class="kch-bub">À très vite 💚</p></div>
 </div></section>
 </main>''' + s[b + len('</main>'):].replace("var f=document.getElementById('kf');", "var f=document.getElementById('kf');if(!f)return;")
@@ -111,9 +112,11 @@ open(OUT + 'favicon.svg', 'w').write('<svg xmlns="http://www.w3.org/2000/svg" vi
 if os.path.exists('og-site.jpg'): shutil.copy('og-site.jpg', OUT + 'og-image.jpg')
 # snippets for the old Systeme.io site pages ("Modifier le code d'en-tête"), only once oseprendretaplace.fr shows this site
 for name, path in [('accueil', ''), ('formations', 'formations'), ('contact', 'contact')]:
+    target = SITE + path
     open(R + 'site-ose/systemeio/redirection-%s.html' % name, 'w', encoding='utf-8').write(
         '<!-- Redirection vers le nouveau site · Systeme.io : Paramètres → Tracking → Modifier le code d’en-tête -->\n'
-        '<script>location.replace(\'%s%s\' + location.search + location.hash);</script>\n' % (SITE, path))
+        '<script>if(location.hostname==="www.oseprendretaplace.fr"){location.replace("%s"+location.search+location.hash);}</script>\n'
+        '<noscript><meta http-equiv="refresh" content="0;url=%s"></noscript>\n' % (target, target))
 if os.path.exists(ZIP): os.remove(ZIP)
 with zipfile.ZipFile(ZIP, 'w', zipfile.ZIP_DEFLATED) as z:
     for root, _, files in os.walk(OUT):

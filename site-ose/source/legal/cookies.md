@@ -18,7 +18,7 @@ Pour refuser et empêcher que vos données soient utilisées par Google Analytic
 Veuillez noter que la suppression de nos cookies ou la désactivation de futurs cookies ou technologies de suivi pourront vous empêcher d’accéder à certaines zones ou fonctionnalités de nos services, ou pourront autrement affecter négativement votre expérience d’utilisateur.
 ## 5. Vos droits
 L’Utilisateur dispose d’un droit d’accès, de rectification, de portabilité et d’effacement de ses données, ou de limitation du traitement, conformément à la loi « informatique et libertés » du 6 janvier 1978 modifiée et au Règlement européen n°2016/679/UE du 27 avril 2016.
-Toute réclamation à ce sujet doit être portée au prestataire, par mail à contact@oseprendretaplace.fr ou par courrier au 74 Grande Rue, 70100 Gray. Le détail de vos droits figure dans la [politique de confidentialité](https://oseprendretaplace.fr/politique-de-confidentialite).
+Toute réclamation à ce sujet doit être portée au prestataire, par mail à contact@oseprendretaplace.fr ou par courrier au 74 Grande Rue, 70100 Gray. Le détail de vos droits figure dans la [politique de confidentialité](@@SITE@@/politique-de-confidentialite).
 ## 6. Mise à jour de cette politique
 Il se peut que nous modifiions cette politique en matière de cookies. Nous vous encourageons à consulter régulièrement cette page pour obtenir les dernières informations sur les cookies.
 @@ Date de la dernière mise à jour : 25/09/2025

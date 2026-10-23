@@ -1,5 +1,5 @@
 ## Article 1. Éditeur de la publication
-L’éditeur du site internet oseprendretaplace.fr est :
+L’éditeur du site internet www.oseprendretaplace.fr est :
 | Nom | BOYER |
 | Prénom | Élodie |
 | Adresse postale | 74 Grande Rue, 70100 Gray |
@@ -7,7 +7,7 @@ L’éditeur du site internet oseprendretaplace.fr est :
 | SIRET | 921 209 896 00023 |
 Vous pouvez contacter le responsable de l’édition du site internet par téléphone, au 06 79 35 34 41, et par mail, à l’adresse contact@oseprendretaplace.fr.
 ## Article 2. Directeur de la publication
-Le site internet oseprendretaplace.fr est dirigé et exploité par :
+Le site internet www.oseprendretaplace.fr est dirigé et exploité par :
 | Nom | BOYER |
 | Prénom | Élodie |
 | Adresse postale | 74 Grande Rue, 70100 Gray |
@@ -15,11 +15,11 @@ Le site internet oseprendretaplace.fr est dirigé et exploité par :
 | SIRET | 921 209 896 00023 |
 Vous pouvez contacter le directeur de la publication du site internet par téléphone, au 06 79 35 34 41, et par mail, à l’adresse contact@oseprendretaplace.fr.
 ## Article 3. Hébergeur du site internet
-Le présent site internet oseprendretaplace.fr est hébergé par :
+Le site internet www.oseprendretaplace.fr est hébergé par deux prestataires. Les pages de présentation (accueil, formations, contact et informations légales) sont hébergées par :
 | Nom | Netlify, Inc. |
 | Adresse postale | 101 2nd Street, San Francisco, CA 94105, États-Unis |
 | Site internet | [netlify.com](https://www.netlify.com) |
-Les pages de paiement et l’espace de formation (www.oseprendretaplace.fr), ainsi que le blog, sont hébergés par la plateforme Systeme.io :
+Les pages de paiement, l’espace de formation et le blog sont hébergés par la plateforme Systeme.io :
 | Nom | ITACWT Limited (Systeme.io) |
 | Adresse postale | 2 Cruise Park Rise, Tyrrelstown, Dublin 15, Irlande |
 | Site internet | [systeme.io](https://systeme.io) |
@@ -38,8 +38,8 @@ Conformément aux dispositions en vigueur relatives à l’informatique, aux fic
 La personne responsable des traitements de données personnelles sur ce site internet est Élodie Boyer. Si vous souhaitez exercer ces droits, vous pouvez contacter Élodie Boyer au 06 79 35 34 41.
 Pour solliciter une modification, une rectification ou une suppression des données vous concernant, il vous suffit d’envoyer au prestataire un courrier par voie électronique ou postale en justifiant de votre identité.
 Si vous estimez que le site internet ne respecte pas vos droits en matière de protection des données personnelles, vous pouvez également former un recours auprès de la Commission Nationale Informatique et Libertés (CNIL), après une tentative préalable de résolution amiable des différends.
-Merci de consulter la [politique de confidentialité](https://oseprendretaplace.fr/politique-de-confidentialite) prévue à ce sujet.
+Merci de consulter la [politique de confidentialité](@@SITE@@/politique-de-confidentialite) prévue à ce sujet.
 ## Article 6. Les cookies
-L’utilisation des cookies sur ce site, leur finalité et la manière de les refuser sont détaillées dans la [politique de cookies](https://oseprendretaplace.fr/politique-cookies).
+L’utilisation des cookies sur ce site, leur finalité et la manière de les refuser sont détaillées dans la [politique de cookies](@@SITE@@/politique-cookies).
 @@ Date de la dernière mise à jour : 25/09/2025
 @@ Modèle type délivré par la SAS LEGAL PEACH. Ce document juridique n’a de valeur qu’informative, en tant que modèle, et ne saurait se substituer aux conseils juridiques pour la personnalisation de vos documents. Tout litige avec un consommateur concernant cette prestation devra être porté auprès du Médiateur de la consommation nommé dans les conditions générales de vente (C2MC).
