@@ -1,0 +1,71 @@
+<!-- Pop-up Winter Pack · page d’accueil Ose prendre ta place (bloc Code HTML Systeme.io) -->
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Nunito+Sans:wght@400;700;800&family=Caveat:wght@700&display=swap">
+<style id="wpop-css">
+.wpop{position:fixed;inset:0;z-index:2000;display:grid;place-items:center;padding:18px;background:rgba(6,44,47,.58);opacity:0;transition:opacity .25s ease;font-family:'Nunito Sans',system-ui,-apple-system,'Segoe UI',sans-serif;}
+.wpop[hidden]{display:none;}
+.wpop.on{opacity:1;}
+.wpop *{box-sizing:border-box;}
+.wpop-c{position:relative;width:min(100%,540px);max-height:calc(100vh - 36px);overflow:auto;background:#fff;border-radius:28px;box-shadow:0 40px 80px -30px rgba(0,0,0,.6);transform:translateY(16px) scale(.97);transition:transform .35s cubic-bezier(.2,.8,.2,1);}
+.wpop.on .wpop-c{transform:none;}
+.wpop-h{position:relative;overflow:hidden;background:#085055;color:#fff;padding:34px 30px 30px;border-radius:28px 28px 0 0;}
+.wpop-h i{position:absolute;color:#fff;font-style:normal;line-height:1;pointer-events:none;}
+.wpop-k{display:inline-block;font-family:'Caveat',cursive;font-weight:700;font-size:26px;line-height:1;color:#FF914D;transform:rotate(-3deg);}
+.wpop-h h2{margin:4px 0 0;font-family:'Young Serif',Georgia,serif;font-weight:400;font-size:46px;line-height:1;color:#fff;}
+.wpop-s{margin:6px 0 0;font-family:'Caveat',cursive;font-weight:700;font-size:28px;line-height:1;color:#FFCFA3;}
+.wpop-p{position:absolute;right:26px;bottom:24px;background:#FF914D;color:#2B1304;border-radius:999px;padding:9px 16px;font-size:15px;font-weight:800;transform:rotate(4deg);box-shadow:0 12px 20px -12px rgba(0,0,0,.6);}
+.wpop-p b{font-size:19px;}
+.wpop-x{position:absolute;top:14px;right:14px;width:40px;height:40px;border:0;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;display:grid;place-items:center;cursor:pointer;}
+.wpop-x:hover{background:rgba(255,255,255,.26);}
+.wpop-x svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;}
+.wpop-b{padding:24px 30px 26px;}
+.wpop-l{margin:0 0 16px;font-size:17px;line-height:1.5;color:#1D2A28;}
+.wpop-l b{color:#085055;}
+.wpop-g{list-style:none;margin:0 0 16px;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 14px;}
+.wpop-g li{display:flex;align-items:flex-start;gap:8px;font-size:14px;line-height:1.35;color:#1D2A28;}
+.wpop-g svg{flex:none;width:17px;height:17px;margin-top:1px;}
+.wpop-g circle{fill:#0F868A;} .wpop-g path{fill:none;stroke:#fff;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;}
+.wpop-gift{display:flex;align-items:flex-start;gap:10px;margin:0 0 20px;padding:12px 14px;border-radius:16px;background:#FFF4EE;border:2px dashed #FF914D;font-size:14px;line-height:1.45;color:#1D2A28;}
+.wpop-gift[hidden]{display:none;}
+.wpop-gift b{color:#B4561F;}
+.wpop-a{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;}
+.wpop-btn{display:inline-flex;align-items:center;gap:10px;background:#FF914D;color:#2B1304;border:2px solid #E27A33;border-radius:999px;padding:15px 26px;font-weight:800;font-size:16px;text-decoration:none;box-shadow:0 14px 26px -14px rgba(180,86,31,.9);}
+.wpop-btn:hover{background:#FF9F66;}
+.wpop-btn span{transition:translate .2s;} .wpop-btn:hover span{translate:4px 0;}
+.wpop-later{border:0;background:none;padding:8px 4px;font:inherit;font-size:15px;font-weight:700;color:#5A6663;text-decoration:underline;text-underline-offset:3px;cursor:pointer;}
+.wpop-later:hover{color:#085055;}
+.wpop-x:focus-visible,.wpop-btn:focus-visible,.wpop-later:focus-visible{outline:3px solid #FF914D;outline-offset:3px;}
+@media (max-width:520px){.wpop-h{padding:28px 22px 26px;} .wpop-h h2{font-size:38px;} .wpop-b{padding:20px 22px 22px;} .wpop-g{grid-template-columns:1fr;} .wpop-btn{width:100%;justify-content:center;} .wpop-a{justify-content:center;} .wpop-p{position:static;display:inline-block;margin-top:14px;transform:rotate(-2deg);}}
+html.wpop-open{overflow:hidden;}
+@media (prefers-reduced-motion:reduce){.wpop,.wpop-c{transition:none;}}
+</style>
+<div class="wpop" id="wpop" role="dialog" aria-modal="true" aria-labelledby="wpop-t" hidden><div class="wpop-c"><div class="wpop-h"><i style="left:6%;top:18%;font-size:14px;opacity:0.50">❄</i><i style="left:18%;top:62%;font-size:10px;opacity:0.40">❄</i><i style="left:34%;top:14%;font-size:12px;opacity:0.55">❄</i><i style="left:52%;top:70%;font-size:9px;opacity:0.40">❄</i><i style="left:66%;top:22%;font-size:16px;opacity:0.60">❄</i><i style="left:80%;top:58%;font-size:11px;opacity:0.45">❄</i><i style="left:92%;top:30%;font-size:13px;opacity:0.50">❄</i><i style="left:44%;top:40%;font-size:8px;opacity:0.35">❄</i><button type="button" class="wpop-x" aria-label="Fermer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button><span class="wpop-k">Nouveau</span><h2 id="wpop-t">Winter Pack</h2><p class="wpop-s">L’Essentiel du Manager</p><span class="wpop-p">Dès <b>197&nbsp;€</b></span></div><div class="wpop-b"><p class="wpop-l"><b>8 outils</b> pour que tous tes managers mènent leurs entretiens <b>avec la même méthode</b>.</p><ul class="wpop-g"><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg><span>L’entretien professionnel</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg><span>L’entretien annuel</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg><span>La réunion d’équipe</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg><span>La trame du OTO</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg><span>Le tableau de bord des objectifs</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg><span>Le calendrier des rituels</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg><span>Les 10 commandements</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg><span>Le kit de survie verbal</span></li></ul><p class="wpop-gift" data-wpop-gift>🎁 <span><b>Cadeau de lancement :</b> le kit d’invitation à l’entretien offert pour tout achat avant dimanche.</span></p><div class="wpop-a"><a class="wpop-btn" href="https://winterpack.oseprendretaplace.fr/" target="_blank" rel="noopener" data-wpop-close>Découvrir le Winter Pack <span aria-hidden="true">→</span></a><button type="button" class="wpop-later" data-wpop-close>Plus tard</button></div></div></div></div>
+<script id="wpop-js">
+(function(){
+  var box = document.getElementById('wpop'); if (!box) return;
+  if (Date.now() > Date.UTC(2026,9,25,22,59,59)) { var g = box.querySelector('[data-wpop-gift]'); if (g) g.hidden = true; }
+  var KEY = 'ose-wpop-seen', shown = false, back = null;
+  function seen(){ try { return sessionStorage.getItem(KEY) === '1'; } catch (e) { return false; } }
+  function mark(){ try { sessionStorage.setItem(KEY, '1'); } catch (e) {} }
+  function open(){
+    if (shown || seen()) return; shown = true; back = document.activeElement;
+    box.hidden = false; document.documentElement.classList.add('wpop-open');
+    requestAnimationFrame(function(){ box.classList.add('on'); });
+    box.querySelector('.wpop-x').focus();
+  }
+  function close(){ mark(); box.classList.remove('on'); box.hidden = true; document.documentElement.classList.remove('wpop-open'); if (back && back.focus) back.focus(); }
+  box.querySelector('.wpop-x').addEventListener('click', close);
+  [].forEach.call(box.querySelectorAll('[data-wpop-close]'), function(a){ a.addEventListener('click', close); });
+  box.addEventListener('click', function(e){ if (e.target === box) close(); });
+  document.addEventListener('keydown', function(e){
+    if (box.hidden) return;
+    if (e.key === 'Escape') { close(); return; }
+    if (e.key !== 'Tab') return;
+    var f = [].slice.call(box.querySelectorAll('button, a[href]')), a = f[0], z = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === a) { e.preventDefault(); z.focus(); }
+    else if (!e.shiftKey && document.activeElement === z) { e.preventDefault(); a.focus(); }
+  });
+  setTimeout(open, 15000);
+  window.addEventListener('scroll', function(){ var m = document.documentElement.scrollHeight - innerHeight; if (m > 0 && pageYOffset / m > 0.2) open(); }, {passive:true});
+  document.addEventListener('mouseout', function(e){ if (!e.relatedTarget && e.clientY <= 0) open(); });
+})();
+</script>

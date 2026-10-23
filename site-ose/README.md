@@ -16,3 +16,5 @@ Rien n'est en ligne : le site actuel reste sur Systeme.io.
 Animations : `source/anim.py` ajoute à chaque page les apparitions au défilement, les compteurs de chiffres, les surlignages qui se tracent et quelques effets au survol. Elles sont désactivées pour les visiteurs qui ont demandé moins d'animations sur leur appareil. `source/build_site.sh` régénère toutes les pages d'un coup.
 
 Pop-up Winter Pack : intégré à la page d'accueil (`source/popup_home.py`). `popup-winter-pack-systemeio.html` est la version autonome à coller dans un bloc Code HTML de la page d'accueil actuelle sur Systeme.io. La ligne « Cadeau de lancement » disparaît seule après le dimanche 25 octobre 2026 à 23 h 59.
+
+Mise en ligne : `systemeio/` contient les blocs à coller dans Systeme.io (accueil, formations, contact 1 et 2, blog 1 et 2, pop-up seul), générés par `source/export_sio.py`. Leurs images sont dans `images-sio/` et sont servies par le site Winter Pack à l'adresse https://winterpack.oseprendretaplace.fr/ose/ (copiées dans le ZIP par `make_deploy.py`).
