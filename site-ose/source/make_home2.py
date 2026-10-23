@@ -24,7 +24,8 @@ BLOG = 'https://oseprendretaplace.systeme.io/leblogose'
 CONTACT = '@@SITE@@/contact'
 RDV = 'https://calendly.com/eb-formationconsulting/30min'
 WPK = 'https://winterpack.oseprendretaplace.fr/'
-RAP = {k: img('home/rapport/r-%s.jpg' % k) for k in ('profil', 'radar', 'plan')}   # real report screenshots (example profile)
+AUD_LIST = ['Ton style dominant', 'Ton point de vigilance', 'Tes forces', 'Tes axes de progrès', 'Ta maturité, thème par thème', 'Ton agilité de posture', 'Ton plan d’action sur 3 semaines', 'Un mot d’Élodie']
+RAP = {k: img('home/rapport/r-%s.jpg' % k) for k in ('p1', 'p2', 'p3')}   # real report screenshots (example profile)
 LINKEDIN = 'https://www.linkedin.com/in/elodie-boyer-299891143/'
 INSTA = 'https://www.instagram.com/elodie_boyer_off_management/'
 LOGO_LI = ('<svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="11" fill="#0A66C2"/>'
@@ -109,17 +110,24 @@ BODY = '''<header class="top hx"><div class="wrap">
   <div class="chatlist">''' + ''.join('<p class="bub%s">%s</p>' % (' r' if i % 2 else '', t) for i, t in enumerate(PAINS)) + '''</div>
 </div></section>
 
-<section class="room mint" id="audit"><div class="wrap a5">
-  <div class="a5-h"><span class="hand">Audit offert</span><h2 class="h2">Voilà ce que tu reçois à la fin de l’audit</h2>
-    <p class="sub">Un vrai rapport, personnalisé à partir de tes réponses. Pas un quiz qui te dit « bravo ».</p></div>
-  <div class="a5-cta"><a class="btn rdvbtn big" href="''' + AUDIT + '''">⚡ Version express · 3 min</a><a class="btn a5-sec" href="''' + AUDIT + '''">✦ Audit complet · 10 min</a></div>
-  <div class="a5-g">
-    <figure class="a5-c"><span class="a5-n">1</span><div class="a5-i"><img src="''' + RAP['profil'] + '''" alt="Exemple de rapport : ton profil et ton point de vigilance" width="900" height="710"></div>
-      <figcaption><b>Ton profil et ton point de vigilance</b><span class="a5-b">Express et complet</span></figcaption></figure>
-    <figure class="a5-c"><span class="a5-n">2</span><div class="a5-i"><img src="''' + RAP['plan'] + '''" alt="Exemple de rapport : ton plan d’action sur 3 semaines" width="900" height="813"></div>
-      <figcaption><b>Ton plan d’action sur 3 semaines</b><span class="a5-b co">Audit complet</span></figcaption></figure>
+<section class="room wpk aud2" id="audit"><div class="wrap wpk-g">
+  <div class="wpk-t">
+    <span class="hand">Audit offert</span>
+    <h2 class="h2">Ton audit managérial <span>Mon outil préféré, offert</span></h2>
+    <p class="sub">De vraies questions de terrain, un vrai diagnostic, et un premier plan d’action pour savoir exactement quoi changer dans ton management.</p>
+    <ul class="wpk-l">''' + ''.join('<li>' + CHK + '<span>%s</span></li>' % t for t in AUD_LIST) + '''</ul>
+    <div class="wpk-o">
+      <a class="wpk-c" href="''' + AUDIT + '''"><small>⚡ Version express</small><b>Mon profil en 3 min</b><span>10 questions</span></a>
+      <a class="wpk-c" href="''' + AUDIT + '''"><small>✦ Audit complet</small><b>Mon analyse détaillée</b><span>31 questions · 10 min</span></a>
+    </div>
+    <a class="btn rdvbtn" href="''' + AUDIT + '''">Commencer mon audit offert ''' + ARR + '''</a>
   </div>
-  <p class="a5-note">Exemple réel de rapport · 100 % offert</p>
+  <div class="wpk-v">
+    <img class="wpk-d d1" src="''' + RAP['p2'] + '''" alt="" width="520" height="684">
+    <img class="wpk-d d2" src="''' + RAP['p3'] + '''" alt="" width="520" height="684">
+    <img class="wpk-d d3" src="''' + RAP['p1'] + '''" alt="Exemple de rapport managérial : profil Le Coach" width="520" height="684">
+    <span class="wpk-st"><b>100 %</b>rapport<br>offert</span>
+  </div>
 </div></section>
 
 <section class="room" id="formations"><div class="wrap">
@@ -356,6 +364,10 @@ footer .fso svg{width:20px;height:20px;}
 @media (max-width:1020px){.wpk-g{grid-template-columns:1fr;} .wpk-v{order:-1;min-height:0;height:min(92vw,400px);max-width:480px;width:100%;margin-inline:auto;}}
 @media (max-width:560px){.wpk-l{grid-template-columns:1fr;} .wpk-o{gap:10px;} .wpk-c{padding:14px;} .wpk-c small{font-size:11px;} .wpk-c b{font-size:17px;line-height:1.2;} .wpk-c span{font-size:16px;} .wpk .btn.rdvbtn{width:100%;justify-content:center;} .wpk-st{width:112px;height:112px;padding:12px;font-size:11.5px;} .wpk-st b{font-size:34px;}}
 @media (prefers-reduced-motion:reduce){.wpk-c{transition:none;}}
+.wpk.aud2{background:var(--mint);}
+.wpk.aud2 .wpk-c span{font-size:15px;color:var(--muted);font-weight:700;}
+.wpk.aud2 .wpk-st b{font-size:34px;white-space:nowrap;}
+@media (max-width:560px){.wpk.aud2 .wpk-st b{font-size:26px;}}
 /* home: audit section, real report preview */
 #audit .a5-h{text-align:center;display:flex;flex-direction:column;align-items:center;}
 #audit .a5-h .sub{text-align:center;margin-inline:auto;max-width:52ch;}

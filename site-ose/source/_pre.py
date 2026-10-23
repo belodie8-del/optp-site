@@ -24,7 +24,8 @@ BLOG = 'https://oseprendretaplace.systeme.io/leblogose'
 CONTACT = '@@SITE@@/contact'
 RDV = 'https://calendly.com/eb-formationconsulting/30min'
 WPK = 'https://winterpack.oseprendretaplace.fr/'
-RAP = {k: img('home/rapport/r-%s.jpg' % k) for k in ('profil', 'radar', 'plan')}   # real report screenshots (example profile)
+AUD_LIST = ['Ton style dominant', 'Ton point de vigilance', 'Tes forces', 'Tes axes de progrès', 'Ta maturité, thème par thème', 'Ton agilité de posture', 'Ton plan d’action sur 3 semaines', 'Un mot d’Élodie']
+RAP = {k: img('home/rapport/r-%s.jpg' % k) for k in ('p1', 'p2', 'p3')}   # real report screenshots (example profile)
 LINKEDIN = 'https://www.linkedin.com/in/elodie-boyer-299891143/'
 INSTA = 'https://www.instagram.com/elodie_boyer_off_management/'
 LOGO_LI = ('<svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="11" fill="#0A66C2"/>'
