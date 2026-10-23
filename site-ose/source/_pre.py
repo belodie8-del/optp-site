@@ -32,8 +32,7 @@ PAINS = ['Tu rentres le soir en te demandant comment tu vas gérer la situation 
          'Tu fais semblant de ne pas entendre ce qu’il se passe, parce que tu ne sais pas comment le gérer.',
          'Tu rejoues la scène de la réunion dans ta tête, en te disant que t’aurais dû dire autrement.',
          'Tu as peur de dire à ton N+1 que tu n’y arrives pas.']
-MODULES = [('RESET', 'Deviens manager'), ('La Lecture d’Équipe', 'Comprends ton équipe'), ('Posture & Crédibilité', 'Deviens crédible'),
-           ('Courage & Influence', 'Communique avec justesse'), ('L’Alliance Individuelle', 'Pilote l’individuel'), ('Le Collectif', 'Pilote le collectif')]
+MODULES = [('RESET', 'Arrête de deviner ce qu’on attend de toi'), ('La Lecture d’Équipe', 'Arrête de manager tout le monde pareil'), ('Posture & Crédibilité', 'Une autorité naturelle, sans crier'), ('Courage & Influence', 'Ose dire les choses, et que ça se passe bien'), ('L’Alliance Individuelle', 'Fais grandir chacun, sans tout porter seul(e)'), ('Le Collectif', 'Une équipe soudée, même quand ça secoue')]
 KIT = ['Vidéos pédagogiques', 'Workbooks à compléter', 'Fiches outils', 'Feuilles de route Notion', 'Challenges', 'Quiz']
 _I = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">%s</svg>'
 KIT_ICONS = [_I % '<rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9.5v5l4.5-2.5z"/>',

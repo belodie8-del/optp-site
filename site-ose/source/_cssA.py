@@ -79,7 +79,7 @@ footer .wrap > span{line-height:1.6;}
 .mods li{display:flex;flex-direction:column;gap:4px;padding:22px 22px 20px;border-radius:22px;background:#fff;}
 .mods .mn{font-family:var(--display);font-size:38px;line-height:1;color:var(--ember);}
 .mods b{font-family:var(--display);font-weight:400;font-size:21px;margin-top:8px;}
-.mods li > span:last-child{font-family:var(--hand);font-size:22px;color:var(--teal);}
+.mods li > span:last-child{font-family:var(--hand);font-size:23px;line-height:1.15;color:var(--teal);margin-top:4px;}
 .kit{margin-top:30px;display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;}
 .kit p{margin:0;color:var(--ink);}
 .kit ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px;}
