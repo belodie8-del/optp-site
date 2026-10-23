@@ -11,18 +11,15 @@ SOCIAL = ('<td style="padding-left:14px;font-family:Arial,Helvetica,sans-serif;f
           '&nbsp;·&nbsp;<a href="%s" style="color:#0F868A;font-weight:bold;text-decoration:none;">Instagram</a></td>' % (LI, IG))
 ROW = ('<table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;margin-top:8px;"><tr>' + pill(FORM, 'Mes formations&nbsp;→', '#FF914D', '#2B1304')
        + '<td style="width:8px;"></td>' + pill(WP, '❄ Le Winter Pack&nbsp;→', '#085055', '#FFFFFF') + SOCIAL + '</tr></table>')
-BAND = ('<table cellpadding="0" cellspacing="0" border="0" width="600" style="border-collapse:collapse;margin-top:6px;width:600px;"><tr>'
-        '<td style="background:#085055;border-radius:14px;padding:11px 20px;font-family:Arial,Helvetica,sans-serif;color:#FFFFFF;">'
-        '<a href="%s" style="color:#FFFFFF;text-decoration:none;"><span style="font-size:15px;font-weight:bold;">❄ Nouveau · Le Winter Pack</span>'
-        '<span style="font-size:13px;">&nbsp;&nbsp;8 outils pour mener tes entretiens&nbsp;&nbsp;</span>'
-        '<span style="font-size:13px;font-weight:bold;color:#FF914D;">Découvrir&nbsp;→</span></a></td></tr></table>'
-        '<table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;margin-top:8px;"><tr>' + pill(FORM, 'Mes formations&nbsp;→', '#FF914D', '#2B1304') + SOCIAL + '</tr></table>') % WP
-VERS = [('1', 'Le bandeau vert', ROW), ('2', 'La carte pêche', ROW), ('3', 'La blanche épurée', BAND)]
+ROW3 = ('<table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;margin-top:8px;"><tr>' + pill(FORM, 'Mes formations&nbsp;→', '#FF914D', '#2B1304')
+        + '<td style="width:8px;"></td>' + pill('https://www.oseprendretaplace.fr', 'Mon site&nbsp;→', '#085055', '#FFFFFF') + SOCIAL + '</tr></table>')
+VERS = [('3', 'La blanche avec le bandeau Winter Pack', ROW3, WP), ('1', 'Le bandeau vert', ROW, 'https://www.oseprendretaplace.fr'), ('2', 'La carte pêche', ROW, 'https://www.oseprendretaplace.fr')]
 secs = ''
-for n, name, row in VERS:
+for n, name, row, link in VERS:
     secs += ('<section id="v%s"><div class="sh"><h2>Version %s · %s</h2><span>Image : signature-mail-%s.png</span></div>'
              '<div class="mail"><img class="pv" src="%s" alt="Signature version %s" width="600"><div class="row" id="r%s">%s</div></div>'
-             '<button type="button" class="copy" data-r="r%s">Copier les boutons cliquables</button></section>') % (n, n, name, n, D('signature-mail-%s.png' % n), n, n, row, n)
+             '<p class="lk">Lien à mettre sur l’image : <b>%s</b></p>'
+             '<button type="button" class="copy" data-r="r%s">Copier les boutons cliquables</button></section>') % (n, n, name, n, D('signature-mail-%s.png' % n), n, n, row, link, n)
 page = '''<title>Signature mail Élodie</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <style>
@@ -46,18 +43,19 @@ header,nav,.mail{min-width:0}
 .steps{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 22px}
 .steps h2{font-family:Georgia,serif;font-weight:400;font-size:21px;margin:0 0 8px;color:var(--pine)}
 .steps ol{margin:0;padding-left:20px;display:grid;gap:6px}
+.lk{margin:0;font-size:14px;color:var(--muted)}.lk b{color:var(--ink);word-break:break-all}
 .tip{background:var(--note);border-radius:14px;padding:14px 18px;font-size:15px;margin:0}
 </style>
 <main>
-<header><h1>Ta signature de mail</h1><p class="intro">3 versions au choix. Chacune se compose d’une image (envoyée dans la conversation) et d’une ligne de boutons cliquables à copier ici.</p></header>
-<nav class="toc" aria-label="Versions"><a href="#v1">Version 1</a><a href="#v2">Version 2</a><a href="#v3">Version 3</a><a href="#gmail">Installer dans Gmail</a></nav>
+<header><h1>Ta signature de mail</h1><p class="intro">Ta version choisie est la première. Elle se compose d’une image (envoyée dans la conversation) et d’une ligne de boutons cliquables à copier ici.</p></header>
+<nav class="toc" aria-label="Versions"><a href="#v3">Ta version (3)</a><a href="#v1">Version 1</a><a href="#v2">Version 2</a><a href="#gmail">Installer dans Gmail</a></nav>
 ''' + secs + '''
 <section class="steps" id="gmail"><h2>Installer dans Gmail</h2><ol>
 <li>Enregistre sur ton ordinateur l’image de la version choisie (signature-mail-1, 2 ou 3.png).</li>
 <li>Gmail : roue crantée → « Voir tous les paramètres » → onglet « Général » → « Signature » → « Créer », puis donne-lui un nom.</li>
 <li>Dans la case de la signature, clique sur l’icône « Insérer une image » → « Importer » et choisis l’image.</li>
 <li>Clique sur l’image : choisis la taille (« Moyenne » en général, pour qu’elle fasse à peu près la largeur d’un paragraphe).</li>
-<li>Image toujours sélectionnée, clique sur l’icône « Lien » et colle <b>https://www.oseprendretaplace.fr</b>.</li>
+<li>Image toujours sélectionnée, clique sur l’icône « Lien » et colle le lien indiqué sous ta version (pour la version 3 : la page du Winter Pack, puisque l’image dit « Découvrir »).</li>
 <li>Place le curseur juste après l’image, appuie sur Entrée, puis colle les boutons copiés sur cette page (Ctrl+V, ou Cmd+V sur Mac).</li>
 <li>Choisis cette signature pour les nouveaux e-mails et les réponses, puis « Enregistrer les modifications » tout en bas de la page.</li></ol></section>
 <p class="tip">Envoie-toi un e-mail de test : clique sur l’image (ton site), puis sur chaque bouton, pour vérifier que tout s’ouvre bien.</p>

@@ -1,6 +1,6 @@
 """3 email signature designs inspired by the new site (rendered as images, 600 px wide)."""
 exec(open('_pre.py', encoding='utf-8').read())
-MAIL = 'elodie.boyer@ebformationconsulting.com'
+MAIL = 'eb.formationconsulting@gmail.com'
 LOGO = '<svg class="lg" viewBox="0 0 287 90" role="img" aria-label="EB Formation Consulting"><use href="#optplogo"/></svg>'
 V1 = '''<div class="sig s1" id="s1">
   <div class="s1-v"><img src="''' + ARCH_O + '''" alt=""><p class="pi">On ne naît pas manager.<br><b>Ça s’apprend.</b></p></div>
