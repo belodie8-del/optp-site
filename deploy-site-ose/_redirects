@@ -1,0 +1,12 @@
+# Pages of the new site
+/accueil                         /index.html                              200
+/formations                      /formations.html                         200
+/contact                         /contact.html                            200
+/politique-de-confidentialite    /politique-de-confidentialite.html       200
+/conditions-utilisation          /conditions-utilisation.html             200
+/politique-cookies               /politique-cookies.html                  200
+/merci                           /merci.html                              200
+# Blog on Systeme.io
+/blog                            https://oseprendretaplace.systeme.io/leblogose 301
+# Everything else (payment, thank-you pages, member area, …) stays on Systeme.io
+/*                               https://espace.oseprendretaplace.fr/:splat 301

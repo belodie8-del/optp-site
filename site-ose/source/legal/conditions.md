@@ -16,8 +16,14 @@ Le site internet www.oseprendretaplace.fr est dirigé et exploité par :
 Vous pouvez contacter le directeur de la publication du site internet par téléphone, au 06 79 35 34 41, et par mail, à l’adresse contact@oseprendretaplace.fr.
 ## Article 3. Hébergeur du site internet
 Le présent site internet www.oseprendretaplace.fr est hébergé par :
-| Nom | OVH |
-| Adresse postale | 2, rue Kellermann, 59100 Roubaix |
+| Nom | Netlify, Inc. |
+| Adresse postale | 101 2nd Street, San Francisco, CA 94105, États-Unis |
+| Site internet | [netlify.com](https://www.netlify.com) |
+Les pages de paiement, l’espace de formation et le blog sont hébergés par la plateforme Systeme.io :
+| Nom | ITACWT Limited (Systeme.io) |
+| Adresse postale | 2 Cruise Park Rise, Tyrrelstown, Dublin 15, Irlande |
+| Site internet | [systeme.io](https://systeme.io) |
+Le nom de domaine oseprendretaplace.fr est enregistré auprès d’OVH, 2 rue Kellermann, 59100 Roubaix.
 ## Article 4. Protection de la propriété intellectuelle
 Les éléments présents sur ce site internet sont fournis par le directeur de publication.
 Ils restent de l’ordre de sa propriété intellectuelle. Tous droits de reproduction, modification et de diffusion sont réservés.

@@ -3,43 +3,33 @@ import html
 D = '/home/user/optp-site/site-ose/systemeio/'
 OUT = '/tmp/claude-0/-home-user-optp-site/1386eaca-821b-50a5-926e-8bdc38c36a33/scratchpad/home/codes-site-ose.html'
 PAGES = [
- ('accueil', 'Page d’accueil', 'www.oseprendretaplace.fr/accueil',
-  ['Supprime les sections existantes de la page (menu et pied de page compris).',
-   'Ajoute une section en pleine largeur, sans marges, avec un élément « Code HTML ».',
-   'Colle le bloc ci-dessous. Le pop-up Winter Pack est déjà dedans.'],
-  [('Bloc unique', 'Tout le contenu de la page', 'accueil.html')]),
- ('formations', 'Page Les formations', 'www.oseprendretaplace.fr/formations',
-  ['Supprime les sections existantes de la page.',
-   'Ajoute une section en pleine largeur, sans marges, avec un élément « Code HTML ».',
-   'Colle le bloc ci-dessous. Les 3 boutons de paiement sont déjà reliés.'],
-  [('Bloc unique', 'Tout le contenu de la page', 'formations.html')]),
- ('contact', 'Page Contact', 'www.oseprendretaplace.fr/contact',
-  ['Garde ton formulaire de contact Systeme.io : c’est lui qui t’envoie les messages.',
-   'Supprime les autres sections. Au-dessus du formulaire, ajoute un élément « Code HTML » avec le bloc 1.',
-   'Sous le formulaire, ajoute un second élément « Code HTML » avec le bloc 2.',
-   'Dans les réglages du formulaire, mets le bouton en orange (#FF914D) avec des coins arrondis.'],
-  [('Bloc 1', 'Au-dessus du formulaire de contact', 'contact-1.html'),
-   ('Bloc 2', 'En dessous du formulaire de contact', 'contact-2.html')]),
- ('blog', 'Page du blog', 'oseprendretaplace.systeme.io/leblogose',
+ ('systeme', '1 · Préparer Systeme.io', 'espace.oseprendretaplace.fr',
+  ['Dans Systeme.io, ajoute le domaine <b>espace.oseprendretaplace.fr</b> (Paramètres → Domaines personnalisés). Crée chez OVH l’enregistrement DNS que Systeme.io t’indique.',
+   'Dans les réglages de chaque tunnel (paiements, remerciements, Winter Pack, cartable de rentrée, sprint…) et de l’espace membre, choisis le domaine espace.oseprendretaplace.fr.',
+   'Vérifie que <b>espace.oseprendretaplace.fr/paiement-ose</b> s’ouvre bien. Ne passe pas à l’étape 3 avant : sinon les paiements ne fonctionneront plus.'],
+  []),
+ ('netlify', '2 · Mettre le site sur Netlify', 'site-ose-netlify.zip',
+  ['Sur Netlify : Add new site → Deploy manually, puis glisse le fichier <b>site-ose-netlify.zip</b>.',
+   'Dans Forms, clique sur « Enable form detection », puis redépose le même ZIP (c’est ce qui active le formulaire de contact).',
+   'Dans Forms → Form notifications, ajoute une notification e-mail vers contact@oseprendretaplace.fr.',
+   'Teste le site sur l’adresse provisoire xxx.netlify.app que Netlify te donne.'],
+  []),
+ ('domaine', '3 · Brancher www.oseprendretaplace.fr', 'chez OVH',
+  ['Dans Netlify : Domain management → Add a domain → www.oseprendretaplace.fr.',
+   'Dans Systeme.io, retire www.oseprendretaplace.fr de tes domaines personnalisés.',
+   'Chez OVH, remplace la cible de l’enregistrement CNAME de « www » par l’adresse que Netlify affiche (xxx.netlify.app).',
+   'Attends que le changement se propage (de quelques minutes à quelques heures). Netlify active le HTTPS tout seul.',
+   'Teste : www.oseprendretaplace.fr/paiement-ose doit t’emmener sur la page de paiement, sur espace.oseprendretaplace.fr.'],
+  []),
+ ('blog', '4 · Le blog (reste sur Systeme.io)', 'oseprendretaplace.systeme.io/leblogose',
   ['Ouvre la mise en page du blog et garde l’élément « liste des articles » : il se met à jour seul.',
    'Supprime les autres sections. Au-dessus de la liste, ajoute un élément « Code HTML » avec le bloc 1.',
    'Sous la liste, ajoute un second élément « Code HTML » avec le bloc 2.'],
   [('Bloc 1', 'Au-dessus de la liste des articles', 'blog-1.html'),
    ('Bloc 2', 'En dessous de la liste des articles', 'blog-2.html')]),
- ('legal', 'Pages légales', '3 nouvelles pages',
-  ['Crée 3 nouvelles pages dans ton site Systeme.io, avec exactement ces adresses : politique-de-confidentialite, conditions-utilisation et politique-cookies.',
-   'Dans chaque page, ajoute une section en pleine largeur, sans marges, avec un élément « Code HTML », et colle le bloc correspondant.',
-   'Les liens du pied de page de toutes les autres pages pointent déjà vers ces 3 adresses.'],
-  [('Politique de confidentialité', 'www.oseprendretaplace.fr/politique-de-confidentialite', 'politique-de-confidentialite.html'),
-   ('Conditions d’utilisation', 'www.oseprendretaplace.fr/conditions-utilisation', 'conditions-utilisation.html'),
-   ('Politique de cookies', 'www.oseprendretaplace.fr/politique-cookies', 'politique-cookies.html')]),
- ('popup', 'Facultatif · pop-up seul', 'ancienne page d’accueil',
-  ['Seulement si tu gardes l’ancienne page d’accueil quelques jours : ajoute un élément « Code HTML » n’importe où dans la page et colle ce bloc.',
-   'Inutile avec la nouvelle page d’accueil, qui contient déjà le pop-up.'],
-  [('Pop-up Winter Pack', 'N’importe où dans la page', 'popup-winter-pack.html')]),
 ]
 n = 0
-nav = ''.join('<a href="#%s">%s</a>' % (k, t.split(' · ')[0].replace('Page ', '').replace('d’accueil', 'Accueil').replace('Pages légales', 'Légal')) for k, t, *_ in PAGES)
+nav = ''.join('<a href="#%s">%s</a>' % (k, t.split(' (')[0]) for k, t, *_ in PAGES)
 secs = ''
 for key, title, url, steps, blocks in PAGES:
     items = ''
@@ -94,14 +84,14 @@ textarea{display:block;width:100%;height:96px;resize:vertical;border:1px solid v
 </style>
 <main>
 <header><h1>Mettre le nouveau site en ligne</h1>
-<p class="intro">Les codes à coller dans Systeme.io, page par page. Pour chaque bloc, clique sur « Copier le code », puis colle-le dans un élément « Code HTML ».</p></header>
-<div class="first"><p><b>À faire en premier :</b> dépose le dernier ZIP du Winter Pack sur Netlify (onglet Deploys).</p><p>Les photos et images des nouvelles pages sont hébergées avec le site du Winter Pack. Sans ce dépôt, elles ne s’affichent pas.</p></div>
+<p class="intro">Le site est hébergé sur Netlify. Toutes les adresses restent les mêmes : ce qui n’est pas une page du nouveau site (paiements, remerciements, espace membre…) est renvoyé automatiquement vers Systeme.io. Suis les étapes dans l’ordre.</p></header>
+<div class="first"><p><b>Pourquoi l’étape 1 d’abord :</b> une adresse ne peut pointer que vers un seul hébergeur. Quand www passera sur Netlify, tes pages Systeme.io vivront sur espace.oseprendretaplace.fr, et Netlify y renverra tous les anciens liens.</p><p>Le blog utilise des images hébergées avec le Winter Pack : garde bien le dernier ZIP du Winter Pack en ligne.</p></div>
 <nav class="toc" aria-label="Pages">''' + nav + '''</nav>
 ''' + secs + '''
-<div class="tips"><h2>Avant de commencer</h2><ul>
-<li>Duplique chaque page dans Systeme.io avant de la modifier : tu gardes une copie de l’ancienne version.</li>
+<div class="tips"><h2>Bon à savoir</h2><ul>
+<li>Ne supprime pas tes anciennes pages Systeme.io : les pages de paiement et de remerciement doivent continuer d’exister.</li>
 <li>Les animations et le pop-up ne s’affichent pas dans l’éditeur. Vérifie sur la page publiée, en navigation privée.</li>
-<li>Si un en-tête ou un pied de page Systeme.io apparaît encore en plus du nouveau, masque-le dans les réglages de la page.</li>
+<li>Pour changer le nom espace.oseprendretaplace.fr, dis-le-moi avant l’étape 1 : je régénère le ZIP en 1 minute.</li>
 </ul></div>
 </main>
 <script>

@@ -19,7 +19,7 @@ Les données personnelles sont collectées automatiquement, à des fins commerci
 - les données concernant la santé ou des données concernant la vie sexuelle,
 - l’orientation sexuelle d’une personne physique,
 - les condamnations pénales et infractions.
-Les données sont traitées, transférées, stockées hors de l’Union européenne avec les outils suivants : Google docs.
+Les données sont traitées, transférées, stockées hors de l’Union européenne avec les outils suivants : Google docs, Netlify (formulaire de contact du site).
 Les données collectées sont :
 - Nom
 - Prénom
