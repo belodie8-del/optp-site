@@ -4,7 +4,7 @@
 - output: sio/<page>.html (one block per page; the contact page is split around the native contact form)."""
 import re, os, hashlib, base64, sys
 OUT = 'sio/'; IMG_DIR = '/home/user/optp-site/site-ose/images-sio/'
-BASE = 'https://winterpack.oseprendretaplace.fr/ose/'
+BASE = open('site_base.txt', encoding='utf-8').read().strip().rstrip('/') + '/img/'   # images are served by the new site (the Netlify ZIP has the same files in img/)
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
          '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Nunito+Sans:opsz,wght@6..12,400..800&family=Caveat:wght@600;700&display=swap">\n')
 os.makedirs(OUT, exist_ok=True); os.makedirs(IMG_DIR, exist_ok=True)
