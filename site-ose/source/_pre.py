@@ -24,6 +24,14 @@ BLOG = 'https://oseprendretaplace.systeme.io/leblogose'
 CONTACT = 'https://www.oseprendretaplace.fr/contact'
 RDV = 'https://calendly.com/eb-formationconsulting/30min'
 WPK = 'https://winterpack.oseprendretaplace.fr/'
+LINKEDIN = 'https://www.linkedin.com/in/elodie-boyer-299891143/'
+INSTA = 'https://www.instagram.com/elodie_boyer_off_management/'
+LOGO_LI = ('<svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="11" fill="#0A66C2"/>'
+           '<path fill="#fff" d="M13 19h5v16h-5zM15.5 10.8a2.9 2.9 0 1 1 0 5.8 2.9 2.9 0 0 1 0-5.8zM21 19h4.8v2.2h.1c.7-1.3 2.3-2.6 4.8-2.6 5.1 0 6.1 3.4 6.1 7.7V35h-5v-7.8c0-1.9 0-4.3-2.6-4.3s-3 2-3 4.1V35h-5z"/></svg>')
+LOGO_IG = ('<svg viewBox="0 0 48 48" aria-hidden="true"><defs><radialGradient id="soc-ig" cx="30%" cy="107%" r="150%"><stop offset="0" stop-color="#FDF497"/><stop offset=".05" stop-color="#FDF497"/>'
+           '<stop offset=".45" stop-color="#FD5949"/><stop offset=".6" stop-color="#D6249F"/><stop offset=".9" stop-color="#285AEB"/></radialGradient></defs>'
+           '<rect width="48" height="48" rx="12" fill="url(#soc-ig)"/><rect x="11" y="11" width="26" height="26" rx="8" fill="none" stroke="#fff" stroke-width="3"/>'
+           '<circle cx="24" cy="24" r="6.2" fill="none" stroke="#fff" stroke-width="3"/><circle cx="31.6" cy="16.4" r="1.9" fill="#fff"/></svg>')
 WP_AP = [img('home/wpap/s%d.jpg' % n) for n in (1, 2, 7)]
 WP_TOOLS = ['L’entretien professionnel', 'L’entretien annuel', 'La réunion d’équipe', 'La trame du OTO',
             'Le tableau de bord des objectifs', 'Le calendrier des rituels', 'Les 10 commandements', 'Le kit de survie verbal']

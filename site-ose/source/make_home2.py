@@ -24,6 +24,14 @@ BLOG = 'https://oseprendretaplace.systeme.io/leblogose'
 CONTACT = 'https://www.oseprendretaplace.fr/contact'
 RDV = 'https://calendly.com/eb-formationconsulting/30min'
 WPK = 'https://winterpack.oseprendretaplace.fr/'
+LINKEDIN = 'https://www.linkedin.com/in/elodie-boyer-299891143/'
+INSTA = 'https://www.instagram.com/elodie_boyer_off_management/'
+LOGO_LI = ('<svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="11" fill="#0A66C2"/>'
+           '<path fill="#fff" d="M13 19h5v16h-5zM15.5 10.8a2.9 2.9 0 1 1 0 5.8 2.9 2.9 0 0 1 0-5.8zM21 19h4.8v2.2h.1c.7-1.3 2.3-2.6 4.8-2.6 5.1 0 6.1 3.4 6.1 7.7V35h-5v-7.8c0-1.9 0-4.3-2.6-4.3s-3 2-3 4.1V35h-5z"/></svg>')
+LOGO_IG = ('<svg viewBox="0 0 48 48" aria-hidden="true"><defs><radialGradient id="soc-ig" cx="30%" cy="107%" r="150%"><stop offset="0" stop-color="#FDF497"/><stop offset=".05" stop-color="#FDF497"/>'
+           '<stop offset=".45" stop-color="#FD5949"/><stop offset=".6" stop-color="#D6249F"/><stop offset=".9" stop-color="#285AEB"/></radialGradient></defs>'
+           '<rect width="48" height="48" rx="12" fill="url(#soc-ig)"/><rect x="11" y="11" width="26" height="26" rx="8" fill="none" stroke="#fff" stroke-width="3"/>'
+           '<circle cx="24" cy="24" r="6.2" fill="none" stroke="#fff" stroke-width="3"/><circle cx="31.6" cy="16.4" r="1.9" fill="#fff"/></svg>')
 WP_AP = [img('home/wpap/s%d.jpg' % n) for n in (1, 2, 7)]
 WP_TOOLS = ['L’entretien professionnel', 'L’entretien annuel', 'La réunion d’équipe', 'La trame du OTO',
             'Le tableau de bord des objectifs', 'Le calendrier des rituels', 'Les 10 commandements', 'Le kit de survie verbal']
@@ -207,6 +215,16 @@ BODY = '''<header class="top hx"><div class="wrap">
   <div class="posts2">''' + ''.join('<a class="pc2" href="%s"><span class="pc2-i"><img src="%s" alt="" width="640" height="480" loading="lazy"></span><span class="pc2-t"><span class="pc2-k">Article</span><span class="pc2-h">%s</span><span class="pc2-m">Lire l’article →</span></span></a>' % (POST_URLS[i], POST_IMG[i], p) for i, p in enumerate(POSTS)) + '''</div>
 </div></section>
 
+<section class="soc" id="reseaux"><div class="wrap">
+  <div class="soc-h"><span class="hand">Restons connectés</span><h2 class="h2">Suis-moi sur les réseaux</h2></div>
+  <div class="soc-g">
+    <a class="soc-c" href="''' + LINKEDIN + '''" target="_blank" rel="noopener"><span class="soc-l">''' + LOGO_LI + '''</span>
+      <span class="soc-t"><small>LinkedIn</small><b>Élodie Boyer</b><span>Mes posts sur le management, version terrain.</span></span><span class="soc-a">Me suivre <span aria-hidden="true">→</span></span></a>
+    <a class="soc-c" href="''' + INSTA + '''" target="_blank" rel="noopener"><span class="soc-l">''' + LOGO_IG + '''</span>
+      <span class="soc-t"><small>Instagram</small><b class="soc-hd">@elodie_<wbr>boyer_<wbr>off_<wbr>management</b><span>Des conseils management en format court.</span></span><span class="soc-a">Me suivre <span aria-hidden="true">→</span></span></a>
+  </div>
+</div></section>
+
 <section class="fin2"><div class="wrap">
   <span class="hand">Travaillons ensemble</span>
   <h2>Ose prendre ta place de manager et libère ton potentiel !</h2>
@@ -337,6 +355,28 @@ footer .fso svg{width:20px;height:20px;}
 @media (max-width:1020px){.wpk-g{grid-template-columns:1fr;} .wpk-v{order:-1;min-height:0;height:min(92vw,400px);max-width:480px;width:100%;margin-inline:auto;}}
 @media (max-width:560px){.wpk-l{grid-template-columns:1fr;} .wpk-o{gap:10px;} .wpk-c{padding:14px;} .wpk-c small{font-size:11px;} .wpk-c b{font-size:17px;line-height:1.2;} .wpk-c span{font-size:16px;} .wpk .btn.rdvbtn{width:100%;justify-content:center;} .wpk-st{width:112px;height:112px;padding:12px;font-size:11.5px;} .wpk-st b{font-size:34px;}}
 @media (prefers-reduced-motion:reduce){.wpk-c{transition:none;}}
+/* home: social section */
+.soc{background:var(--paper);}
+.soc .wrap{padding-block:clamp(56px,6vw,84px);}
+.soc-h{text-align:center;display:flex;flex-direction:column;align-items:center;margin-bottom:30px;}
+.soc-h .h2{margin:6px 0 0;font-size:clamp(28px,3.2vw,38px);max-width:none;}
+.soc-g{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;max-width:900px;margin-inline:auto;}
+.soc-c{display:grid;grid-template-columns:64px minmax(0,1fr);grid-template-rows:auto auto;gap:6px 18px;align-items:center;padding:22px 24px;border-radius:26px;background:#fff;border:2px solid var(--line);text-decoration:none;color:var(--ink);box-shadow:0 22px 40px -34px rgba(8,80,85,.6);transition:transform .2s,border-color .2s,box-shadow .2s;}
+.soc-c:hover{transform:translateY(-4px);border-color:#CDE9EB;box-shadow:0 26px 44px -30px rgba(8,80,85,.6);}
+.soc-c:focus-visible{outline:3px solid var(--ember);outline-offset:4px;}
+.soc-l{grid-row:span 2;display:block;width:64px;height:64px;}
+.soc-l svg{display:block;width:100%;height:100%;}
+.soc-t{display:flex;flex-direction:column;gap:2px;min-width:0;}
+.soc-t small{font-size:12.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+.soc-t b{font-family:var(--display);font-weight:400;font-size:21px;line-height:1.2;color:var(--pine);overflow-wrap:anywhere;}
+.soc-t b.soc-hd{font-size:18px;overflow-wrap:normal;}
+.soc-t > span{font-size:15px;line-height:1.45;color:var(--muted);}
+.soc-a{font-weight:800;font-size:15px;color:var(--ember-ink);}
+.soc-a span{display:inline-block;transition:translate .2s;} .soc-c:hover .soc-a span{translate:4px 0;}
+@media (max-width:760px){.soc-g{grid-template-columns:1fr;max-width:520px;}}
+@media (max-width:420px){.soc-c{grid-template-columns:52px minmax(0,1fr);padding:18px;gap:6px 14px;} .soc-l{width:52px;height:52px;} .soc-t b{font-size:18px;} .soc-t b.soc-hd{font-size:16px;}}
+@media (prefers-reduced-motion:reduce){.soc-c,.soc-a span{transition:none;}}
+
 
 .eq-more{margin-top:26px;text-align:center;color:var(--muted);font-size:15px;}
 .eq-more a{font-weight:800;color:var(--pine);}

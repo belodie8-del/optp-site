@@ -133,6 +133,16 @@ BODY_A = '''<header class="top hx"><div class="wrap">
   <div class="posts2">''' + ''.join('<a class="pc2" href="%s"><span class="pc2-i"><img src="%s" alt="" width="640" height="480" loading="lazy"></span><span class="pc2-t"><span class="pc2-k">Article</span><span class="pc2-h">%s</span><span class="pc2-m">Lire l’article →</span></span></a>' % (POST_URLS[i], POST_IMG[i], p) for i, p in enumerate(POSTS)) + '''</div>
 </div></section>
 
+<section class="soc" id="reseaux"><div class="wrap">
+  <div class="soc-h"><span class="hand">Restons connectés</span><h2 class="h2">Suis-moi sur les réseaux</h2></div>
+  <div class="soc-g">
+    <a class="soc-c" href="''' + LINKEDIN + '''" target="_blank" rel="noopener"><span class="soc-l">''' + LOGO_LI + '''</span>
+      <span class="soc-t"><small>LinkedIn</small><b>Élodie Boyer</b><span>Mes posts sur le management, version terrain.</span></span><span class="soc-a">Me suivre <span aria-hidden="true">→</span></span></a>
+    <a class="soc-c" href="''' + INSTA + '''" target="_blank" rel="noopener"><span class="soc-l">''' + LOGO_IG + '''</span>
+      <span class="soc-t"><small>Instagram</small><b class="soc-hd">@elodie_<wbr>boyer_<wbr>off_<wbr>management</b><span>Des conseils management en format court.</span></span><span class="soc-a">Me suivre <span aria-hidden="true">→</span></span></a>
+  </div>
+</div></section>
+
 <section class="fin2"><div class="wrap">
   <span class="hand">Travaillons ensemble</span>
   <h2>Ose prendre ta place de manager et libère ton potentiel !</h2>
