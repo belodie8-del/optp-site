@@ -29,15 +29,13 @@ BODY_A = '''<header class="top hx"><div class="wrap">
 <section class="room mint" id="audit"><div class="wrap a5">
   <div class="a5-h"><span class="hand">Audit offert</span><h2 class="h2">Voilà ce que tu reçois à la fin de l’audit</h2>
     <p class="sub">Un vrai rapport, personnalisé à partir de tes réponses. Pas un quiz qui te dit « bravo ».</p></div>
+  <div class="a5-cta"><a class="btn rdvbtn big" href="''' + AUDIT + '''">⚡ Version express · 3 min</a><a class="btn a5-sec" href="''' + AUDIT + '''">✦ Audit complet · 10 min</a></div>
   <div class="a5-g">
     <figure class="a5-c"><span class="a5-n">1</span><div class="a5-i"><img src="''' + RAP['profil'] + '''" alt="Exemple de rapport : ton profil et ton point de vigilance" width="900" height="710"></div>
       <figcaption><b>Ton profil et ton point de vigilance</b><span class="a5-b">Express et complet</span></figcaption></figure>
-    <figure class="a5-c"><span class="a5-n">2</span><div class="a5-i fit"><img src="''' + RAP['radar'] + '''" alt="Exemple de rapport : ta maturité thème par thème" width="900" height="388"></div>
-      <figcaption><b>Ta maturité, thème par thème</b><span class="a5-b co">Audit complet</span></figcaption></figure>
-    <figure class="a5-c"><span class="a5-n">3</span><div class="a5-i"><img src="''' + RAP['plan'] + '''" alt="Exemple de rapport : ton plan d’action sur 3 semaines" width="900" height="813"></div>
+    <figure class="a5-c"><span class="a5-n">2</span><div class="a5-i"><img src="''' + RAP['plan'] + '''" alt="Exemple de rapport : ton plan d’action sur 3 semaines" width="900" height="813"></div>
       <figcaption><b>Ton plan d’action sur 3 semaines</b><span class="a5-b co">Audit complet</span></figcaption></figure>
   </div>
-  <div class="a5-cta"><a class="btn rdvbtn big" href="''' + AUDIT + '''">⚡ Version express · 3 min</a><a class="btn a5-sec" href="''' + AUDIT + '''">✦ Audit complet · 10 min</a></div>
   <p class="a5-note">Exemple réel de rapport · 100 % offert</p>
 </div></section>
 

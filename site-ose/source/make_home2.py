@@ -112,15 +112,13 @@ BODY = '''<header class="top hx"><div class="wrap">
 <section class="room mint" id="audit"><div class="wrap a5">
   <div class="a5-h"><span class="hand">Audit offert</span><h2 class="h2">Voilà ce que tu reçois à la fin de l’audit</h2>
     <p class="sub">Un vrai rapport, personnalisé à partir de tes réponses. Pas un quiz qui te dit « bravo ».</p></div>
+  <div class="a5-cta"><a class="btn rdvbtn big" href="''' + AUDIT + '''">⚡ Version express · 3 min</a><a class="btn a5-sec" href="''' + AUDIT + '''">✦ Audit complet · 10 min</a></div>
   <div class="a5-g">
     <figure class="a5-c"><span class="a5-n">1</span><div class="a5-i"><img src="''' + RAP['profil'] + '''" alt="Exemple de rapport : ton profil et ton point de vigilance" width="900" height="710"></div>
       <figcaption><b>Ton profil et ton point de vigilance</b><span class="a5-b">Express et complet</span></figcaption></figure>
-    <figure class="a5-c"><span class="a5-n">2</span><div class="a5-i fit"><img src="''' + RAP['radar'] + '''" alt="Exemple de rapport : ta maturité thème par thème" width="900" height="388"></div>
-      <figcaption><b>Ta maturité, thème par thème</b><span class="a5-b co">Audit complet</span></figcaption></figure>
-    <figure class="a5-c"><span class="a5-n">3</span><div class="a5-i"><img src="''' + RAP['plan'] + '''" alt="Exemple de rapport : ton plan d’action sur 3 semaines" width="900" height="813"></div>
+    <figure class="a5-c"><span class="a5-n">2</span><div class="a5-i"><img src="''' + RAP['plan'] + '''" alt="Exemple de rapport : ton plan d’action sur 3 semaines" width="900" height="813"></div>
       <figcaption><b>Ton plan d’action sur 3 semaines</b><span class="a5-b co">Audit complet</span></figcaption></figure>
   </div>
-  <div class="a5-cta"><a class="btn rdvbtn big" href="''' + AUDIT + '''">⚡ Version express · 3 min</a><a class="btn a5-sec" href="''' + AUDIT + '''">✦ Audit complet · 10 min</a></div>
   <p class="a5-note">Exemple réel de rapport · 100 % offert</p>
 </div></section>
 
@@ -361,9 +359,9 @@ footer .fso svg{width:20px;height:20px;}
 /* home: audit section, real report preview */
 #audit .a5-h{text-align:center;display:flex;flex-direction:column;align-items:center;}
 #audit .a5-h .sub{text-align:center;margin-inline:auto;max-width:52ch;}
-.a5-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:22px;}
+.a5-g{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px;margin:48px auto 0;max-width:900px;}
 .a5-c{position:relative;margin:0;display:flex;flex-direction:column;background:#fff;border-radius:26px;padding:14px 14px 18px;box-shadow:0 30px 50px -36px rgba(8,80,85,.75);}
-.a5-i{height:250px;overflow:hidden;border-radius:16px;border:1px solid rgba(8,80,85,.08);background:#FCFAF8;}
+.a5-i{height:300px;overflow:hidden;border-radius:16px;border:1px solid rgba(8,80,85,.08);background:#FCFAF8;}
 .a5-i img{display:block;width:100%;height:100%;object-fit:cover;object-position:top left;transition:transform 4s ease;}
 .a5-i.fit img{object-fit:contain;object-position:center;}
 .a5-c:hover .a5-i img{transform:scale(1.04);}
@@ -371,12 +369,12 @@ footer .fso svg{width:20px;height:20px;}
 .a5-c figcaption{display:flex;flex-direction:column;align-items:flex-start;gap:8px;padding:14px 6px 0;}
 .a5-c figcaption b{font-family:var(--display);font-weight:400;font-size:21px;line-height:1.2;color:var(--pine);}
 .a5-b{font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:999px;background:var(--peach2);color:var(--ember-ink);} .a5-b.co{background:#CDE9EB;color:var(--pine);}
-.a5-cta{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:14px 18px;margin-top:40px;}
+.a5-cta{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:14px 18px;margin-top:8px;}
 .a5-sec{background:#fff;color:var(--pine);border:2px solid var(--pine);padding:17px 30px;font-size:17px;}
 .a5-sec:hover{background:var(--pine);color:#fff;}
 .a5-cta a:focus-visible{outline:3px solid var(--ember);outline-offset:3px;}
-.a5-note{margin:16px 0 0;text-align:center;font-family:var(--hand);font-weight:700;font-size:22px;color:var(--ember-ink);}
-@media (max-width:900px){.a5-g{grid-template-columns:1fr;max-width:480px;margin-inline:auto;}}
+.a5-note{margin:22px 0 0;text-align:center;font-family:var(--hand);font-weight:700;font-size:22px;color:var(--ember-ink);}
+@media (max-width:760px){.a5-g{grid-template-columns:1fr;max-width:480px;} .a5-i{height:260px;}}
 @media (max-width:560px){.a5-cta .btn{width:100%;justify-content:center;}}
 @media (prefers-reduced-motion:reduce){.a5-i img{transition:none;}}
 
