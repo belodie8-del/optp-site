@@ -73,3 +73,13 @@ h1{font-family:'Young Serif',Georgia,serif;font-weight:400;line-height:1.05}
 html = '<!doctype html><meta charset="utf-8">' + CSS + '<p class="lab">Version 1</p>' + V1 + '<p class="lab">Version 2</p>' + V2 + '<p class="lab">Version 3</p>' + V3 + defs
 open(S + 'sig/sig-versions.html', 'w', encoding='utf-8').write(html)
 print('ok')
+
+# image-only versions (the clickable buttons are added below the image as real HTML links)
+import re as _re
+img_html = html.replace('body{background:#eee;', 'body{background:transparent;')
+img_html = _re.sub(r'\s*<div class="pl">.*?</div>', '', img_html)
+img_html = _re.sub(r'\s*<div class="s3-band">.*?</div>', '', img_html)
+img_html = img_html.replace('height:226px}', 'height:auto;min-height:196px}').replace('min-height:236px}', 'min-height:210px}')
+img_html = img_html.replace('.s2-v{flex:none;align-self:flex-end;margin-bottom:-22px}', '.s2-v{flex:none;align-self:flex-end;margin-bottom:-22px}.s2-v img{height:178px!important;width:136px!important;border-radius:68px 68px 0 0!important}')
+open(S + 'sig/sig-images.html', 'w', encoding='utf-8').write(img_html)
+print('images ok')
