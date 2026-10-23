@@ -26,17 +26,19 @@ BODY_A = '''<header class="top hx"><div class="wrap">
   <div class="chatlist">''' + ''.join('<p class="bub%s">%s</p>' % (' r' if i % 2 else '', t) for i, t in enumerate(PAINS)) + '''</div>
 </div></section>
 
-<section class="room mint" id="audit"><div class="wrap">
-  <div class="aud">
-    <span class="hand">Audit offert</span><h2 class="h2 aud-h">Mon outil préféré (offert) pour transformer ton management</h2>
-    <div class="aud-o">
-      <a class="ao ex" href="''' + AUDIT + '''"><span class="ao-i" aria-hidden="true">⚡</span><span class="ao-k">Version express · 3 min</span><b>Mon profil en 3 minutes</b>
-        <span class="ao-t">10 questions pour révéler ton <strong>style dominant</strong> et ton <strong>point de vigilance</strong>.</span><span class="ao-c">Commencer l’audit express →</span></a>
-      <a class="ao co" href="''' + AUDIT + '''"><span class="ao-i" aria-hidden="true">✦</span><span class="ao-k">Audit complet · 10 min</span><b>Mon analyse détaillée</b>
-        <span class="ao-t">31 questions : radar de maturité, forces, axes, et ton <strong>plan d’action sur 3 semaines</strong>.</span><span class="ao-c">Commencer l’audit complet →</span></a>
-    </div>
-    <p class="aud-n"><b>Des vraies questions. Un vrai diagnostic.</b> Et un premier plan d’action pour savoir exactement quoi changer dans ton management, dès maintenant.</p>
+<section class="room mint" id="audit"><div class="wrap a5">
+  <div class="a5-h"><span class="hand">Audit offert</span><h2 class="h2">Voilà ce que tu reçois à la fin de l’audit</h2>
+    <p class="sub">Un vrai rapport, personnalisé à partir de tes réponses. Pas un quiz qui te dit « bravo ».</p></div>
+  <div class="a5-g">
+    <figure class="a5-c"><span class="a5-n">1</span><div class="a5-i"><img src="''' + RAP['profil'] + '''" alt="Exemple de rapport : ton profil et ton point de vigilance" width="900" height="710"></div>
+      <figcaption><b>Ton profil et ton point de vigilance</b><span class="a5-b">Express et complet</span></figcaption></figure>
+    <figure class="a5-c"><span class="a5-n">2</span><div class="a5-i fit"><img src="''' + RAP['radar'] + '''" alt="Exemple de rapport : ta maturité thème par thème" width="900" height="388"></div>
+      <figcaption><b>Ta maturité, thème par thème</b><span class="a5-b co">Audit complet</span></figcaption></figure>
+    <figure class="a5-c"><span class="a5-n">3</span><div class="a5-i"><img src="''' + RAP['plan'] + '''" alt="Exemple de rapport : ton plan d’action sur 3 semaines" width="900" height="813"></div>
+      <figcaption><b>Ton plan d’action sur 3 semaines</b><span class="a5-b co">Audit complet</span></figcaption></figure>
   </div>
+  <div class="a5-cta"><a class="btn rdvbtn big" href="''' + AUDIT + '''">⚡ Version express · 3 min</a><a class="btn a5-sec" href="''' + AUDIT + '''">✦ Audit complet · 10 min</a></div>
+  <p class="a5-note">Exemple réel de rapport · 100 % offert</p>
 </div></section>
 
 <section class="room" id="formations"><div class="wrap">
@@ -151,6 +153,6 @@ BODY_A = '''<header class="top hx"><div class="wrap">
   <a class="btn rdvbtn big" href="''' + RDV + '''" target="_blank" rel="noopener">Je prends RDV avec Élodie ''' + ARR + '''</a>
 </div></section>
 </main>
-<footer><div class="wrap"><span><b>Élodie Boyer</b> · Formatrice en management passionnée qui aide les managers à réaliser leur plein potentiel<br>© 2026 EB Formation Consulting · <span class="flg"><a href="https://oseprendretaplace.fr/politique-de-confidentialite">Politique de confidentialité</a> · <a href="https://oseprendretaplace.fr/conditions-utilisation">Conditions d’utilisation</a> · <a href="https://oseprendretaplace.fr/politique-cookies">Politique de cookies</a></span></span><nav aria-label="Liens"><a href="''' + FORM + '''">Les formations</a><a href="''' + BLOG + '''">Blog</a><a href="''' + CONTACT + '''">Contact</a><span class="fso"><a href="https://www.linkedin.com/in/elodie-boyer-299891143/" target="_blank" rel="noopener" aria-label="LinkedIn · Élodie Boyer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 11v5M8 8v.01M12 16v-5M12 13a2 2 0 0 1 4 0v3"/></svg></a><a href="https://www.instagram.com/elodie_boyer_off_management/" target="_blank" rel="noopener" aria-label="Instagram · elodie_boyer_off_management"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5v.01"/></svg></a></span></nav></div></footer>
+<footer><div class="wrap"><span><b>Élodie Boyer</b> · Formatrice en management passionnée qui aide les managers à réaliser leur plein potentiel<br>© 2026 EB Formation Consulting · <span class="flg"><a href="@@SITE@@/politique-de-confidentialite">Politique de confidentialité</a> · <a href="@@SITE@@/conditions-utilisation">Conditions d’utilisation</a> · <a href="@@SITE@@/politique-cookies">Politique de cookies</a></span></span><nav aria-label="Liens"><a href="''' + FORM + '''">Les formations</a><a href="''' + BLOG + '''">Blog</a><a href="''' + CONTACT + '''">Contact</a><span class="fso"><a href="https://www.linkedin.com/in/elodie-boyer-299891143/" target="_blank" rel="noopener" aria-label="LinkedIn · Élodie Boyer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 11v5M8 8v.01M12 16v-5M12 13a2 2 0 0 1 4 0v3"/></svg></a><a href="https://www.instagram.com/elodie_boyer_off_management/" target="_blank" rel="noopener" aria-label="Instagram · elodie_boyer_off_management"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5v.01"/></svg></a></span></nav></div></footer>
 '''
 

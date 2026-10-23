@@ -24,6 +24,7 @@ BLOG = 'https://oseprendretaplace.systeme.io/leblogose'
 CONTACT = '@@SITE@@/contact'
 RDV = 'https://calendly.com/eb-formationconsulting/30min'
 WPK = 'https://winterpack.oseprendretaplace.fr/'
+RAP = {k: img('home/rapport/r-%s.jpg' % k) for k in ('profil', 'radar', 'plan')}   # real report screenshots (example profile)
 LINKEDIN = 'https://www.linkedin.com/in/elodie-boyer-299891143/'
 INSTA = 'https://www.instagram.com/elodie_boyer_off_management/'
 LOGO_LI = ('<svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="11" fill="#0A66C2"/>'
@@ -108,17 +109,19 @@ BODY = '''<header class="top hx"><div class="wrap">
   <div class="chatlist">''' + ''.join('<p class="bub%s">%s</p>' % (' r' if i % 2 else '', t) for i, t in enumerate(PAINS)) + '''</div>
 </div></section>
 
-<section class="room mint" id="audit"><div class="wrap">
-  <div class="aud">
-    <span class="hand">Audit offert</span><h2 class="h2 aud-h">Mon outil préféré (offert) pour transformer ton management</h2>
-    <div class="aud-o">
-      <a class="ao ex" href="''' + AUDIT + '''"><span class="ao-i" aria-hidden="true">⚡</span><span class="ao-k">Version express · 3 min</span><b>Mon profil en 3 minutes</b>
-        <span class="ao-t">10 questions pour révéler ton <strong>style dominant</strong> et ton <strong>point de vigilance</strong>.</span><span class="ao-c">Commencer l’audit express →</span></a>
-      <a class="ao co" href="''' + AUDIT + '''"><span class="ao-i" aria-hidden="true">✦</span><span class="ao-k">Audit complet · 10 min</span><b>Mon analyse détaillée</b>
-        <span class="ao-t">31 questions : radar de maturité, forces, axes, et ton <strong>plan d’action sur 3 semaines</strong>.</span><span class="ao-c">Commencer l’audit complet →</span></a>
-    </div>
-    <p class="aud-n"><b>Des vraies questions. Un vrai diagnostic.</b> Et un premier plan d’action pour savoir exactement quoi changer dans ton management, dès maintenant.</p>
+<section class="room mint" id="audit"><div class="wrap a5">
+  <div class="a5-h"><span class="hand">Audit offert</span><h2 class="h2">Voilà ce que tu reçois à la fin de l’audit</h2>
+    <p class="sub">Un vrai rapport, personnalisé à partir de tes réponses. Pas un quiz qui te dit « bravo ».</p></div>
+  <div class="a5-g">
+    <figure class="a5-c"><span class="a5-n">1</span><div class="a5-i"><img src="''' + RAP['profil'] + '''" alt="Exemple de rapport : ton profil et ton point de vigilance" width="900" height="710"></div>
+      <figcaption><b>Ton profil et ton point de vigilance</b><span class="a5-b">Express et complet</span></figcaption></figure>
+    <figure class="a5-c"><span class="a5-n">2</span><div class="a5-i fit"><img src="''' + RAP['radar'] + '''" alt="Exemple de rapport : ta maturité thème par thème" width="900" height="388"></div>
+      <figcaption><b>Ta maturité, thème par thème</b><span class="a5-b co">Audit complet</span></figcaption></figure>
+    <figure class="a5-c"><span class="a5-n">3</span><div class="a5-i"><img src="''' + RAP['plan'] + '''" alt="Exemple de rapport : ton plan d’action sur 3 semaines" width="900" height="813"></div>
+      <figcaption><b>Ton plan d’action sur 3 semaines</b><span class="a5-b co">Audit complet</span></figcaption></figure>
   </div>
+  <div class="a5-cta"><a class="btn rdvbtn big" href="''' + AUDIT + '''">⚡ Version express · 3 min</a><a class="btn a5-sec" href="''' + AUDIT + '''">✦ Audit complet · 10 min</a></div>
+  <p class="a5-note">Exemple réel de rapport · 100 % offert</p>
 </div></section>
 
 <section class="room" id="formations"><div class="wrap">
@@ -355,6 +358,28 @@ footer .fso svg{width:20px;height:20px;}
 @media (max-width:1020px){.wpk-g{grid-template-columns:1fr;} .wpk-v{order:-1;min-height:0;height:min(92vw,400px);max-width:480px;width:100%;margin-inline:auto;}}
 @media (max-width:560px){.wpk-l{grid-template-columns:1fr;} .wpk-o{gap:10px;} .wpk-c{padding:14px;} .wpk-c small{font-size:11px;} .wpk-c b{font-size:17px;line-height:1.2;} .wpk-c span{font-size:16px;} .wpk .btn.rdvbtn{width:100%;justify-content:center;} .wpk-st{width:112px;height:112px;padding:12px;font-size:11.5px;} .wpk-st b{font-size:34px;}}
 @media (prefers-reduced-motion:reduce){.wpk-c{transition:none;}}
+/* home: audit section, real report preview */
+#audit .a5-h{text-align:center;display:flex;flex-direction:column;align-items:center;}
+#audit .a5-h .sub{text-align:center;margin-inline:auto;max-width:52ch;}
+.a5-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:22px;}
+.a5-c{position:relative;margin:0;display:flex;flex-direction:column;background:#fff;border-radius:26px;padding:14px 14px 18px;box-shadow:0 30px 50px -36px rgba(8,80,85,.75);}
+.a5-i{height:250px;overflow:hidden;border-radius:16px;border:1px solid rgba(8,80,85,.08);background:#FCFAF8;}
+.a5-i img{display:block;width:100%;height:100%;object-fit:cover;object-position:top left;transition:transform 4s ease;}
+.a5-i.fit img{object-fit:contain;object-position:center;}
+.a5-c:hover .a5-i img{transform:scale(1.04);}
+.a5-n{position:absolute;z-index:2;top:-14px;left:-10px;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--ember);color:#2B1304;font-family:var(--display);font-size:22px;box-shadow:0 10px 20px -10px rgba(180,86,31,.8);}
+.a5-c figcaption{display:flex;flex-direction:column;align-items:flex-start;gap:8px;padding:14px 6px 0;}
+.a5-c figcaption b{font-family:var(--display);font-weight:400;font-size:21px;line-height:1.2;color:var(--pine);}
+.a5-b{font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:999px;background:var(--peach2);color:var(--ember-ink);} .a5-b.co{background:#CDE9EB;color:var(--pine);}
+.a5-cta{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:14px 18px;margin-top:40px;}
+.a5-sec{background:#fff;color:var(--pine);border:2px solid var(--pine);padding:17px 30px;font-size:17px;}
+.a5-sec:hover{background:var(--pine);color:#fff;}
+.a5-cta a:focus-visible{outline:3px solid var(--ember);outline-offset:3px;}
+.a5-note{margin:16px 0 0;text-align:center;font-family:var(--hand);font-weight:700;font-size:22px;color:var(--ember-ink);}
+@media (max-width:900px){.a5-g{grid-template-columns:1fr;max-width:480px;margin-inline:auto;}}
+@media (max-width:560px){.a5-cta .btn{width:100%;justify-content:center;}}
+@media (prefers-reduced-motion:reduce){.a5-i img{transition:none;}}
+
 /* home: social section */
 .soc{background:var(--paper);}
 .soc .wrap{padding-block:clamp(56px,6vw,84px);}

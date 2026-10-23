@@ -137,7 +137,6 @@ html{scroll-behavior:smooth;}
 .ose .chatlist{display:flex;flex-direction:column;gap:14px;}
 .ose .bub{margin:0;max-width:88%;padding:16px 20px;background:var(--peach);border-radius:22px 22px 22px 6px;font-size:16.5px;line-height:1.45;color:var(--ink);box-shadow:0 10px 22px -18px rgba(29,42,40,.6);}
 .ose .bub.r{align-self:flex-end;background:var(--mint);border-radius:22px 22px 6px 22px;color:var(--pine);}
-.ose .aud{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:center;background:#fff;border-radius:34px;padding:clamp(28px,4vw,52px);box-shadow:0 30px 60px -40px rgba(8,80,85,.6);}
 .ose .eq{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1.25fr);gap:14px;align-items:center;margin-top:40px;}
 .ose .eq-op{align-self:center;display:grid;place-items:center;width:50px;height:50px;border-radius:50%;background:var(--mint);color:var(--pine);font-family:var(--display);font-size:30px;}
 .ose .trk{display:flex;flex-direction:column;gap:10px;padding:26px 22px;border-radius:26px;background:var(--paper);border:2px solid var(--line);}
@@ -231,6 +230,27 @@ html{scroll-behavior:smooth;}
 .ose .wpk-st{width:112px;height:112px;padding:12px;font-size:11.5px;}
 .ose .wpk-st b{font-size:34px;}}
 @media (prefers-reduced-motion:reduce){.ose .wpk-c{transition:none;}}
+.ose #audit .a5-h{text-align:center;display:flex;flex-direction:column;align-items:center;}
+.ose #audit .a5-h .sub{text-align:center;margin-inline:auto;max-width:52ch;}
+.ose .a5-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:22px;}
+.ose .a5-c{position:relative;margin:0;display:flex;flex-direction:column;background:#fff;border-radius:26px;padding:14px 14px 18px;box-shadow:0 30px 50px -36px rgba(8,80,85,.75);}
+.ose .a5-i{height:250px;overflow:hidden;border-radius:16px;border:1px solid rgba(8,80,85,.08);background:#FCFAF8;}
+.ose .a5-i img{display:block;width:100%;height:100%;object-fit:cover;object-position:top left;transition:transform 4s ease;}
+.ose .a5-i.fit img{object-fit:contain;object-position:center;}
+.ose .a5-c:hover .a5-i img{transform:scale(1.04);}
+.ose .a5-n{position:absolute;z-index:2;top:-14px;left:-10px;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--ember);color:#2B1304;font-family:var(--display);font-size:22px;box-shadow:0 10px 20px -10px rgba(180,86,31,.8);}
+.ose .a5-c figcaption{display:flex;flex-direction:column;align-items:flex-start;gap:8px;padding:14px 6px 0;}
+.ose .a5-c figcaption b{font-family:var(--display);font-weight:400;font-size:21px;line-height:1.2;color:var(--pine);}
+.ose .a5-b{font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:999px;background:var(--peach2);color:var(--ember-ink);}
+.ose .a5-b.co{background:#CDE9EB;color:var(--pine);}
+.ose .a5-cta{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:14px 18px;margin-top:40px;}
+.ose .a5-sec{background:#fff;color:var(--pine);border:2px solid var(--pine);padding:17px 30px;font-size:17px;}
+.ose .a5-sec:hover{background:var(--pine);color:#fff;}
+.ose .a5-cta a:focus-visible{outline:3px solid var(--ember);outline-offset:3px;}
+.ose .a5-note{margin:16px 0 0;text-align:center;font-family:var(--hand);font-weight:700;font-size:22px;color:var(--ember-ink);}
+@media (max-width:900px){.ose .a5-g{grid-template-columns:1fr;max-width:480px;margin-inline:auto;}}
+@media (max-width:560px){.ose .a5-cta .btn{width:100%;justify-content:center;}}
+@media (prefers-reduced-motion:reduce){.ose .a5-i img{transition:none;}}
 .ose .soc{background:var(--paper);}
 .ose .soc .wrap{padding-block:clamp(56px,6vw,84px);}
 .ose .soc-h{text-align:center;display:flex;flex-direction:column;align-items:center;margin-bottom:30px;}
@@ -308,25 +328,13 @@ html{scroll-behavior:smooth;}
 @media (max-width:1020px){.ose .posts2{grid-template-columns:repeat(2,minmax(0,1fr));}}
 @media (max-width:560px){.ose .posts2{grid-template-columns:1fr;gap:20px;}}
 @media (prefers-reduced-motion:reduce){.ose .pc2,.ose .pc2-i img{transition:none;}}
-.ose .aud{display:block!important;}
-.ose .aud .aud-h{max-width:24ch;margin-bottom:34px;}
-.ose .aud-o{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;}
 .ose .ao{display:flex;flex-direction:column;gap:8px;padding:26px 26px 24px;border-radius:24px;text-decoration:none;color:var(--ink);border-left:6px solid var(--ember);background:var(--peach);transition:transform .2s,box-shadow .2s;}
 .ose .ao.co{border-left-color:var(--teal);background:var(--mint);}
 .ose .ao:hover{transform:translateY(-4px);box-shadow:0 22px 36px -28px rgba(8,80,85,.7);}
 .ose .ao:focus-visible{outline:3px solid var(--ember);outline-offset:4px;}
-.ose .ao-i{font-size:24px;line-height:1;color:var(--ember);}
-.ose .ao.co .ao-i{color:var(--teal);}
-.ose .ao-k{font-size:12.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--ember-ink);}
-.ose .ao.co .ao-k{color:var(--teal);}
 .ose .ao b{font-family:var(--display);font-weight:400;font-size:26px;line-height:1.15;color:var(--ink);}
-.ose .ao-t{font-size:15.5px;line-height:1.55;color:var(--muted);}
-.ose .ao-t strong{color:var(--ink);}
-.ose .ao-c{margin-top:auto;padding-top:8px;font-weight:800;color:var(--ember-ink);}
-.ose .ao.co .ao-c{color:var(--pine);}
 .ose .aud-n{margin:28px 0 0;padding-top:24px;border-top:1.5px dashed rgba(8,80,85,.18);font-size:17px;line-height:1.6;color:var(--muted);}
 .ose .aud-n b{color:var(--pine);}
-@media (max-width:760px){.ose .aud-o{grid-template-columns:1fr;}}
 @media (prefers-reduced-motion:reduce){.ose .ao{transition:none;}}
 .ose .eq{grid-template-columns:minmax(0,1fr) auto minmax(0,1fr)!important;align-items:stretch!important;}
 .ose .eq-eq{grid-column:1/-1;justify-self:center;}
@@ -368,7 +376,6 @@ html{scroll-behavior:smooth;}
 .ose .pg-h .h2{max-width:none;font-size:clamp(30px,3.6vw,46px);}
 .ose .pg-h .sub{max-width:62ch;margin-inline:auto;}
 @media (max-width:560px){.ose main .room .h2{font-size:30px;line-height:1.12;}
-.ose .aud .aud-h{font-size:25px;}
 .ose .pg-h .h2{font-size:25px;}}
 .ose .fin2{background:var(--ember);color:#2B1304;text-align:center;}
 .ose .fin2 .wrap{padding-block:clamp(56px,7vw,90px);max-width:860px;}
@@ -390,7 +397,6 @@ html{scroll-behavior:smooth;}
 .ose .mo{gap:80px;}
 .ose .chatlist{gap:20px;}
 .ose .bub{padding:20px 24px;}
-.ose .aud{gap:64px;padding:clamp(36px,5vw,68px);}
 .ose .eq{margin-top:64px;gap:20px;}
 .ose .trk{padding:32px 26px;gap:14px;}
 .ose .trk.big{padding:38px 32px;}
@@ -422,7 +428,6 @@ html{scroll-behavior:smooth;}
 @media (max-width:1020px){.ose main > .room{padding-block:clamp(72px,14vw,100px);}
 .ose .h2o > .wrap:first-child{padding-block:64px 40px;gap:48px;}
 .ose .mo,.ose .ab,.ose .bl{gap:48px;}
-.ose .aud{gap:40px;}
 .ose .eq{gap:16px;}}
 @media (max-width:1020px){.ose .h2o > .wrap:first-child,.ose .mo,.ose .aud,.ose .ab,.ose .bl{grid-template-columns:1fr;}
 .ose .ab-v{position:static;}
@@ -530,17 +535,19 @@ html.wpop-open{overflow:hidden;}
   <div class="chatlist"><p class="bub">Tu rentres le soir en te demandant comment tu vas gérer la situation de demain.</p><p class="bub r">Tu cherches des réponses en cachette sur ChatGPT, et tu ne trouves que des réponses génériques qui ne connaissent ni ton équipe, ni ton contexte.</p><p class="bub">Tu fais semblant de ne pas entendre ce qu’il se passe, parce que tu ne sais pas comment le gérer.</p><p class="bub r">Tu rejoues la scène de la réunion dans ta tête, en te disant que t’aurais dû dire autrement.</p><p class="bub">Tu as peur de dire à ton N+1 que tu n’y arrives pas.</p></div>
 </div></section>
 
-<section class="room mint" id="audit"><div class="wrap">
-  <div class="aud">
-    <span class="hand">Audit offert</span><h2 class="h2 aud-h">Mon outil préféré (offert) pour transformer ton management</h2>
-    <div class="aud-o">
-      <a class="ao ex" href="https://auditmanagerial.oseprendretaplace.fr/"><span class="ao-i" aria-hidden="true">⚡</span><span class="ao-k">Version express · 3 min</span><b>Mon profil en 3 minutes</b>
-        <span class="ao-t">10 questions pour révéler ton <strong>style dominant</strong> et ton <strong>point de vigilance</strong>.</span><span class="ao-c">Commencer l’audit express →</span></a>
-      <a class="ao co" href="https://auditmanagerial.oseprendretaplace.fr/"><span class="ao-i" aria-hidden="true">✦</span><span class="ao-k">Audit complet · 10 min</span><b>Mon analyse détaillée</b>
-        <span class="ao-t">31 questions : radar de maturité, forces, axes, et ton <strong>plan d’action sur 3 semaines</strong>.</span><span class="ao-c">Commencer l’audit complet →</span></a>
-    </div>
-    <p class="aud-n"><b>Des vraies questions. Un vrai diagnostic.</b> Et un premier plan d’action pour savoir exactement quoi changer dans ton management, dès maintenant.</p>
+<section class="room mint" id="audit"><div class="wrap a5">
+  <div class="a5-h"><span class="hand">Audit offert</span><h2 class="h2">Voilà ce que tu reçois à la fin de l’audit</h2>
+    <p class="sub">Un vrai rapport, personnalisé à partir de tes réponses. Pas un quiz qui te dit « bravo ».</p></div>
+  <div class="a5-g">
+    <figure class="a5-c"><span class="a5-n">1</span><div class="a5-i"><img src="https://oseprendretaplace-formation.netlify.app/img/bf30bdd6ce4a.jpg" alt="Exemple de rapport : ton profil et ton point de vigilance" width="900" height="710"></div>
+      <figcaption><b>Ton profil et ton point de vigilance</b><span class="a5-b">Express et complet</span></figcaption></figure>
+    <figure class="a5-c"><span class="a5-n">2</span><div class="a5-i fit"><img src="https://oseprendretaplace-formation.netlify.app/img/286ce558a88c.jpg" alt="Exemple de rapport : ta maturité thème par thème" width="900" height="388"></div>
+      <figcaption><b>Ta maturité, thème par thème</b><span class="a5-b co">Audit complet</span></figcaption></figure>
+    <figure class="a5-c"><span class="a5-n">3</span><div class="a5-i"><img src="https://oseprendretaplace-formation.netlify.app/img/7e5a90c6e1ad.jpg" alt="Exemple de rapport : ton plan d’action sur 3 semaines" width="900" height="813"></div>
+      <figcaption><b>Ton plan d’action sur 3 semaines</b><span class="a5-b co">Audit complet</span></figcaption></figure>
   </div>
+  <div class="a5-cta"><a class="btn rdvbtn big" href="https://auditmanagerial.oseprendretaplace.fr/">⚡ Version express · 3 min</a><a class="btn a5-sec" href="https://auditmanagerial.oseprendretaplace.fr/">✦ Audit complet · 10 min</a></div>
+  <p class="a5-note">Exemple réel de rapport · 100 % offert</p>
 </div></section>
 
 <section class="room" id="formations"><div class="wrap">

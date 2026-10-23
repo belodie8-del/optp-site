@@ -19,11 +19,12 @@ news = open(S + 'site/logos/news.svg', encoding='utf-8').read().replace('width="
 ENV = 'data:image/svg+xml;base64,' + base64.b64encode(news.encode()).decode()
 
 AUDIT = 'https://auditmanagerial.oseprendretaplace.fr/'
-FORM = 'https://oseprendretaplace.fr/formations'
+FORM = '@@SITE@@/formations'
 BLOG = 'https://oseprendretaplace.systeme.io/leblogose'
-CONTACT = 'https://oseprendretaplace.fr/contact'
+CONTACT = '@@SITE@@/contact'
 RDV = 'https://calendly.com/eb-formationconsulting/30min'
 WPK = 'https://winterpack.oseprendretaplace.fr/'
+RAP = {k: img('home/rapport/r-%s.jpg' % k) for k in ('profil', 'radar', 'plan')}   # real report screenshots (example profile)
 LINKEDIN = 'https://www.linkedin.com/in/elodie-boyer-299891143/'
 INSTA = 'https://www.instagram.com/elodie_boyer_off_management/'
 LOGO_LI = ('<svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="11" fill="#0A66C2"/>'
