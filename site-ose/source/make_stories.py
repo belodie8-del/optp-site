@@ -10,14 +10,12 @@ def tick(t): return '<li><span class="ck">✓</span>%s</li>' % t
 TOOLS = ['L’entretien professionnel', 'L’entretien annuel', 'La réunion d’équipe', 'La trame du OTO',
          'Le tableau de bord des objectifs', 'Le calendrier des rituels', 'Les 10 commandements', 'Le kit de survie verbal']
 ST = [
-('site-1', 'pine', '''<div class="top">''' + LOGOW + '''</div>
- <p class="hand o">Ça y est !</p>
+('site-1', 'pine', ''' <p class="hand o">Ça y est !</p>
  <h1 class="w">Mon nouveau site est <em>en ligne</em></h1>
  ''' + phone('../stories/m-site.jpg', 'big') + '''
  <span class="stk" style="right:52px;top:560px">Nouveau ✨</span>
  <p class="url w">www.oseprendretaplace.fr</p>'''),
-('site-2', 'peach', '''<div class="top">''' + LOGO + '''</div>
- <p class="hand">Ce que tu vas y trouver</p>
+('site-2', 'peach', ''' <p class="hand">Ce que tu vas y trouver</p>
  <h1>Tout pour oser prendre ta place de manager</h1>
  <div class="cards">
   <div class="cd"><span class="n">1</span><div><b>Mes formations</b><span>Ose Prendre Ta Place, Incarne ta posture, Booste ton équipe</span></div></div>
@@ -26,25 +24,17 @@ ST = [
   <div class="cd wp"><span class="n">4</span><div><b>❄ Le Winter Pack</b><span>8 outils pour mener tes entretiens</span></div></div>
  </div>
  <p class="hand foot">Tout est au même endroit 💚</p>'''),
-('site-3', 'mint', '''<div class="top">''' + LOGO + '''</div>
- <h1>Viens faire un tour</h1>
+('site-3', 'mint', ''' <h1>Viens faire un tour</h1>
  <p class="sub">Les formations, l’audit offert, le blog et le Winter Pack, réunis sur un seul site.</p>
  ''' + phone('../stories/m-site-form.jpg', 'mid') + '''
  <p class="hand lk">Le lien est juste ici 👇</p>
  <div class="spot"></div>'''),
-('winter-1', 'pine snow', SNOW + '''<div class="top">''' + LOGOW + '''</div>
- <p class="hand o">Nouveau · Winter Pack</p>
+('winter-1', 'pine snow', SNOW + ''' <p class="hand o">Nouveau · Winter Pack</p>
  <h1 class="w">L’hiver arrive. <em>Prépare tes managers.</em></h1>
  <p class="sub w">L’Essentiel du Manager : 8 outils pour que tes managers mènent leurs entretiens avec la même méthode.</p>
  <div class="fan"><img class="d1" src="wpap/s2.jpg" alt=""><img class="d2" src="wpap/s7.jpg" alt=""><img class="d3" src="wpap/s1.jpg" alt=""></div>
  <span class="stk big" style="right:30px;bottom:150px"><b>8</b>outils prêts<br>à l’emploi</span>'''),
-('winter-2', 'white', '''<div class="top">''' + LOGO + '''</div>
- <p class="hand">Winter Pack · L’Essentiel du Manager</p>
- <h1>8 outils pour manager toute l’année</h1>
- <ol class="tl">''' + ''.join('<li><span class="n">%d</span>%s</li>' % (i + 1, t) for i, t in enumerate(TOOLS)) + '''</ol>
- <p class="fmt">En PDF, sur Notion et sur Excel, prêts à l’emploi</p>'''),
-('winter-3', 'peach', '''<div class="top">''' + LOGO + '''</div>
- <p class="hand">Pour toi, ou pour toute ta PME</p>
+('winter-3', 'peach', ''' <p class="hand">Pour toi, ou pour toute ta PME</p>
  <h1>Choisis ton Winter Pack</h1>
  <div class="offs">
   <div class="of"><small>Pour un manager</small><b>Winter Pack Solo</b><em>197 €</em></div>
@@ -54,11 +44,12 @@ ST = [
  <p class="hand lk">Le lien est juste ici 👇</p>
  <div class="spot"></div>'''),
 ]
+exec(open('stories_tools.py', encoding='utf-8').read())
 CSS = '''<style>
 :root{--pine:#085055;--teal:#0F868A;--ember:#FF914D;--ink-e:#B4561F;--peach:#FFF4EE;--peach2:#FFE7D8;--mint:#E4F5F6;--ink:#1D2A28;--muted:#5A6663}
 *{box-sizing:border-box;margin:0}
 body{background:#999;padding:20px;display:flex;flex-wrap:wrap;gap:20px;font-family:'Nunito Sans',sans-serif;color:var(--ink)}
-.st{position:relative;width:540px;height:960px;overflow:hidden;padding:182px 44px 0;display:flex;flex-direction:column;align-items:center;text-align:center}
+.st{position:relative;width:540px;height:960px;overflow:hidden;padding:150px 44px 0;display:flex;flex-direction:column;align-items:center;text-align:center}
 .st.pine{background:radial-gradient(circle at 85% 12%,#0F6A6E 0,var(--pine) 46%)}.st.peach{background:var(--peach)}.st.mint{background:var(--mint)}.st.white{background:#fff}
 .sn{position:absolute;font-style:normal;color:#fff;line-height:1}
 .top{position:absolute;top:122px;left:0;right:0;display:flex;justify-content:center}
@@ -105,7 +96,7 @@ h1.w em{color:var(--ember)}
 .of.pme{background:var(--pine);border-color:var(--pine)}.of.pme small{color:rgba(255,255,255,.75)}.of.pme b{color:#fff}.of.pme em{color:var(--ember)}
 .gift{margin-top:14px;display:flex;gap:12px;align-items:flex-start;text-align:left;background:#fff;border:2.5px dashed var(--ember);border-radius:20px;padding:16px 18px;font-size:18px;line-height:1.4}
 .gift b{color:var(--ink-e)}
-</style>'''
+''' + CSS_T + '''</style>'''
 html = '<!doctype html><meta charset="utf-8">' + CSS + ''.join('<div class="st %s" id="%s">%s</div>' % (cls, sid, body) for sid, cls, body in ST) + defs
 open(S + 'home/stories.html', 'w', encoding='utf-8').write(html)
 print('ok', [s[0] for s in ST])
