@@ -91,6 +91,7 @@ def export(src, name, parts=None):
     for k in range(len(cuts) - 1):
         chunk = body[cuts[k]:cuts[k + 1]]
         if k > 0: chunk = '<main>' + chunk   # keeps the `main > …` rules working in the following blocks
+        if k < len(cuts) - 2: chunk += '</main>'   # every block must be valid HTML on its own (Systeme.io rejects unclosed tags)
         out = ('<!-- ' + name + ' · bloc %d/%d -->\n' % (k + 1, len(cuts) - 1)) + (style if k == 0 else '') + '<div class="ose">' + chunk + '</div>\n'
         open(OUT + '%s-%d.html' % (name, k + 1), 'w', encoding='utf-8').write(out)
 
