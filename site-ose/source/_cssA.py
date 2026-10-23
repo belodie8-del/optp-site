@@ -72,6 +72,14 @@ CSS_A = '''<style>
 .nl-k{font-weight:800;color:var(--pine);margin-bottom:6px!important;}
 .nl-h{font-family:var(--hand);font-size:23px;line-height:1.2;color:var(--ember-ink)!important;}
 footer .wrap > span{line-height:1.6;}
+footer .flg a{font-weight:600;text-decoration:underline;text-decoration-color:rgba(8,80,85,.25);text-underline-offset:3px;}
+footer .flg a:hover,footer .flg a[aria-current]{color:var(--pine);text-decoration-color:currentColor;}
+footer nav{align-items:center;}
+footer .fso{display:inline-flex;gap:10px;}
+footer .fso a{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:var(--mint);color:var(--teal);transition:background .15s,color .15s;}
+footer .fso a:hover{background:var(--teal);color:#fff;}
+footer .fso a:focus-visible{outline:3px solid var(--ember);outline-offset:2px;}
+footer .fso svg{width:20px;height:20px;}
 .eq-more{margin-top:26px;text-align:center;color:var(--muted);font-size:15px;}
 .eq-more a{font-weight:800;color:var(--pine);}
 /* programme: numbered tiles + kit */

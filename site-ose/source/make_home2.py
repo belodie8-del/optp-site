@@ -188,7 +188,7 @@ BODY = '''<header class="top hx"><div class="wrap">
   <a class="btn rdvbtn big" href="''' + RDV + '''" target="_blank" rel="noopener">Je prends RDV avec Élodie ''' + ARR + '''</a>
 </div></section>
 </main>
-<footer><div class="wrap"><span><b>Élodie Boyer</b> · Formatrice en management passionnée qui aide les managers à réaliser leur plein potentiel<br>© 2026 EB Formation Consulting · Politique de confidentialité · Conditions d’utilisation · Politique de cookies</span><nav aria-label="Liens"><a href="''' + FORM + '''">Les formations</a><a href="''' + BLOG + '''">Blog</a><a href="''' + CONTACT + '''">Contact</a><a href="https://www.linkedin.com/in/elodie-boyer-299891143/" target="_blank" rel="noopener">LinkedIn</a></nav></div></footer>
+<footer><div class="wrap"><span><b>Élodie Boyer</b> · Formatrice en management passionnée qui aide les managers à réaliser leur plein potentiel<br>© 2026 EB Formation Consulting · <span class="flg"><a href="https://www.oseprendretaplace.fr/politique-de-confidentialite">Politique de confidentialité</a> · <a href="https://www.oseprendretaplace.fr/conditions-utilisation">Conditions d’utilisation</a> · <a href="https://www.oseprendretaplace.fr/politique-cookies">Politique de cookies</a></span></span><nav aria-label="Liens"><a href="''' + FORM + '''">Les formations</a><a href="''' + BLOG + '''">Blog</a><a href="''' + CONTACT + '''">Contact</a><span class="fso"><a href="https://www.linkedin.com/in/elodie-boyer-299891143/" target="_blank" rel="noopener" aria-label="LinkedIn · Élodie Boyer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 11v5M8 8v.01M12 16v-5M12 13a2 2 0 0 1 4 0v3"/></svg></a><a href="https://www.instagram.com/elodie_boyer_off_management/" target="_blank" rel="noopener" aria-label="Instagram · elodie_boyer_off_management"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5v.01"/></svg></a></span></nav></div></footer>
 '''
 
 CSS = '''<style>
@@ -265,6 +265,14 @@ CSS = '''<style>
 .nl-k{font-weight:800;color:var(--pine);margin-bottom:6px!important;}
 .nl-h{font-family:var(--hand);font-size:23px;line-height:1.2;color:var(--ember-ink)!important;}
 footer .wrap > span{line-height:1.6;}
+footer .flg a{font-weight:600;text-decoration:underline;text-decoration-color:rgba(8,80,85,.25);text-underline-offset:3px;}
+footer .flg a:hover,footer .flg a[aria-current]{color:var(--pine);text-decoration-color:currentColor;}
+footer nav{align-items:center;}
+footer .fso{display:inline-flex;gap:10px;}
+footer .fso a{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:var(--mint);color:var(--teal);transition:background .15s,color .15s;}
+footer .fso a:hover{background:var(--teal);color:#fff;}
+footer .fso a:focus-visible{outline:3px solid var(--ember);outline-offset:2px;}
+footer .fso svg{width:20px;height:20px;}
 .eq-more{margin-top:26px;text-align:center;color:var(--muted);font-size:15px;}
 .eq-more a{font-weight:800;color:var(--pine);}
 /* programme: numbered tiles + kit */

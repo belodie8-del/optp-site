@@ -99,5 +99,7 @@ if __name__ == '__main__':
     export('formations-test.html', 'formations')
     export('contact-sio.html', 'contact', parts=['<!--FORM-->'])
     export('blog-sio.html', 'blog', parts=['<!--LIST-->'])
+    for slug in ['politique-de-confidentialite', 'conditions-utilisation', 'politique-cookies']:
+        export('legal-%s.html' % slug, slug)
     for f in sorted(os.listdir(OUT)): print(f, os.path.getsize(OUT + f))
     print('images', sorted(os.listdir(IMG_DIR)))

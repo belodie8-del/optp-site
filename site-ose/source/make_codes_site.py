@@ -26,13 +26,20 @@ PAGES = [
    'Sous la liste, ajoute un second élément « Code HTML » avec le bloc 2.'],
   [('Bloc 1', 'Au-dessus de la liste des articles', 'blog-1.html'),
    ('Bloc 2', 'En dessous de la liste des articles', 'blog-2.html')]),
+ ('legal', 'Pages légales', '3 nouvelles pages',
+  ['Crée 3 nouvelles pages dans ton site Systeme.io, avec exactement ces adresses : politique-de-confidentialite, conditions-utilisation et politique-cookies.',
+   'Dans chaque page, ajoute une section en pleine largeur, sans marges, avec un élément « Code HTML », et colle le bloc correspondant.',
+   'Les liens du pied de page de toutes les autres pages pointent déjà vers ces 3 adresses.'],
+  [('Politique de confidentialité', 'www.oseprendretaplace.fr/politique-de-confidentialite', 'politique-de-confidentialite.html'),
+   ('Conditions d’utilisation', 'www.oseprendretaplace.fr/conditions-utilisation', 'conditions-utilisation.html'),
+   ('Politique de cookies', 'www.oseprendretaplace.fr/politique-cookies', 'politique-cookies.html')]),
  ('popup', 'Facultatif · pop-up seul', 'ancienne page d’accueil',
   ['Seulement si tu gardes l’ancienne page d’accueil quelques jours : ajoute un élément « Code HTML » n’importe où dans la page et colle ce bloc.',
    'Inutile avec la nouvelle page d’accueil, qui contient déjà le pop-up.'],
   [('Pop-up Winter Pack', 'N’importe où dans la page', 'popup-winter-pack.html')]),
 ]
 n = 0
-nav = ''.join('<a href="#%s">%s</a>' % (k, t.split(' · ')[0].replace('Page ', '').replace('d’accueil', 'Accueil')) for k, t, *_ in PAGES)
+nav = ''.join('<a href="#%s">%s</a>' % (k, t.split(' · ')[0].replace('Page ', '').replace('d’accueil', 'Accueil').replace('Pages légales', 'Légal')) for k, t, *_ in PAGES)
 secs = ''
 for key, title, url, steps, blocks in PAGES:
     items = ''

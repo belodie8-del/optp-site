@@ -17,3 +17,7 @@ python3 make_contact.py >/dev/null
 python3 anim.py accueil-A.html accueil-B.html accueil-C.html accueil-test.html formations-test.html blog-test.html article-test.html contact-test.html
 python3 popup_home.py accueil-A.html accueil-B.html accueil-C.html accueil-test.html
 python3 popup_home.py --block popup-winter-pack-systemeio.html
+python3 make_blog_sio.py
+python3 make_contact_sio.py >/dev/null
+python3 make_legal.py >/dev/null
+python3 anim.py contact-sio.html legal-politique-de-confidentialite.html legal-conditions-utilisation.html legal-politique-cookies.html
