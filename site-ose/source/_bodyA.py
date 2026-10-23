@@ -1,6 +1,6 @@
 BODY_A = '''<header class="top hx"><div class="wrap">
   <a href="#top" aria-label="Accueil"><svg class="logo" viewBox="0 0 287 90" role="img" aria-label="EB Formation Consulting"><use href="#optplogo"/></svg></a>
-  <nav class="nav" aria-label="Menu"><a href="#formations">Les formations</a><a href="''' + BLOG + '''">Blog</a><a href="''' + CONTACT + '''">Contact</a><a class="btn rdvbtn" href="''' + AUDIT + '''">Audit offert</a></nav>
+  <nav class="nav" aria-label="Menu"><a href="#formations">Les formations</a><a href="''' + BLOG + '''">Blog</a><a href="''' + CONTACT + '''">Contact</a><a class="btn wpnav" href="https://winterpack.oseprendretaplace.fr/"><span aria-hidden="true">❄</span> Winter Pack</a><a class="btn rdvbtn" href="''' + AUDIT + '''">Audit offert</a></nav>
 </div></header>
 <main id="top">
 
@@ -68,6 +68,29 @@ BODY_A = '''<header class="top hx"><div class="wrap">
       <p>Des outils pour que la méthode ne reste pas dans ta tête, mais pour l’intégrer complètement à ton quotidien. Inclus dans chaque module :</p></div>
     <ul class="kit2-l">''' + ''.join('<li><span class="ki">%s</span><span><b>%s</b>%s</span></li>' % (KIT_ICONS[i], k, ('<small>%s</small>' % KIT_NOTE[k]) if k in KIT_NOTE else '') for i, k in enumerate(KIT)) + '''</ul></div>
 </div></section>
+
+<section class="room wpk" id="winter-pack"><div class="wpk-fl" aria-hidden="true">''' + ''.join('<i style="left:%d%%;top:%d%%;font-size:%dpx">❄</i>' % f for f in [(4, 12, 22), (14, 70, 14), (30, 8, 16), (47, 88, 12), (58, 6, 20), (73, 80, 15), (88, 14, 24), (95, 60, 13)]) + '''</div><div class="wrap wpk-g">
+  <div class="wpk-t">
+    <span class="hand">Nouveau cet hiver</span>
+    <h2 class="h2">Winter Pack <span>L’Essentiel du Manager</span></h2>
+    <p class="sub">8 outils prêts à l’emploi pour mener tes entretiens et tes rituels d’équipe avec une vraie méthode. Pour toi, ou pour tous les managers de ta PME.</p>
+    <ul class="wpk-l">''' + ''.join('<li>' + CHK + '<span>%s</span></li>' % t for t in WP_TOOLS) + '''</ul>
+    <div class="wpk-o">
+      <a class="wpk-c" href="''' + WPK + '''#offre"><small>Pour un manager</small><b>Winter Pack Solo</b><span>197 €</span></a>
+      <a class="wpk-c" href="''' + WPK + '''#offre"><small>Pour toute ta PME</small><b>Winter Pack PME</b><span>dès 490 €</span></a>
+    </div>
+    <p class="wpk-gift" data-wpk-gift>🎁 <span><b>Cadeau de lancement :</b> le kit d’invitation à l’entretien offert pour tout achat avant dimanche.</span></p>
+    <a class="btn rdvbtn" href="''' + WPK + '''">Découvrir le Winter Pack ''' + ARR + '''</a>
+  </div>
+  <div class="wpk-v" aria-hidden="true">
+    <img class="wpk-d d1" src="''' + WP_AP[1] + '''" alt="" width="520" height="735">
+    <img class="wpk-d d2" src="''' + WP_AP[2] + '''" alt="" width="520" height="735">
+    <img class="wpk-d d3" src="''' + WP_AP[0] + '''" alt="" width="520" height="735">
+    <span class="wpk-st"><b>8</b>outils prêts<br>à l’emploi</span>
+  </div>
+</div>
+<script>(function(){if(Date.now()>Date.UTC(2026,9,25,22,59,59)){var g=document.querySelector('[data-wpk-gift]');if(g)g.hidden=true;}})();</script>
+</section>
 
 <section class="room" id="elodie"><div class="wrap ab">
   <div class="ab-v"><img src="''' + ARCH_T + '''" alt="Élodie Boyer" width="420" height="540"><p class="ab-n"><b>Élodie Boyer</b>Formatrice en management passionnée qui aide les managers à réaliser leur plein potentiel</p></div>

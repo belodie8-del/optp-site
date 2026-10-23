@@ -23,6 +23,10 @@ FORM = 'https://www.oseprendretaplace.fr/formations'
 BLOG = 'https://oseprendretaplace.systeme.io/leblogose'
 CONTACT = 'https://www.oseprendretaplace.fr/contact'
 RDV = 'https://calendly.com/eb-formationconsulting/30min'
+WPK = 'https://winterpack.oseprendretaplace.fr/'
+WP_AP = [img('home/wpap/s%d.jpg' % n) for n in (1, 2, 7)]
+WP_TOOLS = ['L’entretien professionnel', 'L’entretien annuel', 'La réunion d’équipe', 'La trame du OTO',
+            'Le tableau de bord des objectifs', 'Le calendrier des rituels', 'Les 10 commandements', 'Le kit de survie verbal']
 NEWS = P.NEWS_URL
 CHK = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg>'
 ARR = '<span aria-hidden="true">→</span>'

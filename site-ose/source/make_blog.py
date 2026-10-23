@@ -22,7 +22,7 @@ CAT_TINT = {'posture-et-legitimite': 'c1', 'manager-son-equipe': 'c2', 'deleguer
 def nav(cur):
     return ('<header class="top hx"><div class="wrap"><a href="' + HOME + '" aria-label="Accueil"><svg class="logo" viewBox="0 0 287 90" role="img" aria-label="EB Formation Consulting"><use href="#optplogo"/></svg></a>'
             '<nav class="nav" aria-label="Menu"><a href="' + HOME + '">Accueil</a><a href="' + FORM + '">Les formations</a><a href="' + BLOG + '" aria-current="page">Blog</a><a href="' + CONTACT + '">Contact</a>'
-            '<a class="btn rdvbtn" href="' + AUDIT + '">Audit offert</a></nav></div></header>')
+            '<a class="btn wpnav" href="https://winterpack.oseprendretaplace.fr/"><span aria-hidden="true">❄</span> Winter Pack</a><a class="btn rdvbtn" href="' + AUDIT + '">Audit offert</a></nav></div></header>')
 def chips(p): return ''.join('<span class="cat %s">%s</span>' % (CAT_TINT.get(c['path'], 'c1'), c['name']) for c in p['categories'])
 def card(p, extra=''):
     return ('<a class="bc" href="%s" data-cats="%s"%s><span class="bc-i"><img src="%s" alt=""></span><span class="bc-t"><span class="bc-m">%s<span class="bc-d">%s</span></span>'

@@ -14,7 +14,7 @@ IC_CLIP = I % '<path d="M21 11l-8.5 8.5a5 5 0 0 1-7-7L14 4a3.5 3.5 0 0 1 5 5l-8.
 
 BODY = '''<header class="top hx"><div class="wrap">
   <a href="''' + HOME + '''" aria-label="Accueil"><svg class="logo" viewBox="0 0 287 90" role="img" aria-label="EB Formation Consulting"><use href="#optplogo"/></svg></a>
-  <nav class="nav" aria-label="Menu"><a href="''' + HOME + '''">Accueil</a><a href="''' + FORM + '''">Les formations</a><a href="''' + BLOG + '''">Blog</a><a href="''' + CONTACT + '''" aria-current="page">Contact</a><a class="btn rdvbtn" href="''' + AUDIT + '''">Audit offert</a></nav>
+  <nav class="nav" aria-label="Menu"><a href="''' + HOME + '''">Accueil</a><a href="''' + FORM + '''">Les formations</a><a href="''' + BLOG + '''">Blog</a><a href="''' + CONTACT + '''" aria-current="page">Contact</a><a class="btn wpnav" href="https://winterpack.oseprendretaplace.fr/"><span aria-hidden="true">❄</span> Winter Pack</a><a class="btn rdvbtn" href="''' + AUDIT + '''">Audit offert</a></nav>
 </div></header>
 <main id="top">
 <section class="kch"><div class="wrap">

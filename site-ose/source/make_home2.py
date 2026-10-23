@@ -23,6 +23,10 @@ FORM = 'https://www.oseprendretaplace.fr/formations'
 BLOG = 'https://oseprendretaplace.systeme.io/leblogose'
 CONTACT = 'https://www.oseprendretaplace.fr/contact'
 RDV = 'https://calendly.com/eb-formationconsulting/30min'
+WPK = 'https://winterpack.oseprendretaplace.fr/'
+WP_AP = [img('home/wpap/s%d.jpg' % n) for n in (1, 2, 7)]
+WP_TOOLS = ['L’entretien professionnel', 'L’entretien annuel', 'La réunion d’équipe', 'La trame du OTO',
+            'Le tableau de bord des objectifs', 'Le calendrier des rituels', 'Les 10 commandements', 'Le kit de survie verbal']
 NEWS = P.NEWS_URL
 CHK = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg>'
 ARR = '<span aria-hidden="true">→</span>'
@@ -70,7 +74,7 @@ STATS = ''.join('<li><b>%s</b><span>%s</span></li>' % x for x in P.STATS)
 
 BODY = '''<header class="top hx"><div class="wrap">
   <a href="#top" aria-label="Accueil"><svg class="logo" viewBox="0 0 287 90" role="img" aria-label="EB Formation Consulting"><use href="#optplogo"/></svg></a>
-  <nav class="nav" aria-label="Menu"><a href="#formations">Les formations</a><a href="''' + BLOG + '''">Blog</a><a href="''' + CONTACT + '''">Contact</a><a class="btn rdvbtn" href="''' + AUDIT + '''">Audit offert</a></nav>
+  <nav class="nav" aria-label="Menu"><a href="#formations">Les formations</a><a href="''' + BLOG + '''">Blog</a><a href="''' + CONTACT + '''">Contact</a><a class="btn wpnav" href="https://winterpack.oseprendretaplace.fr/"><span aria-hidden="true">❄</span> Winter Pack</a><a class="btn rdvbtn" href="''' + AUDIT + '''">Audit offert</a></nav>
 </div></header>
 <main id="top">
 
@@ -138,6 +142,29 @@ BODY = '''<header class="top hx"><div class="wrap">
       <p>Des outils pour que la méthode ne reste pas dans ta tête, mais pour l’intégrer complètement à ton quotidien. Inclus dans chaque module :</p></div>
     <ul class="kit2-l">''' + ''.join('<li><span class="ki">%s</span><span><b>%s</b>%s</span></li>' % (KIT_ICONS[i], k, ('<small>%s</small>' % KIT_NOTE[k]) if k in KIT_NOTE else '') for i, k in enumerate(KIT)) + '''</ul></div>
 </div></section>
+
+<section class="room wpk" id="winter-pack"><div class="wpk-fl" aria-hidden="true">''' + ''.join('<i style="left:%d%%;top:%d%%;font-size:%dpx">❄</i>' % f for f in [(4, 12, 22), (14, 70, 14), (30, 8, 16), (47, 88, 12), (58, 6, 20), (73, 80, 15), (88, 14, 24), (95, 60, 13)]) + '''</div><div class="wrap wpk-g">
+  <div class="wpk-t">
+    <span class="hand">Nouveau cet hiver</span>
+    <h2 class="h2">Winter Pack <span>L’Essentiel du Manager</span></h2>
+    <p class="sub">8 outils prêts à l’emploi pour mener tes entretiens et tes rituels d’équipe avec une vraie méthode. Pour toi, ou pour tous les managers de ta PME.</p>
+    <ul class="wpk-l">''' + ''.join('<li>' + CHK + '<span>%s</span></li>' % t for t in WP_TOOLS) + '''</ul>
+    <div class="wpk-o">
+      <a class="wpk-c" href="''' + WPK + '''#offre"><small>Pour un manager</small><b>Winter Pack Solo</b><span>197 €</span></a>
+      <a class="wpk-c" href="''' + WPK + '''#offre"><small>Pour toute ta PME</small><b>Winter Pack PME</b><span>dès 490 €</span></a>
+    </div>
+    <p class="wpk-gift" data-wpk-gift>🎁 <span><b>Cadeau de lancement :</b> le kit d’invitation à l’entretien offert pour tout achat avant dimanche.</span></p>
+    <a class="btn rdvbtn" href="''' + WPK + '''">Découvrir le Winter Pack ''' + ARR + '''</a>
+  </div>
+  <div class="wpk-v" aria-hidden="true">
+    <img class="wpk-d d1" src="''' + WP_AP[1] + '''" alt="" width="520" height="735">
+    <img class="wpk-d d2" src="''' + WP_AP[2] + '''" alt="" width="520" height="735">
+    <img class="wpk-d d3" src="''' + WP_AP[0] + '''" alt="" width="520" height="735">
+    <span class="wpk-st"><b>8</b>outils prêts<br>à l’emploi</span>
+  </div>
+</div>
+<script>(function(){if(Date.now()>Date.UTC(2026,9,25,22,59,59)){var g=document.querySelector('[data-wpk-gift]');if(g)g.hidden=true;}})();</script>
+</section>
 
 <section class="room" id="elodie"><div class="wrap ab">
   <div class="ab-v"><img src="''' + ARCH_T + '''" alt="Élodie Boyer" width="420" height="540"><p class="ab-n"><b>Élodie Boyer</b>Formatrice en management passionnée qui aide les managers à réaliser leur plein potentiel</p></div>
@@ -273,6 +300,44 @@ footer .fso a{display:grid;place-items:center;width:38px;height:38px;border-radi
 footer .fso a:hover{background:var(--teal);color:#fff;}
 footer .fso a:focus-visible{outline:3px solid var(--ember);outline-offset:2px;}
 footer .fso svg{width:20px;height:20px;}
+/* header: Winter Pack button */
+.top .nav .btn.wpnav{background:var(--pine);color:#fff;border:2px solid var(--pine);box-shadow:0 12px 22px -14px rgba(8,80,85,.9);padding:9px 18px;font-size:14.5px;gap:6px;}
+.top .nav .btn.wpnav:hover{background:var(--teal);border-color:var(--teal);color:#fff;}
+.top .nav .btn.wpnav span{font-size:15px;line-height:1;}
+.top .nav .btn.wpnav:focus-visible{outline:3px solid var(--ember);outline-offset:3px;}
+@media (max-width:640px){.top .wrap{gap:10px;} .top .nav{gap:8px;} .top .nav .btn.wpnav,.hx .nav .rdvbtn{padding:8px 12px;font-size:13px;white-space:nowrap;} .logo{height:28px;}}
+@media (max-width:370px){.top .nav .btn.wpnav span{display:none;} .top .nav .btn.wpnav,.hx .nav .rdvbtn{padding:8px 10px;}}
+/* home: Winter Pack section */
+.wpk{position:relative;overflow:hidden;background:linear-gradient(180deg,#E4F5F6 0%,#F4FBFB 100%);}
+.wpk-fl{position:absolute;inset:0;pointer-events:none;}
+.wpk-fl i{position:absolute;font-style:normal;line-height:1;color:var(--teal);opacity:.22;}
+.wpk-g{position:relative;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(36px,5vw,72px);align-items:center;}
+.wpk .h2{margin-bottom:16px;}
+.wpk .h2 span{display:block;font-family:var(--hand);font-weight:700;font-size:.62em;line-height:1.1;color:var(--ember-ink);margin-top:4px;}
+.wpk-l{list-style:none;margin:6px 0 24px;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px 18px;}
+.wpk-l li{display:flex;align-items:flex-start;gap:9px;font-size:15.5px;line-height:1.35;color:var(--ink);}
+.wpk-l svg{flex:none;width:19px;height:19px;margin-top:1px;}
+.wpk-l circle{fill:var(--teal);} .wpk-l path{fill:none;stroke:#fff;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;}
+.wpk-o{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-bottom:18px;}
+.wpk-c{display:flex;flex-direction:column;gap:2px;padding:16px 18px;border-radius:20px;background:#fff;border:2px solid #CDE9EB;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .2s;}
+.wpk-c:hover{border-color:var(--teal);transform:translateY(-2px);}
+.wpk-c:focus-visible{outline:3px solid var(--ember);outline-offset:3px;}
+.wpk-c small{font-size:12.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);}
+.wpk-c b{font-family:var(--display);font-weight:400;font-size:21px;color:var(--pine);}
+.wpk-c span{font-weight:800;font-size:18px;color:var(--ember-ink);}
+.wpk-gift{display:flex;align-items:flex-start;gap:10px;margin:0 0 24px;padding:12px 16px;border-radius:16px;background:#FFF4EE;border:2px dashed var(--ember);font-size:15px;line-height:1.45;color:var(--ink);}
+.wpk-gift b{color:var(--ember-ink);}
+.wpk-v{position:relative;min-height:440px;}
+.wpk-d{position:absolute;width:min(62%,300px);height:auto;border-radius:14px;border:6px solid #fff;box-shadow:0 30px 50px -30px rgba(8,80,85,.75);}
+.wpk-d.d1{left:2%;top:10%;transform:rotate(-8deg);}
+.wpk-d.d2{right:2%;top:6%;transform:rotate(7deg);}
+.wpk-d.d3{left:50%;top:0;transform:translateX(-50%) rotate(-1deg);z-index:2;}
+.wpk-st{position:absolute;z-index:3;right:2%;bottom:6%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;width:146px;height:146px;padding:16px;border-radius:50%;background:var(--pine);color:#fff;font-weight:800;font-size:13.5px;line-height:1.25;transform:rotate(8deg);box-shadow:0 18px 30px -16px rgba(8,40,43,.8);}
+.wpk-st b{display:block;font-family:var(--display);font-weight:400;font-size:44px;line-height:1;color:var(--ember);}
+@media (max-width:1020px){.wpk-g{grid-template-columns:1fr;} .wpk-v{order:-1;min-height:0;height:min(92vw,400px);max-width:480px;width:100%;margin-inline:auto;}}
+@media (max-width:560px){.wpk-l{grid-template-columns:1fr;} .wpk-o{gap:10px;} .wpk-c{padding:14px;} .wpk-c small{font-size:11px;} .wpk-c b{font-size:17px;line-height:1.2;} .wpk-c span{font-size:16px;} .wpk .btn.rdvbtn{width:100%;justify-content:center;} .wpk-st{width:112px;height:112px;padding:12px;font-size:11.5px;} .wpk-st b{font-size:34px;}}
+@media (prefers-reduced-motion:reduce){.wpk-c{transition:none;}}
+
 .eq-more{margin-top:26px;text-align:center;color:var(--muted);font-size:15px;}
 .eq-more a{font-weight:800;color:var(--pine);}
 /* programme: numbered tiles + kit */

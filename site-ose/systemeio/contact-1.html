@@ -122,6 +122,16 @@ html{scroll-behavior:smooth;}
 .ose footer .fso a:hover{background:var(--teal);color:#fff;}
 .ose footer .fso a:focus-visible{outline:3px solid var(--ember);outline-offset:2px;}
 .ose footer .fso svg{width:20px;height:20px;}
+.ose .top .nav .btn.wpnav{background:var(--pine);color:#fff;border:2px solid var(--pine);box-shadow:0 12px 22px -14px rgba(8,80,85,.9);padding:9px 18px;font-size:14.5px;gap:6px;}
+.ose .top .nav .btn.wpnav:hover{background:var(--teal);border-color:var(--teal);color:#fff;}
+.ose .top .nav .btn.wpnav span{font-size:15px;line-height:1;}
+.ose .top .nav .btn.wpnav:focus-visible{outline:3px solid var(--ember);outline-offset:3px;}
+@media (max-width:640px){.ose .top .wrap{gap:10px;}
+.ose .top .nav{gap:8px;}
+.ose .top .nav .btn.wpnav,.ose .hx .nav .rdvbtn{padding:8px 12px;font-size:13px;white-space:nowrap;}
+.ose .logo{height:28px;}}
+@media (max-width:370px){.ose .top .nav .btn.wpnav span{display:none;}
+.ose .top .nav .btn.wpnav,.ose .hx .nav .rdvbtn{padding:8px 10px;}}
 .ose .mods{list-style:none;margin:36px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;}
 .ose .mods li{display:flex;flex-direction:column;gap:4px;padding:22px 22px 20px;border-radius:22px;background:#fff;}
 .ose .mods b{font-family:var(--display);font-weight:400;font-size:21px;margin-top:8px;}
@@ -274,7 +284,7 @@ html.oa .ose mark.oa-m.oa-on{background-size:100% .4em;}
 </style>
 <div class="ose"><header class="top hx"><div class="wrap">
   <a href="https://www.oseprendretaplace.fr/accueil" aria-label="Accueil"><svg class="logo" viewBox="0 0 287 90" role="img" aria-label="EB Formation Consulting"><use href="#optplogo"/></svg></a>
-  <nav class="nav" aria-label="Menu"><a href="https://www.oseprendretaplace.fr/accueil">Accueil</a><a href="https://www.oseprendretaplace.fr/formations">Les formations</a><a href="https://oseprendretaplace.systeme.io/leblogose">Blog</a><a href="https://www.oseprendretaplace.fr/contact" aria-current="page">Contact</a><a class="btn rdvbtn" href="https://auditmanagerial.oseprendretaplace.fr/">Audit offert</a></nav>
+  <nav class="nav" aria-label="Menu"><a href="https://www.oseprendretaplace.fr/accueil">Accueil</a><a href="https://www.oseprendretaplace.fr/formations">Les formations</a><a href="https://oseprendretaplace.systeme.io/leblogose">Blog</a><a href="https://www.oseprendretaplace.fr/contact" aria-current="page">Contact</a><a class="btn wpnav" href="https://winterpack.oseprendretaplace.fr/"><span aria-hidden="true">❄</span> Winter Pack</a><a class="btn rdvbtn" href="https://auditmanagerial.oseprendretaplace.fr/">Audit offert</a></nav>
 </div></header>
 <main id="top">
 <section class="kch"><div class="wrap">

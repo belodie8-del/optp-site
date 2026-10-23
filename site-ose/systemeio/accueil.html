@@ -182,6 +182,55 @@ html{scroll-behavior:smooth;}
 .ose footer .fso a:hover{background:var(--teal);color:#fff;}
 .ose footer .fso a:focus-visible{outline:3px solid var(--ember);outline-offset:2px;}
 .ose footer .fso svg{width:20px;height:20px;}
+.ose .top .nav .btn.wpnav{background:var(--pine);color:#fff;border:2px solid var(--pine);box-shadow:0 12px 22px -14px rgba(8,80,85,.9);padding:9px 18px;font-size:14.5px;gap:6px;}
+.ose .top .nav .btn.wpnav:hover{background:var(--teal);border-color:var(--teal);color:#fff;}
+.ose .top .nav .btn.wpnav span{font-size:15px;line-height:1;}
+.ose .top .nav .btn.wpnav:focus-visible{outline:3px solid var(--ember);outline-offset:3px;}
+@media (max-width:640px){.ose .top .wrap{gap:10px;}
+.ose .top .nav{gap:8px;}
+.ose .top .nav .btn.wpnav,.ose .hx .nav .rdvbtn{padding:8px 12px;font-size:13px;white-space:nowrap;}
+.ose .logo{height:28px;}}
+@media (max-width:370px){.ose .top .nav .btn.wpnav span{display:none;}
+.ose .top .nav .btn.wpnav,.ose .hx .nav .rdvbtn{padding:8px 10px;}}
+.ose .wpk{position:relative;overflow:hidden;background:linear-gradient(180deg,#E4F5F6 0%,#F4FBFB 100%);}
+.ose .wpk-fl{position:absolute;inset:0;pointer-events:none;}
+.ose .wpk-fl i{position:absolute;font-style:normal;line-height:1;color:var(--teal);opacity:.22;}
+.ose .wpk-g{position:relative;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(36px,5vw,72px);align-items:center;}
+.ose .wpk .h2{margin-bottom:16px;}
+.ose .wpk .h2 span{display:block;font-family:var(--hand);font-weight:700;font-size:.62em;line-height:1.1;color:var(--ember-ink);margin-top:4px;}
+.ose .wpk-l{list-style:none;margin:6px 0 24px;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px 18px;}
+.ose .wpk-l li{display:flex;align-items:flex-start;gap:9px;font-size:15.5px;line-height:1.35;color:var(--ink);}
+.ose .wpk-l svg{flex:none;width:19px;height:19px;margin-top:1px;}
+.ose .wpk-l circle{fill:var(--teal);}
+.ose .wpk-l path{fill:none;stroke:#fff;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;}
+.ose .wpk-o{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-bottom:18px;}
+.ose .wpk-c{display:flex;flex-direction:column;gap:2px;padding:16px 18px;border-radius:20px;background:#fff;border:2px solid #CDE9EB;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .2s;}
+.ose .wpk-c:hover{border-color:var(--teal);transform:translateY(-2px);}
+.ose .wpk-c:focus-visible{outline:3px solid var(--ember);outline-offset:3px;}
+.ose .wpk-c small{font-size:12.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);}
+.ose .wpk-c b{font-family:var(--display);font-weight:400;font-size:21px;color:var(--pine);}
+.ose .wpk-c span{font-weight:800;font-size:18px;color:var(--ember-ink);}
+.ose .wpk-gift{display:flex;align-items:flex-start;gap:10px;margin:0 0 24px;padding:12px 16px;border-radius:16px;background:#FFF4EE;border:2px dashed var(--ember);font-size:15px;line-height:1.45;color:var(--ink);}
+.ose .wpk-gift b{color:var(--ember-ink);}
+.ose .wpk-v{position:relative;min-height:440px;}
+.ose .wpk-d{position:absolute;width:min(62%,300px);height:auto;border-radius:14px;border:6px solid #fff;box-shadow:0 30px 50px -30px rgba(8,80,85,.75);}
+.ose .wpk-d.d1{left:2%;top:10%;transform:rotate(-8deg);}
+.ose .wpk-d.d2{right:2%;top:6%;transform:rotate(7deg);}
+.ose .wpk-d.d3{left:50%;top:0;transform:translateX(-50%) rotate(-1deg);z-index:2;}
+.ose .wpk-st{position:absolute;z-index:3;right:2%;bottom:6%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;width:146px;height:146px;padding:16px;border-radius:50%;background:var(--pine);color:#fff;font-weight:800;font-size:13.5px;line-height:1.25;transform:rotate(8deg);box-shadow:0 18px 30px -16px rgba(8,40,43,.8);}
+.ose .wpk-st b{display:block;font-family:var(--display);font-weight:400;font-size:44px;line-height:1;color:var(--ember);}
+@media (max-width:1020px){.ose .wpk-g{grid-template-columns:1fr;}
+.ose .wpk-v{order:-1;min-height:0;height:min(92vw,400px);max-width:480px;width:100%;margin-inline:auto;}}
+@media (max-width:560px){.ose .wpk-l{grid-template-columns:1fr;}
+.ose .wpk-o{gap:10px;}
+.ose .wpk-c{padding:14px;}
+.ose .wpk-c small{font-size:11px;}
+.ose .wpk-c b{font-size:17px;line-height:1.2;}
+.ose .wpk-c span{font-size:16px;}
+.ose .wpk .btn.rdvbtn{width:100%;justify-content:center;}
+.ose .wpk-st{width:112px;height:112px;padding:12px;font-size:11.5px;}
+.ose .wpk-st b{font-size:34px;}}
+@media (prefers-reduced-motion:reduce){.ose .wpk-c{transition:none;}}
 .ose .eq-more{margin-top:26px;text-align:center;color:var(--muted);font-size:15px;}
 .ose .eq-more a{font-weight:800;color:var(--pine);}
 .ose .mods{list-style:none;margin:36px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;}
@@ -429,7 +478,7 @@ html.wpop-open{overflow:hidden;}
 </style>
 <div class="ose"><header class="top hx"><div class="wrap">
   <a href="#top" aria-label="Accueil"><svg class="logo" viewBox="0 0 287 90" role="img" aria-label="EB Formation Consulting"><use href="#optplogo"/></svg></a>
-  <nav class="nav" aria-label="Menu"><a href="#formations">Les formations</a><a href="https://oseprendretaplace.systeme.io/leblogose">Blog</a><a href="https://www.oseprendretaplace.fr/contact">Contact</a><a class="btn rdvbtn" href="https://auditmanagerial.oseprendretaplace.fr/">Audit offert</a></nav>
+  <nav class="nav" aria-label="Menu"><a href="#formations">Les formations</a><a href="https://oseprendretaplace.systeme.io/leblogose">Blog</a><a href="https://www.oseprendretaplace.fr/contact">Contact</a><a class="btn wpnav" href="https://winterpack.oseprendretaplace.fr/"><span aria-hidden="true">❄</span> Winter Pack</a><a class="btn rdvbtn" href="https://auditmanagerial.oseprendretaplace.fr/">Audit offert</a></nav>
 </div></header>
 <main id="top">
 
@@ -499,6 +548,29 @@ html.wpop-open{overflow:hidden;}
       <p>Des outils pour que la méthode ne reste pas dans ta tête, mais pour l’intégrer complètement à ton quotidien. Inclus dans chaque module :</p></div>
     <ul class="kit2-l"><li><span class="ki"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9.5v5l4.5-2.5z"/></svg></span><span><b>Vidéos pédagogiques</b></span></li><li><span class="ki"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4"/><path d="M9 17l1-3 5-5 2 2-5 5z"/></svg></span><span><b>Workbooks à compléter</b></span></li><li><span class="ki"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg></span><span><b>Fiches outils</b></span></li><li><span class="ki"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"/><path d="M3.5 6l1.2 1.2 2-2.2M3.5 12l1.2 1.2 2-2.2M3.5 18l1.2 1.2 2-2.2"/></svg></span><span><b>Feuilles de route Notion</b><small>trames, checklists, modèles prêts à l’emploi</small></span></li><li><span class="ki"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4h8v5a4 4 0 0 1-8 0z"/><path d="M8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4"/><path d="M12 13v4M9 20h6"/></svg></span><span><b>Challenges</b></span></li><li><span class="ki"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.5v.4"/><path d="M12 17h.01"/></svg></span><span><b>Quiz</b></span></li></ul></div>
 </div></section>
+
+<section class="room wpk" id="winter-pack"><div class="wpk-fl" aria-hidden="true"><i style="left:4%;top:12%;font-size:22px">❄</i><i style="left:14%;top:70%;font-size:14px">❄</i><i style="left:30%;top:8%;font-size:16px">❄</i><i style="left:47%;top:88%;font-size:12px">❄</i><i style="left:58%;top:6%;font-size:20px">❄</i><i style="left:73%;top:80%;font-size:15px">❄</i><i style="left:88%;top:14%;font-size:24px">❄</i><i style="left:95%;top:60%;font-size:13px">❄</i></div><div class="wrap wpk-g">
+  <div class="wpk-t">
+    <span class="hand">Nouveau cet hiver</span>
+    <h2 class="h2">Winter Pack <span>L’Essentiel du Manager</span></h2>
+    <p class="sub">8 outils prêts à l’emploi pour mener tes entretiens et tes rituels d’équipe avec une vraie méthode. Pour toi, ou pour tous les managers de ta PME.</p>
+    <ul class="wpk-l"><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg><span>L’entretien professionnel</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg><span>L’entretien annuel</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg><span>La réunion d’équipe</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg><span>La trame du OTO</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg><span>Le tableau de bord des objectifs</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg><span>Le calendrier des rituels</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg><span>Les 10 commandements</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg><span>Le kit de survie verbal</span></li></ul>
+    <div class="wpk-o">
+      <a class="wpk-c" href="https://winterpack.oseprendretaplace.fr/#offre"><small>Pour un manager</small><b>Winter Pack Solo</b><span>197 €</span></a>
+      <a class="wpk-c" href="https://winterpack.oseprendretaplace.fr/#offre"><small>Pour toute ta PME</small><b>Winter Pack PME</b><span>dès 490 €</span></a>
+    </div>
+    <p class="wpk-gift" data-wpk-gift>🎁 <span><b>Cadeau de lancement :</b> le kit d’invitation à l’entretien offert pour tout achat avant dimanche.</span></p>
+    <a class="btn rdvbtn" href="https://winterpack.oseprendretaplace.fr/">Découvrir le Winter Pack <span aria-hidden="true">→</span></a>
+  </div>
+  <div class="wpk-v" aria-hidden="true">
+    <img class="wpk-d d1" src="https://winterpack.oseprendretaplace.fr/ose/dddbc99538e5.jpg" alt="" width="520" height="735">
+    <img class="wpk-d d2" src="https://winterpack.oseprendretaplace.fr/ose/d86fdf29401f.jpg" alt="" width="520" height="735">
+    <img class="wpk-d d3" src="https://winterpack.oseprendretaplace.fr/ose/5296c4d969ce.jpg" alt="" width="520" height="735">
+    <span class="wpk-st"><b>8</b>outils prêts<br>à l’emploi</span>
+  </div>
+</div>
+<script>(function(){if(Date.now()>Date.UTC(2026,9,25,22,59,59)){var g=document.querySelector('[data-wpk-gift]');if(g)g.hidden=true;}})();</script>
+</section>
 
 <section class="room" id="elodie"><div class="wrap ab">
   <div class="ab-v"><img src="https://winterpack.oseprendretaplace.fr/ose/454f0518365c.jpg" alt="Élodie Boyer" width="420" height="540"><p class="ab-n"><b>Élodie Boyer</b>Formatrice en management passionnée qui aide les managers à réaliser leur plein potentiel</p></div>
