@@ -9,16 +9,16 @@ V1 = '''<div class="sig s1" id="s1">
     <div class="pl"><span class="p1">Mes formations →</span><span class="p2">❄ Winter Pack →</span></div></div>
 </div>'''
 V2 = '''<div class="sig s2" id="s2">
-  <div class="s2-t">''' + LOGO + '''<h1>Élodie Boyer</h1><span class="hd">Construire un management humain mais exigeant</span>
+  <div class="s2-t">''' + LOGO + '''<h1>Élodie Boyer</h1><span class="hd">Formatrice en management</span><p class="co">Fondatrice · EB Formation Consulting</p>
     <p class="ct"><span>☎</span> 06 79 35 34 41<br><span>✉</span> ''' + MAIL + '''<br><span>✦</span> <b>www.oseprendretaplace.fr</b></p>
     <div class="pl"><span class="p1">Mes formations →</span><span class="p2">❄ Le Winter Pack →</span></div></div>
   <div class="s2-v"><img src="''' + ARCH_T + '''" alt=""></div>
 </div>'''
 V3 = '''<div class="sig s3" id="s3">
   <div class="s3-top"><img class="ph" src="''' + ORANGE + '''" alt="">
-    <div><h1>Élodie Boyer</h1><span class="hd">Fondatrice EB Formation Consulting</span>
+    <div><h1>Élodie Boyer</h1><span class="hd">Formatrice en management</span><p class="co">Fondatrice · EB Formation Consulting</p>
     <p class="ct">06 79 35 34 41<br>''' + MAIL + '''<br><b>www.oseprendretaplace.fr</b></p></div>
-    ''' + LOGO + '''</div>
+    <div class="s3-r">''' + LOGO + '''<span class="tg">Formations<br>en management</span></div></div>
   <div class="s3-band"><i>❄</i><span><b>Nouveau · Le Winter Pack</b> 8 outils pour mener tes entretiens avec une vraie méthode</span><em>Découvrir →</em></div>
 </div>'''
 CSS = '''<style>
@@ -63,8 +63,11 @@ h1{font-family:'Young Serif',Georgia,serif;font-weight:400;line-height:1.05}
 .s3-top > div{flex:1;min-width:0}
 .s3 h1{font-size:28px;color:var(--pine)}
 .s3 .hd{color:var(--ember);font-size:19px}
-.s3 .ct{margin-top:4px}.s3 .ct b{color:var(--teal)}
-.s3 .lg{align-self:flex-start;width:96px;height:30px}
+.s3 .ct{margin-top:5px}.s3 .ct b{color:var(--teal)}
+.s3 .hd{font-size:22px;margin-top:1px}.s3 .co,.s2 .co{font-size:12.5px;font-weight:800;color:var(--pine);letter-spacing:.02em}
+.s3-r{align-self:flex-start;display:flex;flex-direction:column;align-items:flex-end;gap:10px}.s3 .lg{width:96px;height:30px}
+.tg{background:var(--mint);color:var(--pine);font-weight:800;font-size:11px;line-height:1.25;text-align:center;border-radius:10px;padding:6px 9px}
+.s3 .co{white-space:nowrap;font-size:12px}
 .s3-band{display:flex;align-items:center;gap:12px;background:linear-gradient(90deg,var(--pine),var(--teal));color:#fff;padding:11px 22px}
 .s3-band i{font-style:normal;font-size:20px}
 .s3-band span{flex:1;font-size:12.5px;line-height:1.35}.s3-band b{display:block;font-family:'Young Serif';font-weight:400;font-size:16px}
