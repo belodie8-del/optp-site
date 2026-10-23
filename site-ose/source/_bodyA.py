@@ -26,23 +26,23 @@ BODY_A = '''<header class="top hx"><div class="wrap">
   <div class="chatlist">''' + ''.join('<p class="bub%s">%s</p>' % (' r' if i % 2 else '', t) for i, t in enumerate(PAINS)) + '''</div>
 </div></section>
 
-<section class="room wpk aud2" id="audit"><div class="wrap wpk-g">
-  <div class="wpk-t">
-    <span class="hand">Audit offert</span>
-    <h2 class="h2">Ton audit managérial <span>Mon outil préféré, offert</span></h2>
-    <p class="sub">De vraies questions de terrain, un vrai diagnostic, et un premier plan d’action pour savoir exactement quoi changer dans ton management.</p>
-    <ul class="wpk-l">''' + ''.join('<li>' + CHK + '<span>%s</span></li>' % t for t in AUD_LIST) + '''</ul>
-    <div class="wpk-o">
-      <a class="wpk-c" href="''' + AUDIT + '''"><small>⚡ Version express</small><b>Mon profil en 3 min</b><span>10 questions</span></a>
-      <a class="wpk-c" href="''' + AUDIT + '''"><small>✦ Audit complet</small><b>Mon analyse détaillée</b><span>31 questions · 10 min</span></a>
+<section class="room mint" id="audit"><div class="wrap">
+  <div class="aud3">
+    <div class="aud3-t">
+      <span class="hand">Audit offert</span><h2 class="h2 aud-h">Mon outil préféré (offert) pour transformer ton management</h2>
+      <div class="aud3-o">
+        <a class="ao ex" href="''' + AUDIT + '''"><span class="ao-k">⚡ Version express · 3 min</span><b>Mon profil en 3 minutes</b>
+          <span class="ao-t">Ton <strong>style dominant</strong> et ton <strong>point de vigilance</strong>.</span><span class="ao-c">Commencer →</span></a>
+        <a class="ao co" href="''' + AUDIT + '''"><span class="ao-k">✦ Audit complet · 10 min</span><b>Mon analyse détaillée</b>
+          <span class="ao-t">Radar de maturité et <strong>plan d’action sur 3 semaines</strong>.</span><span class="ao-c">Commencer →</span></a>
+      </div>
     </div>
-    <a class="btn rdvbtn" href="''' + AUDIT + '''">Commencer mon audit offert ''' + ARR + '''</a>
-  </div>
-  <div class="wpk-v">
-    <img class="wpk-d d1" src="''' + RAP['p2'] + '''" alt="" width="520" height="684">
-    <img class="wpk-d d2" src="''' + RAP['p3'] + '''" alt="" width="520" height="684">
-    <img class="wpk-d d3" src="''' + RAP['p1'] + '''" alt="Exemple de rapport managérial : profil Le Coach" width="520" height="684">
-    <span class="wpk-st"><b>100 %</b>rapport<br>offert</span>
+    <div class="aud3-v">
+      <img class="aud3-d d1" src="''' + RAP['p2'] + '''" alt="" width="520" height="684">
+      <img class="aud3-d d2" src="''' + RAP['p3'] + '''" alt="" width="520" height="684">
+      <img class="aud3-d d3" src="''' + RAP['p1'] + '''" alt="Exemple de rapport managérial : profil Le Coach" width="520" height="684">
+      <span class="aud3-st"><b>100 %</b>offert</span>
+    </div>
   </div>
 </div></section>
 

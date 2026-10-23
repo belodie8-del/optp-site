@@ -110,23 +110,23 @@ BODY = '''<header class="top hx"><div class="wrap">
   <div class="chatlist">''' + ''.join('<p class="bub%s">%s</p>' % (' r' if i % 2 else '', t) for i, t in enumerate(PAINS)) + '''</div>
 </div></section>
 
-<section class="room wpk aud2" id="audit"><div class="wrap wpk-g">
-  <div class="wpk-t">
-    <span class="hand">Audit offert</span>
-    <h2 class="h2">Ton audit managérial <span>Mon outil préféré, offert</span></h2>
-    <p class="sub">De vraies questions de terrain, un vrai diagnostic, et un premier plan d’action pour savoir exactement quoi changer dans ton management.</p>
-    <ul class="wpk-l">''' + ''.join('<li>' + CHK + '<span>%s</span></li>' % t for t in AUD_LIST) + '''</ul>
-    <div class="wpk-o">
-      <a class="wpk-c" href="''' + AUDIT + '''"><small>⚡ Version express</small><b>Mon profil en 3 min</b><span>10 questions</span></a>
-      <a class="wpk-c" href="''' + AUDIT + '''"><small>✦ Audit complet</small><b>Mon analyse détaillée</b><span>31 questions · 10 min</span></a>
+<section class="room mint" id="audit"><div class="wrap">
+  <div class="aud3">
+    <div class="aud3-t">
+      <span class="hand">Audit offert</span><h2 class="h2 aud-h">Mon outil préféré (offert) pour transformer ton management</h2>
+      <div class="aud3-o">
+        <a class="ao ex" href="''' + AUDIT + '''"><span class="ao-k">⚡ Version express · 3 min</span><b>Mon profil en 3 minutes</b>
+          <span class="ao-t">Ton <strong>style dominant</strong> et ton <strong>point de vigilance</strong>.</span><span class="ao-c">Commencer →</span></a>
+        <a class="ao co" href="''' + AUDIT + '''"><span class="ao-k">✦ Audit complet · 10 min</span><b>Mon analyse détaillée</b>
+          <span class="ao-t">Radar de maturité et <strong>plan d’action sur 3 semaines</strong>.</span><span class="ao-c">Commencer →</span></a>
+      </div>
     </div>
-    <a class="btn rdvbtn" href="''' + AUDIT + '''">Commencer mon audit offert ''' + ARR + '''</a>
-  </div>
-  <div class="wpk-v">
-    <img class="wpk-d d1" src="''' + RAP['p2'] + '''" alt="" width="520" height="684">
-    <img class="wpk-d d2" src="''' + RAP['p3'] + '''" alt="" width="520" height="684">
-    <img class="wpk-d d3" src="''' + RAP['p1'] + '''" alt="Exemple de rapport managérial : profil Le Coach" width="520" height="684">
-    <span class="wpk-st"><b>100 %</b>rapport<br>offert</span>
+    <div class="aud3-v">
+      <img class="aud3-d d1" src="''' + RAP['p2'] + '''" alt="" width="520" height="684">
+      <img class="aud3-d d2" src="''' + RAP['p3'] + '''" alt="" width="520" height="684">
+      <img class="aud3-d d3" src="''' + RAP['p1'] + '''" alt="Exemple de rapport managérial : profil Le Coach" width="520" height="684">
+      <span class="aud3-st"><b>100 %</b>offert</span>
+    </div>
   </div>
 </div></section>
 
@@ -368,6 +368,20 @@ footer .fso svg{width:20px;height:20px;}
 .wpk.aud2 .wpk-c span{font-size:15px;color:var(--muted);font-weight:700;}
 .wpk.aud2 .wpk-st b{font-size:34px;white-space:nowrap;}
 @media (max-width:560px){.wpk.aud2 .wpk-st b{font-size:26px;}}
+
+/* home: compact audit card with the real report */
+.aud3{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:36px;align-items:center;background:#fff;border-radius:34px;padding:clamp(28px,4vw,48px);box-shadow:0 30px 60px -40px rgba(8,80,85,.6);overflow:hidden;}
+.aud3 .aud-h{margin:6px 0 22px;font-size:clamp(28px,3.2vw,40px);max-width:22ch;}
+.aud3-o{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;}
+.aud3 .ao{padding:18px 18px 16px;gap:6px;} .aud3 .ao b{font-size:21px;} .aud3 .ao-t{font-size:14.5px;line-height:1.45;}
+.aud3-v{position:relative;height:330px;}
+.aud3-d{position:absolute;width:62%;height:auto;border-radius:12px;border:5px solid #fff;box-shadow:0 24px 40px -24px rgba(8,80,85,.7);}
+.aud3-d.d1{left:0;top:30px;transform:rotate(-8deg);} .aud3-d.d2{right:0;top:22px;transform:rotate(7deg);}
+.aud3-d.d3{left:50%;top:0;transform:translateX(-50%) rotate(-1deg);z-index:2;}
+.aud3-st{position:absolute;z-index:3;right:-6px;bottom:0;display:flex;flex-direction:column;align-items:center;justify-content:center;width:96px;height:96px;border-radius:50%;background:var(--pine);color:#fff;font-weight:800;font-size:13px;transform:rotate(8deg);box-shadow:0 14px 24px -14px rgba(8,40,43,.8);}
+.aud3-st b{font-family:var(--display);font-weight:400;font-size:26px;line-height:1;color:var(--ember);white-space:nowrap;}
+@media (max-width:900px){.aud3{grid-template-columns:1fr;} .aud3-v{order:-1;height:250px;max-width:340px;width:100%;margin:0 auto 18px;}}
+@media (max-width:560px){.aud3-o{grid-template-columns:1fr;} .aud3-v{height:210px;max-width:280px;}}
 /* home: audit section, real report preview */
 #audit .a5-h{text-align:center;display:flex;flex-direction:column;align-items:center;}
 #audit .a5-h .sub{text-align:center;margin-inline:auto;max-width:52ch;}

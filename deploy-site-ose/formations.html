@@ -696,6 +696,20 @@ footer .fso svg{width:20px;height:20px;}
 .wpk.aud2 .wpk-c span{font-size:15px;color:var(--muted);font-weight:700;}
 .wpk.aud2 .wpk-st b{font-size:34px;white-space:nowrap;}
 @media (max-width:560px){.wpk.aud2 .wpk-st b{font-size:26px;}}
+
+/* home: compact audit card with the real report */
+.aud3{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:36px;align-items:center;background:#fff;border-radius:34px;padding:clamp(28px,4vw,48px);box-shadow:0 30px 60px -40px rgba(8,80,85,.6);overflow:hidden;}
+.aud3 .aud-h{margin:6px 0 22px;font-size:clamp(28px,3.2vw,40px);max-width:22ch;}
+.aud3-o{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;}
+.aud3 .ao{padding:18px 18px 16px;gap:6px;} .aud3 .ao b{font-size:21px;} .aud3 .ao-t{font-size:14.5px;line-height:1.45;}
+.aud3-v{position:relative;height:330px;}
+.aud3-d{position:absolute;width:62%;height:auto;border-radius:12px;border:5px solid #fff;box-shadow:0 24px 40px -24px rgba(8,80,85,.7);}
+.aud3-d.d1{left:0;top:30px;transform:rotate(-8deg);} .aud3-d.d2{right:0;top:22px;transform:rotate(7deg);}
+.aud3-d.d3{left:50%;top:0;transform:translateX(-50%) rotate(-1deg);z-index:2;}
+.aud3-st{position:absolute;z-index:3;right:-6px;bottom:0;display:flex;flex-direction:column;align-items:center;justify-content:center;width:96px;height:96px;border-radius:50%;background:var(--pine);color:#fff;font-weight:800;font-size:13px;transform:rotate(8deg);box-shadow:0 14px 24px -14px rgba(8,40,43,.8);}
+.aud3-st b{font-family:var(--display);font-weight:400;font-size:26px;line-height:1;color:var(--ember);white-space:nowrap;}
+@media (max-width:900px){.aud3{grid-template-columns:1fr;} .aud3-v{order:-1;height:250px;max-width:340px;width:100%;margin:0 auto 18px;}}
+@media (max-width:560px){.aud3-o{grid-template-columns:1fr;} .aud3-v{height:210px;max-width:280px;}}
 /* home: audit section, real report preview */
 #audit .a5-h{text-align:center;display:flex;flex-direction:column;align-items:center;}
 #audit .a5-h .sub{text-align:center;margin-inline:auto;max-width:52ch;}

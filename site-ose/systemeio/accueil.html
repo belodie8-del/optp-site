@@ -230,10 +230,23 @@ html{scroll-behavior:smooth;}
 .ose .wpk-st{width:112px;height:112px;padding:12px;font-size:11.5px;}
 .ose .wpk-st b{font-size:34px;}}
 @media (prefers-reduced-motion:reduce){.ose .wpk-c{transition:none;}}
-.ose .wpk.aud2{background:var(--mint);}
-.ose .wpk.aud2 .wpk-c span{font-size:15px;color:var(--muted);font-weight:700;}
-.ose .wpk.aud2 .wpk-st b{font-size:34px;white-space:nowrap;}
-@media (max-width:560px){.ose .wpk.aud2 .wpk-st b{font-size:26px;}}
+.ose .aud3{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:36px;align-items:center;background:#fff;border-radius:34px;padding:clamp(28px,4vw,48px);box-shadow:0 30px 60px -40px rgba(8,80,85,.6);overflow:hidden;}
+.ose .aud3 .aud-h{margin:6px 0 22px;font-size:clamp(28px,3.2vw,40px);max-width:22ch;}
+.ose .aud3-o{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;}
+.ose .aud3 .ao{padding:18px 18px 16px;gap:6px;}
+.ose .aud3 .ao b{font-size:21px;}
+.ose .aud3 .ao-t{font-size:14.5px;line-height:1.45;}
+.ose .aud3-v{position:relative;height:330px;}
+.ose .aud3-d{position:absolute;width:62%;height:auto;border-radius:12px;border:5px solid #fff;box-shadow:0 24px 40px -24px rgba(8,80,85,.7);}
+.ose .aud3-d.d1{left:0;top:30px;transform:rotate(-8deg);}
+.ose .aud3-d.d2{right:0;top:22px;transform:rotate(7deg);}
+.ose .aud3-d.d3{left:50%;top:0;transform:translateX(-50%) rotate(-1deg);z-index:2;}
+.ose .aud3-st{position:absolute;z-index:3;right:-6px;bottom:0;display:flex;flex-direction:column;align-items:center;justify-content:center;width:96px;height:96px;border-radius:50%;background:var(--pine);color:#fff;font-weight:800;font-size:13px;transform:rotate(8deg);box-shadow:0 14px 24px -14px rgba(8,40,43,.8);}
+.ose .aud3-st b{font-family:var(--display);font-weight:400;font-size:26px;line-height:1;color:var(--ember);white-space:nowrap;}
+@media (max-width:900px){.ose .aud3{grid-template-columns:1fr;}
+.ose .aud3-v{order:-1;height:250px;max-width:340px;width:100%;margin:0 auto 18px;}}
+@media (max-width:560px){.ose .aud3-o{grid-template-columns:1fr;}
+.ose .aud3-v{height:210px;max-width:280px;}}
 .ose .soc{background:var(--paper);}
 .ose .soc .wrap{padding-block:clamp(56px,6vw,84px);}
 .ose .soc-h{text-align:center;display:flex;flex-direction:column;align-items:center;margin-bottom:30px;}
@@ -315,7 +328,13 @@ html{scroll-behavior:smooth;}
 .ose .ao.co{border-left-color:var(--teal);background:var(--mint);}
 .ose .ao:hover{transform:translateY(-4px);box-shadow:0 22px 36px -28px rgba(8,80,85,.7);}
 .ose .ao:focus-visible{outline:3px solid var(--ember);outline-offset:4px;}
+.ose .ao-k{font-size:12.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--ember-ink);}
+.ose .ao.co .ao-k{color:var(--teal);}
 .ose .ao b{font-family:var(--display);font-weight:400;font-size:26px;line-height:1.15;color:var(--ink);}
+.ose .ao-t{font-size:15.5px;line-height:1.55;color:var(--muted);}
+.ose .ao-t strong{color:var(--ink);}
+.ose .ao-c{margin-top:auto;padding-top:8px;font-weight:800;color:var(--ember-ink);}
+.ose .ao.co .ao-c{color:var(--pine);}
 .ose .aud-n{margin:28px 0 0;padding-top:24px;border-top:1.5px dashed rgba(8,80,85,.18);font-size:17px;line-height:1.6;color:var(--muted);}
 .ose .aud-n b{color:var(--pine);}
 @media (prefers-reduced-motion:reduce){.ose .ao{transition:none;}}
@@ -518,23 +537,23 @@ html.wpop-open{overflow:hidden;}
   <div class="chatlist"><p class="bub">Tu rentres le soir en te demandant comment tu vas gérer la situation de demain.</p><p class="bub r">Tu cherches des réponses en cachette sur ChatGPT, et tu ne trouves que des réponses génériques qui ne connaissent ni ton équipe, ni ton contexte.</p><p class="bub">Tu fais semblant de ne pas entendre ce qu’il se passe, parce que tu ne sais pas comment le gérer.</p><p class="bub r">Tu rejoues la scène de la réunion dans ta tête, en te disant que t’aurais dû dire autrement.</p><p class="bub">Tu as peur de dire à ton N+1 que tu n’y arrives pas.</p></div>
 </div></section>
 
-<section class="room wpk aud2" id="audit"><div class="wrap wpk-g">
-  <div class="wpk-t">
-    <span class="hand">Audit offert</span>
-    <h2 class="h2">Ton audit managérial <span>Mon outil préféré, offert</span></h2>
-    <p class="sub">De vraies questions de terrain, un vrai diagnostic, et un premier plan d’action pour savoir exactement quoi changer dans ton management.</p>
-    <ul class="wpk-l"><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg><span>Ton style dominant</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg><span>Ton point de vigilance</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg><span>Tes forces</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg><span>Tes axes de progrès</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg><span>Ta maturité, thème par thème</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg><span>Ton agilité de posture</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg><span>Ton plan d’action sur 3 semaines</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg><span>Un mot d’Élodie</span></li></ul>
-    <div class="wpk-o">
-      <a class="wpk-c" href="https://auditmanagerial.oseprendretaplace.fr/"><small>⚡ Version express</small><b>Mon profil en 3 min</b><span>10 questions</span></a>
-      <a class="wpk-c" href="https://auditmanagerial.oseprendretaplace.fr/"><small>✦ Audit complet</small><b>Mon analyse détaillée</b><span>31 questions · 10 min</span></a>
+<section class="room mint" id="audit"><div class="wrap">
+  <div class="aud3">
+    <div class="aud3-t">
+      <span class="hand">Audit offert</span><h2 class="h2 aud-h">Mon outil préféré (offert) pour transformer ton management</h2>
+      <div class="aud3-o">
+        <a class="ao ex" href="https://auditmanagerial.oseprendretaplace.fr/"><span class="ao-k">⚡ Version express · 3 min</span><b>Mon profil en 3 minutes</b>
+          <span class="ao-t">Ton <strong>style dominant</strong> et ton <strong>point de vigilance</strong>.</span><span class="ao-c">Commencer →</span></a>
+        <a class="ao co" href="https://auditmanagerial.oseprendretaplace.fr/"><span class="ao-k">✦ Audit complet · 10 min</span><b>Mon analyse détaillée</b>
+          <span class="ao-t">Radar de maturité et <strong>plan d’action sur 3 semaines</strong>.</span><span class="ao-c">Commencer →</span></a>
+      </div>
     </div>
-    <a class="btn rdvbtn" href="https://auditmanagerial.oseprendretaplace.fr/">Commencer mon audit offert <span aria-hidden="true">→</span></a>
-  </div>
-  <div class="wpk-v">
-    <img class="wpk-d d1" src="https://oseprendretaplace-formation.netlify.app/img/a71fdef0e4da.jpg" alt="" width="520" height="684">
-    <img class="wpk-d d2" src="https://oseprendretaplace-formation.netlify.app/img/0ab6365ff618.jpg" alt="" width="520" height="684">
-    <img class="wpk-d d3" src="https://oseprendretaplace-formation.netlify.app/img/08976028fd28.jpg" alt="Exemple de rapport managérial : profil Le Coach" width="520" height="684">
-    <span class="wpk-st"><b>100 %</b>rapport<br>offert</span>
+    <div class="aud3-v">
+      <img class="aud3-d d1" src="https://oseprendretaplace-formation.netlify.app/img/a71fdef0e4da.jpg" alt="" width="520" height="684">
+      <img class="aud3-d d2" src="https://oseprendretaplace-formation.netlify.app/img/0ab6365ff618.jpg" alt="" width="520" height="684">
+      <img class="aud3-d d3" src="https://oseprendretaplace-formation.netlify.app/img/08976028fd28.jpg" alt="Exemple de rapport managérial : profil Le Coach" width="520" height="684">
+      <span class="aud3-st"><b>100 %</b>offert</span>
+    </div>
   </div>
 </div></section>
 
