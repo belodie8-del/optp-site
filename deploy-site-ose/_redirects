@@ -8,5 +8,5 @@
 /merci                           /merci.html                              200
 # Blog on Systeme.io
 /blog                            https://oseprendretaplace.systeme.io/leblogose 301
-# Everything else (payment, thank-you pages, member area, …) stays on Systeme.io
-/*                               https://espace.oseprendretaplace.fr/:splat 301
+# Everything else (payment, thank-you pages, member area, …) is on Systeme.io, at www
+/*                               https://www.oseprendretaplace.fr/:splat  301

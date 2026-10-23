@@ -3,28 +3,30 @@ import html
 D = '/home/user/optp-site/site-ose/systemeio/'
 OUT = '/tmp/claude-0/-home-user-optp-site/1386eaca-821b-50a5-926e-8bdc38c36a33/scratchpad/home/codes-site-ose.html'
 PAGES = [
- ('systeme', '1 · Préparer Systeme.io', 'espace.oseprendretaplace.fr',
-  ['Dans Systeme.io, ajoute le domaine <b>espace.oseprendretaplace.fr</b> (Paramètres → Domaines personnalisés). Crée chez OVH l’enregistrement DNS que Systeme.io t’indique.',
-   'Dans les réglages de chaque tunnel (paiements, remerciements, Winter Pack, cartable de rentrée, sprint…) et de l’espace membre, choisis le domaine espace.oseprendretaplace.fr.',
-   'Vérifie que <b>espace.oseprendretaplace.fr/paiement-ose</b> s’ouvre bien. Ne passe pas à l’étape 3 avant : sinon les paiements ne fonctionneront plus.'],
-  []),
- ('netlify', '2 · Mettre le site sur Netlify', 'site-ose-netlify.zip',
+ ('netlify', '1 · Mettre le site sur Netlify', 'site-ose-netlify.zip',
   ['Sur Netlify : Add new site → Deploy manually, puis glisse le fichier <b>site-ose-netlify.zip</b>.',
    'Dans Forms, clique sur « Enable form detection », puis redépose le même ZIP (c’est ce qui active le formulaire de contact).',
    'Dans Forms → Form notifications, ajoute une notification e-mail vers contact@oseprendretaplace.fr.',
    'Teste le site sur l’adresse provisoire xxx.netlify.app que Netlify te donne.'],
   []),
- ('domaine', '3 · Brancher www.oseprendretaplace.fr', 'chez OVH',
-  ['Dans Netlify : Domain management → Add a domain → www.oseprendretaplace.fr.',
-   'Dans Systeme.io, retire www.oseprendretaplace.fr de tes domaines personnalisés.',
-   'Chez OVH, remplace la cible de l’enregistrement CNAME de « www » par l’adresse que Netlify affiche (xxx.netlify.app).',
+ ('domaine', '2 · Brancher oseprendretaplace.fr (sans www)', 'Netlify + OVH',
+  ['Dans Netlify : Domain management → Add a domain → <b>oseprendretaplace.fr</b>. Netlify ajoute aussi www.oseprendretaplace.fr tout seul : <b>supprime cette ligne www</b>, car www reste chez Systeme.io.',
+   'Chez OVH, dans ton domaine oseprendretaplace.fr : onglet « Redirection », supprime la redirection vers www si elle existe.',
+   'Toujours chez OVH, onglet « Zone DNS » : modifie l’enregistrement <b>A</b> de oseprendretaplace.fr (aujourd’hui 213.186.33.5) et mets <b>75.2.60.5</b>. Ne touche pas à la ligne www.',
    'Attends que le changement se propage (de quelques minutes à quelques heures). Netlify active le HTTPS tout seul.',
-   'Teste : www.oseprendretaplace.fr/paiement-ose doit t’emmener sur la page de paiement, sur espace.oseprendretaplace.fr.'],
+   'Vérifie que <b>https://oseprendretaplace.fr</b> affiche bien le nouveau site avant de passer à l’étape 3.'],
   []),
+ ('redirection', '3 · Rediriger les pages du site Systeme.io', 'tunnel « SITE »',
+  ['À faire seulement quand l’étape 2 marche. Avant, la page tournerait en boucle.',
+   'Pour chacune des 3 pages ci-dessous : Modifier la page → Paramètres → Tracking → « Modifier le code d’en-tête », colle le code, puis Sauvegarder.',
+   'Ne mets ce code sur aucune autre page : ni paiement, ni remerciement, ni blog.'],
+  [('Page d’accueil', 'www.oseprendretaplace.fr → oseprendretaplace.fr', 'redirection-accueil.html'),
+   ('Page de vente (les formations)', 'www.oseprendretaplace.fr/formations → oseprendretaplace.fr/formations', 'redirection-formations.html'),
+   ('Page de contact', 'www.oseprendretaplace.fr/contact → oseprendretaplace.fr/contact', 'redirection-contact.html')]),
  ('blog', '4 · Le blog (reste sur Systeme.io)', 'oseprendretaplace.systeme.io/leblogose',
-  ['Ouvre la mise en page du blog et garde l’élément « liste des articles » : il se met à jour seul.',
-   'Supprime les autres sections. Au-dessus de la liste, ajoute un élément « Code HTML » avec le bloc 1.',
-   'Sous la liste, ajoute un second élément « Code HTML » avec le bloc 2.'],
+  ['Pas de redirection sur le blog : il reste sur Systeme.io pour que tes nouveaux articles s’ajoutent tout seuls.',
+   'Ouvre la mise en page du blog et garde l’élément « liste des articles ». Supprime les autres sections.',
+   'Au-dessus de la liste, ajoute un élément « Code HTML » avec le bloc 1. Sous la liste, un second élément « Code HTML » avec le bloc 2.'],
   [('Bloc 1', 'Au-dessus de la liste des articles', 'blog-1.html'),
    ('Bloc 2', 'En dessous de la liste des articles', 'blog-2.html')]),
 ]
@@ -84,14 +86,14 @@ textarea{display:block;width:100%;height:96px;resize:vertical;border:1px solid v
 </style>
 <main>
 <header><h1>Mettre le nouveau site en ligne</h1>
-<p class="intro">Le site est hébergé sur Netlify. Toutes les adresses restent les mêmes : ce qui n’est pas une page du nouveau site (paiements, remerciements, espace membre…) est renvoyé automatiquement vers Systeme.io. Suis les étapes dans l’ordre.</p></header>
-<div class="first"><p><b>Pourquoi l’étape 1 d’abord :</b> une adresse ne peut pointer que vers un seul hébergeur. Quand www passera sur Netlify, tes pages Systeme.io vivront sur espace.oseprendretaplace.fr, et Netlify y renverra tous les anciens liens.</p><p>Le blog utilise des images hébergées avec le Winter Pack : garde bien le dernier ZIP du Winter Pack en ligne.</p></div>
+<p class="intro">Le nouveau site vit sur Netlify, à l’adresse oseprendretaplace.fr. www.oseprendretaplace.fr reste chez Systeme.io : paiements, remerciements, espace membre et blog continuent de marcher sans rien changer. Suis les étapes dans l’ordre.</p></header>
+<div class="first"><p><b>Le principe :</b> le nouveau site est sur oseprendretaplace.fr. Les 3 anciennes pages du site Systeme.io (accueil, formations, contact) renvoient vers lui, et tout le reste ne bouge pas.</p><p>Le blog utilise des images hébergées avec le Winter Pack : garde bien le dernier ZIP du Winter Pack en ligne.</p></div>
 <nav class="toc" aria-label="Pages">''' + nav + '''</nav>
 ''' + secs + '''
 <div class="tips"><h2>Bon à savoir</h2><ul>
 <li>Ne supprime pas tes anciennes pages Systeme.io : les pages de paiement et de remerciement doivent continuer d’exister.</li>
 <li>Les animations et le pop-up ne s’affichent pas dans l’éditeur. Vérifie sur la page publiée, en navigation privée.</li>
-<li>Pour changer le nom espace.oseprendretaplace.fr, dis-le-moi avant l’étape 1 : je régénère le ZIP en 1 minute.</li>
+<li>Pour revenir à l’ancien site à tout moment : retire le code d’en-tête des 3 pages Systeme.io.</li>
 </ul></div>
 </main>
 <script>

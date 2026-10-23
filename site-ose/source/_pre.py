@@ -19,9 +19,9 @@ news = open(S + 'site/logos/news.svg', encoding='utf-8').read().replace('width="
 ENV = 'data:image/svg+xml;base64,' + base64.b64encode(news.encode()).decode()
 
 AUDIT = 'https://auditmanagerial.oseprendretaplace.fr/'
-FORM = 'https://www.oseprendretaplace.fr/formations'
+FORM = 'https://oseprendretaplace.fr/formations'
 BLOG = 'https://oseprendretaplace.systeme.io/leblogose'
-CONTACT = 'https://www.oseprendretaplace.fr/contact'
+CONTACT = 'https://oseprendretaplace.fr/contact'
 RDV = 'https://calendly.com/eb-formationconsulting/30min'
 WPK = 'https://winterpack.oseprendretaplace.fr/'
 LINKEDIN = 'https://www.linkedin.com/in/elodie-boyer-299891143/'
