@@ -4,7 +4,7 @@
 import sys
 WP = 'https://winterpack.oseprendretaplace.fr/'
 END_UTC = (2026, 9, 25, 22, 59, 59)   # bonus line hidden after Sunday 25 Oct 2026, 23:59 Paris
-TOOLS = ['L’entretien professionnel', 'L’entretien annuel', 'La réunion d’équipe', 'La trame du OTO',
+TOOLS = ['L’entretien de parcours professionnel', 'L’entretien annuel', 'La réunion d’équipe', 'La trame du OTO',
          'Le tableau de bord des objectifs', 'Le calendrier des rituels', 'Les 10 commandements', 'Le kit de survie verbal']
 CHK = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg>'
 FLAKES = ''.join('<i style="left:%d%%;top:%d%%;font-size:%dpx;opacity:%.2f">❄</i>' % f for f in

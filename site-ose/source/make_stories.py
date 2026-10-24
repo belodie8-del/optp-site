@@ -7,7 +7,7 @@ SNOW = ''.join('<i class="sn" style="left:%d%%;top:%d%%;font-size:%dpx;opacity:%
 def phone(src, cls=''):
     return '<div class="ph %s"><div class="ph-s"><img src="%s" alt=""></div></div>' % (cls, src)
 def tick(t): return '<li><span class="ck">✓</span>%s</li>' % t
-TOOLS = ['L’entretien professionnel', 'L’entretien annuel', 'La réunion d’équipe', 'La trame du OTO',
+TOOLS = ['L’entretien de parcours professionnel', 'L’entretien annuel', 'La réunion d’équipe', 'La trame du OTO',
          'Le tableau de bord des objectifs', 'Le calendrier des rituels', 'Les 10 commandements', 'Le kit de survie verbal']
 ST = [
 ('site-1', 'pine', ''' <p class="hand o">Ça y est !</p>

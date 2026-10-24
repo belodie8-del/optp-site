@@ -1,6 +1,6 @@
 # one story per Winter Pack tool (texts from the Winter Pack page), inserted after the Winter Pack intro story
 TD = [
- ('L’entretien professionnel', 'Un collaborateur qui ne se voit pas d’avenir chez toi finit par le chercher ailleurs.', 'PDF · à imprimer ou à remplir',
+ ('L’entretien de parcours professionnel', 'Un collaborateur qui ne se voit pas d’avenir chez toi finit par le chercher ailleurs.', 'PDF · à imprimer ou à remplir',
   [('Le cadre légal intégré', 'La trame rappelle ce que la loi impose, de l’accueil aux signatures.'), ('Un plan d’actions daté', 'Des actions concrètes, avec un point d’étape à 6 mois.')]),
  ('L’entretien annuel', 'L’entretien annuel évalue aussi le manager.', 'PDF · à imprimer ou à remplir',
   [('Deux regards comparés', 'Manager et collaborateur remplissent chacun leur exemplaire.'), ('Le management évalué aussi', 'Le collaborateur donne son avis sur son manager.')]),
@@ -19,12 +19,13 @@ TD = [
 ]
 _pos = [i for i, x in enumerate(ST) if x[0] == 'winter-1'][0] + 1
 for k, (name, hook, fmt, pts) in enumerate(TD):
-    body = (' <p class="hand">Winter Pack · outil %d/8</p>\n <h1 class="tn">%s</h1>\n <p class="hk">« %s »</p>\n'
+    body = (' <p class="hand">Winter Pack · outil %d/8</p>\n <h1 class="tn%s">%s</h1>\n <p class="hk">« %s »</p>\n'
             ' <div class="pv"><img src="wpap/t%d.jpg" alt=""><span class="fm">%s</span></div>\n <div class="pts">%s</div>') % (
-        k + 1, name, hook, k + 1, fmt,
+        k + 1, ' long' if len(name) > 32 else '', name, hook, k + 1, fmt,
         ''.join('<div class="pt"><span class="ck2">✓</span><div><b>%s</b><span>%s</span></div></div>' % p for p in pts))
     ST.insert(_pos + k, ('outil-%d' % (k + 1), 'mint' if k % 2 else 'peach', body))
 CSS_T = '''.tn{font-size:40px}
+.tn.long{font-size:35px}
 .hk{margin-top:8px;font-size:18px;line-height:1.4;font-weight:700;font-style:italic;color:var(--teal);max-width:32ch}
 .pv{position:relative;margin-top:18px;width:100%;height:262px;background:#fff;border-radius:22px;padding:14px;box-shadow:0 30px 46px -32px rgba(8,80,85,.75);transform:rotate(-1.5deg);display:grid;place-items:center}
 .pv img{max-width:100%;max-height:236px;object-fit:contain;border-radius:8px}

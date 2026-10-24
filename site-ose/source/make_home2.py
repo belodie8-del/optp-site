@@ -35,7 +35,7 @@ LOGO_IG = ('<svg viewBox="0 0 48 48" aria-hidden="true"><defs><radialGradient id
            '<rect width="48" height="48" rx="12" fill="url(#soc-ig)"/><rect x="11" y="11" width="26" height="26" rx="8" fill="none" stroke="#fff" stroke-width="3"/>'
            '<circle cx="24" cy="24" r="6.2" fill="none" stroke="#fff" stroke-width="3"/><circle cx="31.6" cy="16.4" r="1.9" fill="#fff"/></svg>')
 WP_AP = [img('home/wpap/s%d.jpg' % n) for n in (1, 2, 7)]
-WP_TOOLS = ['L’entretien professionnel', 'L’entretien annuel', 'La réunion d’équipe', 'La trame du OTO',
+WP_TOOLS = ['L’entretien de parcours professionnel', 'L’entretien annuel', 'La réunion d’équipe', 'La trame du OTO',
             'Le tableau de bord des objectifs', 'Le calendrier des rituels', 'Les 10 commandements', 'Le kit de survie verbal']
 NEWS = P.NEWS_URL
 CHK = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg>'

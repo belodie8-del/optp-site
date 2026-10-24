@@ -8,8 +8,8 @@ i = frag.index('</style>') + len('</style>')
 head_inner, body = frag[:i], frag[i:]
 head_inner = head_inner.replace('<title>Winter Pack · Humain</title>', '')
 head_inner = head_inner.replace('<meta name="claude:viewport-fit-sides" content="cover">\n', '')
-DESC = 'Winter Pack · L’Essentiel du Manager : 8 outils pour que tous tes managers mènent leurs entretiens avec la même méthode. Pour les PME sans SIRH, ou sans module entretiens.'
-TITLE = 'Winter Pack · L’Essentiel du Manager'
+DESC = '8 outils prêts à l’emploi pour tes managers : trames d’entretien annuel et de parcours professionnel (loi 2025), OTO, réunion d’équipe, objectifs. Dès 197 €.'
+TITLE = 'Trames d’entretien annuel et de parcours professionnel · Winter Pack'
 URL = 'https://winterpack.oseprendretaplace.fr/'
 meta = ('<meta charset="UTF-8">\n<meta name="google-site-verification" content="vvfP6Ki-xjIGNlaZxGgeBjxDDMKPneN8TT4x25t-X7E" />\n<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n'
         '<title>%(t)s</title>\n<meta name="description" content="%(d)s">\n'
