@@ -14,9 +14,7 @@ TODAY = datetime.date.today().isoformat()
 
 ORG_ID, PERSON_ID = MAIN + '#organisation', MAIN + '#elodie-boyer'
 ORG = {'@type': 'Organization', '@id': ORG_ID, 'name': 'EB Formation Consulting', 'alternateName': 'Ose prendre ta place',
-       'url': MAIN, 'email': MAIL, 'founder': {'@id': PERSON_ID},
-       'address': {'@type': 'PostalAddress', 'streetAddress': '74 Grande Rue', 'postalCode': '70100',
-                   'addressLocality': 'Gray', 'addressRegion': 'Haute-Saône', 'addressCountry': 'FR'}}
+       'url': MAIN, 'email': MAIL, 'founder': {'@id': PERSON_ID}}
 PERSON = {'@type': 'Person', '@id': PERSON_ID, 'name': 'Élodie Boyer', 'jobTitle': 'Formatrice en management',
           'worksFor': {'@id': ORG_ID}, 'url': MAIN, 'sameAs': [LINKEDIN, INSTA],
           'knowsAbout': ['Management', 'Posture managériale', 'Formation de managers', 'Entretien annuel',
@@ -103,9 +101,9 @@ def sitemap(urls):
 
 LLMS_MAIN = '''# Ose prendre ta place
 
-> Formations en management en ligne, avec coaching individuel, pour les managers qui n’ont jamais été formés. Par Élodie Boyer, formatrice en management (EB Formation Consulting, Gray, Haute-Saône, France).
+> Formations en management en ligne, avec coaching individuel, pour les managers qui n’ont jamais été formés. Par Élodie Boyer, formatrice en management (EB Formation Consulting, France).
 
-Élodie Boyer accompagne les managers, qu’ils viennent d’être nommés ou qu’ils managent depuis des années, sur leur posture, leur autorité naturelle, leur communication, leur équipe et leurs entretiens. Elle a accompagné des managers en laboratoire, pharmacie, intérim, coiffure et informatique. Les formations se suivent en ligne : un module par semaine, puis une séance de coaching individuel sur Google Meet la semaine suivante.
+Élodie Boyer accompagne les managers, qu’ils viennent d’être nommés ou qu’ils managent depuis des années, sur leur posture, leur autorité naturelle, leur communication, leur équipe et leurs entretiens. Elle a accompagné des managers en laboratoire, pharmacie, intérim, coiffure et informatique. Les formations se suivent à distance : un module par semaine, puis une séance de coaching individuel sur Google Meet la semaine suivante.
 
 ## Formations
 
