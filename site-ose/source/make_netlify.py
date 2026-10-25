@@ -3,6 +3,7 @@ as static files, images as files, the contact form through Netlify Forms. www.os
 thank-you pages, member area): every other path is sent there, and the 3 old Systeme.io site pages send visitors here (header snippets).
 Output: /home/user/optp-site/deploy-site-ose/, site-ose-netlify.zip and the snippets in site-ose/systemeio/."""
 import re, os, shutil, hashlib, base64, zipfile, html as H
+import seo
 R = '/home/user/optp-site/'
 OUT = R + 'deploy-site-ose/'
 ZIP = R + 'site-ose-netlify.zip'
@@ -12,10 +13,10 @@ SIO = 'https://www.oseprendretaplace.fr'   # stays on Systeme.io
 BLOG = 'https://oseprendretaplace.systeme.io/leblogose'
 OWN = ['accueil', 'formations', 'contact', 'politique-de-confidentialite', 'conditions-utilisation', 'politique-cookies']
 PAGES = [  # output file, source, path, title, description
- ('index.html', 'accueil-A.html', '', 'Ose prendre ta place · Formations en management · Élodie Boyer',
-  'Une méthode concrète pour incarner une autorité naturelle, fédérer ton équipe et retrouver le plaisir de manager, même si tu n’as jamais été formé(e).'),
- ('formations.html', 'formations-test.html', 'formations', 'Les formations · Ose prendre ta place',
-  'Ose Prendre Ta Place, Incarne ta posture, Booste ton équipe : les formations en management d’Élodie Boyer, pour les managers qui n’ont jamais été formés.'),
+ ('index.html', 'accueil-A.html', '', 'Formation management en ligne · Élodie Boyer · Ose prendre ta place',
+  'Formations en management en ligne avec coaching individuel, par Élodie Boyer, formatrice. Pour les managers jamais formés : posture, autorité naturelle, équipe.'),
+ ('formations.html', 'formations-test.html', 'formations', 'Formation manager en ligne avec coaching · Ose prendre ta place',
+  '3 formules en ligne avec coaching individuel : Ose Prendre Ta Place (6 modules, 12 semaines), Incarne ta posture et Booste ton équipe (3 modules). Pour managers jamais formés.'),
  ('contact.html', 'contact-test.html', 'contact', 'Contact · Ose prendre ta place',
   'Une question sur les formations, besoin d’y voir plus clair ou envie d’échanger autour d’un sujet management ? Écris à Élodie Boyer.'),
  ('politique-de-confidentialite.html', 'legal-politique-de-confidentialite.html', 'politique-de-confidentialite', 'Politique de confidentialité · Ose prendre ta place',
@@ -60,7 +61,8 @@ def build(src, path, title, desc, index=True, edit=None):
     i = s.index('<header')
     head = s[:i]
     head = re.sub(r'<meta charset[^>]*>\s*|<meta name="viewport"[^>]*>\s*|<title>[^<]*</title>\s*|<meta name="claude:[^>]*>\s*', '', head)
-    return '<!doctype html>\n<html lang="fr">\n<head>\n' + meta(path, title, desc, index) + head + '</head>\n<body>\n' + s[i:] + '\n</body>\n</html>\n'
+    return ('<!doctype html>\n<html lang="fr">\n<head>\n' + meta(path, title, desc, index) + (seo.main_ld(path, s) if index else '') +
+            head + '</head>\n<body>\n' + s[i:] + '\n</body>\n</html>\n')
 
 def contact_form(s):
     """Netlify Forms instead of the preview form; the browser checks the required fields."""
@@ -104,8 +106,8 @@ open(OUT + '_redirects', 'w').write(
     '# Everything else (payment, thank-you pages, member area, …) is on Systeme.io, at www\n' + '%-32s %-40s %d\n' % rules[-1])
 open(OUT + '_headers', 'w').write('/img/*\n  Cache-Control: public, max-age=31536000, immutable\n')
 open(OUT + 'robots.txt', 'w').write('User-agent: *\nAllow: /\nSitemap: %ssitemap.xml\n' % SITE)
-open(OUT + 'sitemap.xml', 'w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
-    ''.join('  <url><loc>%s%s</loc></url>\n' % (SITE, p) for p in [''] + OWN[1:]) + '</urlset>\n')
+open(OUT + 'sitemap.xml', 'w').write(seo.sitemap([SITE + p for p in [''] + OWN[1:]]))
+open(OUT + 'llms.txt', 'w', encoding='utf-8').write(seo.LLMS_MAIN)
 open(OUT + 'google6dff6d42b5b88ba4.html', 'w').write('google-site-verification: google6dff6d42b5b88ba4.html')
 open(OUT + 'favicon.svg', 'w').write('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="16" fill="#085055"/>'
     '<text x="32" y="44" text-anchor="middle" font-family="Georgia,serif" font-size="32" fill="#FF914D">EB</text></svg>')

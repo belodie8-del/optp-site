@@ -1,5 +1,7 @@
 """Turns the Winter Pack page fragment into a standalone site folder (index.html + legal pages) and a zip."""
-import os, re, shutil, zipfile
+import os, re, shutil, zipfile, sys
+sys.path.insert(0, '/tmp/claude-0/-home-user-optp-site/1386eaca-821b-50a5-926e-8bdc38c36a33/scratchpad/home')
+import seo
 R = '/home/user/optp-site/'
 OUT = R + 'deploy-winter-pack/'
 frag = open(R + 'winter-pack.html', encoding='utf-8').read()
@@ -18,14 +20,15 @@ meta = ('<meta charset="UTF-8">\n<meta name="google-site-verification" content="
         '<meta property="og:site_name" content="EB Formation Consulting">\n'
         '<meta property="og:image" content="%(u)sog-image.jpg">\n<meta property="og:image:width" content="1200">\n<meta property="og:image:height" content="627">\n<meta name="twitter:card" content="summary_large_image">\n'
         '<meta property="og:title" content="%(t)s">\n<meta property="og:description" content="%(d)s">\n') % {'t': TITLE, 'd': DESC, 'u': URL}
-html = '<!DOCTYPE html>\n<html lang="fr">\n<head>\n' + meta + head_inner + '\n</head>\n<body>\n' + body + '\n</body>\n</html>\n'
+html = '<!DOCTYPE html>\n<html lang="fr">\n<head>\n' + meta + seo.wp_ld(body) + head_inner + '\n</head>\n<body>\n' + body + '\n</body>\n</html>\n'
 
 if os.path.isdir(OUT):
     shutil.rmtree(OUT)
 os.makedirs(OUT)
 open(OUT + 'index.html', 'w', encoding='utf-8').write(html)
 open(OUT + 'robots.txt', 'w').write('User-agent: *' + chr(10) + 'Allow: /' + chr(10) + 'Sitemap: ' + URL + 'sitemap.xml' + chr(10))
-open(OUT + 'sitemap.xml', 'w').write('<?xml version="1.0" encoding="UTF-8"?>' + chr(10) + '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>' + URL + '</loc></url></urlset>' + chr(10))
+open(OUT + 'sitemap.xml', 'w').write(seo.sitemap([URL]))
+open(OUT + 'llms.txt', 'w', encoding='utf-8').write(seo.LLMS_WP)
 for f in ['winter-pack-cgv.html', 'winter-pack-confidentialite.html', 'winter-pack-mentions-legales.html']:
     shutil.copy(R + f, OUT + f)
 

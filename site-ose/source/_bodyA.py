@@ -6,7 +6,7 @@ BODY_A = '''<header class="top hx"><div class="wrap">
 
 <section class="h2o"><div class="wrap">
   <div class="h2o-t">
-    <span class="hand">Formation en ligne · par Élodie Boyer</span>
+    <span class="hand">Formation en management en ligne · par Élodie Boyer</span>
     <h1>Ose prendre ta place <em>de manager<svg viewBox="0 0 300 24" aria-hidden="true" preserveAspectRatio="none"><path d="M4 16C60 6 150 4 296 12" /></svg></em></h1>
     <p class="lede">Une méthode concrète pour incarner une autorité naturelle, fédérer ton équipe et retrouver le plaisir de manager, même si tu n’as jamais été formé(e).</p>
     <div class="ctas"><a class="btn rdvbtn" href="#formations">Découvrir les formations ''' + ARR + '''</a><a class="btn ghost" href="''' + AUDIT + '''">Faire l’audit offert</a></div>
