@@ -19,6 +19,8 @@ Pop-up Winter Pack : intégré à la page d'accueil (`source/popup_home.py`). `p
 
 Mise en ligne : `systemeio/` contient les blocs à coller dans Systeme.io (accueil, formations, contact 1 et 2, blog 1 et 2, pop-up seul), générés par `source/export_sio.py`. Leurs images sont dans `images-sio/` et sont servies par le site Winter Pack à l'adresse https://winterpack.oseprendretaplace.fr/ose/ (copiées dans le ZIP par `make_deploy.py`).
 
+Formules : `source/formules.py` titre chaque formule par la situation du manager (Posture de manager, Management d’équipe, Parcours complet), garde son nom juste en dessous, ajoute le bloc « Par où commencer ? » à la page Formations et appelle « parcours » les formules de 3 modules. `build_site.sh` l’applique après `anim.py`.
+
 Référencement (Google et assistants IA) : `source/seo.py` ajoute aux pages des données structurées (organisation, Élodie Boyer, les 3 formations, le Winter Pack et ses offres, les FAQ relues sur la page même), écrit `llms.txt` (résumé du site pour les IA) et des plans de site datés. Il sert à `make_netlify.py` et au `make_deploy.py` du Winter Pack.
 
 Pages légales : `politique-de-confidentialite.html`, `conditions-utilisation.html` et `politique-cookies.html`, générées par `source/make_legal.py` à partir des textes de `source/legal/*.md` (repris des documents du Drive). Le pied de page de toutes les pages renvoie vers ces 3 adresses et vers LinkedIn et Instagram.

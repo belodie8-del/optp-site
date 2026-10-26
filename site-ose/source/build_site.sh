@@ -15,6 +15,7 @@ python3 make_formations.py >/dev/null
 python3 make_blog.py >/dev/null
 python3 make_contact.py >/dev/null
 python3 anim.py accueil-A.html accueil-B.html accueil-C.html accueil-test.html formations-test.html blog-test.html article-test.html contact-test.html
+python3 formules.py formations-test.html accueil-A.html accueil-test.html
 python3 popup_home.py accueil-A.html accueil-B.html accueil-C.html accueil-test.html
 python3 popup_home.py --block popup-winter-pack-systemeio.html
 python3 make_blog_sio.py

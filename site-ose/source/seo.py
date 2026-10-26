@@ -38,23 +38,23 @@ def faq(page_html, url, skip=()):
             qa.append({'@type': 'Question', 'name': q, 'acceptedAnswer': {'@type': 'Answer', 'text': a}})
     return {'@type': 'FAQPage', '@id': url + '#faq', 'url': url, 'inLanguage': 'fr-FR', 'mainEntity': qa}
 
-def _course(name, desc, price, modules):
-    return {'@type': 'Course', 'name': name, 'description': desc, 'url': MAIN + 'formations', 'inLanguage': 'fr',
+def _course(name, alt, anchor, desc, price, modules):
+    return {'@type': 'Course', 'name': name, 'alternateName': alt, 'description': desc, 'url': MAIN + 'formations#' + anchor, 'inLanguage': 'fr',
             'provider': {'@id': ORG_ID}, 'coursePrerequisites': 'Aucun',
             'syllabusSections': [{'@type': 'Syllabus', 'name': m} for m in modules],
             'offers': {'@type': 'Offer', 'price': price, 'priceCurrency': 'EUR', 'category': 'Paid', 'url': MAIN + 'formations#offres'},
             'hasCourseInstance': {'@type': 'CourseInstance', 'courseMode': 'Online', 'instructor': {'@id': PERSON_ID}}}
 
 COURSES = [
-    _course('Ose Prendre Ta Place',
+    _course('Ose Prendre Ta Place', 'Parcours complet', 'parcours-complet',
             'Formation en management en ligne : 6 modules et 6 séances de coaching individuel avec Élodie Boyer, sur 12 semaines, '
             'avec un groupe WhatsApp privé et des lives réservés aux managers du programme.', '1497',
             ['RESET', 'La Lecture d’Équipe', 'Posture & Crédibilité', 'Courage & Influence', 'L’Alliance Individuelle', 'Le Collectif']),
-    _course('Incarne ta posture',
-            'Parcours de 3 modules pour construire ta posture de manager, avec 3 séances de coaching individuel avec Élodie Boyer.', '897',
+    _course('Incarne ta posture', 'Posture de manager', 'posture-de-manager',
+            'Parcours de 3 modules pour les managers qui viennent de prendre leur poste ou qui ont encore l’impression de faire semblant : construire sa posture de manager, avec 3 séances de coaching individuel avec Élodie Boyer.', '897',
             ['RESET', 'La Lecture d’Équipe', 'Posture & Crédibilité']),
-    _course('Booste ton équipe',
-            'Parcours de 3 modules pour agir concrètement sur ton management individuel et collectif, avec 3 séances de coaching '
+    _course('Booste ton équipe', 'Management d’équipe', 'management-equipe',
+            'Parcours de 3 modules pour les managers dont l’équipe n’avance pas comme ils veulent : agir concrètement sur son management individuel et collectif, avec 3 séances de coaching '
             'individuel avec Élodie Boyer.', '897',
             ['Courage & Influence', 'L’Alliance Individuelle', 'Le Collectif']),
 ]
@@ -107,9 +107,9 @@ LLMS_MAIN = '''# Ose prendre ta place
 
 ## Formations
 
-- [Ose Prendre Ta Place]({m}formations) : la formation complète. 6 modules (RESET, La Lecture d’Équipe, Posture & Crédibilité, Courage & Influence, L’Alliance Individuelle, Le Collectif) et 6 séances de coaching individuel sur 12 semaines, un groupe WhatsApp privé et des lives réservés aux managers du programme. 1 497 €, paiement en 2 fois possible.
-- [Incarne ta posture]({m}formations) : 3 modules (RESET, La Lecture d’Équipe, Posture & Crédibilité) et 3 séances de coaching individuel. 897 €.
-- [Booste ton équipe]({m}formations) : 3 modules (Courage & Influence, L’Alliance Individuelle, Le Collectif) et 3 séances de coaching individuel. 897 €.
+- [Ose Prendre Ta Place]({m}formations#parcours-complet) (parcours complet) : la formation complète. 6 modules (RESET, La Lecture d’Équipe, Posture & Crédibilité, Courage & Influence, L’Alliance Individuelle, Le Collectif) et 6 séances de coaching individuel sur 12 semaines, un groupe WhatsApp privé et des lives réservés aux managers du programme. 1 497 €, paiement en 2 fois possible.
+- [Incarne ta posture]({m}formations#posture-de-manager) (posture de manager) : pour les managers qui viennent de prendre leur poste, ou qui ont encore l’impression de faire semblant. 3 modules (RESET, La Lecture d’Équipe, Posture & Crédibilité) et 3 séances de coaching individuel. 897 €.
+- [Booste ton équipe]({m}formations#management-equipe) (management d’équipe) : pour les managers dont l’équipe n’avance pas comme ils veulent. 3 modules (Courage & Influence, L’Alliance Individuelle, Le Collectif) et 3 séances de coaching individuel. 897 €.
 - Accès à la plateforme à vie. Les formations ne sont pas finançables par le CPF. L’inscription commence par un appel de 30 minutes.
 
 ## Outils

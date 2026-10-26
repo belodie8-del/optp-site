@@ -6,9 +6,9 @@
 
 ## Formations
 
-- [Ose Prendre Ta Place](https://oseprendretaplace-formation.netlify.app/formations) : la formation complète. 6 modules (RESET, La Lecture d’Équipe, Posture & Crédibilité, Courage & Influence, L’Alliance Individuelle, Le Collectif) et 6 séances de coaching individuel sur 12 semaines, un groupe WhatsApp privé et des lives réservés aux managers du programme. 1 497 €, paiement en 2 fois possible.
-- [Incarne ta posture](https://oseprendretaplace-formation.netlify.app/formations) : 3 modules (RESET, La Lecture d’Équipe, Posture & Crédibilité) et 3 séances de coaching individuel. 897 €.
-- [Booste ton équipe](https://oseprendretaplace-formation.netlify.app/formations) : 3 modules (Courage & Influence, L’Alliance Individuelle, Le Collectif) et 3 séances de coaching individuel. 897 €.
+- [Ose Prendre Ta Place](https://oseprendretaplace-formation.netlify.app/formations#parcours-complet) (parcours complet) : la formation complète. 6 modules (RESET, La Lecture d’Équipe, Posture & Crédibilité, Courage & Influence, L’Alliance Individuelle, Le Collectif) et 6 séances de coaching individuel sur 12 semaines, un groupe WhatsApp privé et des lives réservés aux managers du programme. 1 497 €, paiement en 2 fois possible.
+- [Incarne ta posture](https://oseprendretaplace-formation.netlify.app/formations#posture-de-manager) (posture de manager) : pour les managers qui viennent de prendre leur poste, ou qui ont encore l’impression de faire semblant. 3 modules (RESET, La Lecture d’Équipe, Posture & Crédibilité) et 3 séances de coaching individuel. 897 €.
+- [Booste ton équipe](https://oseprendretaplace-formation.netlify.app/formations#management-equipe) (management d’équipe) : pour les managers dont l’équipe n’avance pas comme ils veulent. 3 modules (Courage & Influence, L’Alliance Individuelle, Le Collectif) et 3 séances de coaching individuel. 897 €.
 - Accès à la plateforme à vie. Les formations ne sont pas finançables par le CPF. L’inscription commence par un appel de 30 minutes.
 
 ## Outils
