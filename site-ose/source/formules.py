@@ -47,6 +47,10 @@ CSS_FORMATIONS = '''
 #posture-de-manager,#management-equipe,#parcours-complet{scroll-margin-top:110px;}
 @media (max-width:860px){.poc{grid-template-columns:minmax(0,1fr);}}
 '''
+CSS_PROGRAMME = '''
+.mdg-n{opacity:.85;}
+@media (max-width:560px){.mdg-t .mdg-n{display:block;font-size:14px;}.mdg-s{display:none;}}
+'''
 CSS_HOME = '''
 /* home: offers titled by situation, own name underneath */
 .trk p.trk-n{margin:-6px 0 2px;font-family:var(--hand);font-size:26px;line-height:1;color:var(--ember-ink);}
@@ -61,7 +65,16 @@ def _css(s, css):
     i = s.index('</style>')
     return s[:i] + css + s[i:]
 
+def programme(s):
+    """The two module groups of the programme carry the same situation titles."""
+    s = _rep(s, '<p class="mdg-t ga">Modules 1 à 3 · <b>Incarne ta posture</b></p>',
+             '<p class="mdg-t ga">Modules 1 à 3 · <b>Posture de manager</b><span class="mdg-n"><span class="mdg-s"> · </span>Incarne ta posture</span></p>')
+    s = _rep(s, '<p class="mdg-t gb">Modules 4 à 6 · <b>Booste ton équipe</b></p>',
+             '<p class="mdg-t gb">Modules 4 à 6 · <b>Management d’équipe</b><span class="mdg-n"><span class="mdg-s"> · </span>Booste ton équipe</span></p>')
+    return _css(s, CSS_PROGRAMME)
+
 def formations(s):
+    s = programme(s)
     s = _rep(s, '<section class="room" id="offres">', POC + '<section class="room" id="offres">')
     s = _rep(s, 'href="#offres">Découvrir les formules', 'href="#par-ou-commencer">Découvrir les formules')
     s = _rep(s, '<article class="oc"><div class="oc-a"><span class="trk-k">Ose Prendre Ta Place</span><h3>C’est la transformation complète !</h3>',
